@@ -1,0 +1,189 @@
+/* =========================================
+   Introduction Page 核心布局
+   ========================================= */
+.introduction-page {
+  position: relative;
+  z-index: 10;        
+  margin-top: 100vh;  
+  height: 100vh; 
+  min-height: 800px; /* 为了适应更大的框，调高保底高度 */
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.aurora-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* =========================================
+   毛玻璃框与内容排版 (华文黑体)
+   ========================================= */
+.boxes-container {
+  display: flex;
+  gap: 60px; /* 框体变大，间距稍微收敛防止超出屏幕 */
+  align-items: center;
+  margin-top: -3vh; /* 🌟 整体上提，解决上方看着太宽的问题 */
+}
+
+.glass-box {
+  width: 380px;  /* 🌟 从 340px 放大 */
+  height: 520px; /* 🌟 从 460px 放大 */
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+/* 内部内容容器 */
+.box-inner-content {
+  padding: 30px 35px; /* 🌟 顶部缩紧一点，左右放宽，比例更好 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: "STHeiti", "华文黑体", "Microsoft YaHei", sans-serif;
+  color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+.box-title {
+  font-size: 2rem; /* 🌟 标题等比放大 */
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* 技能条列表 */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* 🌟 间距等比拉开 */
+  flex: 1;
+  justify-content: flex-start;
+  margin-top: 5px; /* 微调进度条群组的上边距 */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 技能名与条的间距放大 */
+}
+
+.skill-name {
+  font-size: 1.05rem; /* 🌟 字体等比放大 */
+  letter-spacing: 0.5px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px; /* 🌟 进度条调粗，更有质感 */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #0044ff;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 68, 255, 0.8);
+}
+
+/* 教育经历 */
+.edu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-name {
+  font-size: 1.25rem; /* 🌟 校名字体等比放大 */
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-wrap: break-word; 
+}
+
+.edu-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin-bottom: 15px;
+}
+
+.edu-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem; /* 🌟 专业学位字体放大 */
+}
+
+.blue-text {
+  color: #0044ff;
+  font-weight: 600;
+}
+
+/* =========================================
+   底部滑动文字
+   ========================================= */
+.text-row {
+  position: absolute; 
+  bottom: 5vh; 
+  white-space: nowrap; 
+}
+
+.text-row h2 {
+  font-size: 6rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 5px;
+  font-family: "STHeiti", "华文黑体", sans-serif;
+}
+
+/* =========================================
+   响应式调整 (小屏幕自动缩小，防崩坏)
+   ========================================= */
+@media (max-height: 850px) {
+  .boxes-container { margin-top: -1vh; gap: 40px; }
+  .glass-box { width: 320px; height: 460px; }
+  .pc-card { width: 320px; height: 460px; } /* 确保卡片也响应式缩小 */
+  .text-row h2 { font-size: 4.5rem; }
+  .box-inner-content { padding: 25px 25px; }
+  .box-title { font-size: 1.6rem; margin-bottom: 15px; }
+  .school-name { font-size: 1.1rem; }
+  .skill-name { font-size: 0.95rem; }
+}
+
+@media (max-width: 1250px) {
+  .boxes-container { gap: 30px; }
+  .glass-box { width: 320px; height: 460px; }
+  .pc-card { width: 320px; height: 460px; }
+  .school-name { font-size: 1.1rem; }
+  .edu-details { font-size: 0.9rem; }
+}

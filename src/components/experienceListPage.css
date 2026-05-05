@@ -1,0 +1,95 @@
+/* =========================================
+   Experience List Page 基础设置
+   ========================================= */
+.experience-list-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;          
+  min-height: 800px;      
+  background-color: black; 
+  z-index: 90; 
+  overflow: hidden; 
+}
+
+/* 视差背景层 */
+.parallax-star-bg {
+  position: absolute;
+  top: -10%; 
+  left: 0;
+  width: 100%;
+  height: 120%; 
+  background-size: 100% 100%; 
+  background-position: center;      
+  background-repeat: no-repeat;     
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+/* =========================================
+   公司列表排版容器
+   ========================================= */
+.company-list-container {
+  position: relative;
+  z-index: 5; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; 
+  padding: 0 10%; 
+}
+
+.company-item {
+  cursor: default;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.company-item:hover {
+  transform: scale(1.03); 
+}
+
+/* =========================================
+   字体排版 & 扫光遮罩组合特效
+   ========================================= */
+/* =========================================
+   字体排版 & 扫光遮罩组合特效
+   ========================================= */
+/* =========================================
+   字体排版 & 扫光遮罩组合特效
+   ========================================= */
+.company-text-mask {
+  font-family: "华文雅黑", "STHeiti", "Microsoft YaHei", sans-serif !important;
+  
+  /* 🌟 核心修改：将最大字号从 3rem 降到 2.6rem，中间动态比例调为 2.5vw。
+     这样屏幕最宽时字不会显得太大，而变窄时依然会保持在 1.6rem 左右并自动换行。 */
+  font-size: clamp(1.6rem, 2.5vw, 2.6rem); 
+  font-weight: 600;
+  
+  /* 排版优化：保持换行，并增加行高 */
+  white-space: normal; 
+  line-height: 1.4; 
+  word-wrap: break-word; 
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 15%, 
+    rgba(0, 0, 0, 1) 85%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 15%, 
+    rgba(0, 0, 0, 1) 85%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+}

@@ -1,0 +1,88 @@
+/* ========================================= */
+/* 1. 顶部全局包裹层 (居中液态玻璃)          */
+/* ========================================= */
+.navbar-wrapper {
+  position: fixed;   /* 固定在屏幕顶部，脱离文档流 */
+  top: 30px;
+  left: 0;
+  width: 100%;       /* 撑满整个屏幕宽度 */
+  height: 60px;      /* 设定高度，为了内部元素对齐 */
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* 保证里面的玻璃组件永远在屏幕正中间 */
+  align-items: center;     /* 垂直方向居中 */
+  pointer-events: none;    /* 外层透明区域不阻挡鼠标点击网页下方内容 */
+}
+
+/* 恢复实体元素的鼠标点击功能 */
+.navbar-glass, .contact-btn {
+  pointer-events: auto; 
+}
+
+/* ========================================= */
+/* 2. 玻璃组件内部强制排版                   */
+/* ========================================= */
+/* 强制覆盖 GlassSurface 组件自带的居中属性，让它内部变成 100% 宽度 */
+.navbar-glass .glass-surface__content {
+  width: 100% !important; 
+  padding: 0 !important; 
+  display: flex !important;
+}
+
+/* 前四个按钮的容器：撑满并使用 space-evenly 完美均匀分布 */
+.nav-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 前四个链接文字样式 */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff; /* 必须是纯白 */
+  mix-blend-mode: difference; /* 🌟 新增：开启反色魔法 */
+  font-weight: 400;
+  font-size: 1rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* 3. Contact me 按钮 (绝对右上角)           */
+/* ========================================= */
+a.contact-btn,
+a.contact-btn:link,
+a.contact-btn:visited,
+a.contact-btn:hover,
+a.contact-btn:active {
+  position: fixed;
+  top: 45px;
+  right: 40px;
+  z-index: 2000;
+  
+  color: #ffffff; /* 必须是纯白 */
+  text-decoration: none;
+  white-space: nowrap;
+  
+  font-size: 1rem;
+  font-weight: 400;
+  
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}

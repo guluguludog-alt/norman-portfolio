@@ -1,0 +1,64 @@
+/* 🌟 引入 Dela Gothic One 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+/* =========================================
+   Experience Page (沉浸式纯黑过渡页)
+   ========================================= */
+.experience-page {
+  position: relative;
+  width: 100%;
+  
+  /* 🌟 核心修改 1：从 66vh 再缩短约五分之一，变成 50vh（精确占据屏幕的一半） */
+  height: 50vh;          
+  
+  /* 🌟 核心修改 2：同步调小保底高度，防止在小屏幕上由于高度不够而被撑开 */
+  min-height: 400px;     
+  
+  background-color: black;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* =========================================
+   顶部镜像极光 (高度保持 50vh 不变)
+   ========================================= */
+.experience-aurora-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* 极光依然保持 50vh，因为页面现在也是 50vh，极光刚好覆盖这半屏空间并向下消散 */
+  height: 50vh; 
+  
+  transform: scaleY(-1); 
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* =========================================
+   Experiences 扫光文字
+   ========================================= */
+.exp-text-container {
+  position: absolute;
+  top: 60%; /* 相对位置保持在 60% 处不变 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.exp-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(3rem, 9vw, 9rem); 
+  letter-spacing: 2px;
+  margin: 0;
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  white-space: nowrap;
+}
