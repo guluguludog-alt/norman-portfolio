@@ -1,0 +1,222 @@
+/* =========================================
+   Architecture Works 基础设置
+   ========================================= */
+.architecture-works-section {
+  position: relative;
+  width: 100%;
+  height: 250vh; 
+  background-color: #000000; 
+  z-index: 100;
+}
+
+.sticky-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: block; 
+  perspective: 1500px; 
+}
+
+/* =========================================
+   后盖文件夹布局
+   ========================================= */
+.folder-piece {
+  position: absolute;
+  bottom: -16vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 45vw;
+  height: 32vw;
+  min-width: 500px;
+  min-height: 360px;
+}
+
+@media (max-width: 1110px) {
+  .folder-piece {
+    bottom: -180px; 
+  }
+}
+
+.folder-back-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1155cc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05), 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.folder-tab {
+  position: absolute;
+  top: -35px;
+  left: 30px;
+  width: 160px;
+  height: 40px;
+  background: #1155cc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+/* =========================================
+   🌟 终极修复：彻底独立的高级毛玻璃前盖
+   ========================================= */
+.folder-front-glass {
+  position: absolute;
+  /* 定位直接与 folder-piece 同步，不再嵌套！ */
+  bottom: -16vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  
+  /* 高度是原本 32vw 的 90%，精确换算为 28.8vw */
+  width: 45vw;
+  height: 28.8vw;
+  min-width: 500px;
+  min-height: 324px; /* 原 360px 的 90% */
+
+  /* 完美的厚重光影材质 */
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  
+  backdrop-filter: blur(28px) saturate(130%);
+  -webkit-backdrop-filter: blur(28px) saturate(130%);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.85); 
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  
+  box-shadow: 
+    0 -5px 25px rgba(0, 0, 0, 0.3),                 
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),   
+    inset 0 -50px 80px rgba(0, 0, 0, 0.6);         
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* 稍微调整 padding 适应新容器 */
+  padding: 6% 10%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1110px) {
+  .folder-front-glass {
+    bottom: -180px; 
+  }
+}
+
+.folder-ui-top h3 {
+  font-family: -apple-system, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.folder-ui-top p {
+  font-family: -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.folder-ui-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.folder-count {
+  font-family: -apple-system, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.folder-circle-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   照片层 
+   ========================================= */
+.photos-center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+}
+
+.flying-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;  
+  height: 260px;
+  margin-left: -200px; 
+  margin-top: -130px;  
+  
+  object-fit: cover;
+  border-radius: 8px;
+  border: 4px solid rgba(255, 255, 255, 0.95); 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  will-change: transform, filter;
+  pointer-events: none; 
+}
+
+/* =========================================
+   隐形的横向滚动轨道 
+   ========================================= */
+.horizontal-scroll-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  z-index: 60; 
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; 
+}
+
+.horizontal-scroll-overlay::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-track {
+  display: flex;
+  width: 500vw; 
+  height: 100%;
+}
+
+.scroll-snap-point {
+  width: 100vw;
+  height: 100%;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}

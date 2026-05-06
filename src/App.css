@@ -1,21 +1,41 @@
 /* =========================================
    基础重置与全局设置 (包含 React 的 #root)
    ========================================= */
+@font-face {
+    font-family: 'Aquatico';
+    src: url('/fonts/Aquatico-Regular.otf') format('opentype'); /* 改成了 /fonts/... */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'SansSerifFLF';
+    src: url('/fonts/SansSerifFLF.otf') format('opentype'); /* 改成了 /fonts/... */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* ⚠️ 关键修复：加入 #root 确保 React 挂载节点撑满全屏 */
+/* ⚠️ 关键修复：加入 #root 确保 React 挂载节点撑满全屏，并配置跨平台字体栈 */
 body, html, #root {
     width: 100%;
     min-height: 100vh;
     background-color: #000;
     color: #fff;
     overflow-x: hidden;
+    overflow-x: clip;
+    
+    /* 现代跨平台标准中英文字体栈 */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
 }
+
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
@@ -52,12 +72,12 @@ body, html, #root {
    第一页：首页 (Hero)
    ========================================= */
 #home {
-  position: fixed; /* 🌟 核心：强制钉死在屏幕上 */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* 占满整屏 */
-  z-index: 1;    /* 放在最底层，等着被盖住 */
+  height: 100vh; 
+  z-index: 1;    
 }
 
 .bg-container {
@@ -96,8 +116,9 @@ body, html, #root {
 }
 
 .title-main h1 {
-    font-family: '华文黑体', Helvetica, Arial, sans-serif;
-    font-size: 7rem; 
+    /* 🌟 修改点：把 SansSerifFLF 放在最前面作为首选英文字体 */
+    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-size: 10rem; 
     font-weight: 400; 
     line-height: 1.1; 
     letter-spacing: 1px;
@@ -113,7 +134,7 @@ body, html, #root {
 }
 
 .title-name h2 {
-    font-family: 'Aquatico', Helvetica, Arial, sans-serif; 
+    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif; 
     font-style: normal; 
     font-size: 2rem;
     font-weight: 700; 
@@ -322,22 +343,25 @@ body, html, #root {
     font-weight: bold;
 }
 
+/* =========================================
+   字体类控制修复 (跨平台适配)
+   ========================================= */
+
 .keep-my-font,
 .keep-my-font span {
-  font-family: '华文黑体', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  /* 🌟 修改点：把 SansSerifFLF 放在解码动画文字的首选位置 */
+  font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
   font-weight: 400 !important; 
 }
 
 .keep-my-font-name,
 .keep-my-font-name span {
-  font-family: 'Aquatico', Helvetica, Arial, sans-serif !important; 
+  font-family: 'Aquatico', "Segoe UI", Arial, sans-serif !important; 
   font-weight: 400 !important; 
 }
 
-/* 字条的字体控制 */
-
 .keep-my-font-3,
 .keep-my-font-3 span {
-  font-family: 'Dela Gothic One', Helvetica, Arial, sans-serif !important; 
+  font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif !important; 
   font-weight: 900 !important; 
 }

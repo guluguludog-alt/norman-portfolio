@@ -42,42 +42,22 @@
 }
 
 .company-item {
-  cursor: default;
+  cursor: pointer; 
   width: 100%;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.company-item:hover {
-  transform: scale(1.03); 
+  position: relative;
 }
 
 /* =========================================
    字体排版 & 扫光遮罩组合特效
    ========================================= */
-/* =========================================
-   字体排版 & 扫光遮罩组合特效
-   ========================================= */
-/* =========================================
-   字体排版 & 扫光遮罩组合特效
-   ========================================= */
-.company-text-mask {
-  font-family: "华文雅黑", "STHeiti", "Microsoft YaHei", sans-serif !important;
-  
-  /* 🌟 核心修改：将最大字号从 3rem 降到 2.6rem，中间动态比例调为 2.5vw。
-     这样屏幕最宽时字不会显得太大，而变窄时依然会保持在 1.6rem 左右并自动换行。 */
-  font-size: clamp(1.6rem, 2.5vw, 2.6rem); 
-  font-weight: 600;
-  
-  /* 排版优化：保持换行，并增加行高 */
-  white-space: normal; 
-  line-height: 1.4; 
-  word-wrap: break-word; 
-  
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  
+
+.company-text-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  transform-origin: center center; 
+  /* 🌟 核心修改：将渐变遮罩移到父盒子，这样光标到达两侧边缘时会被自然隐没 */
   -webkit-mask-image: linear-gradient(
     to right, 
     rgba(0, 0, 0, 0) 0%, 
@@ -92,4 +72,67 @@
     rgba(0, 0, 0, 1) 85%, 
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+.original-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+}
+
+.reveal-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  
+  background-image: none !important;
+  -webkit-text-fill-color: #0016d8 !important; 
+  color: #0016d8 !important;
+  text-shadow: 0 0 15px rgba(0, 22, 216, 0.6), 0 0 30px rgba(82, 17, 221, 0.5);
+}
+
+.reveal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw; 
+  width: 100%;
+  height: 100%;
+}
+
+.intern-position, .intern-time {
+  white-space: nowrap; 
+}
+
+/* 移除了旧的内部 mask，防止双层裁剪影响性能 */
+.company-text-mask {
+  font-family: "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
+  font-size: clamp(1.6rem, 2.5vw, 2.6rem); 
+  font-weight: 600;
+  white-space: normal; 
+  line-height: 1.4; 
+  word-wrap: break-word; 
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* =========================================
+   彗星光标 (Comet Scanner)
+   ========================================= */
+.comet-scanner {
+  position: absolute;
+  top: -15%;       
+  bottom: -15%;
+  width: 3px;      
+  background: #ffffff;
+  border-radius: 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0; 
 }

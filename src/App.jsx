@@ -9,6 +9,7 @@ import PortfolioSection from './components/PortfolioSection';
 import IntroductionPage from './components/IntroductionPage';
 import ExperiencePage from './components/ExperiencePage';
 import ExperienceListPage from './components/ExperienceListPage';
+import ArchitectureWorks from './components/ArchitectureWorks';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <IntroductionPage />
       <ExperiencePage />
       <ExperienceListPage />
+      <ArchitectureWorks />
       <PortfolioSection id="architecture" title="Architecture" subtitle="works" />
       <PortfolioSection id="landscape" title="Landscape" subtitle="works" />
       <PortfolioSection id="more" title="More" subtitle="works" />
