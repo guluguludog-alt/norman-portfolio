@@ -1,0 +1,4640 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  fonts/
+    Aquatico-Regular.otf
+    SansSerifFLF.otf
+  background_layer.png
+  background_layerpng.png
+  favicon.svg
+  icons.svg
+  pixel_layer.png
+src/
+  assets/
+    avatar.png
+    hero.png
+    Project1.jpg
+    Project2.jpg
+    Project3.jpg
+    Project4.jpg
+    Project5.jpg
+    react.svg
+    Starbackground.png
+    vite.svg
+  components/
+    architectureWorks.css
+    ArchitectureWorks.jsx
+    AuroraEffect.css
+    AuroraEffect.jsx
+    BorderGlow.css
+    BorderGlow.jsx
+    decodeText.css
+    DecodeText.jsx
+    DecryptedText.jsx
+    experienceListPage.css
+    ExperienceListPage.jsx
+    experiencePage.css
+    ExperiencePage.jsx
+    GlassSurface.css
+    GlassSurface.jsx
+    Hero.jsx
+    introductionPage.css
+    IntroductionPage.jsx
+    Navbar.css
+    Navbar.jsx
+    PortfolioSection.jsx
+    ProfileCard.css
+    ProfileCard.jsx
+    RotatingText.jsx
+  App.css
+  App.jsx
+  index.css
+  main.jsx
+.gitignore
+eslint.config.js
+index.html
+package.json
+README.md
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/AuroraEffect.css">
+.aurora-container {
+  width: 100%;
+  height: 100%;
+}
+
+.aurora-container {
+  /* 其他原有的样式保持不变 */
+  
+  /* 添加这行，将整个容器垂直翻转 */
+  transform: scaleY(-1); 
+}
+</file>
+
+<file path="src/components/AuroraEffect.jsx">
+import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
+import { useEffect, useRef } from 'react';
+
+import './AuroraEffect.css';
+
+const VERT = `#version 300 es
+in vec2 position;
+void main() {
+  gl_Position = vec4(position, 0.0, 1.0);
+}
+`;
+
+const FRAG = `#version 300 es
+precision highp float;
+
+uniform float uTime;
+uniform float uAmplitude;
+uniform vec3 uColorStops[3];
+uniform vec2 uResolution;
+uniform float uBlend;
+
+out vec4 fragColor;
+
+vec3 permute(vec3 x) {
+  return mod(((x * 34.0) + 1.0) * x, 289.0);
+}
+
+float snoise(vec2 v){
+  const vec4 C = vec4(
+      0.211324865405187, 0.366025403784439,
+      -0.577350269189626, 0.024390243902439
+  );
+  vec2 i  = floor(v + dot(v, C.yy));
+  vec2 x0 = v - i + dot(i, C.xx);
+  vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+
+  vec3 p = permute(
+      permute(i.y + vec3(0.0, i1.y, 1.0))
+    + i.x + vec3(0.0, i1.x, 1.0)
+  );
+
+  vec3 m = max(
+      0.5 - vec3(
+          dot(x0, x0),
+          dot(x12.xy, x12.xy),
+          dot(x12.zw, x12.zw)
+      ), 
+      0.0
+  );
+  m = m * m;
+  m = m * m;
+
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+struct ColorStop {
+  vec3 color;
+  float position;
+};
+
+#define COLOR_RAMP(colors, factor, finalColor) {              \
+  int index = 0;                                            \
+  for (int i = 0; i < 2; i++) {                               \
+     ColorStop currentColor = colors[i];                    \
+     bool isInBetween = currentColor.position <= factor;    \
+     index = int(mix(float(index), float(i), float(isInBetween))); \
+  }                                                         \
+  ColorStop currentColor = colors[index];                   \
+  ColorStop nextColor = colors[index + 1];                  \
+  float range = nextColor.position - currentColor.position; \
+  float lerpFactor = (factor - currentColor.position) / range; \
+  finalColor = mix(currentColor.color, nextColor.color, lerpFactor); \
+}
+
+void main() {
+  vec2 uv = gl_FragCoord.xy / uResolution;
+  
+  ColorStop colors[3];
+  colors[0] = ColorStop(uColorStops[0], 0.0);
+  colors[1] = ColorStop(uColorStops[1], 0.5);
+  colors[2] = ColorStop(uColorStops[2], 1.0);
+  
+  vec3 rampColor;
+  COLOR_RAMP(colors, uv.x, rampColor);
+  
+  float height = snoise(vec2(uv.x * 2.0 + uTime * 0.1, uTime * 0.25)) * 0.5 * uAmplitude;
+  height = exp(height);
+  height = (uv.y * 2.0 - height + 0.2);
+  float intensity = 0.6 * height;
+  
+  float midPoint = 0.20;
+  float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
+  
+  vec3 auroraColor = intensity * rampColor;
+  
+  fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
+}
+`;
+
+export default function Aurora(props) {
+  const { colorStops = ['#5227FF', '#7cff67', '#5227FF'], amplitude = 1.0, blend = 0.5 } = props;
+  const propsRef = useRef(props);
+  propsRef.current = props;
+
+  const ctnDom = useRef(null);
+
+  useEffect(() => {
+    const ctn = ctnDom.current;
+    if (!ctn) return;
+
+    const renderer = new Renderer({
+      alpha: true,
+      premultipliedAlpha: true,
+      antialias: true
+    });
+    const gl = renderer.gl;
+    gl.clearColor(0, 0, 0, 0);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    gl.canvas.style.backgroundColor = 'transparent';
+
+    let program;
+
+    function resize() {
+      if (!ctn) return;
+      const width = ctn.offsetWidth;
+      const height = ctn.offsetHeight;
+      renderer.setSize(width, height);
+      if (program) {
+        program.uniforms.uResolution.value = [width, height];
+      }
+    }
+    window.addEventListener('resize', resize);
+
+    const geometry = new Triangle(gl);
+    if (geometry.attributes.uv) {
+      delete geometry.attributes.uv;
+    }
+
+    const colorStopsArray = colorStops.map(hex => {
+      const c = new Color(hex);
+      return [c.r, c.g, c.b];
+    });
+
+    program = new Program(gl, {
+      vertex: VERT,
+      fragment: FRAG,
+      uniforms: {
+        uTime: { value: 0 },
+        uAmplitude: { value: amplitude },
+        uColorStops: { value: colorStopsArray },
+        uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
+        uBlend: { value: blend }
+      }
+    });
+
+    const mesh = new Mesh(gl, { geometry, program });
+    ctn.appendChild(gl.canvas);
+
+    let animateId = 0;
+    const update = t => {
+      animateId = requestAnimationFrame(update);
+      const { time = t * 0.01, speed = 1.0 } = propsRef.current;
+      program.uniforms.uTime.value = time * speed * 0.1;
+      program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
+      program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+      const stops = propsRef.current.colorStops ?? colorStops;
+      program.uniforms.uColorStops.value = stops.map(hex => {
+        const c = new Color(hex);
+        return [c.r, c.g, c.b];
+      });
+      renderer.render({ scene: mesh });
+    };
+    animateId = requestAnimationFrame(update);
+
+    resize();
+
+    return () => {
+      cancelAnimationFrame(animateId);
+      window.removeEventListener('resize', resize);
+      if (ctn && gl.canvas.parentNode === ctn) {
+        ctn.removeChild(gl.canvas);
+      }
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [amplitude]);
+
+  return <div ref={ctnDom} className="aurora-container" />;
+}
+</file>
+
+<file path="src/components/BorderGlow.css">
+/* =========================================
+   BorderGlow.css - 纯净边缘流光版
+   ========================================= */
+
+.border-glow-card {
+  --edge-proximity: 0;
+  --cursor-angle: 45deg;
+  --edge-sensitivity: 30;
+  --color-sensitivity: calc(var(--edge-sensitivity) + 20);
+  --border-radius: 28px;
+  --glow-padding: 40px;
+  --cone-spread: 25;
+
+  position: relative;
+  border-radius: var(--border-radius);
+  isolation: isolate;
+  transform: translate3d(0, 0, 0.01px);
+  display: grid;
+  /* 基础边框线，设为极淡的白色 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg, #120F17);
+  overflow: visible;
+}
+
+.border-glow-card::before,
+.border-glow-card::after,
+.border-glow-card > .edge-light {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: opacity 0.25s ease-out;
+  z-index: -1;
+}
+
+/* 初始状态隐藏光效 */
+.border-glow-card:not(:hover):not(.sweep-active)::before,
+.border-glow-card:not(:hover):not(.sweep-active)::after,
+.border-glow-card:not(:hover):not(.sweep-active) > .edge-light {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+/* 🌟 核心修改 2：双重遮罩掏空中心 */
+.border-glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  
+  /* 用 padding 来决定发光边框的粗细（1px） */
+  padding: 1px; 
+
+  /* 移除了之前复杂的 padding-box 遮挡逻辑，直接放渐变 */
+  background:
+    var(--gradient-one, radial-gradient(at 80% 55%, hsla(268, 100%, 76%, 1) 0px, transparent 50%)),
+    var(--gradient-two, radial-gradient(at 69% 34%, hsla(349, 100%, 74%, 1) 0px, transparent 50%)),
+    var(--gradient-three, radial-gradient(at 8% 6%, hsla(136, 100%, 78%, 1) 0px, transparent 50%)),
+    var(--gradient-four, radial-gradient(at 41% 38%, hsla(192, 100%, 64%, 1) 0px, transparent 50%)),
+    var(--gradient-five, radial-gradient(at 86% 85%, hsla(186, 100%, 74%, 1) 0px, transparent 50%)),
+    var(--gradient-six, radial-gradient(at 82% 18%, hsla(52, 100%, 65%, 1) 0px, transparent 50%)),
+    var(--gradient-seven, radial-gradient(at 51% 4%, hsla(12, 100%, 72%, 1) 0px, transparent 50%)),
+    var(--gradient-base, linear-gradient(#c299ff 0 100%));
+
+  opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+/* 👇 最关键的魔法：双遮罩组合 */
+  
+  /* 1. WebKit 内核浏览器（Chrome/Safari/Edge） */
+  -webkit-mask:
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      black calc(var(--cone-spread) * 1%),
+      transparent calc((var(--cone-spread) + 15) * 1%),
+      transparent calc((100 - var(--cone-spread) - 15) * 1%),
+      black calc((100 - var(--cone-spread)) * 1%)
+    ),
+    linear-gradient(#fff 0 0) content-box;
+  -webkit-mask-composite: source-out;
+
+  /* 2. 标准属性（消除黄线，兼容 Firefox 等） */
+  mask:
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      black calc(var(--cone-spread) * 1%),
+      transparent calc((var(--cone-spread) + 15) * 1%),
+      transparent calc((100 - var(--cone-spread) - 15) * 1%),
+      black calc((100 - var(--cone-spread)) * 1%)
+    ),
+    linear-gradient(#fff 0 0) content-box;
+  mask-composite: subtract;
+}
+
+/* 🌟 核心修改 1：一刀切，彻底抹杀内部的光晕层，防止任何漏光 */
+.border-glow-card::after {
+  display: none !important; 
+}
+
+/* 外部发光容器层 */
+.border-glow-card > .edge-light {
+  inset: calc(var(--glow-padding) * -1);
+  pointer-events: none;
+  z-index: 1;
+
+  mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%
+    );
+
+  opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+  mix-blend-mode: plus-lighter;
+}
+
+/* 🌟 核心修改：真正的外发光阴影层，已移除所有 inset 内发光 */
+.border-glow-card > .edge-light::before {
+  content: "";
+  position: absolute;
+  inset: var(--glow-padding);
+  border-radius: inherit;
+  box-shadow:
+    0 0 1px 0 var(--glow-color-60, hsl(40deg 80% 80% / 60%)),
+    0 0 3px 0 var(--glow-color-50, hsl(40deg 80% 80% / 50%)),
+    0 0 6px 0 var(--glow-color-40, hsl(40deg 80% 80% / 40%)),
+    0 0 15px 0 var(--glow-color-30, hsl(40deg 80% 80% / 30%)),
+    0 0 25px 2px var(--glow-color-20, hsl(40deg 80% 80% / 20%)),
+    0 0 50px 2px var(--glow-color-10, hsl(40deg 80% 80% / 10%));
+}
+
+.border-glow-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* 确保内部不遮挡滚动 */
+  overflow: visible; 
+  z-index: 1;
+  height: 100%;
+}
+</file>
+
+<file path="src/components/BorderGlow.jsx">
+import { useRef, useCallback, useEffect } from 'react';
+import './BorderGlow.css';
+
+function parseHSL(hslStr) {
+  const match = hslStr.match(/([\d.]+)\s*([\d.]+)%?\s*([\d.]+)%?/);
+  if (!match) return { h: 40, s: 80, l: 80 };
+  return { h: parseFloat(match[1]), s: parseFloat(match[2]), l: parseFloat(match[3]) };
+}
+
+function buildGlowVars(glowColor, intensity) {
+  const { h, s, l } = parseHSL(glowColor);
+  const base = `${h}deg ${s}% ${l}%`;
+  const opacities = [100, 60, 50, 40, 30, 20, 10];
+  const keys = ['', '-60', '-50', '-40', '-30', '-20', '-10'];
+  const vars = {};
+  for (let i = 0; i < opacities.length; i++) {
+    vars[`--glow-color${keys[i]}`] = `hsl(${base} / ${Math.min(opacities[i] * intensity, 100)}%)`;
+  }
+  return vars;
+}
+
+const GRADIENT_POSITIONS = ['80% 55%', '69% 34%', '8% 6%', '41% 38%', '86% 85%', '82% 18%', '51% 4%'];
+const GRADIENT_KEYS = ['--gradient-one', '--gradient-two', '--gradient-three', '--gradient-four', '--gradient-five', '--gradient-six', '--gradient-seven'];
+const COLOR_MAP = [0, 1, 2, 0, 1, 2, 1];
+
+function buildGradientVars(colors) {
+  const vars = {};
+  for (let i = 0; i < 7; i++) {
+    const c = colors[Math.min(COLOR_MAP[i], colors.length - 1)];
+    vars[GRADIENT_KEYS[i]] = `radial-gradient(at ${GRADIENT_POSITIONS[i]}, ${c} 0px, transparent 50%)`;
+  }
+  vars['--gradient-base'] = `linear-gradient(${colors[0]} 0 100%)`;
+  return vars;
+}
+
+function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
+function easeInCubic(x) { return x * x * x; }
+
+function animateValue({ start = 0, end = 100, duration = 1000, delay = 0, ease = easeOutCubic, onUpdate, onEnd }) {
+  const t0 = performance.now() + delay;
+  function tick() {
+    const elapsed = performance.now() - t0;
+    const t = Math.min(elapsed / duration, 1);
+    onUpdate(start + (end - start) * ease(t));
+    if (t < 1) requestAnimationFrame(tick);
+    else if (onEnd) onEnd();
+  }
+  setTimeout(() => requestAnimationFrame(tick), delay);
+}
+
+const BorderGlow = ({
+  children,
+  className = '',
+  edgeSensitivity = 30,
+  glowColor = '40 80 80',
+  backgroundColor = '#120F17',
+  borderRadius = 28,
+  glowRadius = 40,
+  glowIntensity = 1.0,
+  coneSpread = 25,
+  animated = false,
+  colors = ['#c084fc', '#f472b6', '#38bdf8'],
+  fillOpacity = 0.5,
+}) => {
+  const cardRef = useRef(null);
+
+  const getCenterOfElement = useCallback((el) => {
+    const { width, height } = el.getBoundingClientRect();
+    return [width / 2, height / 2];
+  }, []);
+
+  const getEdgeProximity = useCallback((el, x, y) => {
+    const [cx, cy] = getCenterOfElement(el);
+    const dx = x - cx;
+    const dy = y - cy;
+    let kx = Infinity;
+    let ky = Infinity;
+    if (dx !== 0) kx = cx / Math.abs(dx);
+    if (dy !== 0) ky = cy / Math.abs(dy);
+    return Math.min(Math.max(1 / Math.min(kx, ky), 0), 1);
+  }, [getCenterOfElement]);
+
+  const getCursorAngle = useCallback((el, x, y) => {
+    const [cx, cy] = getCenterOfElement(el);
+    const dx = x - cx;
+    const dy = y - cy;
+    if (dx === 0 && dy === 0) return 0;
+    const radians = Math.atan2(dy, dx);
+    let degrees = radians * (180 / Math.PI) + 90;
+    if (degrees < 0) degrees += 360;
+    return degrees;
+  }, [getCenterOfElement]);
+
+  const handlePointerMove = useCallback((e) => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const edge = getEdgeProximity(card, x, y);
+    const angle = getCursorAngle(card, x, y);
+
+    card.style.setProperty('--edge-proximity', `${(edge * 100).toFixed(3)}`);
+    card.style.setProperty('--cursor-angle', `${angle.toFixed(3)}deg`);
+  }, [getEdgeProximity, getCursorAngle]);
+
+  useEffect(() => {
+    if (!animated || !cardRef.current) return;
+    const card = cardRef.current;
+    const angleStart = 110;
+    const angleEnd = 465;
+    card.classList.add('sweep-active');
+    card.style.setProperty('--cursor-angle', `${angleStart}deg`);
+
+    animateValue({ duration: 500, onUpdate: v => card.style.setProperty('--edge-proximity', v) });
+    animateValue({ ease: easeInCubic, duration: 1500, end: 50, onUpdate: v => {
+      card.style.setProperty('--cursor-angle', `${(angleEnd - angleStart) * (v / 100) + angleStart}deg`);
+    }});
+    animateValue({ ease: easeOutCubic, delay: 1500, duration: 2250, start: 50, end: 100, onUpdate: v => {
+      card.style.setProperty('--cursor-angle', `${(angleEnd - angleStart) * (v / 100) + angleStart}deg`);
+    }});
+    animateValue({ ease: easeInCubic, delay: 2500, duration: 1500, start: 100, end: 0,
+      onUpdate: v => card.style.setProperty('--edge-proximity', v),
+      onEnd: () => card.classList.remove('sweep-active'),
+    });
+  }, [animated]);
+
+  const glowVars = buildGlowVars(glowColor, glowIntensity);
+
+  return (
+    <div
+      ref={cardRef}
+      onPointerMove={handlePointerMove}
+      className={`border-glow-card ${className}`}
+      style={{
+        '--card-bg': backgroundColor,
+        '--edge-sensitivity': edgeSensitivity,
+        '--border-radius': `${borderRadius}px`,
+        '--glow-padding': `${glowRadius}px`,
+        '--cone-spread': coneSpread,
+        '--fill-opacity': fillOpacity,
+        ...glowVars,
+        ...buildGradientVars(colors),
+      }}
+    >
+      <span className="edge-light" />
+      <div className="border-glow-inner">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default BorderGlow;
+</file>
+
+<file path="src/components/decodeText.css">
+/* decodeText.css 或加入你现有的 css 文件 */
+.decode-text-container {
+    font-weight: 800;
+    letter-spacing: 0.15rem; /* 字间距让乱码看起来更舒服 */
+    /* 颜色和大小可以由外部调用时通过 className 覆盖 */
+}
+</file>
+
+<file path="src/components/DecodeText.jsx">
+import React, { useState, useEffect, useRef } from 'react';
+
+export default function DecodeText({ text, className = "" }) {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const [renderedElements, setRenderedElements] = useState([]);
+  const intervalRef = useRef(null);
+
+  const startDecodeAnimation = () => {
+    let iteration = 0;
+    const lag = 5; // 乱码拖尾长度
+
+    // 清除上一次可能存在的动画
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    intervalRef.current = setInterval(() => {
+      const newElements = [];
+
+      for (let i = 0; i < text.length; i++) {
+        // 1. 还没轮到这个字符，隐藏但保留物理占位，防止宽度抖动
+        if (iteration < i) {
+          newElements.push(
+            <span key={i} style={{ visibility: "hidden" }}>
+              {text[i]}
+            </span>
+          );
+        } 
+        // 2. 锁定真实字符
+        else if (iteration >= i + lag) {
+          newElements.push(<span key={i}>{text[i]}</span>);
+        } 
+        // 3. 过渡期乱码
+        else {
+          if (text[i] === ' ') {
+            newElements.push(<span key={i}> </span>);
+          } else {
+            newElements.push(
+              <span key={i}>
+                {letters[Math.floor(Math.random() * letters.length)]}
+              </span>
+            );
+          }
+        }
+      }
+
+      setRenderedElements(newElements);
+
+      if (iteration >= text.length + lag) {
+        clearInterval(intervalRef.current);
+      }
+
+      iteration += 0.4; // 控制解码速度
+    }, 30); // 控制帧率
+  };
+
+  useEffect(() => {
+    // 组件挂载时自动播放一次
+    startDecodeAnimation();
+
+    // 组件卸载时清理定时器，防止内存泄漏
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [text]); // 如果传入的 text 发生变化，重新播放动画
+
+  return (
+    <div 
+      className={`decode-text-container ${className}`} 
+      onMouseEnter={startDecodeAnimation} // 鼠标悬停时再次播放
+      style={{
+        fontFamily: "'Courier New', Consolas, Monaco, monospace", // 强制等宽字体防止抖动
+        whiteSpace: "pre", 
+        cursor: "default",
+        display: "inline-block" // 让容器紧贴文字
+      }}
+    >
+      {/* 初始渲染或动画未开始前，先放一个隐藏的占位，撑开高度 */}
+      {renderedElements.length > 0 ? renderedElements : <span style={{visibility: 'hidden'}}>{text}</span>}
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/DecryptedText.jsx">
+import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import { motion } from 'motion/react';
+
+const styles = {
+  wrapper: {
+    display: 'inline-block',
+    whiteSpace: 'pre-wrap'
+  },
+  srOnly: {
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    padding: 0,
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0,0,0,0)',
+    border: 0
+  }
+};
+
+export default function DecryptedText({
+  text,
+  speed = 50,
+  maxIterations = 10,
+  sequential = false,
+  revealDirection = 'start',
+  useOriginalCharsOnly = false,
+  characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+  className = '',
+  parentClassName = '',
+  encryptedClassName = '',
+  animateOn = 'hover',
+  clickMode = 'once',
+  ...props
+}) {
+  const [displayText, setDisplayText] = useState(text);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [revealedIndices, setRevealedIndices] = useState(new Set());
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isDecrypted, setIsDecrypted] = useState(animateOn !== 'click');
+  const [direction, setDirection] = useState('forward');
+
+  const containerRef = useRef(null);
+  const orderRef = useRef([]);
+  const pointerRef = useRef(0);
+  const intervalRef = useRef(null);
+
+  const availableChars = useMemo(() => {
+    return useOriginalCharsOnly
+      ? Array.from(new Set(text.split(''))).filter(char => char !== ' ')
+      : characters.split('');
+  }, [useOriginalCharsOnly, text, characters]);
+
+  const shuffleText = useCallback(
+    (originalText, currentRevealed) => {
+      return originalText
+        .split('')
+        .map((char, i) => {
+          if (char === ' ') return ' ';
+          if (currentRevealed.has(i)) return originalText[i];
+          return availableChars[Math.floor(Math.random() * availableChars.length)];
+        })
+        .join('');
+    },
+    [availableChars]
+  );
+
+  const computeOrder = useCallback(
+    len => {
+      const order = [];
+      if (len <= 0) return order;
+      if (revealDirection === 'start') {
+        for (let i = 0; i < len; i++) order.push(i);
+        return order;
+      }
+      if (revealDirection === 'end') {
+        for (let i = len - 1; i >= 0; i--) order.push(i);
+        return order;
+      }
+      // center
+      const middle = Math.floor(len / 2);
+      let offset = 0;
+      while (order.length < len) {
+        if (offset % 2 === 0) {
+          const idx = middle + offset / 2;
+          if (idx >= 0 && idx < len) order.push(idx);
+        } else {
+          const idx = middle - Math.ceil(offset / 2);
+          if (idx >= 0 && idx < len) order.push(idx);
+        }
+        offset++;
+      }
+      return order.slice(0, len);
+    },
+    [revealDirection]
+  );
+
+  const fillAllIndices = useCallback(() => {
+    const s = new Set();
+    for (let i = 0; i < text.length; i++) s.add(i);
+    return s;
+  }, [text]);
+
+  const removeRandomIndices = useCallback((set, count) => {
+    const arr = Array.from(set);
+    for (let i = 0; i < count && arr.length > 0; i++) {
+      const idx = Math.floor(Math.random() * arr.length);
+      arr.splice(idx, 1);
+    }
+    return new Set(arr);
+  }, []);
+
+  const encryptInstantly = useCallback(() => {
+    const emptySet = new Set();
+    setRevealedIndices(emptySet);
+    setDisplayText(shuffleText(text, emptySet));
+    setIsDecrypted(false);
+  }, [text, shuffleText]);
+
+  const triggerDecrypt = useCallback(() => {
+    if (sequential) {
+      orderRef.current = computeOrder(text.length);
+      pointerRef.current = 0;
+      setRevealedIndices(new Set());
+    } else {
+      setRevealedIndices(new Set());
+    }
+    setDirection('forward');
+    setIsAnimating(true);
+  }, [sequential, computeOrder, text.length]);
+
+  const triggerReverse = useCallback(() => {
+    if (sequential) {
+      // compute forward order then reverse it: we'll remove indices in that order
+      orderRef.current = computeOrder(text.length).slice().reverse();
+      pointerRef.current = 0;
+      setRevealedIndices(fillAllIndices()); // start fully revealed
+      setDisplayText(shuffleText(text, fillAllIndices()));
+    } else {
+      // non-seq: start from fully revealed as well
+      setRevealedIndices(fillAllIndices());
+      setDisplayText(shuffleText(text, fillAllIndices()));
+    }
+    setDirection('reverse');
+    setIsAnimating(true);
+  }, [sequential, computeOrder, fillAllIndices, shuffleText, text]);
+
+  useEffect(() => {
+    if (!isAnimating) return;
+
+    let currentIteration = 0;
+
+    const getNextIndex = revealedSet => {
+      const textLength = text.length;
+      switch (revealDirection) {
+        case 'start':
+          return revealedSet.size;
+        case 'end':
+          return textLength - 1 - revealedSet.size;
+        case 'center': {
+          const middle = Math.floor(textLength / 2);
+          const offset = Math.floor(revealedSet.size / 2);
+          const nextIndex = revealedSet.size % 2 === 0 ? middle + offset : middle - offset - 1;
+
+          if (nextIndex >= 0 && nextIndex < textLength && !revealedSet.has(nextIndex)) {
+            return nextIndex;
+          }
+
+          for (let i = 0; i < textLength; i++) {
+            if (!revealedSet.has(i)) return i;
+          }
+          return 0;
+        }
+        default:
+          return revealedSet.size;
+      }
+    };
+
+    intervalRef.current = setInterval(() => {
+      setRevealedIndices(prevRevealed => {
+        if (sequential) {
+          // Forward
+          if (direction === 'forward') {
+            if (prevRevealed.size < text.length) {
+              const nextIndex = getNextIndex(prevRevealed);
+              const newRevealed = new Set(prevRevealed);
+              newRevealed.add(nextIndex);
+              setDisplayText(shuffleText(text, newRevealed));
+              return newRevealed;
+            } else {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setIsDecrypted(true);
+              return prevRevealed;
+            }
+          }
+          // Reverse
+          if (direction === 'reverse') {
+            if (pointerRef.current < orderRef.current.length) {
+              const idxToRemove = orderRef.current[pointerRef.current++];
+              const newRevealed = new Set(prevRevealed);
+              newRevealed.delete(idxToRemove);
+              setDisplayText(shuffleText(text, newRevealed));
+              if (newRevealed.size === 0) {
+                clearInterval(intervalRef.current);
+                setIsAnimating(false);
+                setIsDecrypted(false);
+              }
+              return newRevealed;
+            } else {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setIsDecrypted(false);
+              return prevRevealed;
+            }
+          }
+        } else {
+          // Non-Sequential
+          if (direction === 'forward') {
+            setDisplayText(shuffleText(text, prevRevealed));
+            currentIteration++;
+            if (currentIteration >= maxIterations) {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setDisplayText(text);
+              setIsDecrypted(true);
+            }
+            return prevRevealed;
+          }
+
+          // Non-Sequential Reverse
+          if (direction === 'reverse') {
+            let currentSet = prevRevealed;
+            if (currentSet.size === 0) {
+              currentSet = fillAllIndices();
+            }
+            const removeCount = Math.max(1, Math.ceil(text.length / Math.max(1, maxIterations)));
+            const nextSet = removeRandomIndices(currentSet, removeCount);
+            setDisplayText(shuffleText(text, nextSet));
+            currentIteration++;
+            if (nextSet.size === 0 || currentIteration >= maxIterations) {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setIsDecrypted(false);
+              // ensure final scrambled state
+              setDisplayText(shuffleText(text, new Set()));
+              return new Set();
+            }
+            return nextSet;
+          }
+        }
+        return prevRevealed;
+      });
+    }, speed);
+
+    return () => clearInterval(intervalRef.current);
+  }, [
+    isAnimating,
+    text,
+    speed,
+    maxIterations,
+    sequential,
+    revealDirection,
+    shuffleText,
+    direction,
+    fillAllIndices,
+    removeRandomIndices,
+    characters,
+    useOriginalCharsOnly
+  ]);
+
+  /* Click Behaviour */
+  const handleClick = () => {
+    if (animateOn !== 'click') return;
+
+    if (clickMode === 'once') {
+      if (isDecrypted) return;
+      setDirection('forward');
+      triggerDecrypt();
+    }
+
+    if (clickMode === 'toggle') {
+      if (isDecrypted) {
+        triggerReverse();
+      } else {
+        setDirection('forward');
+        triggerDecrypt();
+      }
+    }
+  };
+
+  /* Hover Behaviour */
+  const triggerHoverDecrypt = useCallback(() => {
+    if (isAnimating) return;
+
+    setRevealedIndices(new Set());
+    setIsDecrypted(false);
+    setDisplayText(text);
+    setDirection('forward');
+    setIsAnimating(true);
+  }, [isAnimating, text]);
+
+  const resetToPlainText = useCallback(() => {
+    clearInterval(intervalRef.current);
+    setIsAnimating(false);
+    setRevealedIndices(new Set());
+    setDisplayText(text);
+    setIsDecrypted(true);
+    setDirection('forward');
+  }, [text]);
+
+  /* View Observer */
+  useEffect(() => {
+    if (animateOn !== 'view' && animateOn !== 'inViewHover') return;
+
+    const observerCallback = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          triggerDecrypt();
+          setHasAnimated(true);
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [animateOn, hasAnimated, triggerDecrypt]);
+
+  useEffect(() => {
+    if (animateOn === 'click') {
+      encryptInstantly();
+    } else {
+      setDisplayText(text);
+      setIsDecrypted(true);
+    }
+    setRevealedIndices(new Set());
+    setDirection('forward');
+  }, [animateOn, text, encryptInstantly]);
+
+  const animateProps =
+    animateOn === 'hover' || animateOn === 'inViewHover'
+      ? {
+          onMouseEnter: triggerHoverDecrypt,
+          onMouseLeave: resetToPlainText
+        }
+      : animateOn === 'click'
+        ? {
+            onClick: handleClick
+          }
+        : {};
+
+  return (
+    <motion.span className={parentClassName} ref={containerRef} style={styles.wrapper} {...animateProps} {...props}>
+      <span style={styles.srOnly}>{displayText}</span>
+
+      <span aria-hidden="true">
+        {displayText.split('').map((char, index) => {
+          const isRevealedOrDone = revealedIndices.has(index) || (!isAnimating && isDecrypted);
+
+          return (
+            <span key={index} className={isRevealedOrDone ? className : encryptedClassName}>
+              {char}
+            </span>
+          );
+        })}
+      </span>
+    </motion.span>
+  );
+}
+</file>
+
+<file path="src/components/experiencePage.css">
+/* 🌟 引入 Dela Gothic One 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+/* =========================================
+   Experience Page (沉浸式纯黑过渡页)
+   ========================================= */
+.experience-page {
+  position: relative;
+  width: 100%;
+  
+  /* 🌟 核心修改 1：从 66vh 再缩短约五分之一，变成 50vh（精确占据屏幕的一半） */
+  height: 50vh;          
+  
+  /* 🌟 核心修改 2：同步调小保底高度，防止在小屏幕上由于高度不够而被撑开 */
+  min-height: 400px;     
+  
+  background-color: black;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* =========================================
+   顶部镜像极光 (高度保持 50vh 不变)
+   ========================================= */
+.experience-aurora-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* 极光依然保持 50vh，因为页面现在也是 50vh，极光刚好覆盖这半屏空间并向下消散 */
+  height: 50vh; 
+  
+  transform: scaleY(-1); 
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* =========================================
+   Experiences 扫光文字
+   ========================================= */
+.exp-text-container {
+  position: absolute;
+  top: 60%; /* 相对位置保持在 60% 处不变 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.exp-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(3rem, 9vw, 9rem); 
+  letter-spacing: 2px;
+  margin: 0;
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  white-space: nowrap;
+}
+</file>
+
+<file path="src/components/ExperiencePage.jsx">
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import './experiencePage.css';
+import Aurora from './AuroraEffect'; 
+
+export default function ExperiencePage() {
+  const targetRef = useRef(null);
+
+  // 侦测页面滚动情况
+  // start end: ExperiencePage 顶部刚进入屏幕底端（开始出现）
+  // start start: ExperiencePage 顶部刚到达屏幕顶端（准备开始消失）
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "start start"]
+  });
+
+  // 将滚动进度 (0 到 1) 映射为光效划过的百分比 (-20% 到 120% 确保完全移出边界)
+  const percent = useTransform(scrollYProgress, [0, 1], [-20, 120]);
+  
+  // 计算渐变色的 4 个关键锚点
+  const stop1 = useTransform(percent, v => `${v - 15}%`); // 纯白色的终点
+  const stop2 = useTransform(percent, v => `${v - 5}%`);  // 亮蓝光晕开始
+  const stop3 = useTransform(percent, v => `${v}%`);      // 深蓝光核心
+  const stop4 = useTransform(percent, v => `${v + 10}%`); // 消散为透明
+
+  // 利用模板字符串生成动态的线性渐变背景
+  // 透明边缘使用 rgba(0, 22, 216, 0) 防治某些浏览器下出现灰色带
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
+
+  return (
+    <section id="experience" className="experience-page" ref={targetRef}>
+      
+      {/* 顶部镜像极光 (融为一体的倒影效果) */}
+      <div className="experience-aurora-top">
+        <Aurora
+          colorStops={["#8599d2","#0016d8","#5211dd"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1}
+        />
+      </div>
+
+      {/* 文字容器 (靠下位置) */}
+      <div className="exp-text-container">
+        <motion.h1 
+          className="exp-text"
+          style={{ backgroundImage: animatedGradient }}
+        >
+          Experiences
+        </motion.h1>
+      </div>
+
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/GlassSurface.css">
+.glass-surface {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.26s ease-out;
+}
+
+.glass-surface__filter {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.glass-surface__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.glass-surface--svg {
+  background: light-dark(hsl(0 0% 100% / var(--glass-frost, 0)), hsl(0 0% 0% / var(--glass-frost, 0)));
+  backdrop-filter: var(--filter-id, url(#glass-filter)) saturate(var(--glass-saturation, 1));
+  box-shadow:
+    0 0 2px 1px light-dark(color-mix(in oklch, black, transparent 85%), color-mix(in oklch, white, transparent 65%))
+      inset,
+    0 0 10px 4px light-dark(color-mix(in oklch, black, transparent 90%), color-mix(in oklch, white, transparent 85%))
+      inset,
+    0px 4px 16px rgba(17, 17, 26, 0.05),
+    0px 8px 24px rgba(17, 17, 26, 0.05),
+    0px 16px 56px rgba(17, 17, 26, 0.05),
+    0px 4px 16px rgba(17, 17, 26, 0.05) inset,
+    0px 8px 24px rgba(17, 17, 26, 0.05) inset,
+    0px 16px 56px rgba(17, 17, 26, 0.05) inset;
+}
+
+.glass-surface--fallback {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.8) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.2),
+    0 2px 16px 0 rgba(31, 38, 135, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-surface--fallback {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px) saturate(1.8) brightness(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.8) brightness(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-surface--fallback {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-surface--fallback::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  @media (prefers-color-scheme: dark) {
+    .glass-surface--fallback {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .glass-surface--fallback::before {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
+.glass-surface:focus-visible {
+  outline: 2px solid light-dark(#007aff, #0a84ff);
+  outline-offset: 2px;
+}
+</file>
+
+<file path="src/components/GlassSurface.jsx">
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState, useRef, useId } from 'react';
+import './GlassSurface.css';
+
+const GlassSurface = ({
+  children,
+  width = 200,
+  height = 80,
+  borderRadius = 20,
+  borderWidth = 0.1,
+  brightness = 50,
+  opacity = 1,
+  blur = 14,
+  displace = 3,
+  backgroundOpacity = 0.2,
+  saturation = 1.1,
+  distortionScale = -90,
+  redOffset = 0,
+  greenOffset = 10,
+  blueOffset = 20,
+  xChannel = 'R',
+  yChannel = 'G',
+  mixBlendMode = 'difference',
+  className = '',
+  style = {}
+}) => {
+  const uniqueId = useId().replace(/:/g, '-');
+  const filterId = `glass-filter-${uniqueId}`;
+  const redGradId = `red-grad-${uniqueId}`;
+  const blueGradId = `blue-grad-${uniqueId}`;
+
+  const [svgSupported, setSvgSupported] = useState(false);
+
+  const containerRef = useRef(null);
+  const feImageRef = useRef(null);
+  const redChannelRef = useRef(null);
+  const greenChannelRef = useRef(null);
+  const blueChannelRef = useRef(null);
+  const gaussianBlurRef = useRef(null);
+
+  const generateDisplacementMap = () => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    const actualWidth = rect?.width || 400;
+    const actualHeight = rect?.height || 200;
+    const edgeSize = Math.min(actualWidth, actualHeight) * (borderWidth * 0.5);
+
+    const svgContent = `
+      <svg viewBox="0 0 ${actualWidth} ${actualHeight}" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="${redGradId}" x1="100%" y1="0%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#0000"/>
+            <stop offset="100%" stop-color="red"/>
+          </linearGradient>
+          <linearGradient id="${blueGradId}" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0000"/>
+            <stop offset="100%" stop-color="blue"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" fill="black"></rect>
+        <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" rx="${borderRadius}" fill="url(#${redGradId})" />
+        <rect x="0" y="0" width="${actualWidth}" height="${actualHeight}" rx="${borderRadius}" fill="url(#${blueGradId})" style="mix-blend-mode: ${mixBlendMode}" />
+        <rect x="${edgeSize}" y="${edgeSize}" width="${actualWidth - edgeSize * 2}" height="${actualHeight - edgeSize * 2}" rx="${borderRadius}" fill="hsl(0 0% ${brightness}% / ${opacity})" style="filter:blur(${blur}px)" />
+      </svg>
+    `;
+
+    return `data:image/svg+xml,${encodeURIComponent(svgContent)}`;
+  };
+
+  const updateDisplacementMap = () => {
+    feImageRef.current?.setAttribute('href', generateDisplacementMap());
+  };
+
+  useEffect(() => {
+    updateDisplacementMap();
+    [
+      { ref: redChannelRef, offset: redOffset },
+      { ref: greenChannelRef, offset: greenOffset },
+      { ref: blueChannelRef, offset: blueOffset }
+    ].forEach(({ ref, offset }) => {
+      if (ref.current) {
+        ref.current.setAttribute('scale', (distortionScale + offset).toString());
+        ref.current.setAttribute('xChannelSelector', xChannel);
+        ref.current.setAttribute('yChannelSelector', yChannel);
+      }
+    });
+
+    gaussianBlurRef.current?.setAttribute('stdDeviation', displace.toString());
+  }, [
+    width,
+    height,
+    borderRadius,
+    borderWidth,
+    brightness,
+    opacity,
+    blur,
+    displace,
+    distortionScale,
+    redOffset,
+    greenOffset,
+    blueOffset,
+    xChannel,
+    yChannel,
+    mixBlendMode
+  ]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      setTimeout(updateDisplacementMap, 0);
+    });
+
+    resizeObserver.observe(containerRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      setTimeout(updateDisplacementMap, 0);
+    });
+
+    resizeObserver.observe(containerRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    setTimeout(updateDisplacementMap, 0);
+  }, [width, height]);
+
+  useEffect(() => {
+    setSvgSupported(supportsSVGFilters());
+  }, []);
+
+  const supportsSVGFilters = () => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return false;
+    }
+
+    const isWebkit = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+    const isFirefox = /Firefox/.test(navigator.userAgent);
+
+    if (isWebkit || isFirefox) {
+      return false;
+    }
+
+    const div = document.createElement('div');
+    div.style.backdropFilter = `url(#${filterId})`;
+
+    return div.style.backdropFilter !== '';
+  };
+
+  const containerStyle = {
+    ...style,
+    width: typeof width === 'number' ? `${width}px` : width,
+    height: typeof height === 'number' ? `${height}px` : height,
+    borderRadius: `${borderRadius}px`,
+    '--glass-frost': backgroundOpacity,
+    '--glass-saturation': saturation,
+    '--filter-id': `url(#${filterId})`
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className={`glass-surface ${svgSupported ? 'glass-surface--svg' : 'glass-surface--fallback'} ${className}`}
+      style={containerStyle}
+    >
+      <svg className="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id={filterId} colorInterpolationFilters="sRGB" x="0%" y="0%" width="100%" height="100%">
+            <feImage ref={feImageRef} x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="map" />
+
+            <feDisplacementMap ref={redChannelRef} in="SourceGraphic" in2="map" id="redchannel" result="dispRed" />
+            <feColorMatrix
+              in="dispRed"
+              type="matrix"
+              values="1 0 0 0 0
+                      0 0 0 0 0
+                      0 0 0 0 0
+                      0 0 0 1 0"
+              result="red"
+            />
+
+            <feDisplacementMap
+              ref={greenChannelRef}
+              in="SourceGraphic"
+              in2="map"
+              id="greenchannel"
+              result="dispGreen"
+            />
+            <feColorMatrix
+              in="dispGreen"
+              type="matrix"
+              values="0 0 0 0 0
+                      0 1 0 0 0
+                      0 0 0 0 0
+                      0 0 0 1 0"
+              result="green"
+            />
+
+            <feDisplacementMap ref={blueChannelRef} in="SourceGraphic" in2="map" id="bluechannel" result="dispBlue" />
+            <feColorMatrix
+              in="dispBlue"
+              type="matrix"
+              values="0 0 0 0 0
+                      0 0 0 0 0
+                      0 0 1 0 0
+                      0 0 0 1 0"
+              result="blue"
+            />
+
+            <feBlend in="red" in2="green" mode="screen" result="rg" />
+            <feBlend in="rg" in2="blue" mode="screen" result="output" />
+            <feGaussianBlur ref={gaussianBlurRef} in="output" stdDeviation="0.7" />
+          </filter>
+        </defs>
+      </svg>
+
+      <div className="glass-surface__content">{children}</div>
+    </div>
+  );
+};
+
+export default GlassSurface;
+</file>
+
+<file path="src/components/Hero.jsx">
+import React, { useState, useEffect } from 'react';
+import RotatingText from "./RotatingText";
+import DecryptedText from "./DecryptedText";
+
+export default function Hero() {
+  // 设置初始错位状态和透明度
+  const [offset, setOffset] = useState({ x: 40, y: -30 });
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    // 网页打开后立即触发背景合并动画
+    setOffset({ x: 0, y: 0 });
+    setOpacity(1);
+  }, []);
+
+  return (
+    <section id="home" className="section">
+      <div className="bg-container">
+        {/* 检查点：确认 public 文件夹下文件名是 background_layer.png 还是 background_layerpng.png */}
+        <img 
+          src="/background_layer.png" 
+          alt="bg base" 
+          className="bg-layer bg-layer-1"
+          style={{ 
+            transform: `translate(${-offset.x}px, ${-offset.y}px)`,
+            opacity: opacity,
+            transition: 'transform 2s ease, opacity 2s ease'
+          }}
+        />
+        <img 
+          src="/pixel_layer.png" 
+          alt="bg overlay" 
+          className="bg-layer bg-layer-2"
+          style={{ 
+            transform: `translate(${offset.x}px, ${offset.y}px)`,
+            opacity: opacity,
+            transition: 'transform 2s ease, opacity 2s ease'
+          }}
+        />
+        <img 
+          src="/background_layer.png" 
+          alt="bg fade in" 
+          className="bg-layer bg-layer-3"
+          style={{ 
+            opacity: opacity,
+            transition: 'opacity 2s ease'
+          }}
+        />
+      </div>
+      
+      <div className="title-main">
+        {/* 关键修正：br 加上了闭合斜杠 */}
+        <h1>
+          <RotatingText /><br />{" "}
+          <DecryptedText 
+    text="Designer" 
+    parentClassName="keep-my-font"
+    animateOn="view" 
+    speed={120} 
+    maxIterations={15} 
+    revealDirection="start" 
+    sequential={true} 
+    useOriginalCharsOnly={false} 
+  />
+        </h1>
+      </div>
+      
+      <div className="title-name">
+        <h2>{" "}
+             <DecryptedText 
+    text="Norman Liu" 
+    parentClassName="keep-my-font-name"
+    animateOn="view" 
+    speed={100} 
+    maxIterations={15} 
+    revealDirection="start" 
+    sequential={true} 
+    useOriginalCharsOnly={false} 
+  />
+        </h2>
+      </div>
+
+      <div className="scroll-indicator" onClick={() => document.getElementById('introduction').scrollIntoView()}>
+        Scroll
+        <div className="scroll-arrow"></div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/introductionPage.css">
+/* =========================================
+   Introduction Page 核心布局
+   ========================================= */
+.introduction-page {
+  position: relative;
+  z-index: 10;        
+  margin-top: 100vh;  
+  height: 100vh; 
+  min-height: 800px; /* 为了适应更大的框，调高保底高度 */
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.aurora-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* =========================================
+   毛玻璃框与内容排版 (华文黑体)
+   ========================================= */
+.boxes-container {
+  display: flex;
+  gap: 60px; /* 框体变大，间距稍微收敛防止超出屏幕 */
+  align-items: center;
+  margin-top: -3vh; /* 🌟 整体上提，解决上方看着太宽的问题 */
+}
+
+.glass-box {
+  width: 380px;  /* 🌟 从 340px 放大 */
+  height: 520px; /* 🌟 从 460px 放大 */
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+/* 内部内容容器 */
+.box-inner-content {
+  padding: 30px 35px; /* 🌟 顶部缩紧一点，左右放宽，比例更好 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: "STHeiti", "华文黑体", "Microsoft YaHei", sans-serif;
+  color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+.box-title {
+  font-size: 2rem; /* 🌟 标题等比放大 */
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* 技能条列表 */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* 🌟 间距等比拉开 */
+  flex: 1;
+  justify-content: flex-start;
+  margin-top: 5px; /* 微调进度条群组的上边距 */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 技能名与条的间距放大 */
+}
+
+.skill-name {
+  font-size: 1.05rem; /* 🌟 字体等比放大 */
+  letter-spacing: 0.5px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px; /* 🌟 进度条调粗，更有质感 */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #0044ff;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 68, 255, 0.8);
+}
+
+/* 教育经历 */
+.edu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-name {
+  font-size: 1.25rem; /* 🌟 校名字体等比放大 */
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-wrap: break-word; 
+}
+
+.edu-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin-bottom: 15px;
+}
+
+.edu-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem; /* 🌟 专业学位字体放大 */
+}
+
+.blue-text {
+  color: #0044ff;
+  font-weight: 600;
+}
+
+/* =========================================
+   底部滑动文字
+   ========================================= */
+.text-row {
+  position: absolute; 
+  bottom: 5vh; 
+  white-space: nowrap; 
+}
+
+.text-row h2 {
+  font-size: 6rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 5px;
+  font-family: "STHeiti", "华文黑体", sans-serif;
+}
+
+/* =========================================
+   响应式调整 (小屏幕自动缩小，防崩坏)
+   ========================================= */
+@media (max-height: 850px) {
+  .boxes-container { margin-top: -1vh; gap: 40px; }
+  .glass-box { width: 320px; height: 460px; }
+  .pc-card { width: 320px; height: 460px; } /* 确保卡片也响应式缩小 */
+  .text-row h2 { font-size: 4.5rem; }
+  .box-inner-content { padding: 25px 25px; }
+  .box-title { font-size: 1.6rem; margin-bottom: 15px; }
+  .school-name { font-size: 1.1rem; }
+  .skill-name { font-size: 0.95rem; }
+}
+
+@media (max-width: 1250px) {
+  .boxes-container { gap: 30px; }
+  .glass-box { width: 320px; height: 460px; }
+  .pc-card { width: 320px; height: 460px; }
+  .school-name { font-size: 1.1rem; }
+  .edu-details { font-size: 0.9rem; }
+}
+</file>
+
+<file path="src/components/IntroductionPage.jsx">
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import './introductionPage.css';
+import Aurora from './AuroraEffect'; 
+import BorderGlow from './BorderGlow';
+import ProfileCard from './ProfileCard';
+import avatarImg from '../assets/avatar.png'; 
+
+export default function IntroductionPage() {
+  const targetRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"]
+  });
+
+  const boxesX = useTransform(scrollYProgress, [0, 0.5, 1], ["100vw", "0vw", "0vw"]);
+  const textX = useTransform(scrollYProgress, [0, 0.5, 1], ["-100vw", "0vw", "30vw"]);
+
+  const skills = [
+    { name: "Sketch up", percent: "90%" },
+    { name: "Rhino", percent: "88%" },
+    { name: "AutoCAD", percent: "80%" },
+    { name: "Photoshop", percent: "95%" },
+    { name: "Illustrator", percent: "85%" },
+    { name: "Vibe Coding", percent: "65%" },
+    { name: "CET-6", percent: "90%" }
+  ];
+
+  return (
+    <section id="introduction" className="introduction-page" ref={targetRef}>
+      
+      {/* 🌟 第 1 层：最底层的背景水印文字 */}
+      <div 
+        className="background-hello"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -55%)',
+          fontSize: '24vw',
+          fontWeight: 900,
+          letterSpacing: '-1vw',
+          whiteSpace: 'nowrap',
+          zIndex: 0, 
+          pointerEvents: 'none',
+          color: 'rgba(255, 255, 255, 0.08)',
+          fontFamily: '"STHeiti", "华文黑体", sans-serif'
+        }}
+      >
+        Hello!
+      </div>
+
+      {/* 🌟 第 2 层：极光背景层 */}
+      <div className="aurora-bg-wrapper" style={{ zIndex: 1 }}>
+        <Aurora
+          colorStops={["#8599d2","#0016d8","#5211dd"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1}
+        />
+      </div>
+
+      {/* 🌟 第 3 层：交互内容层 */}
+      <div className="intro-content">
+        
+        <motion.div className="boxes-container" style={{ x: boxesX }}>
+          
+          {/* 左侧：Skills 框 */}
+          <BorderGlow
+            className="glass-box"
+            backgroundColor="rgba(255, 255, 255, 0.03)"
+            borderRadius={24}
+            glowColor="240 80 70"
+            colors={['#8599d2', '#0016d8', '#5211dd']}
+            fillOpacity={0}
+          >
+            <div className="box-inner-content">
+              <h3 className="box-title">Skills</h3>
+              <div className="skills-list">
+                {skills.map((skill, index) => (
+                  <div className="skill-item" key={index}>
+                    <span className="skill-name">{skill.name}</span>
+                    <div className="progress-track">
+                      <div className="progress-fill" style={{ width: skill.percent }}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </BorderGlow>
+
+          {/* 中间：3D Profile Card */}
+          <ProfileCard
+            name="Liu Yuyang"
+            title="Designer"
+            avatarUrl={avatarImg}
+            showUserInfo={false}
+            enableTilt={true}
+            behindGlowEnabled={false}
+            innerGradient="linear-gradient(145deg, rgba(20,20,40,0.8) 0%, rgba(82,17,221,0.2) 100%)"
+          />
+
+          {/* 右侧：Education 框 */}
+          <BorderGlow
+            className="glass-box"
+            backgroundColor="rgba(255, 255, 255, 0.03)"
+            borderRadius={24}
+            glowColor="240 80 70"
+            colors={['#8599d2', '#0016d8', '#5211dd']}
+            fillOpacity={0}
+          >
+            <div className="box-inner-content">
+              <h3 className="box-title">Education</h3>
+              
+              <div className="edu-item">
+                <h4 className="school-name">Shandong Jianzhu University</h4>
+                <div className="edu-divider"></div>
+                <div className="edu-details">
+                  <span className="major">Landscape Architecture</span>
+                  <span className="degree blue-text">Bachelor</span>
+                </div>
+              </div>
+
+              <div className="edu-item" style={{ marginTop: '40px' }}>
+                <h4 className="school-name">Xi'an University of<br/>Architecture and Technology</h4>
+                <div className="edu-divider"></div>
+                <div className="edu-details">
+                  <span className="major">Architecture</span>
+                  <span className="degree blue-text">Master</span>
+                </div>
+              </div>
+            </div>
+          </BorderGlow>
+
+        </motion.div>
+
+        {/* 底部滑动大字 */}
+        <motion.div className="text-row" style={{ x: textX }}>
+          <h2 className="keep-my-font-3">
+            Who Am I - Skills - Education - Who Am I - Skills - Education
+          </h2>
+        </motion.div>
+
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/Navbar.css">
+/* ========================================= */
+/* 1. 顶部全局包裹层 (居中液态玻璃)          */
+/* ========================================= */
+.navbar-wrapper {
+  position: fixed;   /* 固定在屏幕顶部，脱离文档流 */
+  top: 30px;
+  left: 0;
+  width: 100%;       /* 撑满整个屏幕宽度 */
+  height: 60px;      /* 设定高度，为了内部元素对齐 */
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* 保证里面的玻璃组件永远在屏幕正中间 */
+  align-items: center;     /* 垂直方向居中 */
+  pointer-events: none;    /* 外层透明区域不阻挡鼠标点击网页下方内容 */
+}
+
+/* 恢复实体元素的鼠标点击功能 */
+.navbar-glass, .contact-btn {
+  pointer-events: auto; 
+}
+
+/* ========================================= */
+/* 2. 玻璃组件内部强制排版                   */
+/* ========================================= */
+/* 强制覆盖 GlassSurface 组件自带的居中属性，让它内部变成 100% 宽度 */
+.navbar-glass .glass-surface__content {
+  width: 100% !important; 
+  padding: 0 !important; 
+  display: flex !important;
+}
+
+/* 前四个按钮的容器：撑满并使用 space-evenly 完美均匀分布 */
+.nav-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 前四个链接文字样式 */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff; /* 必须是纯白 */
+  mix-blend-mode: difference; /* 🌟 新增：开启反色魔法 */
+  font-weight: 400;
+  font-size: 1rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* 3. Contact me 按钮 (绝对右上角)           */
+/* ========================================= */
+a.contact-btn,
+a.contact-btn:link,
+a.contact-btn:visited,
+a.contact-btn:hover,
+a.contact-btn:active {
+  position: fixed;
+  top: 45px;
+  right: 40px;
+  z-index: 2000;
+  
+  color: #ffffff; /* 必须是纯白 */
+  text-decoration: none;
+  white-space: nowrap;
+  
+  font-size: 1rem;
+  font-weight: 400;
+  
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+</file>
+
+<file path="src/components/Navbar.jsx">
+import React from 'react'; 
+import GlassSurface from './GlassSurface'; 
+import './Navbar.css';
+
+export default function Navbar() { 
+  return (
+    <>
+      {/* 1. 导航栏容器（液态玻璃） */}
+      <header className="navbar-wrapper">
+        <GlassSurface 
+          width="800px"       
+          height="40px"       
+          borderRadius={30}   
+          blur={15}           
+          opacity={0.8}       
+          className="navbar-glass" 
+        >
+          <nav className="nav-links">
+            <a href="#home">Home</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#landscape">Landscape</a>
+            <a href="#more">More</a>
+          </nav>
+        </GlassSurface>
+      </header>
+
+      {/* 2. 彻底独立的 Contact me 按钮 (直接把样式写在标签里，强制生效) */}
+      <a 
+        href="#contact" 
+        className="contact-btn"
+      >
+        Contact me
+      </a>
+    </>
+  );
+}
+</file>
+
+<file path="src/components/PortfolioSection.jsx">
+import React, { useState, useRef } from 'react';
+
+export default function PortfolioSection({ id, title, subtitle }) {
+  const [bgImage, setBgImage] = useState('');
+  const [overlayOpacity, setOverlayOpacity] = useState(0);
+  const trackRef = useRef(null);
+
+  // 1. 生成 15 张稳定的占位图片
+  const projects = Array.from({ length: 15 }, (_, i) => ({
+    id: i + 1,
+    img: `https://picsum.photos/seed/${id}-${i}/800/500`
+  }));
+
+  return (
+    <section id={id} className="section portfolio-section">
+      <div className="diffuse-light"></div>
+      <div 
+        className="hover-bg-overlay" 
+        style={{ 
+          backgroundImage: `url(${bgImage})`, 
+          opacity: overlayOpacity,
+          transition: 'opacity 0.6s ease' 
+        }}
+      ></div>
+      
+      <div className="section-title">
+        {/* 2. 确保标签闭合 */}
+        <h2>{title}<br /><span>{subtitle}</span></h2>
+      </div>
+
+      <div className="gallery-wrapper">
+        <div className="gallery-track" ref={trackRef}>
+          {projects.map((proj) => (
+            <div 
+              key={proj.id} 
+              className="gallery-item"
+              onMouseEnter={() => {
+                setBgImage(proj.img);
+                setOverlayOpacity(0.3);
+              }}
+              onMouseLeave={() => setOverlayOpacity(0)}
+            >
+              <img src={proj.img} alt={`${title} ${proj.id}`} />
+              <div className="project-title">{title} Project {proj.id}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="scroll-hint">Drag or use trackpad to slide <br /> →</div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/ProfileCard.css">
+:root {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --pointer-from-center: 0;
+  --pointer-from-top: 0.5;
+  --pointer-from-left: 0.5;
+  --card-opacity: 0;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --background-x: 50%;
+  --background-y: 50%;
+  --grain: none;
+  --icon: none;
+  --behind-gradient: none;
+  --behind-glow-color: rgba(125, 190, 255, 0.67);
+  --behind-glow-size: 25%;
+  --inner-gradient: none;
+  --sunpillar-1: hsl(2, 100%, 73%);
+  --sunpillar-2: hsl(53, 100%, 69%);
+  --sunpillar-3: hsl(93, 100%, 69%);
+  --sunpillar-4: hsl(176, 100%, 76%);
+  --sunpillar-5: hsl(228, 100%, 74%);
+  --sunpillar-6: hsl(283, 100%, 73%);
+  --sunpillar-clr-1: var(--sunpillar-1);
+  --sunpillar-clr-2: var(--sunpillar-2);
+  --sunpillar-clr-3: var(--sunpillar-3);
+  --sunpillar-clr-4: var(--sunpillar-4);
+  --sunpillar-clr-5: var(--sunpillar-5);
+  --sunpillar-clr-6: var(--sunpillar-6);
+  --card-radius: 24px;
+}
+
+.pc-card-wrapper {
+  perspective: 500px;
+  transform: translate3d(0, 0, 0.1px);
+  position: relative;
+  touch-action: none;
+}
+
+.pc-behind {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--pointer-x) var(--pointer-y),
+    var(--behind-glow-color) 0%,
+    transparent var(--behind-glow-size)
+  );
+  filter: blur(50px) saturate(1.1);
+  opacity: calc(0.8 * var(--card-opacity));
+  transition: opacity 200ms ease;
+}
+
+.pc-card-wrapper:hover,
+.pc-card-wrapper.active {
+  --card-opacity: 1;
+}
+
+.pc-card {
+  width: 380px;      /* 🌟 从 340px 放大到 380px */
+  height: 520px;     /* 🌟 从 460px 放大到 520px */
+  display: grid;
+  border-radius: var(--card-radius);
+  position: relative;
+  background-blend-mode: color-dodge, normal, normal, normal;
+  animation: glow-bg 12s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
+    calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
+  transition: transform 1s ease;
+  transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+  background: rgba(0, 0, 0, 0.9);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.pc-card:hover,
+.pc-card.active {
+  transition: none;
+  transform: translateZ(0) rotateX(var(--rotate-y)) rotateY(var(--rotate-x));
+}
+
+.pc-card-shell.entering .pc-card {
+  transition: transform 180ms ease-out;
+}
+
+.pc-card-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.pc-card * {
+  display: grid;
+  grid-area: 1/-1;
+  border-radius: var(--card-radius);
+  pointer-events: none;
+}
+
+.pc-inside {
+  inset: 0;
+  position: absolute;
+  background-image: var(--inner-gradient);
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: none;
+}
+
+.pc-shine {
+  mask-image: var(--icon);
+  mask-mode: luminance;
+  mask-repeat: repeat;
+  mask-size: 150%;
+  mask-position: top calc(200% - (var(--background-y) * 5)) left calc(100% - var(--background-x));
+  transition: filter 0.8s ease;
+  
+  /* 柔和的磨砂光效过滤 */
+  filter: brightness(0.9) contrast(1.1) saturate(0.8) opacity(0.6);
+  animation: holo-bg 18s linear infinite;
+  animation-play-state: running;
+  /* 关键修复：去除核爆亮，使用 soft-light 柔光模式 */
+  mix-blend-mode: soft-light;
+}
+
+.pc-shine,
+.pc-shine::after {
+  --space: 5%;
+  --angle: -45deg;
+  transform: translate3d(0, 0, 1px);
+  overflow: hidden;
+  z-index: 3;
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      var(--sunpillar-clr-1) calc(var(--space) * 1),
+      var(--sunpillar-clr-2) calc(var(--space) * 2),
+      var(--sunpillar-clr-3) calc(var(--space) * 3),
+      var(--sunpillar-clr-4) calc(var(--space) * 4),
+      var(--sunpillar-clr-5) calc(var(--space) * 5),
+      var(--sunpillar-clr-6) calc(var(--space) * 6),
+      var(--sunpillar-clr-1) calc(var(--space) * 7)
+    ),
+    repeating-linear-gradient(
+      var(--angle),
+      #0e152e 0%,
+      hsl(180, 10%, 60%) 3.8%,
+      hsl(180, 29%, 66%) 4.5%,
+      hsl(180, 10%, 60%) 5.2%,
+      #0e152e 10%,
+      #0e152e 12%
+    ),
+    radial-gradient(
+      farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      hsla(0, 0%, 0%, 0.1) 12%,
+      hsla(0, 0%, 0%, 0.15) 20%,
+      hsla(0, 0%, 0%, 0.25) 120%
+    );
+  background-position:
+    0 var(--background-y),
+    var(--background-x) var(--background-y),
+    center;
+  background-blend-mode: color, hard-light;
+  background-size:
+    500% 500%,
+    300% 300%,
+    200% 200%;
+  background-repeat: repeat;
+}
+
+.pc-shine::before,
+.pc-shine::after {
+  content: '';
+  background-position: center;
+  background-size: cover;
+  grid-area: 1/1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.pc-card:hover .pc-shine,
+.pc-card.active .pc-shine {
+  filter: brightness(0.85) contrast(1.5) saturate(0.5);
+  animation-play-state: paused;
+}
+
+.pc-card:hover .pc-shine::before,
+.pc-card.active .pc-shine::before,
+.pc-card:hover .pc-shine::after,
+.pc-card.active .pc-shine::after {
+  opacity: 1;
+}
+
+.pc-shine::before {
+  background-image:
+    linear-gradient(
+      45deg,
+      var(--sunpillar-4),
+      var(--sunpillar-5),
+      var(--sunpillar-6),
+      var(--sunpillar-1),
+      var(--sunpillar-2),
+      var(--sunpillar-3)
+    ),
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 70%) 0%, hsla(0, 0%, 30%, 0.2) 90%),
+    var(--grain);
+  background-size:
+    250% 250%,
+    100% 100%,
+    220px 220px;
+  background-position:
+    var(--pointer-x) var(--pointer-y),
+    center,
+    calc(var(--pointer-x) * 0.01) calc(var(--pointer-y) * 0.01);
+  
+  /* 更改叠加模式，修复曝光过度 */
+  background-blend-mode: overlay;
+  filter: brightness(1.1) contrast(1.1) saturate(1);
+  mix-blend-mode: screen;
+  opacity: 0.5; /* 增加通透感 */
+}
+
+.pc-shine::after {
+  background-position:
+    0 var(--background-y),
+    calc(var(--background-x) * 0.4) calc(var(--background-y) * 0.5),
+    center;
+  background-size:
+    200% 300%,
+    700% 700%,
+    100% 100%;
+  mix-blend-mode: difference;
+  filter: brightness(0.8) contrast(1.5);
+}
+
+.pc-glare {
+  transform: translate3d(0, 0, 1.1px);
+  overflow: hidden;
+  background-image: radial-gradient(
+    farthest-corner circle at var(--pointer-x) var(--pointer-y),
+    hsl(248, 25%, 80%) 12%,
+    hsla(207, 40%, 30%, 0.8) 90%
+  );
+  mix-blend-mode: overlay;
+  filter: brightness(0.8) contrast(1.2);
+  z-index: 4;
+}
+
+.pc-avatar-content {
+  /* 去除了强制改变图片亮度的混合模式 */
+  overflow: visible;
+  transform: translateZ(2);
+  backface-visibility: hidden;
+}
+
+.pc-avatar-content .avatar {
+  width: 105%;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform-origin: 50% 100%;
+  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0)
+    scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 120ms ease-out;
+}
+
+.pc-avatar-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+.pc-user-info {
+  display: none;
+}
+
+.pc-content:not(.pc-avatar-content) {
+  max-height: 100%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transform: translate3d(
+    calc(var(--pointer-from-left) * -6px + 3px),
+    calc(var(--pointer-from-top) * -6px + 3px),
+    0.1px
+  );
+  z-index: 5;
+  mix-blend-mode: luminosity;
+}
+
+.pc-details {
+  width: 100%;
+  position: absolute;
+  top: 3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-details h3 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 2.2rem;
+  background-image: linear-gradient(to bottom, #fff, #6f6fbe);
+  background-size: 1em 1.5em;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.pc-details p {
+  font-weight: 600;
+  position: relative;
+  top: 0;
+  margin-top: 12px; /* 拉开副标题间距 */
+  white-space: nowrap;
+  font-size: 1rem;
+  margin-inline: auto;
+  width: min-content;
+  background-image: linear-gradient(to bottom, #fff, #4a4ac0);
+  background-size: 1em 1.5em;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@keyframes glow-bg {
+  0% { --bgrotate: 0deg; }
+  100% { --bgrotate: 360deg; }
+}
+
+@keyframes holo-bg {
+  0% {
+    background-position: 0 var(--background-y), 0 0, center;
+  }
+  100% {
+    background-position: 0 var(--background-y), 90% 90%, center;
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-details { top: 2em; }
+  .pc-details h3 { font-size: 1.8rem; }
+  .pc-details p { font-size: 14px; margin-top: 10px; }
+}
+
+@media (max-width: 480px) {
+  .pc-details { top: 1.5em; }
+  .pc-details h3 { font-size: 1.5rem; }
+  .pc-details p { font-size: 12px; margin-top: 8px; }
+}
+</file>
+
+<file path="src/components/ProfileCard.jsx">
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import './ProfileCard.css';
+
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
+
+const ANIMATION_CONFIG = {
+  INITIAL_DURATION: 1200,
+  INITIAL_X_OFFSET: 70,
+  INITIAL_Y_OFFSET: 60,
+  DEVICE_BETA_OFFSET: 20,
+  ENTER_TRANSITION_MS: 180
+};
+
+const clamp = (v, min = 0, max = 100) => Math.min(Math.max(v, min), max);
+const round = (v, precision = 3) => parseFloat(v.toFixed(precision));
+const adjust = (v, fMin, fMax, tMin, tMax) => round(tMin + ((tMax - tMin) * (v - fMin)) / (fMax - fMin));
+
+const ProfileCardComponent = ({
+  avatarUrl = '<Placeholder for avatar URL>',
+  iconUrl = '<Placeholder for icon URL>',
+  grainUrl = '<Placeholder for grain URL>',
+  innerGradient,
+  behindGlowEnabled = true,
+  behindGlowColor,
+  behindGlowSize,
+  className = '',
+  enableTilt = true,
+  enableMobileTilt = false,
+  mobileTiltSensitivity = 5,
+  miniAvatarUrl,
+  name = 'Javi A. Torres',
+  title = 'Software Engineer',
+  handle = 'javicodes',
+  status = 'Online',
+  contactText = 'Contact',
+  showUserInfo = true,
+  onContactClick
+}) => {
+  const wrapRef = useRef(null);
+  const shellRef = useRef(null);
+
+  const enterTimerRef = useRef(null);
+  const leaveRafRef = useRef(null);
+
+  const tiltEngine = useMemo(() => {
+    if (!enableTilt) return null;
+
+    let rafId = null;
+    let running = false;
+    let lastTs = 0;
+
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    const DEFAULT_TAU = 0.14;
+    const INITIAL_TAU = 0.6;
+    let initialUntil = 0;
+
+    const setVarsFromXY = (x, y) => {
+      const shell = shellRef.current;
+      const wrap = wrapRef.current;
+      if (!shell || !wrap) return;
+
+      const width = shell.clientWidth || 1;
+      const height = shell.clientHeight || 1;
+
+      const percentX = clamp((100 / width) * x);
+      const percentY = clamp((100 / height) * y);
+
+      const centerX = percentX - 50;
+      const centerY = percentY - 50;
+
+      const properties = {
+        '--pointer-x': `${percentX}%`,
+        '--pointer-y': `${percentY}%`,
+        '--background-x': `${adjust(percentX, 0, 100, 35, 65)}%`,
+        '--background-y': `${adjust(percentY, 0, 100, 35, 65)}%`,
+        '--pointer-from-center': `${clamp(Math.hypot(percentY - 50, percentX - 50) / 50, 0, 1)}`,
+        '--pointer-from-top': `${percentY / 100}`,
+        '--pointer-from-left': `${percentX / 100}`,
+        '--rotate-x': `${round(-(centerX / 5))}deg`,
+        '--rotate-y': `${round(centerY / 4)}deg`
+      };
+
+      for (const [k, v] of Object.entries(properties)) wrap.style.setProperty(k, v);
+    };
+
+    const step = ts => {
+      if (!running) return;
+      if (lastTs === 0) lastTs = ts;
+      const dt = (ts - lastTs) / 1000;
+      lastTs = ts;
+
+      const tau = ts < initialUntil ? INITIAL_TAU : DEFAULT_TAU;
+      const k = 1 - Math.exp(-dt / tau);
+
+      currentX += (targetX - currentX) * k;
+      currentY += (targetY - currentY) * k;
+
+      setVarsFromXY(currentX, currentY);
+
+      const stillFar = Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05;
+
+      if (stillFar || document.hasFocus()) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        running = false;
+        lastTs = 0;
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+    };
+
+    const start = () => {
+      if (running) return;
+      running = true;
+      lastTs = 0;
+      rafId = requestAnimationFrame(step);
+    };
+
+    return {
+      setImmediate(x, y) {
+        currentX = x;
+        currentY = y;
+        setVarsFromXY(currentX, currentY);
+      },
+      setTarget(x, y) {
+        targetX = x;
+        targetY = y;
+        start();
+      },
+      toCenter() {
+        const shell = shellRef.current;
+        if (!shell) return;
+        this.setTarget(shell.clientWidth / 2, shell.clientHeight / 2);
+      },
+      beginInitial(durationMs) {
+        initialUntil = performance.now() + durationMs;
+        start();
+      },
+      getCurrent() {
+        return { x: currentX, y: currentY, tx: targetX, ty: targetY };
+      },
+      cancel() {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+        running = false;
+        lastTs = 0;
+      }
+    };
+  }, [enableTilt]);
+
+  const getOffsets = (evt, el) => {
+    const rect = el.getBoundingClientRect();
+    return { x: evt.clientX - rect.left, y: evt.clientY - rect.top };
+  };
+
+  const handlePointerMove = useCallback(
+    event => {
+      const shell = shellRef.current;
+      if (!shell || !tiltEngine) return;
+      const { x, y } = getOffsets(event, shell);
+      tiltEngine.setTarget(x, y);
+    },
+    [tiltEngine]
+  );
+
+  const handlePointerEnter = useCallback(
+    event => {
+      const shell = shellRef.current;
+      if (!shell || !tiltEngine) return;
+
+      shell.classList.add('active');
+      shell.classList.add('entering');
+      if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);
+      enterTimerRef.current = window.setTimeout(() => {
+        shell.classList.remove('entering');
+      }, ANIMATION_CONFIG.ENTER_TRANSITION_MS);
+
+      const { x, y } = getOffsets(event, shell);
+      tiltEngine.setTarget(x, y);
+    },
+    [tiltEngine]
+  );
+
+  const handlePointerLeave = useCallback(() => {
+    const shell = shellRef.current;
+    if (!shell || !tiltEngine) return;
+
+    tiltEngine.toCenter();
+
+    const checkSettle = () => {
+      const { x, y, tx, ty } = tiltEngine.getCurrent();
+      const settled = Math.hypot(tx - x, ty - y) < 0.6;
+      if (settled) {
+        shell.classList.remove('active');
+        leaveRafRef.current = null;
+      } else {
+        leaveRafRef.current = requestAnimationFrame(checkSettle);
+      }
+    };
+    if (leaveRafRef.current) cancelAnimationFrame(leaveRafRef.current);
+    leaveRafRef.current = requestAnimationFrame(checkSettle);
+  }, [tiltEngine]);
+
+  const handleDeviceOrientation = useCallback(
+    event => {
+      const shell = shellRef.current;
+      if (!shell || !tiltEngine) return;
+
+      const { beta, gamma } = event;
+      if (beta == null || gamma == null) return;
+
+      const centerX = shell.clientWidth / 2;
+      const centerY = shell.clientHeight / 2;
+      const x = clamp(centerX + gamma * mobileTiltSensitivity, 0, shell.clientWidth);
+      const y = clamp(
+        centerY + (beta - ANIMATION_CONFIG.DEVICE_BETA_OFFSET) * mobileTiltSensitivity,
+        0,
+        shell.clientHeight
+      );
+
+      tiltEngine.setTarget(x, y);
+    },
+    [tiltEngine, mobileTiltSensitivity]
+  );
+
+  useEffect(() => {
+    if (!enableTilt || !tiltEngine) return;
+
+    const shell = shellRef.current;
+    if (!shell) return;
+
+    const pointerMoveHandler = handlePointerMove;
+    const pointerEnterHandler = handlePointerEnter;
+    const pointerLeaveHandler = handlePointerLeave;
+    const deviceOrientationHandler = handleDeviceOrientation;
+
+    shell.addEventListener('pointerenter', pointerEnterHandler);
+    shell.addEventListener('pointermove', pointerMoveHandler);
+    shell.addEventListener('pointerleave', pointerLeaveHandler);
+
+    const handleClick = () => {
+      if (!enableMobileTilt || location.protocol !== 'https:') return;
+      const anyMotion = window.DeviceMotionEvent;
+      if (anyMotion && typeof anyMotion.requestPermission === 'function') {
+        anyMotion
+          .requestPermission()
+          .then(state => {
+            if (state === 'granted') {
+              window.addEventListener('deviceorientation', deviceOrientationHandler);
+            }
+          })
+          .catch(console.error);
+      } else {
+        window.addEventListener('deviceorientation', deviceOrientationHandler);
+      }
+    };
+    shell.addEventListener('click', handleClick);
+
+    const initialX = (shell.clientWidth || 0) - ANIMATION_CONFIG.INITIAL_X_OFFSET;
+    const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
+    tiltEngine.setImmediate(initialX, initialY);
+    tiltEngine.toCenter();
+    tiltEngine.beginInitial(ANIMATION_CONFIG.INITIAL_DURATION);
+
+    return () => {
+      shell.removeEventListener('pointerenter', pointerEnterHandler);
+      shell.removeEventListener('pointermove', pointerMoveHandler);
+      shell.removeEventListener('pointerleave', pointerLeaveHandler);
+      shell.removeEventListener('click', handleClick);
+      window.removeEventListener('deviceorientation', deviceOrientationHandler);
+      if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);
+      if (leaveRafRef.current) cancelAnimationFrame(leaveRafRef.current);
+      tiltEngine.cancel();
+      shell.classList.remove('entering');
+    };
+  }, [
+    enableTilt,
+    enableMobileTilt,
+    tiltEngine,
+    handlePointerMove,
+    handlePointerEnter,
+    handlePointerLeave,
+    handleDeviceOrientation
+  ]);
+
+  const cardStyle = useMemo(
+    () => ({
+      '--icon': iconUrl ? `url(${iconUrl})` : 'none',
+      '--grain': grainUrl ? `url(${grainUrl})` : 'none',
+      '--inner-gradient': innerGradient ?? DEFAULT_INNER_GRADIENT,
+      '--behind-glow-color': behindGlowColor ?? 'rgba(125, 190, 255, 0.67)',
+      '--behind-glow-size': behindGlowSize ?? '50%'
+    }),
+    [iconUrl, grainUrl, innerGradient, behindGlowColor, behindGlowSize]
+  );
+
+  const handleContactClick = useCallback(() => {
+    onContactClick?.();
+  }, [onContactClick]);
+
+  return (
+    <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
+      {behindGlowEnabled && <div className="pc-behind" />}
+      <div ref={shellRef} className="pc-card-shell">
+        <section className="pc-card">
+          <div className="pc-inside">
+            <div className="pc-shine" />
+            <div className="pc-glare" />
+            <div className="pc-content pc-avatar-content">
+              <img
+                className="avatar"
+                src={avatarUrl}
+                alt={`${name || 'User'} avatar`}
+                loading="lazy"
+                onError={e => {
+                  const t = e.target;
+                  t.style.display = 'none';
+                }}
+              />
+              {showUserInfo && (
+                <div className="pc-user-info">
+                  <div className="pc-user-details">
+                    <div className="pc-mini-avatar">
+                      <img
+                        src={miniAvatarUrl || avatarUrl}
+                        alt={`${name || 'User'} mini avatar`}
+                        loading="lazy"
+                        onError={e => {
+                          const t = e.target;
+                          t.style.opacity = '0.5';
+                          t.src = avatarUrl;
+                        }}
+                      />
+                    </div>
+                    <div className="pc-user-text">
+                      <div className="pc-handle">@{handle}</div>
+                      <div className="pc-status">{status}</div>
+                    </div>
+                  </div>
+                  <button
+                    className="pc-contact-btn"
+                    onClick={handleContactClick}
+                    style={{ pointerEvents: 'auto' }}
+                    type="button"
+                    aria-label={`Contact ${name || 'user'}`}
+                  >
+                    {contactText}
+                  </button>
+                </div>
+              )}
+            </div>
+            <div className="pc-content">
+              <div className="pc-details">
+                <h3>{name}</h3>
+                <p>{title}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+const ProfileCard = React.memo(ProfileCardComponent);
+export default ProfileCard;
+</file>
+
+<file path="src/components/RotatingText.jsx">
+import React, { useState, useEffect } from 'react';
+// 确保这里引入了我们在第二步创建的文件
+import DecryptedText from './DecryptedText'; 
+
+export default function RotatingText() {
+  // 这里存放你要循环播放的词汇
+  const words = ['Architectural', 'Landscape', 'AIGC'];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // 设定定时器：每隔 2500 毫秒（2.5秒）自动切换到下一个词
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2500); 
+
+    // 组件卸载时清理定时器
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    // 加一个固定宽度，防止文字长短不一导致页面排版左右跳动
+    <span style={{ display: 'inline-block', minWidth: '220px', textAlign: 'left' }}> 
+      <DecryptedText
+        key={currentIndex} // 核心：每次 currentIndex 改变，强制重新播放进场动画
+        text={words[currentIndex]}
+        parentClassName="keep-my-font"
+        animateOn="view"
+        speed={60}              
+        maxIterations={12}      
+        sequential={true}       
+        revealDirection="start" 
+        useOriginalCharsOnly={false} 
+      />
+    </span>
+  );
+}
+</file>
+
+<file path="src/index.css">
+
+</file>
+
+<file path="src/main.jsx">
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+  },
+])
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>architecture-portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "name": "architecture-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "framer-motion": "^12.38.0",
+    "lenis": "^1.3.23",
+    "maath": "^0.10.8",
+    "motion": "^12.38.0",
+    "ogl": "^1.0.11",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "vite": "^8.0.10"
+  }
+}
+</file>
+
+<file path="README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: './',
+})
+</file>
+
+<file path="src/components/architectureWorks.css">
+/* =========================================
+   Architecture Works 基础设置
+   ========================================= */
+.architecture-works-section {
+  position: relative;
+  width: 100%;
+  height: 180vh; 
+  background-color: #000000; 
+  z-index: 100;
+}
+
+.sticky-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: block; 
+  perspective: 1500px; 
+}
+
+/* =========================================
+   文件夹布局
+   ========================================= */
+.folder-piece {
+  position: absolute;
+  bottom: -16vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 45vw;
+  height: 32vw;
+  min-width: 500px;
+  min-height: 360px;
+}
+
+@media (max-width: 1110px) {
+  .folder-piece { bottom: -180px; }
+}
+
+.folder-back-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000397;
+  border: 1px solid rgba(31, 9, 200, 0.1);
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05), 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.folder-tab {
+  position: absolute;
+  top: -35px;
+  left: 30px;
+  width: 160px;
+  height: 40px;
+  background: #001ede;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.folder-front-glass {
+  position: absolute;
+  bottom: -16vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 45vw;
+  height: 28.8vw;
+  min-width: 500px;
+  min-height: 324px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(0, 0, 0, 0.15) 100%);
+  backdrop-filter: blur(32px) saturate(140%);
+  -webkit-backdrop-filter: blur(32px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid rgba(255, 255, 255, 0.9); 
+  border-left: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.4), inset 0 10px 25px rgba(255, 255, 255, 0.3), inset 0 -60px 100px rgba(0, 0, 0, 0.7);         
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6% 10%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1110px) {
+  .folder-front-glass { bottom: -180px; }
+}
+
+.folder-ui-top h3 {
+  font-family: -apple-system, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.folder-ui-top p {
+  font-family: -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.folder-ui-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+.folder-count { font-family: -apple-system, sans-serif; font-size: 3.5rem; font-weight: 700; color: #ffffff; line-height: 1; }
+.folder-circle-icon { width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+/* =========================================
+   照片层
+   ========================================= */
+.photos-center-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+}
+
+.flying-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;  
+  height: 260px;
+  margin-left: -200px; 
+  margin-top: -130px;  
+  object-fit: cover;
+  border-radius: 8px;
+  /* 🌟 已彻底移除原来的白色 border，实现无边框纯净效果 */
+  border: none; 
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  will-change: transform, filter;
+  pointer-events: none; 
+}
+
+/* =========================================
+   横向交互层
+   ========================================= */
+.horizontal-scroll-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  z-index: 60; 
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; 
+}
+
+.horizontal-scroll-overlay::-webkit-scrollbar { display: none; }
+.scroll-track { display: flex; width: 500vw; height: 100%; }
+.scroll-snap-point { width: 100vw; height: 100%; scroll-snap-align: center; flex-shrink: 0; }
+</file>
+
+<file path="src/components/experienceListPage.css">
+/* =========================================
+   Experience List Page 基础设置
+   ========================================= */
+.experience-list-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;          
+  min-height: 800px;      
+  background-color: black; 
+  z-index: 90; 
+  overflow: hidden; 
+}
+
+/* 视差背景层 */
+.parallax-star-bg {
+  position: absolute;
+  top: -10%; 
+  left: 0;
+  width: 100%;
+  height: 120%; 
+  background-size: 100% 100%; 
+  background-position: center;      
+  background-repeat: no-repeat;     
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+/* =========================================
+   公司列表排版容器
+   ========================================= */
+.company-list-container {
+  position: relative;
+  z-index: 5; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; 
+  padding: 0 10%; 
+}
+
+.company-item {
+  cursor: pointer; 
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* =========================================
+   字体排版 & 扫光遮罩组合特效
+   ========================================= */
+
+.company-text-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  transform-origin: center center; 
+  /* 🌟 核心修改：将渐变遮罩移到父盒子，这样光标到达两侧边缘时会被自然隐没 */
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 15%, 
+    rgba(0, 0, 0, 1) 85%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 15%, 
+    rgba(0, 0, 0, 1) 85%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.original-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+}
+
+.reveal-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  
+  background-image: none !important;
+  -webkit-text-fill-color: #0016d8 !important; 
+  color: #0016d8 !important;
+  text-shadow: 0 0 15px rgba(0, 22, 216, 0.6), 0 0 30px rgba(82, 17, 221, 0.5);
+}
+
+.reveal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw; 
+  width: 100%;
+  height: 100%;
+}
+
+.intern-position, .intern-time {
+  white-space: nowrap; 
+}
+
+/* 移除了旧的内部 mask，防止双层裁剪影响性能 */
+.company-text-mask {
+  font-family: "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
+  font-size: clamp(1.6rem, 2.5vw, 2.6rem); 
+  font-weight: 600;
+  white-space: normal; 
+  line-height: 1.4; 
+  word-wrap: break-word; 
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* =========================================
+   彗星光标 (Comet Scanner)
+   ========================================= */
+.comet-scanner {
+  position: absolute;
+  top: -15%;       
+  bottom: -15%;
+  width: 3px;      
+  background: #ffffff;
+  border-radius: 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0; 
+}
+</file>
+
+<file path="src/components/ExperienceListPage.jsx">
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import './experienceListPage.css';
+import starBg from '../assets/Starbackground.png'; 
+
+const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasHovered, setHasHovered] = useState(false);
+  
+  const opacityStart = index * 0.12; 
+  const opacityEnd = opacityStart + 0.15; 
+  const itemOpacity = useTransform(scrollYProgress, [opacityStart, opacityEnd], [0, 1]);
+
+  const sweepStart = opacityStart + 0.1; 
+  const sweepEnd = sweepStart + 0.4; 
+  const percent = useTransform(scrollYProgress, [sweepStart, sweepEnd], [-20, 120]);
+
+  const stop1 = useTransform(percent, v => `${v - 15}%`); 
+  const stop2 = useTransform(percent, v => `${v - 5}%`);  
+  const stop3 = useTransform(percent, v => `${v}%`);      
+  const stop4 = useTransform(percent, v => `${v + 10}%`); 
+
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(255, 255, 255, 0.25) ${stop4})`;
+
+  // ================= 核心动画编排 =================
+  
+  // 1. 原公司名：放大缓冲 + 遮罩擦除
+  const originalTextVariants = {
+    hidden: { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
+    rest: { 
+      clipPath: "inset(0% 0% 0% 0%)", 
+      scale: 1, 
+      transition: { 
+        clipPath: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
+        // 🌟 修复：加入 0.4 秒的平滑回退，如果在放大中途移走鼠标，它会温柔地缩回去而不是瞬间闪现
+        scale: { duration: 0.4, ease: "easeOut" } 
+      } 
+    },
+    hover: { 
+      clipPath: "inset(0% 0% 0% 100%)", 
+      scale: 1.05, 
+      transition: { 
+        scale: { duration: 0.7, ease: "easeInOut" },
+        clipPath: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
+      } 
+    }
+  };
+
+  // 2. 职位信息揭示
+  const revealTextVariants = {
+    hidden: { clipPath: "inset(0% 100% 0% 0%)" },
+    rest: { 
+      clipPath: "inset(0% 100% 0% 0%)", 
+      transition: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] } 
+    },
+    hover: { 
+      clipPath: "inset(0% 0% 0% 0%)", 
+      transition: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
+    }
+  };
+
+  // 3. 竖直彗星光标
+  const scannerVariants = {
+    hidden: { opacity: 0, left: "0%" },
+    rest: {
+      left: "0%",
+      opacity: 0, 
+      boxShadow: "25px 0 30px 6px rgba(0, 130, 255, 0.9), 70px 0 80px 16px rgba(82, 17, 221, 0.8), 140px 0 130px 28px rgba(0, 22, 216, 0.5)",
+      transition: {
+        left: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
+        boxShadow: { duration: 0 },
+        opacity: { duration: 0.35, delay: 0.5, ease: "easeOut" }
+      }
+    },
+    hover: {
+      left: "100%",
+      opacity: 1,
+      boxShadow: "-25px 0 30px 6px rgba(0, 130, 255, 0.9), -70px 0 80px 16px rgba(82, 17, 221, 0.8), -140px 0 130px 28px rgba(0, 22, 216, 0.5)",
+      transition: {
+        left: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] },
+        boxShadow: { duration: 0, delay: 0.7 },
+        opacity: { duration: 0.15, delay: 0.7, ease: "easeIn" }
+      }
+    }
+  };
+
+  const handleHoverStart = () => {
+    setIsHovered(true);
+    setHasHovered(true);
+  };
+
+  const currentAnimationState = isHovered ? "hover" : (hasHovered ? "rest" : "hidden");
+
+  return (
+    <motion.div 
+      className="company-item"
+      style={{ opacity: itemOpacity }} 
+      onHoverStart={handleHoverStart}
+      onHoverEnd={() => setIsHovered(false)}
+      initial="hidden"
+      animate={currentAnimationState}
+    >
+      <div className="company-text-wrapper">
+        
+        <motion.div 
+          className="company-text-mask original-text"
+          style={{ backgroundImage: animatedGradient }} 
+          variants={originalTextVariants}
+        >
+          {company.name}
+        </motion.div>
+
+        <motion.div 
+          className="company-text-mask reveal-text"
+          variants={revealTextVariants}
+        >
+          <div className="reveal-content">
+            <span className="intern-position">{company.position}</span>
+            <span className="intern-time">{company.time}</span>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="comet-scanner"
+          variants={scannerVariants}
+        />
+        
+      </div>
+    </motion.div>
+  );
+});
+
+export default function ExperienceListPage() {
+  const containerRef = useRef(null);
+
+  const { scrollYProgress: textScrollProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"]
+  });
+
+  const { scrollYProgress: bgScrollProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const bgY = useTransform(bgScrollProgress, [0, 1], ["-10%", "10%"]);
+
+  const companies = [
+    { name: "Architectural Design and Research Institute of Xi'an University of Architecture and Technology", position: "Architecture Intern", time: "2024.9-2025.9" },
+    { name: "Beijing Qinghua Tongheng Planning and Design Institute Co., Ltd. (THUPDI)", position: "Intern", time: "2025.11-2026.1" },
+    { name: "China United Northwest Institute for Engineering Design & Research Co., Ltd.", position: "Architecture Intern", time: "2026.3-2026.6" },
+    { name: "Diyouni Design Institute", position: "Teaching Assistant", time: "2024.7-2024.11" },
+    { name: "Zhuchuang Architectural Design Studio", position: "Architecture Intern", time: "2026.1-2026.3" }
+  ];
+
+  return (
+    <section 
+      id="experience-list" 
+      className="experience-list-page"
+      ref={containerRef}
+    >
+      <motion.div 
+        className="parallax-star-bg"
+        style={{ 
+          y: bgY,
+          backgroundImage: `url(${starBg})` 
+        }}
+      />
+
+      <div className="company-list-container">
+        {companies.map((company, index) => (
+          <CompanyItem 
+            key={index}
+            index={index}
+            company={company}
+            scrollYProgress={textScrollProgress} 
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/App.css">
+/* =========================================
+   基础重置与全局设置 (包含 React 的 #root)
+   ========================================= */
+@font-face {
+    font-family: 'Aquatico';
+    src: url('/fonts/Aquatico-Regular.otf') format('opentype'); /* 改成了 /fonts/... */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+@font-face {
+    font-family: 'SansSerifFLF';
+    src: url('/fonts/SansSerifFLF.otf') format('opentype'); /* 改成了 /fonts/... */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ⚠️ 关键修复：加入 #root 确保 React 挂载节点撑满全屏，并配置跨平台字体栈 */
+body, html, #root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-x: clip;
+    
+    /* 现代跨平台标准中英文字体栈 */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* 背景闪烁动画 */
+@keyframes flicker {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* =========================================
+   顶部导航栏 (由 Navbar.css 管理)
+   ========================================= */
+
+/* 所有导航栏样式已移至 navbar.css */
+
+/* =========================================
+   每个全屏页面区块通用样式
+   ========================================= */
+.section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* =========================================
+   第一页：首页 (Hero)
+   ========================================= */
+#home {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; 
+  z-index: 1;    
+}
+
+.bg-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-layer {
+    position: absolute;
+    top: -5%; left: -5%;
+    width: 110%; height: 110%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bg-layer-1 {
+    z-index: 1;
+}
+
+.bg-layer-2 {
+    z-index: 2;
+    mix-blend-mode: screen; 
+    opacity: 0.8;
+}
+
+/* 主大字 */
+.title-main {
+    position: absolute;
+    left: 8vw; 
+    top: 45%; 
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.title-main h1 {
+    /* 🌟 修改点：把 SansSerifFLF 放在最前面作为首选英文字体 */
+    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-size: 10rem; 
+    font-weight: 400; 
+    line-height: 1.1; 
+    letter-spacing: 1px;
+    text-shadow: 0 4px 25px rgba(0,0,0,0.9); 
+}
+
+/* 名字 */
+.title-name {
+    position: absolute;
+    right: 5vw; 
+    bottom: 22vh; 
+    z-index: 10;
+}
+
+.title-name h2 {
+    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif; 
+    font-style: normal; 
+    font-size: 2rem;
+    font-weight: 700; 
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+}
+
+/* 滚动提示动画 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    animation: bounce 2s infinite ease-in-out;
+    cursor: pointer;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.scroll-arrow {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 15px); }
+}
+
+/* =========================================
+   作品展示页 (Portfolio Section)
+   ========================================= */
+.portfolio-section {
+    background-color: #03102c;
+}
+
+.diffuse-light {
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(10, 80, 255, 0.3) 0%, rgba(3, 16, 44, 0) 50%);
+    z-index: 0;
+    animation: moveLight 15s infinite alternate linear;
+    pointer-events: none;
+}
+
+@keyframes moveLight {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10%, 5%) scale(1.2); }
+    100% { transform: translate(-5%, 15%) scale(0.9); }
+}
+
+.hover-bg-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    filter: blur(10px) brightness(0.4);
+}
+
+.section-title {
+    position: relative;
+    z-index: 10;
+    padding-left: 10vw;
+    margin-top: -5vh;
+}
+
+.section-title h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+
+.section-title span {
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 10vh;
+    z-index: 10;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.gallery-track {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 50px 0 50px 10vw;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    min-width: 400px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    filter: grayscale(100%);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.gallery-item .project-title {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+@keyframes blueGlow {
+    0% { box-shadow: 0 0 15px 5px rgba(0, 100, 255, 0.4); }
+    50% { box-shadow: 0 0 25px 10px rgba(0, 130, 255, 0.7); }
+    100% { box-shadow: 0 0 15px 5px rgba(0, 100, 255, 0.4); }
+}
+
+.gallery-item:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+    animation: blueGlow 2s infinite alternate;
+    z-index: 20;
+}
+
+.gallery-item:hover .project-title {
+    opacity: 1;
+}
+
+.scroll-hint {
+    position: absolute;
+    right: 15vw;
+    bottom: 15vh;
+    font-size: 14px;
+    z-index: 10;
+    text-align: right;
+    opacity: 0.7;
+}
+
+/* =========================================
+   最后一页 (尾页 Contact)
+   ========================================= */
+#contact {
+    background: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+}
+
+.contact-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.contact-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.footer-blue-block {
+    width: 100%;
+    height: 35vh;
+    background-color: #003399;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 40px;
+    color: #fff;
+}
+
+.footer-blue-block p {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   字体类控制修复 (跨平台适配)
+   ========================================= */
+
+.keep-my-font,
+.keep-my-font span {
+  /* 🌟 修改点：把 SansSerifFLF 放在解码动画文字的首选位置 */
+  font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
+  font-weight: 400 !important; 
+}
+
+.keep-my-font-name,
+.keep-my-font-name span {
+  font-family: 'Aquatico', "Segoe UI", Arial, sans-serif !important; 
+  font-weight: 400 !important; 
+}
+
+.keep-my-font-3,
+.keep-my-font-3 span {
+  font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif !important; 
+  font-weight: 900 !important; 
+}
+</file>
+
+<file path="src/App.jsx">
+import React from 'react';
+// 引入 Lenis 的 React 组件
+import { ReactLenis } from 'lenis/react';
+import './App.css';
+// 注意路径：必须包含 ./components/ 
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import PortfolioSection from './components/PortfolioSection';
+import IntroductionPage from './components/IntroductionPage';
+import ExperiencePage from './components/ExperiencePage';
+import ExperienceListPage from './components/ExperienceListPage';
+import ArchitectureWorks from './components/ArchitectureWorks';
+
+function App() {
+  return (
+    // 用 ReactLenis 替换原本的空标签 <>，并加入配置项
+    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+      <Navbar />
+      <Hero />
+      <IntroductionPage />
+      <ExperiencePage />
+      <ExperienceListPage />
+      <ArchitectureWorks />
+      <PortfolioSection id="architecture" title="Architecture" subtitle="works" />
+      <PortfolioSection id="landscape" title="Landscape" subtitle="works" />
+      <PortfolioSection id="more" title="More" subtitle="works" />
+      
+      {/* 尾页 */}
+      <section id="contact" className="section">
+        <div className="contact-content">
+          <h1>Contact me</h1>
+          <p>E-mail: citiesxl@hotmail.com</p>
+        </div>
+        <div className="footer-blue-block">
+          <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
+        </div>
+      </section>
+    </ReactLenis> 
+  );
+}
+
+export default App;
+</file>
+
+<file path="src/components/ArchitectureWorks.jsx">
+import React, { useRef, useEffect, useState, useCallback } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate, useSpring, animate, useMotionValueEvent, useMotionValue, AnimatePresence } from 'framer-motion';
+import './architectureWorks.css';
+
+import Project1 from "../assets/Project1.jpg";
+import Project2 from "../assets/Project2.jpg";
+import Project3 from "../assets/Project3.jpg";
+import Project4 from "../assets/Project4.jpg";
+import Project5 from "../assets/Project5.jpg";
+
+/* ============================
+   DecodeText 组件
+   ============================ */
+const DecodeText = ({ text, className = "", style = {} }) => {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const [renderedElements, setRenderedElements] = useState([]);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    let iteration = 0;
+    const lag = 3;
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      const newElements = [];
+      for (let i = 0; i < text.length; i++) {
+        if (iteration < i) {
+          newElements.push(<span key={i} style={{ visibility: "hidden" }}>{text[i]}</span>);
+        } else if (iteration >= i + lag) {
+          newElements.push(<span key={i}>{text[i]}</span>);
+        } else {
+          if (text[i] === ' ') {
+            newElements.push(<span key={i}> </span>);
+          } else {
+            newElements.push(<span key={i}>{letters[Math.floor(Math.random() * letters.length)]}</span>);
+          }
+        }
+      }
+      setRenderedElements(newElements);
+      if (iteration >= text.length + lag) clearInterval(intervalRef.current);
+      iteration += 1.5;
+    }, 15);
+    return () => clearInterval(intervalRef.current);
+  }, [text]);
+
+  return (
+    <div className={`decode-text-container ${className}`} style={{
+      fontFamily: "'SansSerifFLF', sans-serif",
+      whiteSpace: "pre-wrap", wordBreak: "break-word",
+      cursor: "default", display: "inline-block", ...style
+    }}>
+      {renderedElements.length > 0 ? renderedElements : <span style={{ visibility: 'hidden' }}>{text}</span>}
+    </div>
+  );
+};
+
+/* ============================
+   项目数据
+   ============================ */
+const projectDataConfig = {
+  1: {
+    title: "Beichuan Erma Exhibition Hall",
+    subtitle: "Mianyang, Sichuan Province，China",
+    details: [
+      { label: "Building Program:", value: "Embroidery Exhibition Hall and Rural Theater" },
+      { label: "Completion Date:", value: "September 2021" }
+    ]
+  },
+  0: {
+    title: "Mahuangliang Art House Hotel Design",
+    subtitle: "Yulin, Shaanxi Province，China",
+    details: [
+      { label: "Gross Floor Area:", value: "Approximately 10,000 m²" },
+      { label: "Number of Guest Rooms:", value: "Approximately 40 Rooms" },
+      { label: "Completion Date:", value: "October 2024" }
+    ]
+  },
+  4: {
+    title: "Adaptive Reuse Design of the Former Glass Factory",
+    subtitle: "Urumqi, Xinjiang，China",
+    details: [
+      { label: "Building Program:", value: "Commercial, Marketplace, and Cultural & Creative Park" },
+      { label: "Completion Date:", value: "March 2025" }
+    ]
+  },
+  3: {
+    title: "High-Rise Urban Mixed-Use Complex",
+    subtitle: "Zhengzhou, Henan Province，China",
+    details: [
+      { label: "Gross Floor Area:", value: "49,929.1 m²" },
+      { label: "Number of Floors:", value: "22 Above Ground, 2 Below Ground" },
+      { label: "Building Density:", value: "49.9%" },
+      { label: "Completion Date:", value: "June 2025" }
+    ]
+  },
+  2: {
+    title: "Xiangning County Nursing Home",
+    subtitle: "Linfen, Shanxi Province，China",
+    details: [
+      { label: "Number of Beds:", value: "200 Beds" },
+      { label: "Gross Floor Area:", value: "Approximately 10,000 m²" },
+      { label: "Completion Date:", value: "October 2025" }
+    ]
+  }
+};
+
+/* ============================
+   PhotoItem 组件（修复：expandX 平滑过渡）
+   ============================ */
+const PhotoItem = ({ index, config, smoothY, isExpanded, showText }) => {
+  const lerp = (start, end, t) => start + (end - start) * t;
+  const easeInOut = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const timelineConfig = {
+    4: { start: 0.000, duration: 0.450 },
+    0: { start: 0.060, duration: 0.420 },
+    3: { start: 0.140, duration: 0.400 },
+    2: { start: 0.200, duration: 0.380 },
+    1: { start: 0.260, duration: 0.360 }
+  };
+
+  const sprayStart = timelineConfig[index].start;
+  const sprayDuration = timelineConfig[index].duration;
+  const sprayEnd = sprayStart + sprayDuration;
+  const stackStart = sprayEnd + 0.02;
+  const stackEnd = stackStart + 0.15;
+  const startX = 0, startY = 45;
+
+  const visualSlotIndex = { 1: 0, 0: 1, 4: 2, 3: 3, 2: 4 }[index];
+
+  const getSlotState = (slot) => {
+    const slots = [
+      { x: -150, scale: 2.2, blur: 0, bright: 1, saturate: 1, opacity: 0 },
+      { x: 0, scale: 1.5, blur: 0, bright: 1, saturate: 1, opacity: 1 },
+      { x: 6, scale: 1.5, blur: 0, bright: 1, saturate: 1, opacity: 1 },
+      { x: 12, scale: 1.5, blur: 0, bright: 1, saturate: 1, opacity: 1 },
+      { x: 18, scale: 1.5, blur: 0, bright: 1, saturate: 1, opacity: 1 },
+      { x: 24, scale: 1.5, blur: 0, bright: 1, saturate: 1, opacity: 1 }
+    ];
+    if (slot <= -0.6) return slots[0];
+    if (slot >= 4) return slots[5];
+    let lower = Math.max(0, Math.min(5, Math.floor(slot) + 1));
+    let upper = Math.max(0, Math.min(5, Math.ceil(slot) + 1));
+    const t = slot - Math.floor(slot);
+    if (lower === upper) return slots[lower];
+    return {
+      x: lerp(slots[lower].x, slots[upper].x, t),
+      scale: lerp(slots[lower].scale, slots[upper].scale, t),
+      blur: lerp(slots[lower].blur, slots[upper].blur, t),
+      bright: lerp(slots[lower].bright, slots[upper].bright, t),
+      saturate: lerp(slots[lower].saturate, slots[upper].saturate, t),
+      opacity: lerp(slots[lower].opacity, slots[upper].opacity, t)
+    };
+  };
+
+  const expandX = useSpring(0, { stiffness: 50, damping: 15 });
+  const expandedOffsetX = { 1: -200, 0: -200 + 800, 4: -200 + 1600, 3: -200 + 2400, 2: -200 + 3200 }[index];
+
+  useEffect(() => {
+    // 使用弹簧动画平滑过渡 expandX，不再使用 jump
+    expandX.set(isExpanded ? expandedOffsetX : 0);
+  }, [isExpanded, expandedOffsetX, expandX]);
+
+  const x = useTransform(() => {
+    const yP = smoothY.get();
+    const tx = getSlotState(visualSlotIndex).x;
+    if (yP <= sprayStart) return startX + "vw";
+    if (yP < sprayEnd) {
+      const t = (yP - sprayStart) / sprayDuration;
+      const e = easeInOut(t);
+      const bow = Math.sin(t * Math.PI) * (config.scatterX * 0.35);
+      return lerp(startX, config.scatterX, e) + bow + "vw";
+    }
+    if (yP < stackStart) return config.scatterX + "vw";
+    if (yP < stackEnd) return lerp(config.scatterX, tx, (yP - stackStart) / (stackEnd - stackStart)) + "vw";
+    return tx + "vw";
+  });
+
+  const y = useTransform(() => {
+    const yP = smoothY.get();
+    if (yP <= sprayStart) return startY + "vh";
+    if (yP < sprayEnd) {
+      const t = (yP - sprayStart) / sprayDuration;
+      return lerp(startY, config.scatterY, easeInOut(t)) + "vh";
+    }
+    if (yP < stackStart) return config.scatterY + "vh";
+    if (yP < stackEnd) return lerp(config.scatterY, 0, (yP - stackStart) / (stackEnd - stackStart)) + "vh";
+    return "0vh";
+  });
+
+  const rotateZ = useTransform(() => {
+    const yP = smoothY.get();
+    if (yP <= sprayStart) return 0;
+    if (yP < sprayEnd) return lerp(0, config.scatterR, easeInOut((yP - sprayStart) / sprayDuration));
+    if (yP < stackStart) return config.scatterR;
+    return lerp(config.scatterR, 0, (yP - stackStart) / (stackEnd - stackStart));
+  });
+
+  const scaleBase = useTransform(() => {
+    const yP = smoothY.get();
+    const target = getSlotState(visualSlotIndex).scale;
+    if (yP <= sprayStart) return 0.05;
+    if (yP < sprayEnd) return lerp(0.05, config.scatterS, easeInOut((yP - sprayStart) / sprayDuration));
+    if (yP < stackStart) return config.scatterS;
+    return lerp(config.scatterS, target, (yP - stackStart) / (stackEnd - stackStart));
+  });
+
+  const scaleX = useTransform(() => {
+    const base = scaleBase.get();
+    const yP = smoothY.get();
+    const t = (yP - sprayStart) / sprayDuration;
+    if (yP <= sprayStart || yP >= sprayEnd) return base;
+    const maxAdd = { 4: 10, 0: 8, 3: 7 }[index] ?? 5;
+    const stretch = t <= 0.2
+      ? 1 + maxAdd * (1 - Math.pow(1 - t / 0.2, 2))
+      : 1 + maxAdd * Math.pow(1 - (t - 0.2) / 0.8, 2);
+    return base * stretch;
+  });
+
+  const scaleY = scaleX;
+
+  const clipPathD = useTransform(() => {
+    const yP = smoothY.get();
+    const def = `M 0 0 C 0 0.3, 0 0.7, 0 1 L 1 1 C 1 0.7, 1 0.3, 1 0 Z`;
+    if (yP <= sprayStart || yP >= sprayEnd) return def;
+    const t = (yP - sprayStart) / sprayDuration;
+    const e = easeInOut(t);
+    const pinch = (7 / 15) * (1 - e);
+    const shift = -config.scatterX * 0.015 * (1 - e);
+    return `M 0 0 C 0 0.3, ${pinch + shift} 0.7, ${pinch + shift} 1 L ${1 - pinch + shift} 1 C ${1 - pinch + shift} 0.7, 1 0.3, 1 0 Z`;
+  });
+
+  const clipPathStyle = useTransform(() => {
+    const yP = smoothY.get();
+    return yP > sprayStart && yP < sprayEnd ? `url(#genie-clip-${index})` : "none";
+  });
+
+  const blurVal = useTransform(() => {
+    const yP = smoothY.get();
+    const tb = getSlotState(visualSlotIndex).blur;
+    if (yP < stackStart) return 0;
+    return yP < stackEnd ? lerp(0, tb, (yP - stackStart) / (stackEnd - stackStart)) : tb;
+  });
+
+  const brightVal = useTransform(() => {
+    const yP = smoothY.get();
+    const tb = getSlotState(visualSlotIndex).bright;
+    if (yP < stackStart) return 1;
+    return yP < stackEnd ? lerp(1, tb, (yP - stackStart) / (stackEnd - stackStart)) : tb;
+  });
+
+  const satVal = useTransform(() => {
+    const yP = smoothY.get();
+    const ts = getSlotState(visualSlotIndex).saturate;
+    if (yP < stackStart) return 1;
+    return yP < stackEnd ? lerp(1, ts, (yP - stackStart) / (stackEnd - stackStart)) : ts;
+  });
+
+  const opacity = useTransform(() => getSlotState(visualSlotIndex).opacity);
+  const zIndex = useTransform(() => Math.round(30 - visualSlotIndex));
+  const filter = useMotionTemplate`blur(${blurVal}px) brightness(${brightVal}) saturate(${satVal})`;
+
+  const projectData = projectDataConfig[index];
+
+  return (
+    <>
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <clipPath id={`genie-clip-${index}`} clipPathUnits="objectBoundingBox">
+            <motion.path d={clipPathD} />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <motion.div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, x: expandX, zIndex, pointerEvents: 'none' }}>
+        <motion.div style={{ position: 'absolute', left: '50vw', top: '50%', x, y }}>
+          <motion.img
+            src={config.image}
+            alt={`Work ${index + 1}`}
+            className="flying-photo"
+            style={{
+              position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
+              objectFit: 'cover', rotateZ, scaleX, scaleY, filter, opacity, clipPath: clipPathStyle,
+              transformOrigin: "50% 50%", boxShadow: 'none', WebkitBoxShadow: 'none', pointerEvents: 'none'
+            }}
+          />
+
+          <AnimatePresence>
+            {showText && projectData && (
+              <>
+                <motion.div key={`title-${index}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.15 } }}
+                  style={{ position: 'absolute', left: -270, top: 195, width: 480, pointerEvents: 'none' }}>
+                  <h2 style={{ fontSize: 22, margin: '0 0 6px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif" }}>
+                    <DecodeText text={projectData.title} />
+                  </h2>
+                  <h3 style={{ fontSize: 16, color: '#0000FF', margin: 0, fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif" }}>
+                    <DecodeText text={projectData.subtitle} />
+                  </h3>
+                </motion.div>
+
+                <motion.div key={`data-${index}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.15 } }}
+                  style={{ position: 'absolute', left: 290, top: -180, width: 300, pointerEvents: 'none', display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  {projectData.details.map((d, i) => (
+                    <div key={i}>
+                      <h4 style={{ fontSize: 14, margin: '0 0 4px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif" }}>
+                        <DecodeText text={d.label} />
+                      </h4>
+                      <p style={{ fontSize: 14, color: '#0000FF', margin: 0, fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif" }}>
+                        <DecodeText text={d.value} />
+                      </p>
+                    </div>
+                  ))}
+                  <button style={{
+                    marginTop: 12, padding: '8px 24px', backgroundColor: '#0000FF', color: 'white',
+                    border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-start',
+                    fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto'
+                  }}>Details</button>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </motion.div>
+    </>
+  );
+};
+
+/* ============================
+   ArchitectureWorks 主组件（修复：退出画廊时平滑归位）
+   ============================ */
+export default function ArchitectureWorks() {
+  const containerRef = useRef(null);
+  const galleryX = useMotionValue(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showText, setShowText] = useState(false);
+  const isExpandedRef = useRef(false);
+
+  const snapAnimRef = useRef(null);
+  const isSnapping = useRef(false);
+
+  // 惯性动画控制
+  const inertiaRef = useRef(null);
+  // 退出画廊动画控制
+  const exitAnimRef = useRef(null);
+
+  // 拖拽状态
+  const dragRef = useRef({
+    isDown: false,
+    startX: 0,
+    startGX: 0,
+    lastTime: 0,
+    lastX: 0,
+    velocity: 0
+  });
+
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
+  const smoothY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
+  useMotionValueEvent(smoothY, "change", (latest) => {
+    const expanded = latest >= 0.89;
+    const wasExpanded = isExpandedRef.current;
+    setIsExpanded(expanded);
+    isExpandedRef.current = expanded;
+
+    if (expanded) {
+      // 进入画廊：停止之前的退出动画和吸附动画
+      snapAnimRef.current?.stop();
+      exitAnimRef.current?.stop();
+      // 保留当前 galleryX，用户可以继续拖拽
+    } else if (wasExpanded && !expanded) {
+      // 退出画廊：启动平滑归位动画
+      inertiaRef.current?.stop();     // 停止拖拽惯性
+      exitAnimRef.current?.stop();    // 避免多个退出动画
+
+      // 强制结束拖拽状态，防止指针移动继续改变 galleryX
+      dragRef.current.isDown = false;
+
+      const currentX = galleryX.get();
+      if (currentX !== 0) {
+        exitAnimRef.current = animate(currentX, 0, {
+          type: "spring",
+          stiffness: 120,
+          damping: 18,
+          onUpdate: v => galleryX.set(v),
+          onComplete: () => {
+            exitAnimRef.current = null;
+          }
+        });
+      }
+    }
+    // 未展开且之前也未展开时不处理
+  });
+
+  // 原有的滚轮横向控制（保持不变）
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (!isExpandedRef.current) return;
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        const cur = galleryX.get();
+        let next = cur - e.deltaX * 0.8;
+        next = Math.max(-3200, Math.min(0, next));
+        galleryX.set(next);
+      }
+    };
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [galleryX]);
+
+  // 文字出现延迟
+  useEffect(() => {
+    const timer = isExpanded ? setTimeout(() => setShowText(true), 800) : undefined;
+    if (!isExpanded) setShowText(false);
+    return () => clearTimeout(timer);
+  }, [isExpanded]);
+
+  // 滚动吸附 (0.55 ~ 0.95)
+  useEffect(() => {
+    let timeout;
+    const handle = () => {
+      if (isSnapping.current) return;
+      const p = scrollYProgress.get();
+      if (p > 0.55 && p < 0.95) {
+        isSnapping.current = true;
+        const ct = containerRef.current;
+        const maxScroll = ct.offsetHeight - window.innerHeight;
+        const targetP = p < 0.88 ? 0.81 : 0.90;
+        const targetScroll = ct.offsetTop + maxScroll * targetP;
+        snapAnimRef.current = animate(window.scrollY, targetScroll, {
+          type: "spring", stiffness: 50, damping: 20,
+          onUpdate: v => window.scrollTo(0, v),
+          onComplete: () => { isSnapping.current = false; }
+        });
+      }
+    };
+    const onScroll = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(handle, 200);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollYProgress]);
+
+  // ========== 手动拖拽 + 惯性 ==========
+  const onPointerDown = useCallback((e) => {
+    if (!isExpandedRef.current) return;
+    e.preventDefault();
+    // 停止可能的退出动画，用户拖拽优先
+    inertiaRef.current?.stop();
+    exitAnimRef.current?.stop();
+
+    const t = Date.now();
+    dragRef.current = {
+      isDown: true,
+      startX: e.clientX,
+      startGX: galleryX.get(),
+      lastTime: t,
+      lastX: e.clientX,
+      velocity: 0
+    };
+  }, [galleryX]);
+
+  const onPointerMove = useCallback((e) => {
+    if (!dragRef.current.isDown) return;
+    const now = Date.now();
+    const dx = e.clientX - dragRef.current.startX;
+    let newX = dragRef.current.startGX + dx;
+    newX = Math.max(-3200, Math.min(0, newX));
+    galleryX.set(newX);
+
+    if (now - dragRef.current.lastTime > 16) {
+      const dt = now - dragRef.current.lastTime;
+      if (dt > 0) {
+        dragRef.current.velocity = (e.clientX - dragRef.current.lastX) / dt;
+      }
+      dragRef.current.lastTime = now;
+      dragRef.current.lastX = e.clientX;
+    }
+  }, [galleryX]);
+
+  const onPointerUp = useCallback(() => {
+    if (!dragRef.current.isDown) return;
+    dragRef.current.isDown = false;
+
+    const inertiaFactor = 0.12;
+    const currentX = galleryX.get();
+    const velocity = dragRef.current.velocity * 100;
+    let targetX = currentX + velocity * inertiaFactor;
+    targetX = Math.max(-3200, Math.min(0, targetX));
+
+    inertiaRef.current = animate(currentX, targetX, {
+      type: "spring",
+      stiffness: 120,
+      damping: 18,
+      onUpdate: v => galleryX.set(v),
+      onComplete: () => {}
+    });
+  }, [galleryX]);
+
+  useEffect(() => {
+    const onMove = (e) => onPointerMove(e);
+    const onUp = () => onPointerUp();
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    return () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+    };
+  }, [onPointerMove, onPointerUp]);
+
+  // 文件夹动画值
+  const folderRotateX = useTransform(smoothY, [0, 0.25], [0, -28]);
+  const folderY = useTransform(smoothY, [0.6, 0.81], ["0vh", "35vh"]);
+  const folderOpacity = useTransform(smoothY, [0.6, 0.81], [1, 0]);
+  const auroraBrightness = useTransform(smoothY, [0, 0.16, 0.65], [1, 1.7, 0.6]);
+
+  const scatterConfigs = [
+    { image: Project1, scatterX: -25, scatterY: -15, scatterR: -6, scatterS: 1.3 },
+    { image: Project2, scatterX: -42, scatterY: 15, scatterR: -15, scatterS: 1.1 },
+    { image: Project3, scatterX: 38, scatterY: 12, scatterR: 10, scatterS: 1.15 },
+    { image: Project4, scatterX: 32, scatterY: -18, scatterR: 18, scatterS: 0.85 },
+    { image: Project5, scatterX: 5, scatterY: -25, scatterR: 4, scatterS: 1.0 }
+  ];
+
+  return (
+    <section id="architecture-works" className="architecture-works-section" ref={containerRef}>
+      <div className="sticky-viewport"
+        onPointerDown={onPointerDown}
+        style={{ touchAction: 'none', cursor: isExpanded ? 'grab' : 'default' }}
+      >
+        {/* 文件夹背景 */}
+        <motion.div className="folder-piece"
+          style={{ y: folderY, opacity: folderOpacity, zIndex: 10, pointerEvents: isExpanded ? 'none' : 'auto' }}>
+          <div className="folder-tab"></div>
+          <div className="folder-back-bg"></div>
+        </motion.div>
+
+        {/* 光晕 */}
+        <motion.div className="folder-aurora-glow"
+          style={{
+            position: 'absolute', left: '50%', bottom: '-5vh', width: '70vw', height: '45vh', x: '-50%',
+            y: folderY,
+            background: 'radial-gradient(ellipse at 50% 80%, rgba(82,17,221,0.95) 0%, rgba(82,17,221,0.5) 45%, rgba(0,0,0,0) 70%)',
+            filter: useMotionTemplate`blur(45px) brightness(${auroraBrightness})`,
+            opacity: folderOpacity, zIndex: 15, pointerEvents: isExpanded ? 'none' : 'auto', mixBlendMode: 'screen'
+          }}
+        />
+
+        {/* 内容层（画廊偏移） */}
+        <motion.div style={{
+          x: galleryX,
+          position: 'absolute', left: 0, top: 0, width: '100vw', height: '100%', zIndex: 20,
+          pointerEvents: 'none'
+        }}>
+          {scatterConfigs.map((cfg, idx) => (
+            <PhotoItem key={idx} index={idx} config={cfg} smoothY={smoothY} isExpanded={isExpanded} showText={showText} />
+          ))}
+        </motion.div>
+
+        {/* 毛玻璃卡片 */}
+        <motion.div className="folder-front-glass"
+          style={{
+            y: folderY, opacity: folderOpacity, rotateX: folderRotateX,
+            transformOrigin: "bottom center", zIndex: 50, pointerEvents: isExpanded ? 'none' : 'auto'
+          }}>
+          <div className="folder-ui-top">
+            <h3>Architecture</h3>
+            <p>Works & Projects</p>
+          </div>
+          <div className="folder-ui-bottom">
+            <span className="folder-count">05</span>
+            <div className="folder-circle-icon"></div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+</files>
