@@ -1,0 +1,6 @@
+/* decodeText.css 或加入你现有的 css 文件 */
+.decode-text-container {
+    font-weight: 800;
+    letter-spacing: 0.15rem; /* 字间距让乱码看起来更舒服 */
+    /* 颜色和大小可以由外部调用时通过 className 覆盖 */
+}
