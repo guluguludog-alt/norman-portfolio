@@ -17,12 +17,7 @@ export default function IntroductionPage() {
     offset: ["start end", "end start"]
   });
 
-  // Reset drag position when the section scrolls completely out of view (from either top or bottom)
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest <= 0.05 || latest >= 0.95) {
-      dragX.set(0);
-    }
-  });
+
 
   const boxesX = useTransform(scrollYProgress, [0, 0.5, 1], ["100vw", "0vw", "0vw"]);
   const textX = useTransform(scrollYProgress, [0, 0.5, 1], ["-100vw", "0vw", "30vw"]);
@@ -74,9 +69,17 @@ export default function IntroductionPage() {
       {/* 🌟 第 3 层：交互内容层 */}
       <div className="intro-content">
 
+        {/* 提示：仅在窄屏且动画结束时显示 */}
+        <motion.div 
+          className="swipe-hint"
+          style={{ opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]) }}
+        >
+          Swipe to view
+        </motion.div>
+
         <motion.div
           className="boxes-scroll-wrapper"
-          style={{ x: boxesX, width: '100vw', overflowX: 'clip', overflowY: 'visible' }}
+          style={{ x: boxesX, width: '100vw', overflowX: 'visible', overflowY: 'visible' }}
           ref={dragRef}
         >
           <motion.div

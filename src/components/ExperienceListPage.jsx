@@ -107,7 +107,7 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
           style={{ backgroundImage: animatedGradient }} 
           variants={originalTextVariants}
         >
-          {company.name}
+          {company.name.trim()}
         </motion.div>
 
         <motion.div 
@@ -115,8 +115,8 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
           variants={revealTextVariants}
         >
           <div className="reveal-content">
-            <span className="intern-position">{company.position}</span>
-            <span className="intern-time">{company.time}</span>
+            <span className="intern-position">{company.position.trim()}</span>
+            {company.time && <span className="intern-time">{company.time}</span>}
           </div>
         </motion.div>
 
@@ -149,7 +149,7 @@ export default function ExperienceListPage() {
     { name: "Architectural Design and Research Institute of Xi'an University of Architecture and Technology", position: "Architecture Intern", time: "2024.9-2025.9" },
     { name: "Beijing Qinghua Tongheng Planning and Design Institute Co., Ltd. (THUPDI)", position: "Intern", time: "2025.11-2026.1" },
     { name: "China United Northwest Institute for Engineering Design & Research Co., Ltd.", position: "Architecture Intern", time: "2026.3-2026.6" },
-    { name: "Diyouni Design Institute", position: "Teaching Assistant", time: "2024.7-2024.11" },
+    { name: "Diyouni Design Institute", position: "Teaching Assistant", time: "" },
     { name: "Zhuchuang Architectural Design Studio", position: "Architecture Intern", time: "2026.1-2026.3" }
   ];
 

@@ -119,7 +119,6 @@ const projectDataConfig = {
 /* ============================
    PhotoItem 组件
    ============================ */
-// 🌟 接收新增的 smoothVelocity 以供计算拖拽滞后效果
 const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocity, galleryX }) => {
   const navigate = useNavigate();
   const lerp = (start, end, t) => start + (end - start) * t;
@@ -167,12 +166,23 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
     };
   };
 
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWinWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const expandX = useSpring(0, { stiffness: 50, damping: 15 });
-  const expandedOffsetX = { 1: -200, 0: -200 + 800, 4: -200 + 1600, 3: -200 + 2400, 2: -200 + 3200 }[index];
+  const expandProgress = useSpring(0, { stiffness: 50, damping: 15 });
+
+  const baseOffset = Math.max(-200, 500 - (winWidth / 2));
+  const expandedOffsetX = { 1: baseOffset, 0: baseOffset + 800, 4: baseOffset + 1600, 3: baseOffset + 2400, 2: baseOffset + 3200 }[index];
 
   useEffect(() => {
     expandX.set(isExpanded ? expandedOffsetX : 0);
-  }, [isExpanded, expandedOffsetX, expandX]);
+    expandProgress.set(isExpanded ? 1 : 0);
+  }, [isExpanded, expandedOffsetX, expandX, expandProgress]);
 
   const x = useTransform(() => {
     const yP = smoothY.get();
@@ -211,25 +221,29 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
 
   const scaleBase = useTransform(() => {
     const yP = smoothY.get();
+    const prog = expandProgress.get();
     const target = getSlotState(visualSlotIndex).scale;
-    if (yP <= sprayStart) return 0.05;
-    if (yP < sprayEnd) return lerp(0.05, config.scatterS, easeInOut((yP - sprayStart) / sprayDuration));
-    if (yP < stackStart) return config.scatterS;
-    if (yP < stackEnd) return lerp(config.scatterS, target, (yP - stackStart) / (stackEnd - stackStart));
 
-    if (yP >= 0.7) {
-      const expandedTarget = {
-        1: 2.1, // 1st
-        0: 1.6, // 2nd
-        4: 2.3, // 3rd
-        3: 1.7, // 4th
-        2: 2.15  // 5th
-      }[index] ?? target;
-      const progress = Math.min(1, (yP - 0.7) / 0.19);
-      return lerp(target, expandedTarget, progress);
+    let currentBase = target;
+    if (yP <= sprayStart) {
+      currentBase = 0.05;
+    } else if (yP < sprayEnd) {
+      currentBase = lerp(0.05, config.scatterS, easeInOut((yP - sprayStart) / sprayDuration));
+    } else if (yP < stackStart) {
+      currentBase = config.scatterS;
+    } else if (yP < stackEnd) {
+      currentBase = lerp(config.scatterS, target, (yP - stackStart) / (stackEnd - stackStart));
     }
 
-    return target;
+    const expandedTarget = {
+      1: 2.1,
+      0: 1.6,
+      4: 2.3,
+      3: 1.7,
+      2: 2.15
+    }[index] ?? target;
+
+    return lerp(currentBase, expandedTarget, prog);
   });
 
   const scaleX = useTransform(() => {
@@ -289,18 +303,12 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
 
   const projectData = projectDataConfig[index];
 
-  // 🌟 核心：计算拖拽视差及滞后反馈动画
-  // 当速度为负（向左滚），lagX 为正（向右偏移滞后）
   const lagX = useTransform(smoothVelocity, [-3000, 0, 3000], [120, 0, -120]);
-  // 拖动时增加略微的 3D 偏转反馈
   const rotateY = useTransform(smoothVelocity, [-3000, 0, 3000], [12, 0, -12]);
-  // 拖动时增加轻微抗拉扯形变
   const skewXLag = useTransform(smoothVelocity, [-3000, 0, 3000], [6, 0, -6]);
 
-  // 文字层提供略小的滞后位移，以制造深度（层次感）
   const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
 
-  // 动态计算文字吸附位置，使其紧贴缩放后的图片角落
   const titleLeft = useTransform(scaleX, s => -180 * s - 40);
   const titleTop = useTransform(scaleX, s => 120 * s - 60);
 
@@ -328,18 +336,16 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
               position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
               objectFit: 'cover', rotateZ, scaleX, scaleY, filter, opacity, clipPath: clipPathStyle,
               transformOrigin: "50% 50%", boxShadow: 'none', WebkitBoxShadow: 'none', pointerEvents: 'none',
-              // 🌟 将滞后参数注入图片内层动画
               x: lagX,
               rotateY: rotateY,
               skewX: skewXLag,
-              transformPerspective: 1000 // 为 rotateY 激活立体景深
+              transformPerspective: 1000
             }}
           />
 
           <AnimatePresence>
             {showText && projectData && (
               <>
-                {/* 🌟 标题组绑定 textLagX 产生多层视差 */}
                 <motion.div
                   key={`title-${index}`}
                   initial={{ opacity: 0 }}
@@ -355,7 +361,6 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
                   </h3>
                 </motion.div>
 
-                {/* 🌟 详情组绑定 textLagX 产生多层视差 */}
                 <motion.div
                   key={`data-${index}`}
                   initial={{ opacity: 0 }}
@@ -373,7 +378,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
                       </p>
                     </div>
                   ))}
-                  <button 
+                  <button
                     onClick={() => {
                       sessionStorage.setItem('returnToArchitecture', 'true');
                       sessionStorage.setItem('architectureGalleryX', galleryX.get());
@@ -404,12 +409,10 @@ export default function ArchitectureWorks() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showText, setShowText] = useState(false);
   const isExpandedRef = useRef(false);
-  
+
   const lenis = useLenis();
 
-  // 🌟 新增：提取 galleryX 的物理速度作为视差源泉
   const galleryVelocity = useVelocity(galleryX);
-  // 用弹簧系统阻尼包装速度，让拖拽结束的“回弹归位”更柔软
   const smoothVelocity = useSpring(galleryVelocity, { stiffness: 80, damping: 15 });
 
   const snapAnimRef = useRef(null);
@@ -469,8 +472,17 @@ export default function ArchitectureWorks() {
         galleryX.set(next);
       }
     };
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
+
+    // 修复：局部作用域监听，不再影响全局
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
   }, [galleryX]);
 
   useEffect(() => {

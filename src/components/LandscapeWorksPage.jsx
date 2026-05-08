@@ -116,11 +116,10 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
   const rotateY = useTransform(smoothVelocity, [-3000, 0, 3000], [12, 0, -12]);
   const skewXLag = useTransform(smoothVelocity, [-3000, 0, 3000], [6, 0, -6]);
 
-  // Vertical parallax based on scroll (stickiness variation)
   const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
   const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
 
-  // Use dynamic calc to stick to the right edge but NEVER clip, regardless of screen width.
+  // 🌟 完全恢复你原始的排布方式： - index * 850px
   const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
   const zIndex = 30 - index;
 
@@ -138,7 +137,7 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
             rotateY: rotateY,
             skewX: skewXLag,
             transformPerspective: 1000,
-            boxShadow: 'none', 
+            boxShadow: 'none',
             WebkitBoxShadow: 'none'
           }}
         />
@@ -153,14 +152,15 @@ const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => 
   const projectData = projectDataConfig[index];
 
   const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
+
+  // 🌟 完全恢复你原始的排布方式： - index * 850px
   const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
 
   const titleLeft = -180 * scale - 40;
   const titleTop = -120 * scale - 60;
-  const detailsLeft = 180 * scale - 320 + 40; 
+  const detailsLeft = 180 * scale - 320 + 40;
   const detailsTop = 120 * scale - 180;
 
-  // Vertical parallax based on scroll (stickiness variation)
   const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
   const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
 
@@ -193,18 +193,18 @@ const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => 
               </p>
             </div>
           ))}
-          <button 
+          <button
             onClick={() => {
               sessionStorage.setItem('returnToLandscape', 'true');
               sessionStorage.setItem('landscapeGalleryX', galleryX.get());
               navigate(`/project/LProject${index + 1}`);
             }}
             style={{
-            marginTop: 12, padding: '8px 24px', backgroundColor: '#001ede', color: 'white',
-            border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
-            fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto',
-            boxShadow: "0 4px 15px rgba(0,0,0,0.4)"
-          }}>Details</button>
+              marginTop: 12, padding: '8px 24px', backgroundColor: '#001ede', color: 'white',
+              border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
+              fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto',
+              boxShadow: "0 4px 15px rgba(0,0,0,0.4)"
+            }}>Details</button>
         </motion.div>
       </motion.div>
     </motion.div>
@@ -232,17 +232,17 @@ export default function LandscapeWorksPage() {
 
   useEffect(() => {
     const handleWheel = (e) => {
-      // Allow vertical scroll, intercept horizontal
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
         const cur = galleryX.get();
-        let next = cur + e.deltaX * 0.8;
+        // 🌟 唯一需要修改的地方：从原本的 + 修正为 - ，对齐物理直觉
+        let next = cur - e.deltaX * 0.8;
+        // 🌟 恢复原本的滚动区间：0 到 3400
         next = Math.max(0, Math.min(3400, next));
         galleryX.set(next);
       }
     };
-    
-    // Bind to the container instead of window so it only scrolls horizontally when hovered
+
     const container = containerRef.current;
     if (container) {
       container.addEventListener('wheel', handleWheel, { passive: false });
@@ -274,6 +274,8 @@ export default function LandscapeWorksPage() {
     const now = Date.now();
     const dx = e.clientX - dragRef.current.startX;
     let newX = dragRef.current.startGX + dx;
+
+    // 🌟 恢复原本的滚动区间：0 到 3400
     newX = Math.max(0, Math.min(3400, newX));
     galleryX.set(newX);
 
@@ -295,6 +297,8 @@ export default function LandscapeWorksPage() {
     const currentX = galleryX.get();
     const velocity = dragRef.current.velocity * 100;
     let targetX = currentX + velocity * inertiaFactor;
+
+    // 🌟 恢复原本的滚动区间：0 到 3400
     targetX = Math.max(0, Math.min(3400, targetX));
 
     inertiaRef.current = animate(currentX, targetX, {
@@ -374,8 +378,11 @@ export default function LandscapeWorksPage() {
   return (
     <section id="landscape" className="landscape-portfolio-section" ref={containerRef} style={{ height: '100vh', backgroundColor: '#000', position: 'relative', width: '100%', overflow: 'visible', zIndex: 150 }}>
       
-      <motion.div 
-        style={{ 
+      <div className="landscape-hint-text">
+        Swipe through the gallery to explore more projects.
+      </div>
+      <motion.div
+        style={{
           y: textY,
           position: 'absolute',
           top: 0,
@@ -385,39 +392,19 @@ export default function LandscapeWorksPage() {
           pointerEvents: 'none'
         }}
       >
-        <motion.h1 style={{
-          fontFamily: "'Dela Gothic One', cursive, sans-serif",
-          fontSize: 'clamp(6rem, 10vw, 20rem)',
-          color: 'transparent',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          backgroundImage: animatedGradient,
-          fontWeight: 'bold',
-          margin: 0,
-          lineHeight: 1
-        }}>
+        <motion.h1
+          className="landscape-main-title"
+          style={{ backgroundImage: animatedGradient }}
+        >
           Landscape<br />Works
         </motion.h1>
       </motion.div>
 
-      <div 
+      <div
         onPointerDown={onPointerDown}
         style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'none', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
       >
-        <div style={{
-          position: 'absolute',
-          top: '42%',
-          left: 'calc(100vw - 560px)',
-          transform: 'translate(-50%, -50%)',
-          fontSize: '14vw',
-          fontWeight: 'bold',
-          color: '#1b1965',
-          zIndex: 1,
-          pointerEvents: 'none',
-          userSelect: 'none',
-          whiteSpace: 'nowrap',
-          fontFamily: "'Dela Gothic One', cursive, sans-serif"
-        }}>
+        <div className="landscape-bg-text">
           Landscape
         </div>
 
@@ -438,7 +425,6 @@ export default function LandscapeWorksPage() {
           ))}
         </motion.div>
 
-        {/* Text Layer decoupled from image z-indexes to always be on top of ALL photos */}
         <motion.div style={{
           x: 0,
           position: 'absolute', left: 0, top: 0, width: '100vw', height: '100%', zIndex: 40,

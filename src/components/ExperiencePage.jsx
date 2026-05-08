@@ -46,7 +46,7 @@ export default function ExperiencePage() {
           className="exp-text"
           style={{ backgroundImage: animatedGradient }}
         >
-          Experiences
+          Expe<br className="mobile-break" />riences
         </motion.h1>
       </div>
 

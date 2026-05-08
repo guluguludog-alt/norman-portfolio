@@ -60,5 +60,20 @@
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  white-space: nowrap;
+  white-space: nowrap; /* 默认不换行 */
+}
+
+/* 🌟 新增：650px 以下允许换行，并激活 br 标签 */
+@media (max-width: 650px) {
+  .exp-text {
+    white-space: normal;
+    line-height: 1.1;
+  }
+  .mobile-break {
+    display: block !important;
+  }
+}
+
+.mobile-break {
+  display: none;
 }
