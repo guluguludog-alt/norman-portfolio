@@ -1,0 +1,8 @@
+.landscape-portfolio-section {
+    background-color: #000000 !important;
+    opacity: 1 !important;
+    width: 100vw;
+    height: 180vh;
+    position: relative;
+    z-index: 150;
+}

@@ -35,6 +35,7 @@
   transform: translate3d(0, 0, 0.1px);
   position: relative;
   touch-action: none;
+  display: flex;
 }
 
 .pc-behind {
@@ -42,11 +43,9 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
-    circle at var(--pointer-x) var(--pointer-y),
-    var(--behind-glow-color) 0%,
-    transparent var(--behind-glow-size)
-  );
+  background: radial-gradient(circle at var(--pointer-x) var(--pointer-y),
+      var(--behind-glow-color) 0%,
+      transparent var(--behind-glow-size));
   filter: blur(50px) saturate(1.1);
   opacity: calc(0.8 * var(--card-opacity));
   transition: opacity 200ms ease;
@@ -58,15 +57,15 @@
 }
 
 .pc-card {
-  width: 380px;      /* 🌟 从 340px 放大到 380px */
-  height: 520px;     /* 🌟 从 460px 放大到 520px */
+  width: 380px;
+  height: 100%;
+  min-height: 520px;
   display: grid;
   border-radius: var(--card-radius);
   position: relative;
   background-blend-mode: color-dodge, normal, normal, normal;
   animation: glow-bg 12s linear infinite;
-  box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
-    calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
+  box-shadow: rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px) calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
   transition: transform 1s ease;
   transform: translateZ(0) rotateX(0deg) rotateY(0deg);
   background: rgba(0, 0, 0, 0.9);
@@ -111,7 +110,7 @@
   mask-size: 150%;
   mask-position: top calc(200% - (var(--background-y) * 5)) left calc(100% - var(--background-x));
   transition: filter 0.8s ease;
-  
+
   /* 柔和的磨砂光效过滤 */
   filter: brightness(0.9) contrast(1.1) saturate(0.8) opacity(0.6);
   animation: holo-bg 18s linear infinite;
@@ -131,31 +130,25 @@
   background-size: cover;
   background-position: center;
   background-image:
-    repeating-linear-gradient(
-      0deg,
+    repeating-linear-gradient(0deg,
       var(--sunpillar-clr-1) calc(var(--space) * 1),
       var(--sunpillar-clr-2) calc(var(--space) * 2),
       var(--sunpillar-clr-3) calc(var(--space) * 3),
       var(--sunpillar-clr-4) calc(var(--space) * 4),
       var(--sunpillar-clr-5) calc(var(--space) * 5),
       var(--sunpillar-clr-6) calc(var(--space) * 6),
-      var(--sunpillar-clr-1) calc(var(--space) * 7)
-    ),
-    repeating-linear-gradient(
-      var(--angle),
+      var(--sunpillar-clr-1) calc(var(--space) * 7)),
+    repeating-linear-gradient(var(--angle),
       #0e152e 0%,
       hsl(180, 10%, 60%) 3.8%,
       hsl(180, 29%, 66%) 4.5%,
       hsl(180, 10%, 60%) 5.2%,
       #0e152e 10%,
-      #0e152e 12%
-    ),
-    radial-gradient(
-      farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      #0e152e 12%),
+    radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),
       hsla(0, 0%, 0%, 0.1) 12%,
       hsla(0, 0%, 0%, 0.15) 20%,
-      hsla(0, 0%, 0%, 0.25) 120%
-    );
+      hsla(0, 0%, 0%, 0.25) 120%);
   background-position:
     0 var(--background-y),
     var(--background-x) var(--background-y),
@@ -193,15 +186,13 @@
 
 .pc-shine::before {
   background-image:
-    linear-gradient(
-      45deg,
+    linear-gradient(45deg,
       var(--sunpillar-4),
       var(--sunpillar-5),
       var(--sunpillar-6),
       var(--sunpillar-1),
       var(--sunpillar-2),
-      var(--sunpillar-3)
-    ),
+      var(--sunpillar-3)),
     radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(0, 0%, 70%) 0%, hsla(0, 0%, 30%, 0.2) 90%),
     var(--grain);
   background-size:
@@ -212,12 +203,13 @@
     var(--pointer-x) var(--pointer-y),
     center,
     calc(var(--pointer-x) * 0.01) calc(var(--pointer-y) * 0.01);
-  
+
   /* 更改叠加模式，修复曝光过度 */
   background-blend-mode: overlay;
   filter: brightness(1.1) contrast(1.1) saturate(1);
   mix-blend-mode: screen;
-  opacity: 0.5; /* 增加通透感 */
+  opacity: 0.5;
+  /* 增加通透感 */
 }
 
 .pc-shine::after {
@@ -236,11 +228,9 @@
 .pc-glare {
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
-  background-image: radial-gradient(
-    farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    hsl(248, 25%, 80%) 12%,
-    hsla(207, 40%, 30%, 0.8) 90%
-  );
+  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),
+      hsl(248, 25%, 80%) 12%,
+      hsla(207, 40%, 30%, 0.8) 90%);
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);
   z-index: 4;
@@ -259,8 +249,7 @@
   left: 50%;
   bottom: -5px;
   transform-origin: 50% 100%;
-  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0)
-    scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
+  transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0) scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
   backface-visibility: hidden;
   will-change: transform;
   transition: transform 120ms ease-out;
@@ -284,11 +273,9 @@
   overflow: hidden;
   text-align: center;
   position: relative;
-  transform: translate3d(
-    calc(var(--pointer-from-left) * -6px + 3px),
-    calc(var(--pointer-from-top) * -6px + 3px),
-    0.1px
-  );
+  transform: translate3d(calc(var(--pointer-from-left) * -6px + 3px),
+      calc(var(--pointer-from-top) * -6px + 3px),
+      0.1px);
   z-index: 5;
   mix-blend-mode: luminosity;
 }
@@ -316,7 +303,8 @@
   font-weight: 600;
   position: relative;
   top: 0;
-  margin-top: 12px; /* 拉开副标题间距 */
+  margin-top: 12px;
+  /* 拉开副标题间距 */
   white-space: nowrap;
   font-size: 1rem;
   margin-inline: auto;
@@ -329,27 +317,51 @@
 }
 
 @keyframes glow-bg {
-  0% { --bgrotate: 0deg; }
-  100% { --bgrotate: 360deg; }
+  0% {
+    --bgrotate: 0deg;
+  }
+
+  100% {
+    --bgrotate: 360deg;
+  }
 }
 
 @keyframes holo-bg {
   0% {
     background-position: 0 var(--background-y), 0 0, center;
   }
+
   100% {
     background-position: 0 var(--background-y), 90% 90%, center;
   }
 }
 
 @media (max-width: 768px) {
-  .pc-details { top: 2em; }
-  .pc-details h3 { font-size: 1.8rem; }
-  .pc-details p { font-size: 14px; margin-top: 10px; }
+  .pc-details {
+    top: 2em;
+  }
+
+  .pc-details h3 {
+    font-size: 1.8rem;
+  }
+
+  .pc-details p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-  .pc-details { top: 1.5em; }
-  .pc-details h3 { font-size: 1.5rem; }
-  .pc-details p { font-size: 12px; margin-top: 8px; }
+  .pc-details {
+    top: 1.5em;
+  }
+
+  .pc-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .pc-details p {
+    font-size: 12px;
+    margin-top: 8px;
+  }
 }

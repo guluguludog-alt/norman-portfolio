@@ -5,15 +5,19 @@ import './App.css';
 // 注意路径：必须包含 ./components/ 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import PortfolioSection from './components/PortfolioSection';
+import LandscapeWorksPage from './components/LandscapeWorksPage';
+import MoreWorksPage from './components/MoreWorksPage';
+import AIGCWorksPage from './components/AIGCWorksPage';
 import IntroductionPage from './components/IntroductionPage';
 import ExperiencePage from './components/ExperiencePage';
 import ExperienceListPage from './components/ExperienceListPage';
 import ArchitectureWorks from './components/ArchitectureWorks';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectDetailPage from './components/ProjectDetailPage';
+
+function Home() {
   return (
-    // 用 ReactLenis 替换原本的空标签 <>，并加入配置项
     <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
       <Navbar />
       <Hero />
@@ -21,9 +25,9 @@ function App() {
       <ExperiencePage />
       <ExperienceListPage />
       <ArchitectureWorks />
-      <PortfolioSection id="architecture" title="Architecture" subtitle="works" />
-      <PortfolioSection id="landscape" title="Landscape" subtitle="works" />
-      <PortfolioSection id="more" title="More" subtitle="works" />
+      <LandscapeWorksPage />
+      <AIGCWorksPage />
+      <MoreWorksPage />
       
       {/* 尾页 */}
       <section id="contact" className="section">
@@ -36,6 +40,17 @@ function App() {
         </div>
       </section>
     </ReactLenis> 
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+      </Routes>
+    </Router>
   );
 }
 

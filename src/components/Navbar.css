@@ -55,18 +55,29 @@
 }
 
 /* ========================================= */
-/* 3. Contact me 按钮 (绝对右上角)           */
+/* 3. 右侧独立按钮组                         */
 /* ========================================= */
-a.contact-btn,
-a.contact-btn:link,
-a.contact-btn:visited,
-a.contact-btn:hover,
-a.contact-btn:active {
+.right-nav-group {
   position: fixed;
   top: 45px;
   right: 40px;
   z-index: 2000;
-  
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  pointer-events: none;
+}
+
+.right-nav-group > * {
+  pointer-events: auto;
+}
+
+a.contact-btn,
+a.contact-btn:link,
+a.contact-btn:visited,
+a.contact-btn:hover,
+a.contact-btn:active,
+.lang-btn {
   color: #ffffff; /* 必须是纯白 */
   text-decoration: none;
   white-space: nowrap;
@@ -78,11 +89,87 @@ a.contact-btn:active {
   outline: none;
   background: transparent;
   box-shadow: none;
+  cursor: pointer;
+  padding: 0;
   
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.contact-btn:hover {
+.contact-btn:hover,
+.lang-btn:hover {
   opacity: 0.7;
   transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* 4. 移动端响应式布局 (宽度小于 1200px 时)   */
+/* ========================================= */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 35px;
+    right: 40px;
+    z-index: 2000;
+  }
+
+  .mobile-menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    position: relative;
+    z-index: 2001;
+  }
+
+  .mobile-menu-btn img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-menu-btn:hover img {
+    transform: scale(1.1);
+  }
+
+  /* 全屏表单内的链接容器 */
+  .mobile-fullscreen-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .mobile-fullscreen-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    outline: none;
+    font-family: 'SansSerifFLF', sans-serif;
+  }
+
+  .mobile-fullscreen-link:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }

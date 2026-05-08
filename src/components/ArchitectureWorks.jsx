@@ -1,16 +1,18 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { 
-  motion, 
-  useScroll, 
-  useTransform, 
-  useMotionTemplate, 
-  useSpring, 
-  animate, 
-  useMotionValueEvent, 
-  useMotionValue, 
+import React, { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+  useSpring,
+  animate,
+  useMotionValueEvent,
+  useMotionValue,
   AnimatePresence,
-  useVelocity // 🌟 新增：引入速度监听钩子
+  useVelocity
 } from 'framer-motion';
+import { ReactLenis, useLenis } from 'lenis/react';
+import { useNavigate } from 'react-router-dom';
 import './architectureWorks.css';
 
 import Project1 from "../assets/Project1.jpg";
@@ -118,7 +120,8 @@ const projectDataConfig = {
    PhotoItem 组件
    ============================ */
 // 🌟 接收新增的 smoothVelocity 以供计算拖拽滞后效果
-const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocity }) => {
+const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocity, galleryX }) => {
+  const navigate = useNavigate();
   const lerp = (start, end, t) => start + (end - start) * t;
   const easeInOut = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
@@ -212,7 +215,21 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
     if (yP <= sprayStart) return 0.05;
     if (yP < sprayEnd) return lerp(0.05, config.scatterS, easeInOut((yP - sprayStart) / sprayDuration));
     if (yP < stackStart) return config.scatterS;
-    return lerp(config.scatterS, target, (yP - stackStart) / (stackEnd - stackStart));
+    if (yP < stackEnd) return lerp(config.scatterS, target, (yP - stackStart) / (stackEnd - stackStart));
+
+    if (yP >= 0.7) {
+      const expandedTarget = {
+        1: 2.1, // 1st
+        0: 1.6, // 2nd
+        4: 2.3, // 3rd
+        3: 1.7, // 4th
+        2: 2.15  // 5th
+      }[index] ?? target;
+      const progress = Math.min(1, (yP - 0.7) / 0.19);
+      return lerp(target, expandedTarget, progress);
+    }
+
+    return target;
   });
 
   const scaleX = useTransform(() => {
@@ -279,9 +296,16 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
   const rotateY = useTransform(smoothVelocity, [-3000, 0, 3000], [12, 0, -12]);
   // 拖动时增加轻微抗拉扯形变
   const skewXLag = useTransform(smoothVelocity, [-3000, 0, 3000], [6, 0, -6]);
-  
+
   // 文字层提供略小的滞后位移，以制造深度（层次感）
   const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
+
+  // 动态计算文字吸附位置，使其紧贴缩放后的图片角落
+  const titleLeft = useTransform(scaleX, s => -180 * s - 40);
+  const titleTop = useTransform(scaleX, s => 120 * s - 60);
+
+  const detailsLeft = useTransform(scaleX, s => 180 * s - 300 + 40);
+  const detailsTop = useTransform(scaleX, s => -120 * s - 20);
 
   return (
     <>
@@ -295,7 +319,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
 
       <motion.div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, x: expandX, zIndex, pointerEvents: 'none' }}>
         <motion.div style={{ position: 'absolute', left: '50vw', top: '50%', x, y }}>
-          
+
           <motion.img
             src={config.image}
             alt={`Work ${index + 1}`}
@@ -316,12 +340,12 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
             {showText && projectData && (
               <>
                 {/* 🌟 标题组绑定 textLagX 产生多层视差 */}
-                <motion.div 
-                  key={`title-${index}`} 
-                  initial={{ opacity: 0 }} 
-                  animate={{ opacity: 1 }} 
+                <motion.div
+                  key={`title-${index}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.15 } }}
-                  style={{ position: 'absolute', left: -270, top: 195, width: 480, pointerEvents: 'none', x: textLagX }}
+                  style={{ position: 'absolute', left: titleLeft, top: titleTop, width: 480, pointerEvents: 'none', x: textLagX }}
                 >
                   <h2 style={{ fontSize: 22, margin: '0 0 6px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
                     <DecodeText text={projectData.title} />
@@ -332,12 +356,12 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
                 </motion.div>
 
                 {/* 🌟 详情组绑定 textLagX 产生多层视差 */}
-                <motion.div 
-                  key={`data-${index}`} 
-                  initial={{ opacity: 0 }} 
-                  animate={{ opacity: 1 }} 
+                <motion.div
+                  key={`data-${index}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.15 } }}
-                  style={{ position: 'absolute', left: 290, top: -180, width: 300, pointerEvents: 'none', display: 'flex', flexDirection: 'column', gap: 16, x: textLagX }}
+                  style={{ position: 'absolute', left: detailsLeft, top: detailsTop, width: 300, pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', gap: 16, x: textLagX }}
                 >
                   {projectData.details.map((d, i) => (
                     <div key={i}>
@@ -349,11 +373,18 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
                       </p>
                     </div>
                   ))}
-                  <button style={{
-                    marginTop: 12, padding: '8px 24px', backgroundColor: '#001ede', color: 'white',
-                    border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-start',
-                    fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto'
-                  }}>Details</button>
+                  <button 
+                    onClick={() => {
+                      sessionStorage.setItem('returnToArchitecture', 'true');
+                      sessionStorage.setItem('architectureGalleryX', galleryX.get());
+                      navigate(`/project/Project${index + 1}`);
+                    }}
+                    style={{
+                      marginTop: 12, padding: '8px 24px', backgroundColor: '#001ede', color: 'white',
+                      border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
+                      fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto'
+                    }}
+                  >Details</button>
                 </motion.div>
               </>
             )}
@@ -373,6 +404,8 @@ export default function ArchitectureWorks() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showText, setShowText] = useState(false);
   const isExpandedRef = useRef(false);
+  
+  const lenis = useLenis();
 
   // 🌟 新增：提取 galleryX 的物理速度作为视差源泉
   const galleryVelocity = useVelocity(galleryX);
@@ -406,8 +439,8 @@ export default function ArchitectureWorks() {
       snapAnimRef.current?.stop();
       exitAnimRef.current?.stop();
     } else if (wasExpanded && !expanded) {
-      inertiaRef.current?.stop();     
-      exitAnimRef.current?.stop();    
+      inertiaRef.current?.stop();
+      exitAnimRef.current?.stop();
       dragRef.current.isDown = false;
 
       const currentX = galleryX.get();
@@ -445,6 +478,36 @@ export default function ArchitectureWorks() {
     if (!isExpanded) setShowText(false);
     return () => clearTimeout(timer);
   }, [isExpanded]);
+
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem('returnToArchitecture') === 'true') {
+      const savedX = sessionStorage.getItem('architectureGalleryX');
+      if (savedX !== null) {
+        galleryX.jump(parseFloat(savedX));
+      }
+      const el = containerRef.current;
+      if (el) {
+        const targetScroll = el.offsetTop + (el.offsetHeight - window.innerHeight) * 0.95;
+        window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
+        smoothY.jump(0.95);
+      }
+    }
+  }, [smoothY, galleryX]);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('returnToArchitecture') === 'true') {
+      if (lenis) {
+        sessionStorage.removeItem('returnToArchitecture');
+        sessionStorage.removeItem('architectureGalleryX');
+        const el = containerRef.current;
+        if (el) {
+          const targetScroll = el.offsetTop + (el.offsetHeight - window.innerHeight) * 0.95;
+          lenis.scrollTo(targetScroll, { immediate: true });
+          smoothY.jump(0.95);
+        }
+      }
+    }
+  }, [lenis, smoothY]);
 
   useEffect(() => {
     let timeout;
@@ -522,7 +585,7 @@ export default function ArchitectureWorks() {
       stiffness: 120,
       damping: 18,
       onUpdate: v => galleryX.set(v),
-      onComplete: () => {}
+      onComplete: () => { }
     });
   }, [galleryX]);
 
@@ -556,6 +619,23 @@ export default function ArchitectureWorks() {
         onPointerDown={onPointerDown}
         style={{ touchAction: 'none', cursor: isExpanded ? 'grab' : 'default', perspective: 1500 }}
       >
+        <div style={{
+          position: 'absolute',
+          top: '42%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          fontSize: '14vw',
+          fontWeight: 'bold',
+          color: '#1b1965',
+          zIndex: 1,
+          pointerEvents: 'none',
+          userSelect: 'none',
+          whiteSpace: 'nowrap',
+          fontFamily: "'Dela Gothic One', cursive, sans-serif"
+        }}>
+          Architecture
+        </div>
+
         <motion.div className="folder-piece"
           style={{ y: folderY, opacity: folderOpacity, zIndex: 10, pointerEvents: isExpanded ? 'none' : 'auto' }}>
           <div className="folder-tab"></div>
@@ -578,14 +658,15 @@ export default function ArchitectureWorks() {
           pointerEvents: 'none'
         }}>
           {scatterConfigs.map((cfg, idx) => (
-            <PhotoItem 
-              key={idx} 
-              index={idx} 
-              config={cfg} 
-              smoothY={smoothY} 
-              isExpanded={isExpanded} 
-              showText={showText} 
-              smoothVelocity={smoothVelocity} // 🌟 传入速度
+            <PhotoItem
+              key={idx}
+              index={idx}
+              config={cfg}
+              smoothY={smoothY}
+              isExpanded={isExpanded}
+              showText={showText}
+              smoothVelocity={smoothVelocity}
+              galleryX={galleryX}
             />
           ))}
         </motion.div>
