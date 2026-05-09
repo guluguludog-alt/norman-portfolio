@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useMotionValueEvent } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
 import './introductionPage.css';
 import Aurora from './AuroraEffect';
 import BorderGlow from './BorderGlow';
@@ -11,16 +11,43 @@ export default function IntroductionPage() {
 
   const dragRef = useRef(null);
   const dragX = useMotionValue(0);
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)');
+    const update = () => setIsCompact(mq.matches);
+
+    update();
+
+    if (mq.addEventListener) {
+      mq.addEventListener('change', update);
+      return () => mq.removeEventListener('change', update);
+    }
+
+    mq.addListener(update);
+    return () => mq.removeListener(update);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"]
   });
 
+  const boxesX = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    isCompact ? ['0vw', '0vw', '0vw'] : ['100vw', '0vw', '0vw']
+  );
+  const textX = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    isCompact ? ['-45vw', '0vw', '45vw'] : ['-100vw', '0vw', '30vw']
+  );
 
-
-  const boxesX = useTransform(scrollYProgress, [0, 0.5, 1], ["100vw", "0vw", "0vw"]);
-  const textX = useTransform(scrollYProgress, [0, 0.5, 1], ["-100vw", "0vw", "30vw"]);
+  const introStyles = {
+    '--intro-box-height': isCompact ? 'clamp(420px, 92vw, 500px)' : 'clamp(420px, 44vw, 540px)',
+    '--intro-box-width': isCompact ? 'min(86vw, 360px)' : 'clamp(250px, 24vw, 380px)',
+  };
 
   const skills = [
     { name: "Sketch up", percent: "90%" },
@@ -33,7 +60,12 @@ export default function IntroductionPage() {
   ];
 
   return (
-    <section id="introduction" className="introduction-page" ref={targetRef}>
+    <section
+      id="introduction"
+      className="introduction-page"
+      ref={targetRef}
+      style={introStyles}
+    >
 
       {/* 🌟 第 1 层：最底层的背景水印文字 */}
       <div
@@ -42,7 +74,7 @@ export default function IntroductionPage() {
           position: 'absolute',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -55%)',
+          transform: 'translate(-50%, calc(-50% - (var(--intro-box-height) * 0.18)))',
           fontSize: '24vw',
           fontWeight: 900,
           letterSpacing: '-1vw',
@@ -50,7 +82,7 @@ export default function IntroductionPage() {
           zIndex: 0,
           pointerEvents: 'none',
           color: 'rgba(255, 255, 255, 0.08)',
-          fontFamily: '"STHeiti", "华文黑体", sans-serif'
+          fontFamily: "'Dela Gothic One', cursive, sans-serif"
         }}
       >
         Hello!
@@ -79,15 +111,23 @@ export default function IntroductionPage() {
 
         <motion.div
           className="boxes-scroll-wrapper"
-          style={{ x: boxesX, width: '100vw', overflowX: 'visible', overflowY: 'visible' }}
+          style={{ x: boxesX, width: isCompact ? '100%' : '100vw', overflowX: 'visible', overflowY: 'visible' }}
           ref={dragRef}
         >
           <motion.div
             className="boxes-container"
-            drag="x"
-            dragConstraints={dragRef}
+            drag={isCompact ? false : 'x'}
+            dragConstraints={isCompact ? undefined : dragRef}
             whileTap={{ cursor: "grabbing" }}
-            style={{ x: dragX, cursor: "grab", width: "max-content", margin: "0 auto", padding: "0 20px" }}
+            style={{
+              x: isCompact ? 0 : dragX,
+              y: isCompact ? 0 : 'clamp(-78px, -7vh, -28px)',
+              cursor: isCompact ? 'default' : 'grab',
+              width: isCompact ? '100%' : 'max-content',
+              margin: isCompact ? '0' : '0 auto',
+              padding: isCompact ? '0 16px' : '0 20px',
+              height: isCompact ? 'auto' : 'var(--intro-box-height)'
+            }}
           >
 
             {/* 左侧：Skills 框 */}
@@ -161,7 +201,7 @@ export default function IntroductionPage() {
         </motion.div>
 
         {/* 底部滑动大字 */}
-        <motion.div className="text-row" style={{ x: textX, y: '50%' }}>
+        <motion.div className="text-row" style={{ x: textX, y: isCompact ? 0 : '58%' }}>
           <h2 className="keep-my-font-3">
             Who Am I - Skills - Education - Who Am I - Skills - Education
           </h2>

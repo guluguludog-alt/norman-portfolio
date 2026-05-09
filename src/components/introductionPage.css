@@ -1,11 +1,13 @@
 /* =========================================
    Introduction Page 核心布局
    ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
 .introduction-page {
   position: relative;
   z-index: 50;        
   margin-top: 100vh;  
-  height: 94vh; 
+  height: clamp(760px, 90svh, 920px);
   min-height: 770px; /* 为了适应更大的框，调高保底高度 */
   width: 100%;
   background-color: black;
@@ -30,10 +32,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end; /* Align to bottom to keep bottom layout unchanged */
-  padding-bottom: 18vh; /* Maintain distance from bottom */
+  padding-bottom: clamp(64px, 9vh, 108px); /* Maintain distance from bottom */
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+}
+
+.boxes-scroll-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
 }
 
 .swipe-hint {
@@ -67,9 +76,10 @@
 }
 
 .glass-box {
-  width: 380px;  
-  height: auto;
-  min-height: 520px; 
+  width: var(--intro-box-width);  
+  height: var(--intro-box-height);
+  min-height: var(--intro-box-height); 
+  flex-shrink: 0; /* 🌟 核心修复：防止被意外挤压变形 */
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
@@ -79,6 +89,21 @@
   border-left: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
+}
+
+/* 🌟 核心修复：强力覆盖 ProfileCard 自带的固定宽高，使其完全服从响应式缩放 */
+.boxes-container .pc-card-wrapper {
+  width: var(--intro-box-width) !important;
+  height: var(--intro-box-height) !important;
+  flex-shrink: 0 !important;
+}
+
+.boxes-container .pc-card-shell,
+.boxes-container .pc-card {
+  width: 100% !important;
+  min-width: 0 !important; /* 彻底抹除 380px 的保底宽度限制 */
+  height: 100% !important;
+  min-height: var(--intro-box-height) !important;
 }
 
 /* 内部内容容器 */
@@ -177,12 +202,16 @@
 .text-row {
   position: absolute; 
   bottom: 0; 
+  left: 0;
+  width: 100%;
+  overflow: hidden;
   white-space: nowrap; 
   z-index: 100;
 }
 
 .text-row h2 {
   font-size: 6rem;
+  line-height: 1;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 5px;
@@ -193,9 +222,7 @@
    响应式调整 (小屏幕自动缩小，防崩坏)
    ========================================= */
 @media (max-height: 850px) {
-  .boxes-container { margin-top: -1vh; gap: 40px; }
-  .glass-box { width: 320px; height: auto; min-height: 460px; }
-  .pc-card { width: 320px; height: 100%; min-height: 460px; } /* 确保卡片也响应式缩小并拉伸 */
+  .boxes-container { gap: 40px; }
   .text-row h2 { font-size: 4.5rem; }
   .box-inner-content { padding: 25px 25px; }
   .box-title { font-size: 1.6rem; margin-bottom: 15px; }
@@ -205,8 +232,107 @@
 
 @media (max-width: 1250px) {
   .boxes-container { gap: 30px; }
-  .glass-box { width: 320px; height: auto; min-height: 460px; }
-  .pc-card { width: 320px; height: 100%; min-height: 460px; }
+  .box-inner-content { padding: 24px 24px; }
+  .box-title { font-size: 1.55rem; margin-bottom: 14px; }
+  .skills-list { gap: 12px; }
+  .skill-item { gap: 7px; }
   .school-name { font-size: 1.1rem; }
+  .skill-name,
   .edu-details { font-size: 0.9rem; }
+}
+
+@media (max-width: 1150px) {
+  .boxes-container { gap: 24px; }
+}
+
+@media (max-width: 1050px) {
+  .boxes-container { gap: 18px; }
+}
+
+@media (max-width: 960px) {
+  .boxes-container { gap: 14px; }
+}
+
+@media (max-width: 900px) {
+  .introduction-page {
+    height: auto;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  .intro-content {
+    justify-content: flex-start;
+    padding: 72px 0 120px;
+  }
+
+  .boxes-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    height: auto;
+    padding: 0 16px;
+  }
+
+  .glass-box {
+    width: var(--intro-box-width);
+    height: var(--intro-box-height);
+    min-height: var(--intro-box-height);
+    max-width: 100%;
+  }
+
+  /* 手机端保持 ProfileCard 同步调整 */
+  .boxes-container .pc-card-wrapper {
+    width: var(--intro-box-width) !important;
+    max-width: 100% !important;
+  }
+
+  .box-inner-content {
+    padding: 22px 22px;
+  }
+
+  .box-title {
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+  }
+
+  .skills-list {
+    gap: 13px;
+  }
+
+  .skill-item {
+    gap: 7px;
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+  }
+
+  .school-name {
+    font-size: 1rem;
+  }
+
+  .edu-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 0.9rem;
+  }
+
+  .text-row {
+    bottom: 4px;
+  }
+
+  .text-row h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  .swipe-hint {
+    top: 24px;
+  }
+}
+
+.background-hello {
+  font-family: 'Dela Gothic One', cursive, sans-serif !important;
 }
