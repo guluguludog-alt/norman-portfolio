@@ -30,6 +30,7 @@ export default function DecryptedText({
   parentClassName = '',
   encryptedClassName = '',
   animateOn = 'hover',
+  threshold = 0.1,
   clickMode = 'once',
   ...props
 }) {
@@ -325,7 +326,7 @@ export default function DecryptedText({
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1
+      threshold
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);

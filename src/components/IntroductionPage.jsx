@@ -30,7 +30,7 @@ export default function IntroductionPage() {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end -50vh"]
   });
 
   const boxesX = useTransform(
@@ -40,8 +40,8 @@ export default function IntroductionPage() {
   );
   const textX = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    isCompact ? ['-45vw', '0vw', '45vw'] : ['-100vw', '0vw', '30vw']
+    [0, 0.7, 1],
+    ['0px', '300px', '600px']
   );
 
   const introStyles = {

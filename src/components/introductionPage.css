@@ -202,9 +202,9 @@
 .text-row {
   position: absolute; 
   bottom: 0; 
-  left: 0;
-  width: 100%;
-  overflow: hidden;
+  right: 0;
+  width: auto;
+  overflow: visible;
   white-space: nowrap; 
   z-index: 100;
 }
@@ -216,6 +216,7 @@
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 5px;
   font-family: "STHeiti", "华文黑体", sans-serif;
+  text-align: right;
 }
 
 /* =========================================

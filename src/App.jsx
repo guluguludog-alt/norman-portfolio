@@ -8,6 +8,8 @@ import Hero from './components/Hero';
 import LandscapeWorksPage from './components/LandscapeWorksPage';
 import MoreWorksPage from './components/MoreWorksPage';
 import AIGCWorksPage from './components/AIGCWorksPage';
+import GeneratedContent from './components/GeneratedContent';
+import Programming from './components/Programming';
 import IntroductionPage from './components/IntroductionPage';
 import ExperiencePage from './components/ExperiencePage';
 import ExperienceListPage from './components/ExperienceListPage';
@@ -27,6 +29,8 @@ function Home() {
       <ArchitectureWorks />
       <LandscapeWorksPage />
       <AIGCWorksPage />
+      <GeneratedContent />
+      <Programming />
       <MoreWorksPage />
       
       {/* 尾页 */}
