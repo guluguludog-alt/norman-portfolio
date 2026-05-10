@@ -1,141 +1,84 @@
 /* =========================================
-   Generated Content Page
+   Generated Content Page (Cascade Carousel)
    ========================================= */
 .generated-content-page {
   width: 100vw;
   height: 100vh;
   background-color: #000000;
   position: relative;
-  z-index: 30; /* 确保覆盖 AIGC */
-  margin-top: -100vh; /* 核心：向上滑动覆盖 */
-  overflow: hidden; /* 防止内部元素撑破 */
-  padding: 3vh 3vw;
-  box-sizing: border-box;
+  z-index: 30; /* 确保覆盖 AIGC 页面 */
+  margin-top: -100vh; /* 核心：向上滑动天然覆盖 */
+  overflow: hidden; 
 }
 
 /* =========================================
-   精准 12x4 网格布局
+   动态标题模块 (左侧锚定，蓝块绝对静止)
    ========================================= */
-.gc-grid {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 16px; /* 统一的间距 */
-}
-
-/* =========================================
-   基础卡片样式
-   ========================================= */
-.gc-box {
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* 蓝色标题卡片 */
-.gc-blue-box {
-  background-color: #0c1af0; /* 提取图中的纯正亮蓝色 */
-  color: #000000;
-  padding: 1.5vw;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 灰色图片卡片 */
-.gc-grey-box {
-  background-color: #a3a3a3;
-}
-
-/* 随机图片：默认加上高强度的灰度和调暗，模仿参考图的灰色块质感 */
-.gc-grey-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(80%) brightness(0.85);
-  transition: filter 0.3s ease;
-}
-
-.gc-grey-box:hover img {
-  filter: grayscale(0%) brightness(1); /* 鼠标悬停时恢复色彩 */
-}
-
-/* =========================================
-   字体与排版细节
-   ========================================= */
-.gc-title {
-  font-family: 'Dela Gothic One', "Arial Black", sans-serif;
-  font-size: clamp(1.5rem, 3.5vw, 4rem);
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: -1px;
-}
-
-.gc-subtitle {
-  font-family: "Arial Black", "Segoe UI", sans-serif;
-  font-size: clamp(0.8rem, 1.2vw, 1.5rem);
-  font-weight: 900;
-  margin-top: 4px;
-}
-
-/* 箭头符号的精确位置控制 */
-.gc-arrow {
+.gc-title-block {
   position: absolute;
-  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  top: calc(18vh - 40px);
+  /* 🌟 将 left 从 52vw 加大到 60vw，让整个标题块（蓝块+文字）整体往右移动 */
+  left: 60vw; 
+  right: 5vw;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.gc-blue-square {
+  width: 35px;
+  height: 35px;
+  background-color: #0016d8; 
+  flex-shrink: 0;
+  margin-top: 5px; /* 微调以对齐首行文字的视觉中心 */
+}
+
+.gc-title-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 3.2rem); 
   font-weight: 900;
-  font-family: sans-serif;
-}
-
-.gc-arrow-br { 
-  bottom: 1vw; 
-  right: 1.5vw; 
-}
-
-.gc-arrow-tr { 
-  top: 1vw; 
-  right: 1.5vw; 
+  line-height: 1.25; /* 让多行文本紧凑美观 */
+  color: #ffffff;
+  margin: 0;
+  margin-top: -10px;
+  letter-spacing: 1px;
+  word-wrap: break-word; /* 允许过长时自然换行 */
 }
 
 /* =========================================
-   终极网格坐标分配 (严丝合缝还原图片)
+   无限画廊容器
    ========================================= */
-/* 第一大列 */
-.box-t1 { grid-area: 1 / 1 / 2 / 4; }
-.box-g1 { grid-area: 2 / 1 / 3 / 4; }
-.box-g2 { grid-area: 3 / 1 / 4 / 4; }
-.box-t2 { grid-area: 4 / 1 / 5 / 4; }
+.gc-carousel-container {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  touch-action: pan-y; /* 拦截水平拖拽的默认事件 */
+  cursor: grab;
+  z-index: 40;
+}
 
-/* 第二大列 (两张跨行大图) */
-.box-lg1 { grid-area: 1 / 4 / 3 / 7; }
-.box-lg2 { grid-area: 3 / 4 / 5 / 7; }
+.gc-carousel-container:active {
+  cursor: grabbing;
+}
 
-/* 第三大列 */
-.box-t3 { grid-area: 1 / 7 / 2 / 9; }  /* Title3 宽 */
-.box-g3 { grid-area: 1 / 9 / 2 / 10; } /* 旁边小灰块窄 */
-.box-g4 { grid-area: 2 / 7 / 3 / 10; }
-.box-g5 { grid-area: 3 / 7 / 4 / 10; }
-.box-t4 { grid-area: 4 / 7 / 5 / 9; }  /* Title4 宽 */
-.box-g6 { grid-area: 4 / 9 / 5 / 10; } /* 旁边小灰块窄 */
-
-/* 第四大列 */
-.box-g7 { grid-area: 1 / 10 / 2 / 11; } /* 旁边小灰块窄 */
-.box-t5 { grid-area: 1 / 11 / 2 / 13; } /* Title5 宽 */
-.box-g8 { grid-area: 2 / 10 / 3 / 13; }
-.box-g9 { grid-area: 3 / 10 / 4 / 13; }
-.box-g10 { grid-area: 4 / 10 / 5 / 11; }/* 旁边小灰块窄 */
-.box-t6 { grid-area: 4 / 11 / 5 / 13; } /* Title6 宽 */
-
-/* =========================================
-   响应式（如果屏幕太小则堆叠显示）
-   ========================================= */
+/* 响应式调整 (手机端) */
 @media (max-width: 900px) {
-  .gc-grid {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+  .gc-title-block {
+    top: calc(12vh - 40px);
+    left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
+    right: 10vw;
+    gap: 15px;
   }
-  .gc-box { height: 200px; flex-shrink: 0; }
-  .box-lg1, .box-lg2 { height: 400px; }
+  .gc-blue-square {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+  }
+  .gc-title-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
 }
