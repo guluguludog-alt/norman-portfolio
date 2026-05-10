@@ -144,52 +144,6 @@ vite.config.js
 <files>
 This section contains the contents of the repository's files.
 
-<file path="src/components/generatedContent.css">
-.generated-content-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #ff0000;
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-}
-</file>
-
-<file path="src/components/GeneratedContent.jsx">
-import React from 'react';
-import './generatedContent.css';
-
-export default function GeneratedContent() {
-  return (
-    <section id="generated-content" className="generated-content-page">
-    </section>
-  );
-}
-</file>
-
-<file path="src/components/programming.css">
-.programming-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000;
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-}
-</file>
-
-<file path="src/components/Programming.jsx">
-import React from 'react';
-import './programming.css';
-
-export default function Programming() {
-  return (
-    <section id="programming" className="programming-page">
-    </section>
-  );
-}
-</file>
-
 <file path="public/favicon.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
 </file>
@@ -1522,389 +1476,26 @@ export default function DecodeText({ text, className = "" }) {
 }
 </file>
 
-<file path="src/components/DecryptedText.jsx">
-import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
-import { motion } from 'motion/react';
+<file path="src/components/generatedContent.css">
+/* src/components/generatedContent.css */
+.generated-content-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+</file>
 
-const styles = {
-  wrapper: {
-    display: 'inline-block',
-    whiteSpace: 'pre-wrap'
-  },
-  srOnly: {
-    position: 'absolute',
-    width: '1px',
-    height: '1px',
-    padding: 0,
-    margin: '-1px',
-    overflow: 'hidden',
-    clip: 'rect(0,0,0,0)',
-    border: 0
-  }
-};
+<file path="src/components/GeneratedContent.jsx">
+import React from 'react';
+import './generatedContent.css';
 
-export default function DecryptedText({
-  text,
-  speed = 50,
-  maxIterations = 10,
-  sequential = false,
-  revealDirection = 'start',
-  useOriginalCharsOnly = false,
-  characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
-  className = '',
-  parentClassName = '',
-  encryptedClassName = '',
-  animateOn = 'hover',
-  clickMode = 'once',
-  ...props
-}) {
-  const [displayText, setDisplayText] = useState(text);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [revealedIndices, setRevealedIndices] = useState(new Set());
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const [isDecrypted, setIsDecrypted] = useState(animateOn !== 'click');
-  const [direction, setDirection] = useState('forward');
-
-  const containerRef = useRef(null);
-  const orderRef = useRef([]);
-  const pointerRef = useRef(0);
-  const intervalRef = useRef(null);
-
-  const availableChars = useMemo(() => {
-    return useOriginalCharsOnly
-      ? Array.from(new Set(text.split(''))).filter(char => char !== ' ')
-      : characters.split('');
-  }, [useOriginalCharsOnly, text, characters]);
-
-  const shuffleText = useCallback(
-    (originalText, currentRevealed) => {
-      return originalText
-        .split('')
-        .map((char, i) => {
-          if (char === ' ') return ' ';
-          if (currentRevealed.has(i)) return originalText[i];
-          return availableChars[Math.floor(Math.random() * availableChars.length)];
-        })
-        .join('');
-    },
-    [availableChars]
-  );
-
-  const computeOrder = useCallback(
-    len => {
-      const order = [];
-      if (len <= 0) return order;
-      if (revealDirection === 'start') {
-        for (let i = 0; i < len; i++) order.push(i);
-        return order;
-      }
-      if (revealDirection === 'end') {
-        for (let i = len - 1; i >= 0; i--) order.push(i);
-        return order;
-      }
-      // center
-      const middle = Math.floor(len / 2);
-      let offset = 0;
-      while (order.length < len) {
-        if (offset % 2 === 0) {
-          const idx = middle + offset / 2;
-          if (idx >= 0 && idx < len) order.push(idx);
-        } else {
-          const idx = middle - Math.ceil(offset / 2);
-          if (idx >= 0 && idx < len) order.push(idx);
-        }
-        offset++;
-      }
-      return order.slice(0, len);
-    },
-    [revealDirection]
-  );
-
-  const fillAllIndices = useCallback(() => {
-    const s = new Set();
-    for (let i = 0; i < text.length; i++) s.add(i);
-    return s;
-  }, [text]);
-
-  const removeRandomIndices = useCallback((set, count) => {
-    const arr = Array.from(set);
-    for (let i = 0; i < count && arr.length > 0; i++) {
-      const idx = Math.floor(Math.random() * arr.length);
-      arr.splice(idx, 1);
-    }
-    return new Set(arr);
-  }, []);
-
-  const encryptInstantly = useCallback(() => {
-    const emptySet = new Set();
-    setRevealedIndices(emptySet);
-    setDisplayText(shuffleText(text, emptySet));
-    setIsDecrypted(false);
-  }, [text, shuffleText]);
-
-  const triggerDecrypt = useCallback(() => {
-    if (sequential) {
-      orderRef.current = computeOrder(text.length);
-      pointerRef.current = 0;
-      setRevealedIndices(new Set());
-    } else {
-      setRevealedIndices(new Set());
-    }
-    setDirection('forward');
-    setIsAnimating(true);
-  }, [sequential, computeOrder, text.length]);
-
-  const triggerReverse = useCallback(() => {
-    if (sequential) {
-      // compute forward order then reverse it: we'll remove indices in that order
-      orderRef.current = computeOrder(text.length).slice().reverse();
-      pointerRef.current = 0;
-      setRevealedIndices(fillAllIndices()); // start fully revealed
-      setDisplayText(shuffleText(text, fillAllIndices()));
-    } else {
-      // non-seq: start from fully revealed as well
-      setRevealedIndices(fillAllIndices());
-      setDisplayText(shuffleText(text, fillAllIndices()));
-    }
-    setDirection('reverse');
-    setIsAnimating(true);
-  }, [sequential, computeOrder, fillAllIndices, shuffleText, text]);
-
-  useEffect(() => {
-    if (!isAnimating) return;
-
-    let currentIteration = 0;
-
-    const getNextIndex = revealedSet => {
-      const textLength = text.length;
-      switch (revealDirection) {
-        case 'start':
-          return revealedSet.size;
-        case 'end':
-          return textLength - 1 - revealedSet.size;
-        case 'center': {
-          const middle = Math.floor(textLength / 2);
-          const offset = Math.floor(revealedSet.size / 2);
-          const nextIndex = revealedSet.size % 2 === 0 ? middle + offset : middle - offset - 1;
-
-          if (nextIndex >= 0 && nextIndex < textLength && !revealedSet.has(nextIndex)) {
-            return nextIndex;
-          }
-
-          for (let i = 0; i < textLength; i++) {
-            if (!revealedSet.has(i)) return i;
-          }
-          return 0;
-        }
-        default:
-          return revealedSet.size;
-      }
-    };
-
-    intervalRef.current = setInterval(() => {
-      setRevealedIndices(prevRevealed => {
-        if (sequential) {
-          // Forward
-          if (direction === 'forward') {
-            if (prevRevealed.size < text.length) {
-              const nextIndex = getNextIndex(prevRevealed);
-              const newRevealed = new Set(prevRevealed);
-              newRevealed.add(nextIndex);
-              setDisplayText(shuffleText(text, newRevealed));
-              return newRevealed;
-            } else {
-              clearInterval(intervalRef.current);
-              setIsAnimating(false);
-              setIsDecrypted(true);
-              return prevRevealed;
-            }
-          }
-          // Reverse
-          if (direction === 'reverse') {
-            if (pointerRef.current < orderRef.current.length) {
-              const idxToRemove = orderRef.current[pointerRef.current++];
-              const newRevealed = new Set(prevRevealed);
-              newRevealed.delete(idxToRemove);
-              setDisplayText(shuffleText(text, newRevealed));
-              if (newRevealed.size === 0) {
-                clearInterval(intervalRef.current);
-                setIsAnimating(false);
-                setIsDecrypted(false);
-              }
-              return newRevealed;
-            } else {
-              clearInterval(intervalRef.current);
-              setIsAnimating(false);
-              setIsDecrypted(false);
-              return prevRevealed;
-            }
-          }
-        } else {
-          // Non-Sequential
-          if (direction === 'forward') {
-            setDisplayText(shuffleText(text, prevRevealed));
-            currentIteration++;
-            if (currentIteration >= maxIterations) {
-              clearInterval(intervalRef.current);
-              setIsAnimating(false);
-              setDisplayText(text);
-              setIsDecrypted(true);
-            }
-            return prevRevealed;
-          }
-
-          // Non-Sequential Reverse
-          if (direction === 'reverse') {
-            let currentSet = prevRevealed;
-            if (currentSet.size === 0) {
-              currentSet = fillAllIndices();
-            }
-            const removeCount = Math.max(1, Math.ceil(text.length / Math.max(1, maxIterations)));
-            const nextSet = removeRandomIndices(currentSet, removeCount);
-            setDisplayText(shuffleText(text, nextSet));
-            currentIteration++;
-            if (nextSet.size === 0 || currentIteration >= maxIterations) {
-              clearInterval(intervalRef.current);
-              setIsAnimating(false);
-              setIsDecrypted(false);
-              // ensure final scrambled state
-              setDisplayText(shuffleText(text, new Set()));
-              return new Set();
-            }
-            return nextSet;
-          }
-        }
-        return prevRevealed;
-      });
-    }, speed);
-
-    return () => clearInterval(intervalRef.current);
-  }, [
-    isAnimating,
-    text,
-    speed,
-    maxIterations,
-    sequential,
-    revealDirection,
-    shuffleText,
-    direction,
-    fillAllIndices,
-    removeRandomIndices,
-    characters,
-    useOriginalCharsOnly
-  ]);
-
-  /* Click Behaviour */
-  const handleClick = () => {
-    if (animateOn !== 'click') return;
-
-    if (clickMode === 'once') {
-      if (isDecrypted) return;
-      setDirection('forward');
-      triggerDecrypt();
-    }
-
-    if (clickMode === 'toggle') {
-      if (isDecrypted) {
-        triggerReverse();
-      } else {
-        setDirection('forward');
-        triggerDecrypt();
-      }
-    }
-  };
-
-  /* Hover Behaviour */
-  const triggerHoverDecrypt = useCallback(() => {
-    if (isAnimating) return;
-
-    setRevealedIndices(new Set());
-    setIsDecrypted(false);
-    setDisplayText(text);
-    setDirection('forward');
-    setIsAnimating(true);
-  }, [isAnimating, text]);
-
-  const resetToPlainText = useCallback(() => {
-    clearInterval(intervalRef.current);
-    setIsAnimating(false);
-    setRevealedIndices(new Set());
-    setDisplayText(text);
-    setIsDecrypted(true);
-    setDirection('forward');
-  }, [text]);
-
-  /* View Observer */
-  useEffect(() => {
-    if (animateOn !== 'view' && animateOn !== 'inViewHover') return;
-
-    const observerCallback = entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          triggerDecrypt();
-          setHasAnimated(true);
-        }
-      });
-    };
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const currentRef = containerRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [animateOn, hasAnimated, triggerDecrypt]);
-
-  useEffect(() => {
-    if (animateOn === 'click') {
-      encryptInstantly();
-    } else {
-      setDisplayText(text);
-      setIsDecrypted(true);
-    }
-    setRevealedIndices(new Set());
-    setDirection('forward');
-  }, [animateOn, text, encryptInstantly]);
-
-  const animateProps =
-    animateOn === 'hover' || animateOn === 'inViewHover'
-      ? {
-          onMouseEnter: triggerHoverDecrypt,
-          onMouseLeave: resetToPlainText
-        }
-      : animateOn === 'click'
-        ? {
-            onClick: handleClick
-          }
-        : {};
-
+export default function GeneratedContent() {
   return (
-    <motion.span className={parentClassName} ref={containerRef} style={styles.wrapper} {...animateProps} {...props}>
-      <span style={styles.srOnly}>{displayText}</span>
-
-      <span aria-hidden="true">
-        {displayText.split('').map((char, index) => {
-          const isRevealedOrDone = revealedIndices.has(index) || (!isAnimating && isDecrypted);
-
-          return (
-            <span key={index} className={isRevealedOrDone ? className : encryptedClassName}>
-              {char}
-            </span>
-          );
-        })}
-      </span>
-    </motion.span>
+    <section id="generated-content" className="generated-content-page">
+    </section>
   );
 }
 </file>
@@ -2953,6 +2544,29 @@ const ProfileCard = React.memo(ProfileCardComponent);
 export default ProfileCard;
 </file>
 
+<file path="src/components/programming.css">
+.programming-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+</file>
+
+<file path="src/components/Programming.jsx">
+import React from 'react';
+import './programming.css';
+
+export default function Programming() {
+  return (
+    <section id="programming" className="programming-page">
+    </section>
+  );
+}
+</file>
+
 <file path="src/components/projectDetailPage.css">
 .project-detail-container {
   width: 100vw;
@@ -3378,296 +2992,6 @@ export default defineConfig({
 })
 </file>
 
-<file path="src/components/aigcWorksPage.css">
-/* =========================================
-    AIGC Works Page
-    ========================================= */
-.aigc-portfolio-section {
-    background-color: #000000;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10;
-}
-
-/* =========================================
-    视频容器
-    ========================================= */
-.aigc-video-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-/* =========================================
-    页面标题
-    ========================================= */
-.aigc-titles {
-    position: absolute;
-    bottom: 5vh;
-    left: 5vw;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.aigc-main-title {
-    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
-    font-size: 8rem;
-    font-weight: 900;
-    color: #0016d8;
-    line-height: 1;
-    margin: 0;
-}
-
-.aigc-sub-title {
-    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    color: #0016d8;
-    line-height: 1;
-    margin: 0;
-}
-
-/* =========================================
-   响应式
-   ========================================= */
-
-@media (max-width: 900px) {
-    .aigc-portfolio-section {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-    }
-
-    .aigc-video-container {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .aigc-scroll-video {
-        object-fit: cover;
-        object-position: calc(50% - 100px) center;
-    }
-}
-
-/* =========================================
-    Ring 图片
-    ========================================= */
-.aigc-ring {
-    position: absolute;
-    top: 230%;
-    left: 50%;
-    width: 210vw;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-    pointer-events: none;
-}
-
-/* =========================================
-    视频本体
-    ========================================= */
-.aigc-scroll-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-}
-</file>
-
-<file path="src/components/AIGCWorksPage.jsx">
-import { useRef, useState, useEffect, useCallback } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { useLenis } from 'lenis/react';
-import './aigcWorksPage.css';
-
-import videoFile from '../assets/Video1.mp4';
-import ringImg from '../assets/Ring.png';
-
-export default function AIGCWorksPage() {
-  const sectionRef = useRef(null);
-  const progress = useMotionValue(0);
-  const smoothProgress = useSpring(progress, { stiffness: 100, damping: 30 });
-  const lenisRef = useRef(null);
-  const lockedRef = useRef(false);
-  const canLockRef = useRef(true);
-  const virtualScrollRef = useRef(0);
-  const hasCompletedRef = useRef(false);
-  const animatingRef = useRef(false);
-  const lastDeltaYRef = useRef(0);
-  const ringDisabledRef = useRef(false); // 显式禁用 ring 动画
-  const mouseOverRef = useRef(false);    // 鼠标是否在 AIGCWorksPage 区域内
-
-  const [ringStyle, setRingStyle] = useState({
-    top: '230%',
-    width: '210vw',
-  });
-
-  const sectionHRef = useRef(0);
-
-  // 订阅 smoothProgress，驱动 ring 的 top 和 width
-  // ringDisabledRef 为 true 时完全禁止 ring 的位置和大小动画
-  useEffect(() => {
-    const unsubscribe = smoothProgress.on('change', (v) => {
-      if (ringDisabledRef.current) return;
-      const topPercent = 230 - v * 180; // 230% -> 50%
-      const widthVw = 210 + v * 90;     // 210vw -> 300vw
-      setRingStyle({
-        top: `${topPercent}%`,
-        width: `${widthVw}vw`,
-      });
-    });
-    return unsubscribe;
-  }, [smoothProgress]);
-
-  // wheel 事件：仅在 AIGCWorksPage 区域内监听，记录方向；锁定时双向驱动 progress；动画过渡阶段禁止一切滚动
-  const handleWheel = useCallback((e) => {
-    // 鼠标不在 AIGCWorksPage 区域内时不处理 ring 动画
-    if (!mouseOverRef.current) return;
-
-    lastDeltaYRef.current = e.deltaY;
-
-    // 动画过渡阶段（页面切换 + 重置）禁止滚动
-    if (animatingRef.current) {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
-
-    if (!lockedRef.current) return;
-
-    e.preventDefault();
-    e.stopPropagation();
-
-    const sectionH = sectionHRef.current;
-    if (!sectionH) return;
-
-    const totalVirtualScroll = sectionH * 1.8;
-    virtualScrollRef.current += e.deltaY;
-    const raw = virtualScrollRef.current / totalVirtualScroll;
-    const next = Math.max(0, Math.min(1, raw));
-    progress.set(next);
-
-    // progress 到达 1：先重置 ring 再跳转，全程锁定
-    if (next >= 1 && !hasCompletedRef.current) {
-      hasCompletedRef.current = true;
-      animatingRef.current = true; // 锁定，禁止一切滚动
-
-      // 操作1：立即禁用 ring.png 动画，还原至初始位置（AIGCWorksPage 下 1.3 个页面高度处）
-      progress.set(0);
-      setRingStyle({ top: '230%', width: '210vw' });
-      ringDisabledRef.current = true; // 禁用正向/反向动画
-
-      // 操作2：跳转 GeneratedContent 页面
-      // 在解锁前必须清零 lastDeltaYRef，防止 Lenis 回调误判 comeFromAbove
-      // 而错误地将 ringDisabledRef 重新设为 false，导致页面再次被锁定
-      lockedRef.current = false;
-      lastDeltaYRef.current = 0;
-      const target = document.querySelector('#generated-content');
-      requestAnimationFrame(() => {
-        if (target && lenisRef.current) {
-          lenisRef.current.scrollTo(target, { offset: 0, immediate: true });
-        }
-        canLockRef.current = false;
-        mouseOverRef.current = false;
-        hasCompletedRef.current = false;
-        animatingRef.current = false;
-        setTimeout(() => { canLockRef.current = true; }, 300);
-      });
-      return;
-    }
-
-    // progress 到达 0：解锁，恢复自由滚动（preventDefault 已在 locked 时拦截 wheel，无需 stop/start）
-    if (next <= 0) {
-      lockedRef.current = false;
-      canLockRef.current = false;
-      setTimeout(() => { canLockRef.current = true; }, 300);
-    }
-  }, [progress]);
-
-  // 注册非 passive 的 wheel 监听
-  useEffect(() => {
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [handleWheel]);
-
-  const lenis = useLenis(() => {
-    if (!sectionRef.current) return;
-    const rect = sectionRef.current.getBoundingClientRect();
-    const sectionH = sectionRef.current.offsetHeight;
-    sectionHRef.current = sectionH;
-
-    // 动画过渡阶段禁止进入锁定
-    if (animatingRef.current) return;
-
-    // 从上方（LandscapeWorksPage）滑入时，重新启用 ring 动画
-    const comeFromAbove = lastDeltaYRef.current > 0;
-    if (comeFromAbove && ringDisabledRef.current) {
-      ringDisabledRef.current = false; // 重新启用
-    }
-
-    // ring 动画被禁用时，不进入锁定
-    // 从 GeneratedContent 返回时 ringDisabledRef 已在跳转时设为 true，此处直接生效
-    if (ringDisabledRef.current) return;
-
-    // section 顶部到达/越过视口顶部时：先吸附到完整撑满屏幕位置，再进入锁定
-    if (rect.top <= 0 && canLockRef.current && !lockedRef.current && !hasCompletedRef.current) {
-      // 必须先设置 lockedRef 再 scrollTo，防止 scrollTo 引起的 Lenis 重入回调再次锁定
-      lockedRef.current = true;
-      virtualScrollRef.current = 0;
-      progress.set(0);
-
-      // 将 AIGCWorksPage 精确吸附到撑满视口的位置（rect.top === 0）
-      if (lenisRef.current && rect.top !== 0) {
-        lenisRef.current.scrollTo(sectionRef.current, { offset: 0, immediate: true });
-      }
-    }
-  });
-
-  useEffect(() => {
-    if (lenis) lenisRef.current = lenis;
-  }, [lenis]);
-
-  return (
-    <section
-      id="aigc"
-      className="aigc-portfolio-section"
-      ref={sectionRef}
-      onMouseEnter={() => { mouseOverRef.current = true; }}
-      onMouseLeave={() => { mouseOverRef.current = false; }}
-    >
-      <div className="aigc-video-container">
-        <video
-          src={videoFile}
-          className="aigc-scroll-video"
-          preload="auto"
-          muted
-          playsInline
-          autoPlay
-          loop
-        />
-      </div>
-      <div className="aigc-titles">
-        <h1 className="aigc-main-title">AIGC</h1>
-        <h2 className="aigc-sub-title">Works</h2>
-      </div>
-      <motion.img
-        src={ringImg}
-        alt="Ring"
-        className="aigc-ring"
-        style={ringStyle}
-      />
-    </section>
-  );
-}
-</file>
-
 <file path="src/components/architectureWorks.css">
 /* =========================================
    Architecture Works 基础设置
@@ -3830,6 +3154,394 @@ export default function AIGCWorksPage() {
 .horizontal-scroll-overlay::-webkit-scrollbar { display: none; }
 .scroll-track { display: flex; width: 500vw; height: 100%; }
 .scroll-snap-point { width: 100vw; height: 100%; scroll-snap-align: center; flex-shrink: 0; }
+</file>
+
+<file path="src/components/DecryptedText.jsx">
+import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import { motion } from 'motion/react';
+
+const styles = {
+  wrapper: {
+    display: 'inline-block',
+    whiteSpace: 'pre-wrap'
+  },
+  srOnly: {
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    padding: 0,
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0,0,0,0)',
+    border: 0
+  }
+};
+
+export default function DecryptedText({
+  text,
+  speed = 50,
+  maxIterations = 10,
+  sequential = false,
+  revealDirection = 'start',
+  useOriginalCharsOnly = false,
+  characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+  className = '',
+  parentClassName = '',
+  encryptedClassName = '',
+  animateOn = 'hover',
+  threshold = 0.1,
+  clickMode = 'once',
+  ...props
+}) {
+  const [displayText, setDisplayText] = useState(text);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [revealedIndices, setRevealedIndices] = useState(new Set());
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isDecrypted, setIsDecrypted] = useState(animateOn !== 'click');
+  const [direction, setDirection] = useState('forward');
+
+  const containerRef = useRef(null);
+  const orderRef = useRef([]);
+  const pointerRef = useRef(0);
+  const intervalRef = useRef(null);
+
+  const availableChars = useMemo(() => {
+    return useOriginalCharsOnly
+      ? Array.from(new Set(text.split(''))).filter(char => char !== ' ')
+      : characters.split('');
+  }, [useOriginalCharsOnly, text, characters]);
+
+  const shuffleText = useCallback(
+    (originalText, currentRevealed) => {
+      return originalText
+        .split('')
+        .map((char, i) => {
+          if (char === ' ') return ' ';
+          if (currentRevealed.has(i)) return originalText[i];
+          return availableChars[Math.floor(Math.random() * availableChars.length)];
+        })
+        .join('');
+    },
+    [availableChars]
+  );
+
+  const computeOrder = useCallback(
+    len => {
+      const order = [];
+      if (len <= 0) return order;
+      if (revealDirection === 'start') {
+        for (let i = 0; i < len; i++) order.push(i);
+        return order;
+      }
+      if (revealDirection === 'end') {
+        for (let i = len - 1; i >= 0; i--) order.push(i);
+        return order;
+      }
+      // center
+      const middle = Math.floor(len / 2);
+      let offset = 0;
+      while (order.length < len) {
+        if (offset % 2 === 0) {
+          const idx = middle + offset / 2;
+          if (idx >= 0 && idx < len) order.push(idx);
+        } else {
+          const idx = middle - Math.ceil(offset / 2);
+          if (idx >= 0 && idx < len) order.push(idx);
+        }
+        offset++;
+      }
+      return order.slice(0, len);
+    },
+    [revealDirection]
+  );
+
+  const fillAllIndices = useCallback(() => {
+    const s = new Set();
+    for (let i = 0; i < text.length; i++) s.add(i);
+    return s;
+  }, [text]);
+
+  const removeRandomIndices = useCallback((set, count) => {
+    const arr = Array.from(set);
+    for (let i = 0; i < count && arr.length > 0; i++) {
+      const idx = Math.floor(Math.random() * arr.length);
+      arr.splice(idx, 1);
+    }
+    return new Set(arr);
+  }, []);
+
+  const encryptInstantly = useCallback(() => {
+    const emptySet = new Set();
+    setRevealedIndices(emptySet);
+    setDisplayText(shuffleText(text, emptySet));
+    setIsDecrypted(false);
+  }, [text, shuffleText]);
+
+  const triggerDecrypt = useCallback(() => {
+    if (sequential) {
+      orderRef.current = computeOrder(text.length);
+      pointerRef.current = 0;
+      setRevealedIndices(new Set());
+    } else {
+      setRevealedIndices(new Set());
+    }
+    setDirection('forward');
+    setIsAnimating(true);
+  }, [sequential, computeOrder, text.length]);
+
+  const triggerReverse = useCallback(() => {
+    if (sequential) {
+      // compute forward order then reverse it: we'll remove indices in that order
+      orderRef.current = computeOrder(text.length).slice().reverse();
+      pointerRef.current = 0;
+      setRevealedIndices(fillAllIndices()); // start fully revealed
+      setDisplayText(shuffleText(text, fillAllIndices()));
+    } else {
+      // non-seq: start from fully revealed as well
+      setRevealedIndices(fillAllIndices());
+      setDisplayText(shuffleText(text, fillAllIndices()));
+    }
+    setDirection('reverse');
+    setIsAnimating(true);
+  }, [sequential, computeOrder, fillAllIndices, shuffleText, text]);
+
+  useEffect(() => {
+    if (!isAnimating) return;
+
+    let currentIteration = 0;
+
+    const getNextIndex = revealedSet => {
+      const textLength = text.length;
+      switch (revealDirection) {
+        case 'start':
+          return revealedSet.size;
+        case 'end':
+          return textLength - 1 - revealedSet.size;
+        case 'center': {
+          const middle = Math.floor(textLength / 2);
+          const offset = Math.floor(revealedSet.size / 2);
+          const nextIndex = revealedSet.size % 2 === 0 ? middle + offset : middle - offset - 1;
+
+          if (nextIndex >= 0 && nextIndex < textLength && !revealedSet.has(nextIndex)) {
+            return nextIndex;
+          }
+
+          for (let i = 0; i < textLength; i++) {
+            if (!revealedSet.has(i)) return i;
+          }
+          return 0;
+        }
+        default:
+          return revealedSet.size;
+      }
+    };
+
+    intervalRef.current = setInterval(() => {
+      setRevealedIndices(prevRevealed => {
+        if (sequential) {
+          // Forward
+          if (direction === 'forward') {
+            if (prevRevealed.size < text.length) {
+              const nextIndex = getNextIndex(prevRevealed);
+              const newRevealed = new Set(prevRevealed);
+              newRevealed.add(nextIndex);
+              setDisplayText(shuffleText(text, newRevealed));
+              return newRevealed;
+            } else {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setIsDecrypted(true);
+              return prevRevealed;
+            }
+          }
+          // Reverse
+          if (direction === 'reverse') {
+            if (pointerRef.current < orderRef.current.length) {
+              const idxToRemove = orderRef.current[pointerRef.current++];
+              const newRevealed = new Set(prevRevealed);
+              newRevealed.delete(idxToRemove);
+              setDisplayText(shuffleText(text, newRevealed));
+              if (newRevealed.size === 0) {
+                clearInterval(intervalRef.current);
+                setIsAnimating(false);
+                setIsDecrypted(false);
+              }
+              return newRevealed;
+            } else {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setIsDecrypted(false);
+              return prevRevealed;
+            }
+          }
+        } else {
+          // Non-Sequential
+          if (direction === 'forward') {
+            setDisplayText(shuffleText(text, prevRevealed));
+            currentIteration++;
+            if (currentIteration >= maxIterations) {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setDisplayText(text);
+              setIsDecrypted(true);
+            }
+            return prevRevealed;
+          }
+
+          // Non-Sequential Reverse
+          if (direction === 'reverse') {
+            let currentSet = prevRevealed;
+            if (currentSet.size === 0) {
+              currentSet = fillAllIndices();
+            }
+            const removeCount = Math.max(1, Math.ceil(text.length / Math.max(1, maxIterations)));
+            const nextSet = removeRandomIndices(currentSet, removeCount);
+            setDisplayText(shuffleText(text, nextSet));
+            currentIteration++;
+            if (nextSet.size === 0 || currentIteration >= maxIterations) {
+              clearInterval(intervalRef.current);
+              setIsAnimating(false);
+              setIsDecrypted(false);
+              // ensure final scrambled state
+              setDisplayText(shuffleText(text, new Set()));
+              return new Set();
+            }
+            return nextSet;
+          }
+        }
+        return prevRevealed;
+      });
+    }, speed);
+
+    return () => clearInterval(intervalRef.current);
+  }, [
+    isAnimating,
+    text,
+    speed,
+    maxIterations,
+    sequential,
+    revealDirection,
+    shuffleText,
+    direction,
+    fillAllIndices,
+    removeRandomIndices,
+    characters,
+    useOriginalCharsOnly
+  ]);
+
+  /* Click Behaviour */
+  const handleClick = () => {
+    if (animateOn !== 'click') return;
+
+    if (clickMode === 'once') {
+      if (isDecrypted) return;
+      setDirection('forward');
+      triggerDecrypt();
+    }
+
+    if (clickMode === 'toggle') {
+      if (isDecrypted) {
+        triggerReverse();
+      } else {
+        setDirection('forward');
+        triggerDecrypt();
+      }
+    }
+  };
+
+  /* Hover Behaviour */
+  const triggerHoverDecrypt = useCallback(() => {
+    if (isAnimating) return;
+
+    setRevealedIndices(new Set());
+    setIsDecrypted(false);
+    setDisplayText(text);
+    setDirection('forward');
+    setIsAnimating(true);
+  }, [isAnimating, text]);
+
+  const resetToPlainText = useCallback(() => {
+    clearInterval(intervalRef.current);
+    setIsAnimating(false);
+    setRevealedIndices(new Set());
+    setDisplayText(text);
+    setIsDecrypted(true);
+    setDirection('forward');
+  }, [text]);
+
+  /* View Observer */
+  useEffect(() => {
+    if (animateOn !== 'view' && animateOn !== 'inViewHover') return;
+
+    const observerCallback = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          triggerDecrypt();
+          setHasAnimated(true);
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const currentRef = containerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [animateOn, hasAnimated, triggerDecrypt]);
+
+  useEffect(() => {
+    if (animateOn === 'click') {
+      encryptInstantly();
+    } else {
+      setDisplayText(text);
+      setIsDecrypted(true);
+    }
+    setRevealedIndices(new Set());
+    setDirection('forward');
+  }, [animateOn, text, encryptInstantly]);
+
+  const animateProps =
+    animateOn === 'hover' || animateOn === 'inViewHover'
+      ? {
+          onMouseEnter: triggerHoverDecrypt,
+          onMouseLeave: resetToPlainText
+        }
+      : animateOn === 'click'
+        ? {
+            onClick: handleClick
+          }
+        : {};
+
+  return (
+    <motion.span className={parentClassName} ref={containerRef} style={styles.wrapper} {...animateProps} {...props}>
+      <span style={styles.srOnly}>{displayText}</span>
+
+      <span aria-hidden="true">
+        {displayText.split('').map((char, index) => {
+          const isRevealedOrDone = revealedIndices.has(index) || (!isAnimating && isDecrypted);
+
+          return (
+            <span key={index} className={isRevealedOrDone ? className : encryptedClassName}>
+              {char}
+            </span>
+          );
+        })}
+      </span>
+    </motion.span>
+  );
+}
 </file>
 
 <file path="src/components/ExperiencePage.jsx">
@@ -5157,6 +4869,336 @@ export default function RotatingText() {
 }
 </file>
 
+<file path="src/components/aigcWorksPage.css">
+/* =========================================
+    AIGC Works Page
+    ========================================= */
+.aigc-portfolio-section {
+    background-color: #000000;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* =========================================
+    视频容器
+    ========================================= */
+.aigc-video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+    页面标题
+    ========================================= */
+.aigc-titles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.aigc-main-wrapper {
+    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
+    font-size: 9rem;
+    font-weight: 900;
+    color: #0016d8;
+    line-height: 1;
+}
+
+.aigc-sub-wrapper {
+    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #0016d8;
+    line-height: 1;
+}
+
+.aigc-title-char {
+    /* 字符样式由 DecryptedText 的 className 控制，此处可留空或用继承 */
+    color: inherit;
+}
+
+/* =========================================
+   响应式
+   ========================================= */
+
+@media (max-width: 900px) {
+    .aigc-portfolio-section {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .aigc-video-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .aigc-scroll-video {
+        object-fit: cover;
+        object-position: calc(50% - 100px) center;
+    }
+
+    .aigc-main-wrapper {
+        font-size: 16vw;
+    }
+
+    .aigc-sub-wrapper {
+        font-size: 8vw;
+    }
+}
+
+/* =========================================
+    Ring 图片
+    ========================================= */
+.aigc-ring {
+    position: absolute;
+    top: 230%;
+    left: 50%;
+    width: 210vw;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* =========================================
+    视频本体
+    ========================================= */
+.aigc-scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+</file>
+
+<file path="src/components/AIGCWorksPage.jsx">
+import { useRef, useState, useEffect, useCallback } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useLenis } from 'lenis/react';
+import DecryptedText from './DecryptedText';
+import './aigcWorksPage.css';
+
+import videoFile from '../assets/Video1.mp4';
+import ringImg from '../assets/Ring.png';
+
+export default function AIGCWorksPage() {
+  const sectionRef = useRef(null);
+  
+  // 动画进度驱动 (0 = 初始, 1 = 过渡完成)
+  const progress = useMotionValue(0);
+  const smoothProgress = useSpring(progress, { stiffness: 100, damping: 30 });
+  const lenisRef = useRef(null);
+  
+  // ================= 核心状态控制 =================
+  const isLocked = useRef(false);       // 当前是否处于“动画锁定”状态
+  const hasCompleted = useRef(false);   // 是否已经完成了过渡并进入了下一页
+  const isEscapingUp = useRef(false);   // 【新增】是否正在向反方向退出 (用于防止解锁后瞬间重锁)
+  const virtualScroll = useRef(0);      // 模拟滚动的位移记录
+  const pendingScroll = useRef(false);  // ring 动画结束后才跳转
+
+  const [ringStyle, setRingStyle] = useState({
+    top: '230%',
+    width: '210vw',
+  });
+
+  // 1. 监听进度变化，驱动 UI 动画（Ring 的缩放和位置）
+  //    并等待 spring 动画真正结束后再跳转
+  useEffect(() => {
+    const unsubscribe = smoothProgress.on('change', (v) => {
+      const topPercent = 230 - v * 180; // 230% -> 50%
+      const widthVw = 210 + v * 90;     // 210vw -> 300vw
+      setRingStyle({
+        top: `${topPercent}%`,
+        width: `${widthVw}vw`,
+      });
+
+      // ring spring 动画到位后再跳转到 GeneratedContent
+      if (v >= 0.995 && pendingScroll.current) {
+        pendingScroll.current = false;
+        if (lenisRef.current) {
+          lenisRef.current.start();
+          const target = document.querySelector('#generated-content');
+          if (target) {
+            lenisRef.current.scrollTo(target, { offset: 0, immediate: true });
+          }
+        }
+        setTimeout(() => progress.set(0), 500);
+      }
+    });
+    return unsubscribe;
+  }, [smoothProgress, progress]);
+
+  // 2. 虚拟滚动处理函数：在页面锁定时接管用户的滑动意图
+  const updateVirtualScroll = useCallback((deltaY) => {
+    // 设定滑动多少像素完成整个动画 (1.5倍屏幕高度)
+    const scrollRange = window.innerHeight * 1.5;
+    virtualScroll.current += deltaY;
+    
+    const raw = virtualScroll.current / scrollRange;
+    const clampedProgress = Math.max(0, Math.min(1, raw));
+    
+    progress.set(clampedProgress);
+
+    // --- 情况 A: 动画到达终点 ---
+    if (raw >= 1) {
+      isLocked.current = false;
+      hasCompleted.current = true; 
+      virtualScroll.current = 0;
+      pendingScroll.current = true;  // 等待 ring spring 动画到位后再跳转
+    } 
+    // --- 情况 B: 动画退回起点 (用户取消过渡) ---
+    else if (raw <= 0) {
+      isLocked.current = false;
+      virtualScroll.current = 0;
+      progress.set(0);
+      
+      // 【关键修复】打上“正在向后撤退”的标记
+      isEscapingUp.current = true; 
+      
+      if (lenisRef.current) {
+        lenisRef.current.start(); // 恢复原生滚动，现在可以向上划出了
+      }
+    }
+  }, [progress]);
+
+  // 3. 拦截物理滚动事件 (只有在 isLocked 为 true 时才接管)
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (isLocked.current) {
+        e.preventDefault();
+        e.stopPropagation();
+        updateVirtualScroll(e.deltaY);
+      } else if (e.deltaY > 0) {
+        // 【关键修复】如果用户没有被锁定，并且主动往下滚，立刻清除“撤退”标记，允许重锁
+        isEscapingUp.current = false;
+      }
+    };
+
+    // 移动端支持
+    let touchStartY = 0;
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
+    };
+    const handleTouchMove = (e) => {
+      const deltaY = touchStartY - e.touches[0].clientY;
+      if (isLocked.current) {
+        e.preventDefault();
+        e.stopPropagation();
+        touchStartY = e.touches[0].clientY; // 锁定时的连续追踪
+        updateVirtualScroll(deltaY);
+      } else if (deltaY > 0) {
+        // 【关键修复】移动端主动向下滑动，清除撤退标记
+        isEscapingUp.current = false;
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [updateVirtualScroll]);
+
+  // 4. Lenis 滚动生命周期监控
+  useLenis((lenis) => {
+    lenisRef.current = lenis;
+    if (!sectionRef.current) return;
+
+    const rect = sectionRef.current.getBoundingClientRect();
+
+    // 逻辑 A: 重置机制
+    // 当用户完全滑回上方（Landscape 区域）时，重置全部标记，随时准备迎接下次触发
+    if (rect.top > 100) {
+      hasCompleted.current = false;
+      isEscapingUp.current = false;
+    }
+
+    // 逻辑 B: 锁定机制 (仅限 AIGC 向下过渡)
+    // 只有在：页面到顶了 + 没被锁定 + 没过渡完成 + 【并且用户没有在向后撤退】时，才触发锁定
+    if (
+      rect.top <= 0 && 
+      !isLocked.current && 
+      !hasCompleted.current && 
+      !isEscapingUp.current 
+    ) {
+      isLocked.current = true;
+      virtualScroll.current = 0;
+      progress.set(0);
+      
+      // 停止 Lenis 原生滚动，强行吸附到当前 Section
+      lenis.scrollTo(sectionRef.current, { offset: 0, immediate: true });
+      lenis.stop();
+    }
+  });
+
+  return (
+    <section
+      id="aigc"
+      className="aigc-portfolio-section"
+      ref={sectionRef}
+    >
+      <div className="aigc-video-container">
+        <video
+          src={videoFile}
+          className="aigc-scroll-video"
+          preload="auto"
+          muted
+          playsInline
+          autoPlay
+          loop
+        />
+      </div>
+      <div className="aigc-titles">
+        <DecryptedText
+          text="AIGC"
+          animateOn="view"
+          threshold={0.5}
+          speed={50}
+          maxIterations={30}
+          revealDirection="center"
+          className="aigc-title-char"
+          parentClassName="aigc-main-wrapper"
+        />
+        <DecryptedText
+          text="Works"
+          animateOn="view"
+          threshold={0.5}
+          speed={50}
+          maxIterations={30}
+          revealDirection="center"
+          className="aigc-title-char"
+          parentClassName="aigc-sub-wrapper"
+        />
+      </div>
+      <motion.img
+        src={ringImg}
+        alt="Ring"
+        className="aigc-ring"
+        style={ringStyle}
+      />
+    </section>
+  );
+}
+</file>
+
 <file path="src/components/ExperienceListPage.jsx">
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
@@ -5869,70 +5911,6 @@ html,
 }
 </file>
 
-<file path="src/App.jsx">
-import React from 'react';
-// 引入 Lenis 的 React 组件
-import { ReactLenis } from 'lenis/react';
-import './App.css';
-// 注意路径：必须包含 ./components/ 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import LandscapeWorksPage from './components/LandscapeWorksPage';
-import MoreWorksPage from './components/MoreWorksPage';
-import AIGCWorksPage from './components/AIGCWorksPage';
-import GeneratedContent from './components/GeneratedContent';
-import Programming from './components/Programming';
-import IntroductionPage from './components/IntroductionPage';
-import ExperiencePage from './components/ExperiencePage';
-import ExperienceListPage from './components/ExperienceListPage';
-import ArchitectureWorks from './components/ArchitectureWorks';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProjectDetailPage from './components/ProjectDetailPage';
-
-function Home() {
-  return (
-    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
-      <Navbar />
-      <Hero />
-      <IntroductionPage />
-      <ExperiencePage />
-      <ExperienceListPage />
-      <ArchitectureWorks />
-      <LandscapeWorksPage />
-      <AIGCWorksPage />
-      <GeneratedContent />
-      <Programming />
-      <MoreWorksPage />
-      
-      {/* 尾页 */}
-      <section id="contact" className="section">
-        <div className="contact-content">
-          <h1>Contact me</h1>
-          <p>E-mail: citiesxl@hotmail.com</p>
-        </div>
-        <div className="footer-blue-block">
-          <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
-        </div>
-      </section>
-    </ReactLenis> 
-  );
-}
-
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-</file>
-
 <file path="src/components/experienceListPage.css">
 /* =========================================
    Experience List Page 基础设置
@@ -6076,6 +6054,70 @@ export default App;
   pointer-events: none;
   opacity: 0; 
 }
+</file>
+
+<file path="src/App.jsx">
+import React from 'react';
+// 引入 Lenis 的 React 组件
+import { ReactLenis } from 'lenis/react';
+import './App.css';
+// 注意路径：必须包含 ./components/ 
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import LandscapeWorksPage from './components/LandscapeWorksPage';
+import MoreWorksPage from './components/MoreWorksPage';
+import AIGCWorksPage from './components/AIGCWorksPage';
+import GeneratedContent from './components/GeneratedContent';
+import Programming from './components/Programming';
+import IntroductionPage from './components/IntroductionPage';
+import ExperiencePage from './components/ExperiencePage';
+import ExperienceListPage from './components/ExperienceListPage';
+import ArchitectureWorks from './components/ArchitectureWorks';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectDetailPage from './components/ProjectDetailPage';
+
+function Home() {
+  return (
+    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+      <Navbar />
+      <Hero />
+      <IntroductionPage />
+      <ExperiencePage />
+      <ExperienceListPage />
+      <ArchitectureWorks />
+      <LandscapeWorksPage />
+      <AIGCWorksPage />
+      <GeneratedContent />
+      <Programming />
+      <MoreWorksPage />
+      
+      {/* 尾页 */}
+      <section id="contact" className="section">
+        <div className="contact-content">
+          <h1>Contact me</h1>
+          <p>E-mail: citiesxl@hotmail.com</p>
+        </div>
+        <div className="footer-blue-block">
+          <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
+        </div>
+      </section>
+    </ReactLenis> 
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
 </file>
 
 <file path="src/components/introductionPage.css">

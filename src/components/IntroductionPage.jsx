@@ -12,6 +12,8 @@ export default function IntroductionPage() {
   const dragRef = useRef(null);
   const dragX = useMotionValue(0);
   const [isCompact, setIsCompact] = useState(false);
+  const animPlayedRef = useRef(false);
+  const [animPlayed, setAnimPlayed] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 900px)');
@@ -33,10 +35,22 @@ export default function IntroductionPage() {
     offset: ["start end", "end -50vh"]
   });
 
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (v) => {
+      if (v >= 0.5 && !animPlayedRef.current) {
+        animPlayedRef.current = true;
+        setAnimPlayed(true);
+      }
+    });
+    return () => {
+      if (typeof unsubscribe === 'function') unsubscribe();
+    };
+  }, [scrollYProgress]);
+
   const boxesX = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    isCompact ? ['0vw', '0vw', '0vw'] : ['100vw', '0vw', '0vw']
+    isCompact || animPlayed ? ['0vw', '0vw', '0vw'] : ['100vw', '0vw', '0vw']
   );
   const textX = useTransform(
     scrollYProgress,
