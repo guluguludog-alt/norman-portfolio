@@ -1,3 +1,6 @@
+/* =========================================
+   Programming Page 
+   ========================================= */
 .programming-page {
   width: 100vw;
   height: 100vh;
@@ -5,4 +8,36 @@
   position: relative;
   z-index: 10;
   overflow: hidden;
+}
+
+/* 视频容器 */
+.programming-video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  box-sizing: border-box;
+  
+  /* 🌟 核心 1：用 padding 划定安全区。
+     上边留出 15vh (较宽)，下边留 5vh，左右各留 5vw。
+     你可以随意调整这四个数值来改变画框的大小和位置！*/
+  padding: 15vh 5vw 5vh 5vw; 
+}
+
+/* =========================================
+   视频本体 (全端统一布局)
+   ========================================= */
+.programming-scroll-video {
+  width: 100%;
+  height: 100%;
+  
+  /* 🌟 核心 2：contain 会保证视频完整显示，绝不裁切。
+     它会自动把视频缩放到刚好能放进上面的 padding 安全区内。*/
+  object-fit: contain;
+  
+  display: block;
+  pointer-events: none;
 }

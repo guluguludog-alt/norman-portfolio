@@ -11,7 +11,7 @@ import GProject6 from '../assets/GProject6.png';
 
 const projects = [
   { id: 1, img: GProject1, title: "Conceptual rendering of a smart factory" },
-  { id: 2, img: GProject2, title: "Commercial complex rendering" }, // 🌟 已经修改此处的名称
+  { id: 2, img: GProject2, title: "Commercial complex rendering" },
   { id: 3, img: GProject3, title: "Bus terminal facade rendering" },
   { id: 4, img: GProject4, title: "High-rise mixed-use complex rendering" },
   { id: 5, img: GProject5, title: "Cyberpunk-style smart city poster" },
@@ -30,14 +30,11 @@ const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
 
   const p = useTransform([originalP, spreadProgress], ([orig, spread]) => orig * spread);
 
-  // 性能优化：使用 x (translateX) 代替 left，完全在 GPU 层运行
   const x = useTransform(p,   [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['-63vw', '-42vw', '0vw', '42vw', '64vw', '82vw', '96vw', '110vw']);
-  // 保持宽高动画以维持 object-fit: cover 的动态裁切效果
   const width = useTransform(p,  [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['42vw', '42vw', '42vw', '22vw', '18vw', '14vw', '12vw', '12vw']);
   const height = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['75vh', '75vh', '75vh', '60vh', '45vh', '35vh', '25vh', '25vh']);
   const zIndex = useTransform(originalP, val => Math.round(10 - val));
 
-  // 视口外剔除优化：滑出屏幕后隐藏元素，降低渲染开销
   const visibility = useTransform(p, val => (val < -1.6 || val > 4.6) ? 'hidden' : 'visible');
 
   return (
@@ -53,7 +50,7 @@ const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
         visibility,
         opacity: 1, 
         z: 0,        
-        contain: 'strict', // 核心性能优化：防止宽高变化引发全屏重排
+        contain: 'strict', 
         willChange: 'transform' 
       }}
     >
@@ -103,32 +100,6 @@ export default function GeneratedContent() {
   
   const dragRef = useRef({ isDown: false, startX: 0, startP: 0, lastTime: 0, lastX: 0, velocity: 0 });
   const inertiaRef = useRef(null);
-  const autoScrollRef = useRef(null);
-  const userInteractingRef = useRef(false);
-
-  useEffect(() => {
-    const unsub = spreadProgress.on("change", (v) => {
-      if (v >= 1 && !userInteractingRef.current) {
-        autoScrollRef.current?.stop();
-        autoScrollRef.current = animate(rawProgress.get(), rawProgress.get() + 9999, {
-          duration: 9999 / 0.03,
-          ease: "linear",
-          onUpdate: (v) => {
-            if (!userInteractingRef.current) rawProgress.set(v);
-          },
-        });
-      }
-    });
-    return () => {
-      unsub();
-      autoScrollRef.current?.stop();
-    };
-  }, [rawProgress, spreadProgress]);
-
-  const stopAutoScroll = () => {
-    userInteractingRef.current = true;
-    autoScrollRef.current?.stop();
-  };
 
   useMotionValueEvent(smoothProgress, "change", (latest) => {
     const index = ((Math.round(latest) % 6) + 6) % 6;
@@ -141,7 +112,7 @@ export default function GeneratedContent() {
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
-        stopAutoScroll();
+        inertiaRef.current?.stop(); // 手动滑动时停止之前的惯性动画
         rawProgress.set(rawProgress.get() + e.deltaX * 0.0015);
       }
     };
@@ -153,7 +124,7 @@ export default function GeneratedContent() {
   }, [rawProgress]);
 
   const onPointerDown = (e) => {
-    stopAutoScroll();
+    inertiaRef.current?.stop(); // 鼠标/手指按下时，瞬间停止上次的惯性滑动
     dragRef.current = { 
       isDown: true, startX: e.clientX, startP: rawProgress.get(), 
       lastTime: Date.now(), lastX: e.clientX, velocity: 0 
