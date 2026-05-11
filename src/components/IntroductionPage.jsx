@@ -81,7 +81,6 @@ export default function IntroductionPage() {
       style={introStyles}
     >
 
-      {/* 🌟 第 1 层：最底层的背景水印文字 */}
       <div
         className="background-hello"
         style={{
@@ -102,7 +101,6 @@ export default function IntroductionPage() {
         Hello!
       </div>
 
-      {/* 🌟 第 2 层：极光背景层 */}
       <div className="aurora-bg-wrapper" style={{ zIndex: 1 }}>
         <Aurora
           colorStops={["#8599d2", "#0016d8", "#5211dd"]}
@@ -112,10 +110,8 @@ export default function IntroductionPage() {
         />
       </div>
 
-      {/* 🌟 第 3 层：交互内容层 */}
       <div className="intro-content">
 
-        {/* 提示：仅在窄屏且动画结束时显示 */}
         <motion.div 
           className="swipe-hint"
           style={{ opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]) }}
@@ -125,8 +121,15 @@ export default function IntroductionPage() {
 
         <motion.div
           className="boxes-scroll-wrapper"
-          style={{ x: boxesX, width: isCompact ? '100%' : '100vw', overflowX: 'visible', overflowY: 'visible' }}
           ref={dragRef}
+          style={{ 
+            x: boxesX, 
+            width: isCompact ? '100%' : '100vw', 
+            overflowX: 'visible', 
+            overflowY: 'visible',
+            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级，不锁死 transform
+            willChange: 'transform'
+          }}
         >
           <motion.div
             className="boxes-container"
@@ -144,7 +147,6 @@ export default function IntroductionPage() {
             }}
           >
 
-            {/* 左侧：Skills 框 */}
             <BorderGlow
               className="glass-box"
               backgroundColor="rgba(255, 255, 255, 0.03)"
@@ -168,7 +170,6 @@ export default function IntroductionPage() {
               </div>
             </BorderGlow>
 
-            {/* 中间：3D Profile Card */}
             <ProfileCard
               name="Liu Yuyang"
               title="Designer"
@@ -179,7 +180,6 @@ export default function IntroductionPage() {
               innerGradient="linear-gradient(145deg, rgba(20,20,40,0.8) 0%, rgba(82,17,221,0.2) 100%)"
             />
 
-            {/* 右侧：Education 框 */}
             <BorderGlow
               className="glass-box"
               backgroundColor="rgba(255, 255, 255, 0.03)"
@@ -214,8 +214,15 @@ export default function IntroductionPage() {
           </motion.div>
         </motion.div>
 
-        {/* 底部滑动大字 */}
-        <motion.div className="text-row" style={{ x: textX, y: isCompact ? 0 : '58%' }}>
+        <motion.div 
+          className="text-row" 
+          style={{ 
+            x: textX, 
+            y: isCompact ? 0 : '58%',
+            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级
+            willChange: 'transform'
+          }}
+        >
           <h2 className="keep-my-font-3">
             Who Am I - Skills - Education - Who Am I - Skills - Education
           </h2>

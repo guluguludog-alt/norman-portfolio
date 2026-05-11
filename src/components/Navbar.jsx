@@ -84,7 +84,7 @@ export default function Navbar() {
               style={{
                 position: 'fixed',
                 top: 0, left: 0, width: '100vw', height: '100vh',
-                backgroundColor: '#292597',
+                backgroundColor: '#0016d8', /* 🌟 这里已改为你要求的 #0016d8 */
                 zIndex: 1999,
                 display: 'flex',
                 flexDirection: 'column',

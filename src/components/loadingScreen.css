@@ -1,0 +1,98 @@
+/* =========================================
+   Loading Screen (阶梯滑走优化版)
+   ========================================= */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  touch-action: none;
+  pointer-events: all;
+}
+
+/* 背景切片容器 */
+.loading-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: 1; /* 在底层 */
+}
+
+/* 切片列 */
+.loading-col {
+  flex: 1; /* 自动等分：4个的话各占 25vw，1个的话占 100vw */
+  height: 100vh;
+  background-color: #0016d8; /* 🌟 已按照要求更改为更明亮的蓝色 */
+  will-change: transform;
+}
+
+/* 内容容器 */
+.loading-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* 在背景列的上方 */
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -5vh; /* 视觉中心微调 */
+}
+
+.loading-name {
+  font-family: 'SansSerifFLF', sans-serif;
+  color: #ffffff;
+  font-size: 3rem; 
+  margin: 0;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.loading-percentage {
+  font-family: 'SansSerifFLF', sans-serif;
+  color: #ffffff;
+  font-size: 1rem; 
+  margin-top: 15px;
+  font-weight: 800;
+}
+
+/* 底部进度条容器 */
+.loading-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 16px; 
+  background-color: rgba(255, 255, 255, 0.15); 
+}
+
+/* 进度条本体 */
+.loading-bar {
+  height: 100%;
+  background-color: #000000; 
+  width: 0%;
+}
+
+/* 手机端响应式 */
+@media (max-width: 768px) {
+  .loading-name {
+    font-size: 1.8rem; 
+  }
+  .loading-percentage {
+    font-size: 0.9rem; 
+  }
+}

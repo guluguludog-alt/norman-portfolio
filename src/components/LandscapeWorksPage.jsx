@@ -119,7 +119,6 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
   const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
   const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
 
-  // 🌟 完全恢复你原始的排布方式： - index * 850px
   const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
   const zIndex = 30 - index;
 
@@ -138,7 +137,9 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
             skewX: skewXLag,
             transformPerspective: 1000,
             boxShadow: 'none',
-            WebkitBoxShadow: 'none'
+            WebkitBoxShadow: 'none',
+            z: 0, // 🌟 使用原生方式触发 GPU 层
+            willChange: 'transform'
           }}
         />
       </motion.div>
@@ -152,8 +153,6 @@ const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => 
   const projectData = projectDataConfig[index];
 
   const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
-
-  // 🌟 完全恢复你原始的排布方式： - index * 850px
   const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
 
   const titleLeft = -180 * scale - 40;
@@ -235,9 +234,7 @@ export default function LandscapeWorksPage() {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
         const cur = galleryX.get();
-        // 🌟 唯一需要修改的地方：从原本的 + 修正为 - ，对齐物理直觉
         let next = cur - e.deltaX * 0.8;
-        // 🌟 恢复原本的滚动区间：0 到 3400
         next = Math.max(0, Math.min(3400, next));
         galleryX.set(next);
       }
@@ -275,7 +272,6 @@ export default function LandscapeWorksPage() {
     const dx = e.clientX - dragRef.current.startX;
     let newX = dragRef.current.startGX + dx;
 
-    // 🌟 恢复原本的滚动区间：0 到 3400
     newX = Math.max(0, Math.min(3400, newX));
     galleryX.set(newX);
 
@@ -298,7 +294,6 @@ export default function LandscapeWorksPage() {
     const velocity = dragRef.current.velocity * 100;
     let targetX = currentX + velocity * inertiaFactor;
 
-    // 🌟 恢复原本的滚动区间：0 到 3400
     targetX = Math.max(0, Math.min(3400, targetX));
 
     inertiaRef.current = animate(currentX, targetX, {

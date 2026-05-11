@@ -11,7 +11,7 @@ import GProject6 from '../assets/GProject6.png';
 
 const projects = [
   { id: 1, img: GProject1, title: "Conceptual rendering of a smart factory" },
-  { id: 2, img: GProject2, title: "Architectural rendering of a bus terminal" },
+  { id: 2, img: GProject2, title: "Commercial complex rendering" }, // 🌟 已经修改此处的名称
   { id: 3, img: GProject3, title: "Bus terminal facade rendering" },
   { id: 4, img: GProject4, title: "High-rise mixed-use complex rendering" },
   { id: 5, img: GProject5, title: "Cyberpunk-style smart city poster" },
@@ -19,33 +19,42 @@ const projects = [
 ];
 
 /* =========================================
-   单张幻灯片组件
+   单张幻灯片组件（高性能版）
    ========================================= */
 const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
-  // 将无限滚动的 progress 映射为 -1.5 到 4.5 的连续值
   const originalP = useTransform(smoothProgress, val => {
     let r = ((index - val) % 6 + 6) % 6;
     if (r > 4.5) r -= 6;
     return r;
   });
 
-  // 入场散开动画：spreadProgress 从 0→1 时，图片从堆叠状态散开到正常位置
   const p = useTransform([originalP, spreadProgress], ([orig, spread]) => orig * spread);
 
-  const left = useTransform(p,   [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['-63vw', '-42vw', '0vw', '42vw', '64vw', '82vw', '96vw', '110vw']);
+  // 性能优化：使用 x (translateX) 代替 left，完全在 GPU 层运行
+  const x = useTransform(p,   [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['-63vw', '-42vw', '0vw', '42vw', '64vw', '82vw', '96vw', '110vw']);
+  // 保持宽高动画以维持 object-fit: cover 的动态裁切效果
   const width = useTransform(p,  [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['42vw', '42vw', '42vw', '22vw', '18vw', '14vw', '12vw', '12vw']);
   const height = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['75vh', '75vh', '75vh', '60vh', '45vh', '35vh', '25vh', '25vh']);
-  // zIndex 基于原始排布位置，不受散开动画影响，避免层级跳变
   const zIndex = useTransform(originalP, val => Math.round(10 - val));
+
+  // 视口外剔除优化：滑出屏幕后隐藏元素，降低渲染开销
+  const visibility = useTransform(p, val => (val < -1.6 || val > 4.6) ? 'hidden' : 'visible');
 
   return (
     <motion.div 
       style={{ 
         position: 'absolute', 
         bottom: 0, 
-        left, width, height, zIndex,
+        left: 0,   
+        x,           
+        width, 
+        height, 
+        zIndex,
+        visibility,
         opacity: 1, 
-        willChange: 'transform, width, height, left'
+        z: 0,        
+        contain: 'strict', // 核心性能优化：防止宽高变化引发全屏重排
+        willChange: 'transform' 
       }}
     >
       <img 
@@ -65,9 +74,6 @@ export default function GeneratedContent() {
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   
-  // ===========================================
-  // 页面覆盖缓冲截断逻辑
-  // ===========================================
   const [triggerPoint, setTriggerPoint] = useState(999999);
 
   useLayoutEffect(() => {
@@ -81,7 +87,6 @@ export default function GeneratedContent() {
 
   const { scrollY } = useScroll();
   
-  // 画廊散开动画：页面从 50% 可见到 100% 可见期间，图片从堆叠向右散开
   const { scrollYProgress: galleryEnterProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "start start"]
@@ -92,9 +97,6 @@ export default function GeneratedContent() {
   const smoothClampedScrollY = useSpring(clampedScrollY, { stiffness: 100, damping: 30 });
   const springOffset = useTransform(() => clampedScrollY.get() - smoothClampedScrollY.get());
 
-  // ===========================================
-  // 无限轮播物理逻辑
-  // ===========================================
   const rawProgress = useMotionValue(0); 
   const smoothProgress = useSpring(rawProgress, { stiffness: 80, damping: 15 });
   const [activeIndex, setActiveIndex] = useState(0);
@@ -104,13 +106,12 @@ export default function GeneratedContent() {
   const autoScrollRef = useRef(null);
   const userInteractingRef = useRef(false);
 
-  // 画廊散开动画完成后，启动缓慢自动轮播
   useEffect(() => {
     const unsub = spreadProgress.on("change", (v) => {
       if (v >= 1 && !userInteractingRef.current) {
         autoScrollRef.current?.stop();
         autoScrollRef.current = animate(rawProgress.get(), rawProgress.get() + 9999, {
-          duration: 9999 / 0.03, // 极慢速自动轮播
+          duration: 9999 / 0.03,
           ease: "linear",
           onUpdate: (v) => {
             if (!userInteractingRef.current) rawProgress.set(v);
@@ -124,7 +125,6 @@ export default function GeneratedContent() {
     };
   }, [rawProgress, spreadProgress]);
 
-  // 用户交互时停止自动轮播
   const stopAutoScroll = () => {
     userInteractingRef.current = true;
     autoScrollRef.current?.stop();
@@ -137,7 +137,6 @@ export default function GeneratedContent() {
     }
   });
 
-  // 滚轮滑动支持
   useEffect(() => {
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
@@ -153,7 +152,6 @@ export default function GeneratedContent() {
     };
   }, [rawProgress]);
 
-  // 拖拽控制
   const onPointerDown = (e) => {
     stopAutoScroll();
     dragRef.current = { 
@@ -206,7 +204,6 @@ export default function GeneratedContent() {
       ref={sectionRef}
       style={{ y: springOffset }} 
     >
-      {/* 动态标题模块 */}
       <div className="gc-title-block">
         <div className="gc-blue-square"></div>
         <AnimatePresence mode="wait">
@@ -217,13 +214,13 @@ export default function GeneratedContent() {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.25 }}
             className="gc-title-text"
+            style={{ willChange: 'opacity, transform' }}
           >
             {projects[activeIndex].title}
           </motion.h2>
         </AnimatePresence>
       </div>
 
-      {/* 无限循环画廊容器 */}
       <div 
         className="gc-carousel-container"
         ref={containerRef}

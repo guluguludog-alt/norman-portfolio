@@ -332,6 +332,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
             src={config.image}
             alt={`Work ${index + 1}`}
             className="flying-photo"
+            decoding="async" // 🌟 加入后台异步解码
             style={{
               position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
               objectFit: 'cover', rotateZ, scaleX, scaleY, filter, opacity, clipPath: clipPathStyle,
@@ -339,7 +340,9 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
               x: lagX,
               rotateY: rotateY,
               skewX: skewXLag,
-              transformPerspective: 1000
+              transformPerspective: 1000,
+              z: 0, // 🌟 正确触发硬件加速的方式，不再覆盖 transform
+              willChange: 'transform, filter'
             }}
           />
 
@@ -473,7 +476,6 @@ export default function ArchitectureWorks() {
       }
     };
 
-    // 修复：局部作用域监听，不再影响全局
     const container = containerRef.current;
     if (container) {
       container.addEventListener('wheel', handleWheel, { passive: false });
