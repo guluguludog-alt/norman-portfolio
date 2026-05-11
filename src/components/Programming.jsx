@@ -5,6 +5,8 @@ import './programming.css';
 
 // 引入视频资源
 import Video2 from '../assets/Video2.mp4';
+import ClipoInterface from '../assets/ClipoInterface.png';
+import Bar from '../assets/Bar.png';
 
 export default function Programming() {
   const sectionRef = useRef(null);
@@ -12,6 +14,14 @@ export default function Programming() {
   
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const [showBarContent, setShowBarContent] = useState(false);
+
+  // 视频结束 + 初始动画播完后 2s，触发 bar 内容进场
+  useEffect(() => {
+    if (!videoEnded) return;
+    const timer = setTimeout(() => setShowBarContent(true), 2000);
+    return () => clearTimeout(timer);
+  }, [videoEnded]);
   
   const lenis = useLenis();
   const { scrollY } = useScroll();
@@ -65,6 +75,37 @@ export default function Programming() {
           onEnded={() => setVideoEnded(true)}
         />
       </div>
+      
+      {/* ClipoInterface 图片 + 上方文字：视频播放完成后居中显示，带放大+渐入动画 */}
+      {videoEnded && (
+        <div className={`clipo-interface-wrapper ${showBarContent ? 'clipo-exit' : ''}`}>
+          <div className="clipo-text-group">
+            <p className="clipo-text-top">Vibe-Coding Works</p>
+            <p className="clipo-text-bottom">Clipo</p>
+          </div>
+          <img
+            src={ClipoInterface}
+            alt="Clipo Interface"
+            className="clipo-interface-image"
+          />
+        </div>
+      )}
+
+      {/* AI-Sorted Clipboard History 标题：页面偏上居中，从左侧移入 */}
+      {showBarContent && (
+        <p className="bar-title">AI-Sorted Clipboard History</p>
+      )}
+
+      {/* Bar 图片：页面下方居中，从左侧移入 */}
+      {showBarContent && (
+        <div className="bar-image-wrapper">
+          <img
+            src={Bar}
+            alt="Bar"
+            className="bar-image"
+          />
+        </div>
+      )}
     </section>
   );
 }
