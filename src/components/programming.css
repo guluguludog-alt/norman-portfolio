@@ -1,17 +1,10 @@
-/* 🌟 Google Font: Dela Gothic One（与 ExperiencePage 一致） */
+/* 🌟 Google Font & 字体定义 */
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
-/* 🌟 本地字体：SonsieOne-Regular */
 @font-face {
   font-family: 'SonsieOne';
   src: url('/fonts/SonsieOne-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
-/* =========================================
-   Programming Page 
-   ========================================= */
 .programming-page {
   width: 100vw;
   height: 100vh;
@@ -21,214 +14,193 @@
   overflow: hidden;
 }
 
-/* 视频容器 */
 .programming-video-container {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 1; 
   display: flex;
+  flex-direction: column; 
   justify-content: center; 
   align-items: center; 
   box-sizing: border-box;
-  
-  /* 🌟 核心 1：用 padding 划定安全区。
-     上边留出 15vh (较宽)，下边留 5vh，左右各留 5vw。
-     你可以随意调整这四个数值来改变画框的大小和位置！*/
-  padding: 15vh 5vw 5vh 5vw; 
+  padding: 8vh 2vw 0 2vw; 
 }
 
 /* =========================================
-   视频本体 (全端统一布局)
+   视频容器 (Inline-block 动态吸附，防黑边缝隙)
    ========================================= */
+.video-tight-wrapper {
+  position: relative;
+  display: inline-block; 
+  line-height: 0; 
+  font-size: 0;
+  max-width: 90vw;
+  max-height: 82vh;
+}
+
 .programming-scroll-video {
-  width: 100%;
-  height: 100%;
-  
-  /* 🌟 核心 2：contain 会保证视频完整显示，绝不裁切。
-     它会自动把视频缩放到刚好能放进上面的 padding 安全区内。*/
-  object-fit: contain;
-  
   display: block;
-  pointer-events: none;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain; 
+  z-index: 2;
+  border-radius: 0; 
+  position: relative;
 }
 
 /* =========================================
-   ClipoInterface 图片：居中显示 + 放大渐入动画
+   内部排版 (相对视频动态定位)
+   ========================================= */
+
+/* 🌟 标题定位：轻微偏上 (top: 25%) */
+.bar-title-wrapper {
+  position: absolute;
+  top: 25%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* 🌟 宽度定死为 115%，强制比视频框宽出 15% */
+  width: 115%; 
+  max-width: 96vw; 
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+}
+
+.bar-title {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  color: #0016d8;
+  margin: 0;
+  letter-spacing: 1px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  width: 100%;
+  
+  /* 🌟 核心控制：强制一行显示不换行，配合字号让字符始终越出视频边缘 */
+  white-space: nowrap; 
+  font-size: clamp(1.5rem, 4.2vw, 5.2rem);
+  
+  line-height: 1.1;
+  animation: barTitleSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.8s forwards;
+}
+
+/* 🌟 Bar 图片定位：轻微下移 (bottom: 15%) */
+.bar-image-wrapper {
+  position: absolute;
+  bottom: 25%; 
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 75%; 
+  max-width: 90vw;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
+.bar-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  animation: barImageSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.9s forwards;
+}
+
+/* =========================================
+   边缘流光 (无圆角直角贴合)
+   ========================================= */
+.video-glow-overlay {
+  position: absolute;
+  inset: 0; 
+  z-index: 10; 
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  overflow: hidden; 
+  border-radius: 0; 
+}
+
+.video-glow-overlay.glow-active {
+  /* 🌟 光效不透明度调低，增加一丝透明质感 */
+  opacity: 0.85; 
+  transition: opacity 1.5s ease-in 1.65s; 
+}
+
+.glow-system {
+  position: absolute;
+  top: -100px; bottom: -100px;
+  left: -100px; right: -100px;
+  
+  /* 🌟 降低 blur 半径让光圈收紧，拉高亮度和饱和度让光效“更明显、更锐利” */
+  filter: blur(35px) brightness(1.5) saturate(2); 
+}
+
+.glow-color {
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+}
+
+.glow-color-1 {
+  background: conic-gradient(from 0deg, transparent 10%, #0044ff 30%, #ff0055 50%, transparent 60%);
+  animation: rotateGlow 3.5s linear infinite;
+}
+
+.glow-color-2 {
+  background: conic-gradient(from 180deg, transparent 10%, #00ff44 30%, #ffee00 50%, transparent 60%);
+  animation: rotateGlowReverse 5.5s linear infinite;
+  mix-blend-mode: screen; 
+}
+
+.glow-black-hole {
+  position: absolute;
+  top: 130px; bottom: 130px;
+  left: 130px; right: 130px;
+  background: #000000;
+  border-radius: 0; 
+  z-index: 2; 
+}
+
+@keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rotateGlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+/* =========================================
+   Clipo 初始展示界面
    ========================================= */
 .clipo-interface-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: absolute; 
+  inset: 0; 
+  z-index: 40;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
   align-items: center;
-  pointer-events: none;
-  gap: 24px;
-  padding-top: 70px;
+  pointer-events: none; 
+  gap: 24px; 
+  
+  /* 🌟 轻微上移 Clipo 界面：从 100px 缩小到 20px */
+  padding-top: 20px; 
   box-sizing: border-box;
 }
 
 .clipo-interface-image {
-  width: auto;
-  height: auto;
-  max-width: 49%;
-  max-height: 49%;
-  object-fit: contain;
+  max-width: 45%; 
+  max-height: 45%; 
   opacity: 0;
-  transform: scale(0.4) translateY(100vh);
   animation: clipoImageRise 1.1s cubic-bezier(0.25, 1.2, 0.50, 1) 0.2s forwards;
 }
 
-/* =========================================
-   Clipo 文字组：轻微放大 + 缓慢显现动画
-   ========================================= */
-.clipo-text-group {
-  text-align: center;
-  pointer-events: none;
-}
+.clipo-text-group { text-align: center; }
+.clipo-text-top { font-family: 'Dela Gothic One'; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #fff; opacity: 0; animation: clipoTextReveal 1.4s ease-out 0.05s forwards; margin: 0;}
+.clipo-text-bottom { font-family: 'SonsieOne'; font-size: clamp(2rem, 4vw, 3.5rem); color: #0016d8; opacity: 0; animation: clipoTextReveal 1.4s ease-out 0.15s forwards; margin: 0;}
 
-/* 第一行：Vibe-Coding Works — Dela Gothic One */
-.clipo-text-top {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  margin: 0 0 8px 0;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  color: #ffffff;
-  opacity: 0;
-  transform: scale(0.85);
-  animation: clipoTextReveal 1.4s ease-out 0.05s forwards;
-}
+@keyframes clipoImageRise { 0% { opacity: 0; transform: scale(0.4) translateY(100vh); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes clipoTextReveal { 0% { opacity: 0; transform: scale(0.85); } 100% { opacity: 1; transform: scale(1); } }
+.clipo-interface-wrapper.clipo-exit { animation: oldContentExit 1.2s ease-in forwards; }
+@keyframes oldContentExit { to { opacity: 0; transform: translateX(100vw); } }
 
-/* 第二行：Clipo — SonsieOne-Regular，颜色 #0016d8 */
-.clipo-text-bottom {
-  font-family: 'SonsieOne', cursive, sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.8rem);
-  margin: 0;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  color: #0016d8;
-  opacity: 0;
-  transform: scale(0.85);
-  animation: clipoTextReveal 1.4s ease-out 0.15s forwards;
-}
-
-/* 图片进场：从画面下方外部移入 + 放大 + 渐入 + 轻微回弹 */
-@keyframes clipoImageRise {
-  0% {
-    opacity: 0;
-    transform: scale(0.4) translateY(100vh);
-  }
-  85% {
-    opacity: 1;
-    transform: scale(1.015) translateY(-2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-/* 文字渐进显现：轻微放大 + 缓慢渐入 */
-@keyframes clipoTextReveal {
-  0% {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* =========================================
-   旧内容（Clipo 文字+图片）：向右移出页面
-   ========================================= */
-.clipo-interface-wrapper.clipo-exit {
-  animation: oldContentExit 0.8s ease-in forwards;
-  pointer-events: none;
-}
-
-@keyframes oldContentExit {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100vw);
-  }
-}
-
-/* AI-Sorted Clipboard History 标题文字：页面偏上居中 */
-.bar-title {
-  position: absolute;
-  z-index: 20;
-  top: calc(22% + 150px);
-  left: 50%;
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(2rem, 7vw, 5rem);
-  color: #0016d8;
-  margin: 0;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  animation: barTitleSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.8s forwards;
-}
-
-/* Bar 图片容器：页面下方居中 */
-.bar-image-wrapper {
-  position: absolute;
-  z-index: 20;
-  bottom: 14vh;
-  left: 50%;
-  pointer-events: none;
-}
-
-/* Bar 图片 */
-.bar-image {
-  width: auto;
-  height: auto;
-  max-width: 60vw;
-  max-height: 25vh;
-  object-fit: contain;
-  opacity: 0;
-  transform: translate(-50%, 0);
-  animation: barImageSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.9s forwards;
-}
-
-/* 标题进场：从左外部滑入 + 轻微回弹（保留居中 transform） */
-@keyframes barTitleSlideIn {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) translateX(-100vw);
-  }
-  85% {
-    opacity: 1;
-    transform: translate(-50%, -50%) translateX(6px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) translateX(0);
-  }
-}
-
-/* 图片进场：从左外部滑入 + 轻微回弹（保留居中 transform） */
-@keyframes barImageSlideIn {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0) translateX(-100vw);
-  }
-  85% {
-    opacity: 1;
-    transform: translate(-50%, 0) translateX(6px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0) translateX(0);
-  }
-}
-
+@keyframes barTitleSlideIn { 0% { opacity: 0; transform: translateX(-100vw); } 85% { opacity: 1; transform: translateX(10px); } 100% { opacity: 1; transform: translateX(0); } }
+@keyframes barImageSlideIn { 0% { opacity: 0; transform: translateX(-100vw); } 85% { opacity: 1; transform: translateX(10px); } 100% { opacity: 1; transform: translateX(0); } }

@@ -40,176 +40,121 @@ The content is organized as follows:
 </file_summary>
 
 <directory_structure>
+public/
+  fonts/
+    Aquatico-Regular.otf
+    SansSerifFLF.otf
+    SonsieOne-Regular.ttf
+  background_layer.png
+  background_layerpng.png
+  favicon.svg
+  icons.svg
+  pixel_layer.png
+src/
+  assets/
+    avatar.png
+    Bar.png
+    ClipoInterface.png
+    GProject1.png
+    GProject2.png
+    GProject3.png
+    GProject4.png
+    GProject5.png
+    GProject6.png
+    hero.png
+    LProject1.png
+    LProject2.png
+    LProject3.png
+    LProject4.png
+    LProject5.png
+    MenuIcon.png
+    Project1.jpg
+    Project2.jpg
+    Project3.jpg
+    Project4.jpg
+    Project5.jpg
+    react.svg
+    Ring.png
+    Starbackground.png
+    Video1.mp4
+    Video2.mp4
+    vite.svg
+  components/
+    projects/
+      LProject1.css
+      LProject1.jsx
+      LProject2.css
+      LProject2.jsx
+      LProject3.css
+      LProject3.jsx
+      LProject4.css
+      LProject4.jsx
+      LProject5.css
+      LProject5.jsx
+      Project1.css
+      Project1.jsx
+      Project2.css
+      Project2.jsx
+      Project3.css
+      Project3.jsx
+      Project4.css
+      Project4.jsx
+      Project5.css
+      Project5.jsx
+    aigcWorksPage.css
+    AIGCWorksPage.jsx
+    architectureWorks.css
+    ArchitectureWorks.jsx
+    AuroraEffect.css
+    AuroraEffect.jsx
+    BorderGlow.css
+    BorderGlow.jsx
+    decodeText.css
+    DecodeText.jsx
+    DecryptedText.jsx
+    experienceListPage.css
+    ExperienceListPage.jsx
+    experiencePage.css
+    ExperiencePage.jsx
+    generatedContent.css
+    GeneratedContent.jsx
+    GlassSurface.css
+    GlassSurface.jsx
+    Hero.jsx
+    introductionPage.css
+    IntroductionPage.jsx
+    landscapeWorksPage.css
+    LandscapeWorksPage.jsx
+    loadingScreen.css
+    LoadingScreen.jsx
+    moreWorksPage.css
+    MoreWorksPage.jsx
+    Navbar.css
+    Navbar.jsx
+    PortfolioSection.jsx
+    ProfileCard.css
+    ProfileCard.jsx
+    programming.css
+    Programming.jsx
+    projectDetailPage.css
+    ProjectDetailPage.jsx
+    RotatingText.jsx
+  App.css
+  App.jsx
+  index.css
+  main.jsx
 .gitignore
 eslint.config.js
 index.html
 package.json
-public/background_layer.png
-public/background_layerpng.png
-public/favicon.svg
-public/fonts/Aquatico-Regular.otf
-public/fonts/SansSerifFLF.otf
-public/icons.svg
-public/pixel_layer.png
 README.md
 scratch_gen_lprojects.js
 scratch_gen_projects.js
-src/App.css
-src/App.jsx
-src/assets/avatar.png
-src/assets/GProject1.png
-src/assets/GProject2.png
-src/assets/GProject3.png
-src/assets/GProject4.png
-src/assets/GProject5.png
-src/assets/GProject6.png
-src/assets/hero.png
-src/assets/LProject1.png
-src/assets/LProject2.png
-src/assets/LProject3.png
-src/assets/LProject4.png
-src/assets/LProject5.png
-src/assets/MenuIcon.png
-src/assets/Project1.jpg
-src/assets/Project2.jpg
-src/assets/Project3.jpg
-src/assets/Project4.jpg
-src/assets/Project5.jpg
-src/assets/react.svg
-src/assets/Ring.png
-src/assets/Starbackground.png
-src/assets/Video1.mp4
-src/assets/vite.svg
-src/components/aigcWorksPage.css
-src/components/AIGCWorksPage.jsx
-src/components/architectureWorks.css
-src/components/ArchitectureWorks.jsx
-src/components/AuroraEffect.css
-src/components/AuroraEffect.jsx
-src/components/BorderGlow.css
-src/components/BorderGlow.jsx
-src/components/decodeText.css
-src/components/DecodeText.jsx
-src/components/DecryptedText.jsx
-src/components/experienceListPage.css
-src/components/ExperienceListPage.jsx
-src/components/experiencePage.css
-src/components/ExperiencePage.jsx
-src/components/generatedContent.css
-src/components/GeneratedContent.jsx
-src/components/GlassSurface.css
-src/components/GlassSurface.jsx
-src/components/Hero.jsx
-src/components/introductionPage.css
-src/components/IntroductionPage.jsx
-src/components/landscapeWorksPage.css
-src/components/LandscapeWorksPage.jsx
-src/components/moreWorksPage.css
-src/components/MoreWorksPage.jsx
-src/components/Navbar.css
-src/components/Navbar.jsx
-src/components/PortfolioSection.jsx
-src/components/ProfileCard.css
-src/components/ProfileCard.jsx
-src/components/programming.css
-src/components/Programming.jsx
-src/components/projectDetailPage.css
-src/components/ProjectDetailPage.jsx
-src/components/projects/LProject1.css
-src/components/projects/LProject1.jsx
-src/components/projects/LProject2.css
-src/components/projects/LProject2.jsx
-src/components/projects/LProject3.css
-src/components/projects/LProject3.jsx
-src/components/projects/LProject4.css
-src/components/projects/LProject4.jsx
-src/components/projects/LProject5.css
-src/components/projects/LProject5.jsx
-src/components/projects/Project1.css
-src/components/projects/Project1.jsx
-src/components/projects/Project2.css
-src/components/projects/Project2.jsx
-src/components/projects/Project3.css
-src/components/projects/Project3.jsx
-src/components/projects/Project4.css
-src/components/projects/Project4.jsx
-src/components/projects/Project5.css
-src/components/projects/Project5.jsx
-src/components/RotatingText.jsx
-src/index.css
-src/main.jsx
 vite.config.js
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
-
-<file path=".gitignore">
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-</file>
-
-<file path="eslint.config.js">
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      globals: globals.browser,
-      parserOptions: { ecmaFeatures: { jsx: true } },
-    },
-  },
-])
-</file>
-
-<file path="index.html">
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>architecture-portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
-</file>
 
 <file path="public/favicon.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
@@ -242,218 +187,692 @@ export default defineConfig([
 </svg>
 </file>
 
-<file path="README.md">
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-</file>
-
-<file path="scratch_gen_lprojects.js">
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const titles = {
-  1: "Jinan Huangtai Central Park",
-  2: "Ecological Bird Habitat Riverside Park",
-  3: "Qianfo Mountain Plaza",
-  4: "Jiangshan Mountain Park",
-  5: "FISU Games Themed Floral Landscape Design"
-};
-
-const dir = path.join(__dirname, 'src', 'components', 'projects');
-
-for (let i = 1; i <= 5; i++) {
-  const jsxContent = `import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject${i}.css';
-
-export default function LProject${i}() {
-  return (
-    <div className="project-detail-page lproject${i}-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          ${titles[i]}
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project ${i}. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject ${i} ]</span>
-      </div>
-    </div>
-  );
-}
-`;
-
-  const cssContent = `.lproject${i}-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject${i}-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject${i}-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject${i}-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject${i}-page .project-placeholder-gallery span {
-  color: #444444;
-}
-`;
-
-  fs.writeFileSync(path.join(dir, `LProject${i}.jsx`), jsxContent);
-  fs.writeFileSync(path.join(dir, `LProject${i}.css`), cssContent);
-}
-
-console.log("LProjects generated successfully.");
-</file>
-
-<file path="scratch_gen_projects.js">
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const titles = {
-  1: "International Port Culture Service Center",
-  2: "Digital Industrial Park Headquarters",
-  3: "Conceptual Design of New Energy Headquarters",
-  4: "High-Rise Urban Mixed-Use Complex",
-  5: "Adaptive Reuse Design of the Former Glass Factory"
-};
-
-const dir = path.join(__dirname, 'src', 'components', 'projects');
-if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir, { recursive: true });
-}
-
-for (let i = 1; i <= 5; i++) {
-  const jsxContent = `import React from 'react';
-import { motion } from 'framer-motion';
-import './Project${i}.css';
-
-export default function Project${i}() {
-  return (
-    <div className="project-detail-page project${i}-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          ${titles[i]}
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project ${i}. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project ${i} ]</span>
-      </div>
-    </div>
-  );
-}
-`;
-
-  const cssContent = `.project${i}-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project${i}-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project${i}-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project${i}-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project${i}-page .project-placeholder-gallery span {
-  color: #444444;
-}
-`;
-
-  fs.writeFileSync(path.join(dir, `Project${i}.jsx`), jsxContent);
-  fs.writeFileSync(path.join(dir, `Project${i}.css`), cssContent);
-}
-
-console.log("Projects generated successfully.");
-</file>
-
 <file path="src/assets/react.svg">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
 </file>
 
 <file path="src/assets/vite.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/projects/LProject1.css">
+.lproject1-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject1-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject1-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject1-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject1-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject1.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject1.css';
+
+export default function LProject1() {
+  return (
+    <div className="project-detail-page lproject1-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Jinan Huangtai Central Park
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 1. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 1 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject2.css">
+.lproject2-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject2-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject2-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject2-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject2-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject2.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject2.css';
+
+export default function LProject2() {
+  return (
+    <div className="project-detail-page lproject2-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Ecological Bird Habitat Riverside Park
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 2. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 2 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject3.css">
+.lproject3-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject3-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject3-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject3-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject3-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject3.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject3.css';
+
+export default function LProject3() {
+  return (
+    <div className="project-detail-page lproject3-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Qianfo Mountain Plaza
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 3. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 3 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject4.css">
+.lproject4-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject4-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject4-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject4-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject4-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject4.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject4.css';
+
+export default function LProject4() {
+  return (
+    <div className="project-detail-page lproject4-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Jiangshan Mountain Park
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 4. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 4 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject5.css">
+.lproject5-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject5-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject5-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject5-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject5-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject5.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject5.css';
+
+export default function LProject5() {
+  return (
+    <div className="project-detail-page lproject5-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          FISU Games Themed Floral Landscape Design
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 5. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 5 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project1.css">
+.project1-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project1-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project1-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project1-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project1-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project1.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project1.css';
+
+export default function Project1() {
+  return (
+    <div className="project-detail-page project1-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          International Port Culture Service Center
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 1. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 1 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project2.css">
+.project2-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project2-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project2-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project2-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project2-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project2.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project2.css';
+
+export default function Project2() {
+  return (
+    <div className="project-detail-page project2-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Digital Industrial Park Headquarters
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 2. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 2 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project3.css">
+.project3-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project3-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project3-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project3-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project3-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project3.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project3.css';
+
+export default function Project3() {
+  return (
+    <div className="project-detail-page project3-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Conceptual Design of New Energy Headquarters
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 3. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 3 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project4.css">
+.project4-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project4-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project4-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project4-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project4-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project4.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project4.css';
+
+export default function Project4() {
+  return (
+    <div className="project-detail-page project4-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          High-Rise Urban Mixed-Use Complex
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 4. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 4 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project5.css">
+.project5-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project5-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project5-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project5-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project5-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project5.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project5.css';
+
+export default function Project5() {
+  return (
+    <div className="project-detail-page project5-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Adaptive Reuse Design of the Former Glass Factory
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 5. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 5 ]</span>
+      </div>
+    </div>
+  );
+}
 </file>
 
 <file path="src/components/AuroraEffect.css">
@@ -1412,94 +1831,256 @@ const GlassSurface = ({
 export default GlassSurface;
 </file>
 
-<file path="src/components/Hero.jsx">
-import React, { useState, useEffect } from 'react';
-import RotatingText from "./RotatingText";
-import DecryptedText from "./DecryptedText";
+<file path="src/components/loadingScreen.css">
+/* =========================================
+   Loading Screen (阶梯滑走优化版)
+   ========================================= */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  touch-action: none;
+  pointer-events: all;
+}
 
-export default function Hero() {
-  // 设置初始错位状态和透明度
-  const [offset, setOffset] = useState({ x: 40, y: -30 });
-  const [opacity, setOpacity] = useState(0);
+/* 背景切片容器 */
+.loading-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: 1; /* 在底层 */
+}
+
+/* 切片列 */
+.loading-col {
+  flex: 1; /* 自动等分：4个的话各占 25vw，1个的话占 100vw */
+  height: 100vh;
+  background-color: #0016d8; /* 🌟 已按照要求更改为更明亮的蓝色 */
+  will-change: transform;
+}
+
+/* 内容容器 */
+.loading-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* 在背景列的上方 */
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -5vh; /* 视觉中心微调 */
+}
+
+.loading-name {
+  font-family: 'SansSerifFLF', sans-serif;
+  color: #ffffff;
+  font-size: 3rem; 
+  margin: 0;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.loading-percentage {
+  font-family: 'SansSerifFLF', sans-serif;
+  color: #ffffff;
+  font-size: 1rem; 
+  margin-top: 15px;
+  font-weight: 800;
+}
+
+/* 底部进度条容器 */
+.loading-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 16px; 
+  background-color: rgba(255, 255, 255, 0.15); 
+}
+
+/* 进度条本体 */
+.loading-bar {
+  height: 100%;
+  background-color: #000000; 
+  width: 0%;
+}
+
+/* 手机端响应式 */
+@media (max-width: 768px) {
+  .loading-name {
+    font-size: 1.8rem; 
+  }
+  .loading-percentage {
+    font-size: 0.9rem; 
+  }
+}
+</file>
+
+<file path="src/components/LoadingScreen.jsx">
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import './loadingScreen.css';
+
+// =========================================
+// 1. 引入你需要强制等待加载的大图
+// =========================================
+import avatarImg from '../assets/avatar.png';
+import ringImg from '../assets/Ring.png';
+import starBg from '../assets/Starbackground.png';
+
+// 建筑画廊图片
+import Project1 from '../assets/Project1.jpg';
+import Project2 from '../assets/Project2.jpg';
+import Project3 from '../assets/Project3.jpg';
+import Project4 from '../assets/Project4.jpg';
+import Project5 from '../assets/Project5.jpg';
+
+// 景观画廊图片
+import LProject1 from '../assets/LProject1.png';
+import LProject2 from '../assets/LProject2.png';
+import LProject3 from '../assets/LProject3.png';
+import LProject4 from '../assets/LProject4.png';
+import LProject5 from '../assets/LProject5.png';
+
+// GeneratedContent 页面图片
+import GProject1 from '../assets/GProject1.png';
+import GProject2 from '../assets/GProject2.png';
+import GProject3 from '../assets/GProject3.png';
+import GProject4 from '../assets/GProject4.png';
+import GProject5 from '../assets/GProject5.png';
+import GProject6 from '../assets/GProject6.png';
+
+const PRELOAD_ASSETS = [
+  '/background_layer.png',
+  '/pixel_layer.png',
+  avatarImg, ringImg, starBg,
+  Project1, Project2, Project3, Project4, Project5,
+  LProject1, LProject2, LProject3, LProject4, LProject5,
+  GProject1, GProject2, GProject3, GProject4, GProject5, GProject6
+];
+
+// 🌟 核心突破口：将图片实例挂载到 Window 全局对象上，彻底阻断浏览器的垃圾回收机制！
+window.__PRELOADED_IMAGES_CACHE__ = window.__PRELOADED_IMAGES_CACHE__ || [];
+
+export default function LoadingScreen({ onComplete }) {
+  const [progress, setProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 900);
 
   useEffect(() => {
-    // 网页打开后立即触发背景合并动画
-    setOffset({ x: 0, y: 0 });
-    setOpacity(1);
+    const handleResize = () => setIsDesktop(window.innerWidth > 900);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return (
-    <section id="home" className="section">
-      <div className="bg-container">
-        {/* 检查点：确认 public 文件夹下文件名是 background_layer.png 还是 background_layerpng.png */}
-        <img 
-          src="/background_layer.png" 
-          alt="bg base" 
-          className="bg-layer bg-layer-1"
-          style={{ 
-            transform: `translate(${-offset.x}px, ${-offset.y}px)`,
-            opacity: opacity,
-            transition: 'transform 2s ease, opacity 2s ease'
-          }}
-        />
-        <img 
-          src="/pixel_layer.png" 
-          alt="bg overlay" 
-          className="bg-layer bg-layer-2"
-          style={{ 
-            transform: `translate(${offset.x}px, ${offset.y}px)`,
-            opacity: opacity,
-            transition: 'transform 2s ease, opacity 2s ease'
-          }}
-        />
-        <img 
-          src="/background_layer.png" 
-          alt="bg fade in" 
-          className="bg-layer bg-layer-3"
-          style={{ 
-            opacity: opacity,
-            transition: 'opacity 2s ease'
-          }}
-        />
-      </div>
-      
-      <div className="title-main">
-        {/* 关键修正：br 加上了闭合斜杠 */}
-        <h1>
-          <RotatingText /><br />{" "}
-          <DecryptedText 
-    text="Designer" 
-    parentClassName="keep-my-font"
-    animateOn="view" 
-    speed={120} 
-    maxIterations={15} 
-    revealDirection="start" 
-    sequential={true} 
-    useOriginalCharsOnly={false} 
-  />
-        </h1>
-      </div>
-      
-      <div className="title-name">
-        <h2>{" "}
-             <DecryptedText 
-    text="Norman Liu" 
-    parentClassName="keep-my-font-name"
-    animateOn="view" 
-    speed={100} 
-    maxIterations={15} 
-    revealDirection="start" 
-    sequential={true} 
-    useOriginalCharsOnly={false} 
-  />
-        </h2>
-      </div>
+  useEffect(() => {
+    let isMounted = true;
+    let currentProgress = 0;
+    let loadedCount = 0;
+    const total = PRELOAD_ASSETS.length;
 
-      <div className="scroll-indicator" onClick={() => document.getElementById('introduction').scrollIntoView()}>
-        Scroll
-        <div className="scroll-arrow"></div>
-      </div>
-    </section>
+    const simInterval = setInterval(() => {
+      currentProgress += Math.floor(Math.random() * 10) + 5;
+      if (currentProgress > 85) currentProgress = 85; 
+      if (isMounted) setProgress(currentProgress);
+    }, 150);
+
+    const handleComplete = () => {
+      clearInterval(simInterval);
+      if (isMounted) {
+        setProgress(100); 
+        setTimeout(() => {
+          setIsVisible(false);
+          if (onComplete) onComplete();
+        }, 400); 
+      }
+    };
+
+    if (total === 0) {
+      handleComplete();
+    } else {
+      PRELOAD_ASSETS.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        
+        const markAsLoaded = () => {
+          // 🌟 把解码后的图片塞进全局数组，永久驻留极速内存
+          window.__PRELOADED_IMAGES_CACHE__.push(img);
+          loadedCount++;
+          if (loadedCount === total) handleComplete();
+        };
+
+        // 🌟 强制调用底层 decode()，将压缩包提前解压为 GPU 显存可以直读的位图
+        if (img.decode) {
+          img.decode().then(markAsLoaded).catch(markAsLoaded);
+        } else {
+          img.onload = markAsLoaded;
+          img.onerror = markAsLoaded;
+        }
+      });
+    }
+
+    return () => {
+      isMounted = false;
+      clearInterval(simInterval);
+    };
+  }, [onComplete]);
+
+  const columns = isDesktop ? [0, 1, 2, 3] : [0];
+
+  const colVariants = {
+    initial: { y: 0 },
+    exit: (custom) => {
+      const staggerDelay = custom.isDesktop ? (3 - custom.index) * 0.12 : 0;
+      return {
+        y: '-100vh',
+        transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1], delay: 0.25 + staggerDelay }
+      };
+    }
+  };
+
+  const contentVariants = {
+    initial: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -30, transition: { duration: 0.35, ease: "easeOut" } }
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div className="loading-screen" exit="exit" initial="initial">
+          <div className="loading-bg-wrapper">
+            {columns.map((i) => (
+              <motion.div key={i} className="loading-col" variants={colVariants} custom={{ index: i, isDesktop }} />
+            ))}
+          </div>
+          <motion.div className="loading-content-wrapper" variants={contentVariants}>
+            <div className="loading-content">
+              <h1 className="loading-name">Norman Liu</h1>
+              <p className="loading-percentage">{progress}%</p>
+            </div>
+            <div className="loading-bar-container">
+              <motion.div className="loading-bar" initial={{ width: 0 }} animate={{ width: `${progress}%` }} transition={{ ease: "linear", duration: 0.15 }} />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 </file>
@@ -2113,29 +2694,6 @@ const ProfileCard = React.memo(ProfileCardComponent);
 export default ProfileCard;
 </file>
 
-<file path="src/components/programming.css">
-.programming-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000;
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-}
-</file>
-
-<file path="src/components/Programming.jsx">
-import React from 'react';
-import './programming.css';
-
-export default function Programming() {
-  return (
-    <section id="programming" className="programming-page">
-    </section>
-  );
-}
-</file>
-
 <file path="src/components/projectDetailPage.css">
 .project-detail-container {
   width: 100vw;
@@ -2261,686 +2819,6 @@ export default function ProjectDetailPage() {
 }
 </file>
 
-<file path="src/components/projects/LProject1.css">
-.lproject1-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject1-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject1-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject1-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject1-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject1.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject1.css';
-
-export default function LProject1() {
-  return (
-    <div className="project-detail-page lproject1-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Jinan Huangtai Central Park
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 1. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 1 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject2.css">
-.lproject2-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject2-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject2-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject2-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject2-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject2.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject2.css';
-
-export default function LProject2() {
-  return (
-    <div className="project-detail-page lproject2-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Ecological Bird Habitat Riverside Park
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 2. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 2 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject3.css">
-.lproject3-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject3-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject3-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject3-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject3-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject3.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject3.css';
-
-export default function LProject3() {
-  return (
-    <div className="project-detail-page lproject3-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Qianfo Mountain Plaza
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 3. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 3 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject4.css">
-.lproject4-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject4-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject4-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject4-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject4-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject4.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject4.css';
-
-export default function LProject4() {
-  return (
-    <div className="project-detail-page lproject4-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Jiangshan Mountain Park
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 4. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 4 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject5.css">
-.lproject5-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject5-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject5-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject5-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject5-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject5.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject5.css';
-
-export default function LProject5() {
-  return (
-    <div className="project-detail-page lproject5-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          FISU Games Themed Floral Landscape Design
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 5. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 5 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project1.css">
-.project1-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project1-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project1-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project1-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project1-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project1.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project1.css';
-
-export default function Project1() {
-  return (
-    <div className="project-detail-page project1-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          International Port Culture Service Center
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 1. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 1 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project2.css">
-.project2-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project2-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project2-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project2-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project2-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project2.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project2.css';
-
-export default function Project2() {
-  return (
-    <div className="project-detail-page project2-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Digital Industrial Park Headquarters
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 2. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 2 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project3.css">
-.project3-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project3-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project3-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project3-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project3-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project3.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project3.css';
-
-export default function Project3() {
-  return (
-    <div className="project-detail-page project3-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Conceptual Design of New Energy Headquarters
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 3. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 3 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project4.css">
-.project4-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project4-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project4-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project4-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project4-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project4.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project4.css';
-
-export default function Project4() {
-  return (
-    <div className="project-detail-page project4-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          High-Rise Urban Mixed-Use Complex
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 4. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 4 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project5.css">
-.project5-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project5-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project5-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project5-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project5-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project5.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project5.css';
-
-export default function Project5() {
-  return (
-    <div className="project-detail-page project5-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Adaptive Reuse Design of the Former Glass Factory
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 5. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 5 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
 <file path="src/index.css">
 
 </file>
@@ -2957,6 +2835,279 @@ createRoot(document.getElementById('root')).render(
 )
 </file>
 
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+  },
+])
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>architecture-portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="scratch_gen_lprojects.js">
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const titles = {
+  1: "Jinan Huangtai Central Park",
+  2: "Ecological Bird Habitat Riverside Park",
+  3: "Qianfo Mountain Plaza",
+  4: "Jiangshan Mountain Park",
+  5: "FISU Games Themed Floral Landscape Design"
+};
+
+const dir = path.join(__dirname, 'src', 'components', 'projects');
+
+for (let i = 1; i <= 5; i++) {
+  const jsxContent = `import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject${i}.css';
+
+export default function LProject${i}() {
+  return (
+    <div className="project-detail-page lproject${i}-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          ${titles[i]}
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project ${i}. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject ${i} ]</span>
+      </div>
+    </div>
+  );
+}
+`;
+
+  const cssContent = `.lproject${i}-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject${i}-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject${i}-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject${i}-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject${i}-page .project-placeholder-gallery span {
+  color: #444444;
+}
+`;
+
+  fs.writeFileSync(path.join(dir, `LProject${i}.jsx`), jsxContent);
+  fs.writeFileSync(path.join(dir, `LProject${i}.css`), cssContent);
+}
+
+console.log("LProjects generated successfully.");
+</file>
+
+<file path="scratch_gen_projects.js">
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const titles = {
+  1: "International Port Culture Service Center",
+  2: "Digital Industrial Park Headquarters",
+  3: "Conceptual Design of New Energy Headquarters",
+  4: "High-Rise Urban Mixed-Use Complex",
+  5: "Adaptive Reuse Design of the Former Glass Factory"
+};
+
+const dir = path.join(__dirname, 'src', 'components', 'projects');
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+for (let i = 1; i <= 5; i++) {
+  const jsxContent = `import React from 'react';
+import { motion } from 'framer-motion';
+import './Project${i}.css';
+
+export default function Project${i}() {
+  return (
+    <div className="project-detail-page project${i}-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          ${titles[i]}
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project ${i}. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project ${i} ]</span>
+      </div>
+    </div>
+  );
+}
+`;
+
+  const cssContent = `.project${i}-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project${i}-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project${i}-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project${i}-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project${i}-page .project-placeholder-gallery span {
+  color: #444444;
+}
+`;
+
+  fs.writeFileSync(path.join(dir, `Project${i}.jsx`), jsxContent);
+  fs.writeFileSync(path.join(dir, `Project${i}.css`), cssContent);
+}
+
+console.log("Projects generated successfully.");
+</file>
+
 <file path="vite.config.js">
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -2966,45 +3117,6 @@ export default defineConfig({
   plugins: [react()],
   base: './',
 })
-</file>
-
-<file path="package.json">
-{
-  "name": "architecture-portfolio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.1",
-    "framer-motion": "^12.38.0",
-    "lenis": "^1.3.23",
-    "maath": "^0.10.8",
-    "motion": "^12.38.0",
-    "ogl": "^1.0.11",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "react-router-dom": "^7.15.0",
-    "three": "^0.184.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "vite": "^8.0.10"
-  }
-}
 </file>
 
 <file path="src/components/architectureWorks.css">
@@ -3617,6 +3729,103 @@ export default function ExperiencePage() {
 }
 </file>
 
+<file path="src/components/Hero.jsx">
+import React, { useState, useEffect } from 'react';
+import RotatingText from "./RotatingText";
+import DecryptedText from "./DecryptedText";
+
+// 🌟 接收来自 App 传来的 isAppLoaded 状态
+export default function Hero({ isAppLoaded }) {
+  const [offset, setOffset] = useState({ x: 40, y: -30 });
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    // 🌟 当且仅当加载页滑走时，才触发背景和文字的进场动画
+    if (isAppLoaded) {
+      setOffset({ x: 0, y: 0 });
+      setOpacity(1);
+    }
+  }, [isAppLoaded]);
+
+  return (
+    <section id="home" className="section">
+      <div className="bg-container">
+        <img 
+          src="/background_layer.png" 
+          alt="bg base" 
+          className="bg-layer bg-layer-1"
+          style={{ 
+            transform: `translate(${-offset.x}px, ${-offset.y}px)`,
+            opacity: opacity,
+            transition: 'transform 2s ease, opacity 2s ease'
+          }}
+        />
+        <img 
+          src="/pixel_layer.png" 
+          alt="bg overlay" 
+          className="bg-layer bg-layer-2"
+          style={{ 
+            transform: `translate(${offset.x}px, ${offset.y}px)`,
+            opacity: opacity,
+            transition: 'transform 2s ease, opacity 2s ease'
+          }}
+        />
+        <img 
+          src="/background_layer.png" 
+          alt="bg fade in" 
+          className="bg-layer bg-layer-3"
+          style={{ 
+            opacity: opacity,
+            transition: 'opacity 2s ease'
+          }}
+        />
+      </div>
+      
+      <div className="title-main">
+        {/* 🌟 用 isAppLoaded 锁住文字组件，阻止乱码组件提前进入视口并强行播放 */}
+        {isAppLoaded && (
+          <h1>
+            <RotatingText /><br />{" "}
+            <DecryptedText 
+              text="Designer" 
+              parentClassName="keep-my-font"
+              animateOn="view" 
+              speed={120} 
+              maxIterations={15} 
+              revealDirection="start" 
+              sequential={true} 
+              useOriginalCharsOnly={false} 
+            />
+          </h1>
+        )}
+      </div>
+      
+      <div className="title-name">
+        {isAppLoaded && (
+          <h2>{" "}
+             <DecryptedText 
+                text="Norman Liu" 
+                parentClassName="keep-my-font-name"
+                animateOn="view" 
+                speed={100} 
+                maxIterations={15} 
+                revealDirection="start" 
+                sequential={true} 
+                useOriginalCharsOnly={false} 
+              />
+          </h2>
+        )}
+      </div>
+
+      <div className="scroll-indicator" onClick={() => document.getElementById('introduction').scrollIntoView()}>
+        Scroll
+        <div className="scroll-arrow"></div>
+      </div>
+    </section>
+  );
+}
+</file>
+
 <file path="src/components/landscapeWorksPage.css">
 .landscape-portfolio-section {
     background-color: #000000 !important;
@@ -3684,455 +3893,6 @@ export default function ExperiencePage() {
         right: 20px;
         font-size: 0.8rem;
     }
-}
-</file>
-
-<file path="src/components/LandscapeWorksPage.jsx">
-import React, { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionTemplate,
-  useSpring,
-  animate,
-  useVelocity,
-  useMotionValue
-} from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { useLenis } from 'lenis/react';
-import './landscapeWorksPage.css';
-
-import LProject1 from "../assets/LProject1.png";
-import LProject2 from "../assets/LProject2.png";
-import LProject3 from "../assets/LProject3.png";
-import LProject4 from "../assets/LProject4.png";
-import LProject5 from "../assets/LProject5.png";
-
-const DecodeText = ({ text, className = "", style = {} }) => {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const [renderedElements, setRenderedElements] = useState([]);
-  const intervalRef = useRef(null);
-
-  useEffect(() => {
-    let iteration = 0;
-    const lag = 3;
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      const newElements = [];
-      for (let i = 0; i < text.length; i++) {
-        if (iteration < i) {
-          newElements.push(<span key={i} style={{ visibility: "hidden" }}>{text[i]}</span>);
-        } else if (iteration >= i + lag) {
-          newElements.push(<span key={i}>{text[i]}</span>);
-        } else {
-          if (text[i] === ' ') {
-            newElements.push(<span key={i}> </span>);
-          } else {
-            newElements.push(<span key={i}>{letters[Math.floor(Math.random() * letters.length)]}</span>);
-          }
-        }
-      }
-      setRenderedElements(newElements);
-      if (iteration >= text.length + lag) clearInterval(intervalRef.current);
-      iteration += 1.5;
-    }, 15);
-    return () => clearInterval(intervalRef.current);
-  }, [text]);
-
-  return (
-    <span className={`decode-text-container ${className}`} style={{
-      fontFamily: "'SansSerifFLF', sans-serif",
-      whiteSpace: "pre-wrap", wordBreak: "break-word",
-      cursor: "default", display: "inline-block", ...style
-    }}>
-      {renderedElements.length > 0 ? renderedElements : <span style={{ visibility: 'hidden' }}>{text}</span>}
-    </span>
-  );
-};
-
-const projectDataConfig = {
-  0: {
-    title: "Jinan Huangtai Central Park",
-    subtitle: "Jinan, Shandong, China",
-    details: [
-      { label: "Site Area:", value: "Approximately 45 hectares" },
-      { label: "Commercial Gross Floor Area:", value: "2,300 m²" },
-      { label: "Completion Date:", value: "May 2024" }
-    ]
-  },
-  1: {
-    title: "Ecological Bird Habitat Riverside Park",
-    subtitle: "Mianyang, Sichuan, China",
-    details: [
-      { label: "Site Area:", value: "Approximately 10 hectares" },
-      { label: "Theme:", value: "Ecological Restoration and Bird Conservation" },
-      { label: "Completion Date:", value: "April 2022" }
-    ]
-  },
-  2: {
-    title: "Qianfo Mountain Plaza",
-    subtitle: "Jinan, Shandong, China",
-    details: [
-      { label: "Site Area:", value: "Approximately 10 hectares" },
-      { label: "Commercial Gross Floor Area:", value: "Approximately 1,500 m²" },
-      { label: "Completion Date:", value: "May 2023" }
-    ]
-  },
-  3: {
-    title: "Jiangshan Mountain Park",
-    subtitle: "Jinan, Shandong, China",
-    details: [
-      { label: "Site Area:", value: "Approximately 30 hectares" },
-      { label: "Theme:", value: "Disaster Prevention and Ecological Conservation" },
-      { label: "Completion Date:", value: "September 2023" }
-    ]
-  },
-  4: {
-    title: "FISU Games Themed Floral Landscape Design",
-    subtitle: "Chengdu, Sichuan, China",
-    details: [
-      { label: "Site Area:", value: "Approximately 3,000 m²" },
-      { label: "Completion Date:", value: "September 2022" }
-    ]
-  }
-};
-
-const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress }) => {
-  const scale = index === 0 ? 2.5 : index === 2 ? 1.7 : 2.05;
-  const baseRotateZ = { 0: 4, 1: -3, 2: 5, 3: -2, 4: 3 }[index];
-
-  const lagX = useTransform(smoothVelocity, [-3000, 0, 3000], [120, 0, -120]);
-  const rotateY = useTransform(smoothVelocity, [-3000, 0, 3000], [12, 0, -12]);
-  const skewXLag = useTransform(smoothVelocity, [-3000, 0, 3000], [6, 0, -6]);
-
-  const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
-  const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
-
-  // 🌟 完全恢复你原始的排布方式： - index * 850px
-  const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
-  const zIndex = 30 - index;
-
-  return (
-    <motion.div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, x: wrapperX, y: parallaxY, zIndex, pointerEvents: 'none' }}>
-      <motion.div style={{ position: 'absolute', left: '50vw', top: '50%' }}>
-        <motion.img
-          src={config.image}
-          alt={`Work ${index + 1}`}
-          className="flying-photo"
-          style={{
-            position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
-            objectFit: 'cover', scale, rotateZ: baseRotateZ, transformOrigin: "50% 50%", pointerEvents: 'none',
-            x: lagX,
-            rotateY: rotateY,
-            skewX: skewXLag,
-            transformPerspective: 1000,
-            boxShadow: 'none',
-            WebkitBoxShadow: 'none'
-          }}
-        />
-      </motion.div>
-    </motion.div>
-  );
-};
-
-const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => {
-  const navigate = useNavigate();
-  const scale = index === 0 ? 2.5 : index === 2 ? 1.7 : 2.05;
-  const projectData = projectDataConfig[index];
-
-  const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
-
-  // 🌟 完全恢复你原始的排布方式： - index * 850px
-  const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
-
-  const titleLeft = -180 * scale - 40;
-  const titleTop = -120 * scale - 60;
-  const detailsLeft = 180 * scale - 320 + 40;
-  const detailsTop = 120 * scale - 180;
-
-  const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
-  const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
-
-  if (!projectData) return null;
-
-  return (
-    <motion.div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, x: wrapperX, y: parallaxY, pointerEvents: 'none' }}>
-      <motion.div style={{ position: 'absolute', left: '50vw', top: '50%' }}>
-        <motion.div
-          style={{ position: 'absolute', left: titleLeft, top: titleTop, width: 340, pointerEvents: 'none', x: textLagX }}
-        >
-          <h2 style={{ fontSize: 24, margin: '0 0 6px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
-            <DecodeText text={projectData.title} />
-          </h2>
-          <h3 style={{ fontSize: 16, color: '#4a75ff', margin: 0, fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
-            <DecodeText text={projectData.subtitle} />
-          </h3>
-        </motion.div>
-
-        <motion.div
-          style={{ position: 'absolute', left: detailsLeft, top: detailsTop, width: 320, pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', gap: 16, x: textLagX }}
-        >
-          {projectData.details.map((d, i) => (
-            <div key={i}>
-              <h4 style={{ fontSize: 14, margin: '0 0 4px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
-                <DecodeText text={d.label} />
-              </h4>
-              <p style={{ fontSize: 14, color: '#4a75ff', margin: 0, fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
-                <DecodeText text={d.value} />
-              </p>
-            </div>
-          ))}
-          <button
-            onClick={() => {
-              sessionStorage.setItem('returnToLandscape', 'true');
-              sessionStorage.setItem('landscapeGalleryX', galleryX.get());
-              navigate(`/project/LProject${index + 1}`);
-            }}
-            style={{
-              marginTop: 12, padding: '8px 24px', backgroundColor: '#001ede', color: 'white',
-              border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
-              fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto',
-              boxShadow: "0 4px 15px rgba(0,0,0,0.4)"
-            }}>Details</button>
-        </motion.div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
-export default function LandscapeWorksPage() {
-  const containerRef = useRef(null);
-  const galleryX = useMotionValue(0);
-  const lenis = useLenis();
-
-  const galleryVelocity = useVelocity(galleryX);
-  const smoothVelocity = useSpring(galleryVelocity, { stiffness: 80, damping: 15 });
-
-  const inertiaRef = useRef(null);
-
-  const dragRef = useRef({
-    isDown: false,
-    startX: 0,
-    startGX: 0,
-    lastTime: 0,
-    lastX: 0,
-    velocity: 0
-  });
-
-  useEffect(() => {
-    const handleWheel = (e) => {
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        e.preventDefault();
-        const cur = galleryX.get();
-        // 🌟 唯一需要修改的地方：从原本的 + 修正为 - ，对齐物理直觉
-        let next = cur - e.deltaX * 0.8;
-        // 🌟 恢复原本的滚动区间：0 到 3400
-        next = Math.max(0, Math.min(3400, next));
-        galleryX.set(next);
-      }
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel);
-      }
-    };
-  }, [galleryX]);
-
-  const onPointerDown = useCallback((e) => {
-    e.preventDefault();
-    inertiaRef.current?.stop();
-
-    const t = Date.now();
-    dragRef.current = {
-      isDown: true,
-      startX: e.clientX,
-      startGX: galleryX.get(),
-      lastTime: t,
-      lastX: e.clientX,
-      velocity: 0
-    };
-  }, [galleryX]);
-
-  const onPointerMove = useCallback((e) => {
-    if (!dragRef.current.isDown) return;
-    const now = Date.now();
-    const dx = e.clientX - dragRef.current.startX;
-    let newX = dragRef.current.startGX + dx;
-
-    // 🌟 恢复原本的滚动区间：0 到 3400
-    newX = Math.max(0, Math.min(3400, newX));
-    galleryX.set(newX);
-
-    if (now - dragRef.current.lastTime > 16) {
-      const dt = now - dragRef.current.lastTime;
-      if (dt > 0) {
-        dragRef.current.velocity = (e.clientX - dragRef.current.lastX) / dt;
-      }
-      dragRef.current.lastTime = now;
-      dragRef.current.lastX = e.clientX;
-    }
-  }, [galleryX]);
-
-  const onPointerUp = useCallback(() => {
-    if (!dragRef.current.isDown) return;
-    dragRef.current.isDown = false;
-
-    const inertiaFactor = 0.12;
-    const currentX = galleryX.get();
-    const velocity = dragRef.current.velocity * 100;
-    let targetX = currentX + velocity * inertiaFactor;
-
-    // 🌟 恢复原本的滚动区间：0 到 3400
-    targetX = Math.max(0, Math.min(3400, targetX));
-
-    inertiaRef.current = animate(currentX, targetX, {
-      type: "spring",
-      stiffness: 120,
-      damping: 18,
-      onUpdate: v => galleryX.set(v),
-      onComplete: () => { }
-    });
-  }, [galleryX]);
-
-  useEffect(() => {
-    const onMove = (e) => onPointerMove(e);
-    const onUp = () => onPointerUp();
-    document.addEventListener('pointermove', onMove);
-    document.addEventListener('pointerup', onUp);
-    return () => {
-      document.removeEventListener('pointermove', onMove);
-      document.removeEventListener('pointerup', onUp);
-    };
-  }, [onPointerMove, onPointerUp]);
-
-  useLayoutEffect(() => {
-    if (sessionStorage.getItem('returnToLandscape') === 'true') {
-      const savedX = sessionStorage.getItem('landscapeGalleryX');
-      if (savedX !== null) {
-        galleryX.jump(parseFloat(savedX));
-      }
-      const el = containerRef.current;
-      if (el) {
-        const targetScroll = el.offsetTop;
-        window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
-      }
-    }
-  }, [galleryX]);
-
-  useEffect(() => {
-    if (sessionStorage.getItem('returnToLandscape') === 'true') {
-      if (lenis) {
-        sessionStorage.removeItem('returnToLandscape');
-        sessionStorage.removeItem('landscapeGalleryX');
-        const el = containerRef.current;
-        if (el) {
-          const targetScroll = el.offsetTop;
-          lenis.scrollTo(targetScroll, { immediate: true });
-        }
-      }
-    }
-  }, [lenis]);
-
-  const scatterConfigs = [
-    { image: LProject1 },
-    { image: LProject2 },
-    { image: LProject3 },
-    { image: LProject4 },
-    { image: LProject5 }
-  ];
-
-  const { scrollYProgress: enterProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "start start"]
-  });
-
-  const { scrollYProgress: sectionProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const textY = useTransform(enterProgress, [0, 1], ["-10vh", "-130%"]);
-  const lightPercent = useTransform(enterProgress, [0, 0.5], [-20, 120]);
-  const stop1 = useTransform(lightPercent, v => `${v - 15}%`);
-  const stop2 = useTransform(lightPercent, v => `${v - 5}%`);
-  const stop3 = useTransform(lightPercent, v => `${v}%`);
-  const stop4 = useTransform(lightPercent, v => `${v + 10}%`);
-  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
-
-  return (
-    <section id="landscape" className="landscape-portfolio-section" ref={containerRef} style={{ height: '100vh', backgroundColor: '#000', position: 'relative', width: '100%', overflow: 'visible', zIndex: 150 }}>
-      
-      <div className="landscape-hint-text">
-        Swipe through the gallery to explore more projects.
-      </div>
-      <motion.div
-        style={{
-          y: textY,
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          paddingLeft: '40px',
-          zIndex: 60,
-          pointerEvents: 'none'
-        }}
-      >
-        <motion.h1
-          className="landscape-main-title"
-          style={{ backgroundImage: animatedGradient }}
-        >
-          Landscape<br />Works
-        </motion.h1>
-      </motion.div>
-
-      <div
-        onPointerDown={onPointerDown}
-        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'none', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
-      >
-        <div className="landscape-bg-text">
-          Landscape
-        </div>
-
-        <motion.div style={{
-          x: 0,
-          position: 'absolute', left: 0, top: 0, width: '100vw', height: '100%', zIndex: 20,
-          pointerEvents: 'none'
-        }}>
-          {scatterConfigs.map((cfg, idx) => (
-            <PhotoItem
-              key={idx}
-              index={idx}
-              config={cfg}
-              galleryX={galleryX}
-              smoothVelocity={smoothVelocity}
-              sectionProgress={sectionProgress}
-            />
-          ))}
-        </motion.div>
-
-        <motion.div style={{
-          x: 0,
-          position: 'absolute', left: 0, top: 0, width: '100vw', height: '100%', zIndex: 40,
-          pointerEvents: 'none'
-        }}>
-          {scatterConfigs.map((cfg, idx) => (
-            <PhotoTextItem
-              key={`text-${idx}`}
-              index={idx}
-              galleryX={galleryX}
-              smoothVelocity={smoothVelocity}
-              sectionProgress={sectionProgress}
-            />
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
 }
 </file>
 
@@ -4311,128 +4071,6 @@ a.contact-btn:active,
     opacity: 0.7;
     transform: scale(1.05);
   }
-}
-</file>
-
-<file path="src/components/Navbar.jsx">
-import React, { useState } from 'react'; 
-import GlassSurface from './GlassSurface'; 
-import './Navbar.css';
-import MenuIcon from '../assets/MenuIcon.png';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const menuVariants = {
-  hidden: { y: '-100%', transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
-  visible: { 
-    y: 0, 
-    transition: { 
-      duration: 0.5, 
-      ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.1,
-      delayChildren: 0.15
-    } 
-  }
-};
-
-const linkVariants = {
-  hidden: { y: -30, opacity: 0 },
-  visible: { 
-    y: 0, 
-    opacity: 1, 
-    transition: { type: "spring", stiffness: 300, damping: 24 } 
-  }
-};
-
-export default function Navbar() { 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  return (
-    <>
-      {/* 1. Desktop Layout */}
-      <div className="desktop-nav">
-        {/* 导航栏容器（液态玻璃） */}
-        <header className="navbar-wrapper">
-          <GlassSurface 
-            width="800px"       
-            height="40px"       
-            borderRadius={30}   
-            blur={15}           
-            opacity={0.8}       
-            className="navbar-glass" 
-          >
-            <nav className="nav-links">
-              <a href="#aigc">AIGC</a>
-              <a href="#architecture">Architecture</a>
-              <a href="#landscape">Landscape</a>
-              <a href="#more">More</a>
-            </nav>
-          </GlassSurface>
-        </header>
-
-        {/* 右侧独立按钮组 (语言切换和 Contact me) */}
-        <div className="right-nav-group">
-          <button className="lang-btn">中文</button>
-          <a 
-            href="#contact" 
-            className="contact-btn"
-          >
-            Contact me
-          </a>
-        </div>
-      </div>
-
-      {/* 2. Mobile Layout */}
-      <div className="mobile-nav">
-        <button 
-          className="mobile-menu-btn" 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <img src={MenuIcon} alt="Menu" />
-        </button>
-
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div 
-              className="mobile-fullscreen-menu"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={menuVariants}
-              style={{
-                position: 'fixed',
-                top: 0, left: 0, width: '100vw', height: '100vh',
-                backgroundColor: '#292597',
-                zIndex: 1999,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
-              <nav className="mobile-fullscreen-nav-links">
-                {[
-                  { name: 'AIGC', href: '#aigc' },
-                  { name: 'Architecture', href: '#architecture' },
-                  { name: 'Landscape', href: '#landscape' },
-                  { name: 'More', href: '#more' },
-                  { name: '中文', isButton: true },
-                  { name: 'Contact me', href: '#contact' }
-                ].map((item, idx) => (
-                  <motion.div key={idx} variants={linkVariants}>
-                    {item.isButton ? (
-                      <button className="mobile-fullscreen-link" onClick={() => setIsMobileMenuOpen(false)}>{item.name}</button>
-                    ) : (
-                      <a href={item.href} className="mobile-fullscreen-link" onClick={() => setIsMobileMenuOpen(false)}>{item.name}</a>
-                    )}
-                  </motion.div>
-                ))}
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </>
-  );
 }
 </file>
 
@@ -4841,6 +4479,1284 @@ export default function RotatingText() {
         useOriginalCharsOnly={false}
       />
     </span>
+  );
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "architecture-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "framer-motion": "^12.38.0",
+    "lenis": "^1.3.23",
+    "maath": "^0.10.8",
+    "motion": "^12.38.0",
+    "ogl": "^1.0.11",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.15.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "vite": "^8.0.10"
+  }
+}
+</file>
+
+<file path="src/components/ExperienceListPage.jsx">
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import './experienceListPage.css';
+import starBg from '../assets/Starbackground.png'; 
+
+const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasHovered, setHasHovered] = useState(false);
+  
+  const opacityStart = index * 0.12; 
+  const opacityEnd = opacityStart + 0.15; 
+  const itemOpacity = useTransform(scrollYProgress, [opacityStart, opacityEnd], [0, 1]);
+
+  const sweepStart = opacityStart + 0.1; 
+  const sweepEnd = sweepStart + 0.4; 
+  const percent = useTransform(scrollYProgress, [sweepStart, sweepEnd], [-20, 120]);
+
+  const stop1 = useTransform(percent, v => `${v - 15}%`); 
+  const stop2 = useTransform(percent, v => `${v - 5}%`);  
+  const stop3 = useTransform(percent, v => `${v}%`);      
+  const stop4 = useTransform(percent, v => `${v + 10}%`); 
+
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(255, 255, 255, 0.25) ${stop4})`;
+
+  // ================= 核心动画编排 =================
+  
+  // 1. 原公司名：放大缓冲 + 遮罩擦除
+  const originalTextVariants = {
+    hidden: { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
+    rest: { 
+      clipPath: "inset(0% 0% 0% 0%)", 
+      scale: 1, 
+      transition: { 
+        clipPath: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
+        // 🌟 修复：加入 0.4 秒的平滑回退，如果在放大中途移走鼠标，它会温柔地缩回去而不是瞬间闪现
+        scale: { duration: 0.4, ease: "easeOut" } 
+      } 
+    },
+    hover: { 
+      clipPath: "inset(0% 0% 0% 100%)", 
+      scale: 1.05, 
+      transition: { 
+        scale: { duration: 0.7, ease: "easeInOut" },
+        clipPath: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
+      } 
+    }
+  };
+
+  // 2. 职位信息揭示
+  const revealTextVariants = {
+    hidden: { clipPath: "inset(0% 100% 0% 0%)" },
+    rest: { 
+      clipPath: "inset(0% 100% 0% 0%)", 
+      transition: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] } 
+    },
+    hover: { 
+      clipPath: "inset(0% 0% 0% 0%)", 
+      transition: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
+    }
+  };
+
+  // 3. 竖直彗星光标
+  const scannerVariants = {
+    hidden: { opacity: 0, left: "0%" },
+    rest: {
+      left: "0%",
+      opacity: 0, 
+      boxShadow: "25px 0 30px 6px rgba(0, 130, 255, 0.9), 70px 0 80px 16px rgba(82, 17, 221, 0.8), 140px 0 130px 28px rgba(0, 22, 216, 0.5)",
+      transition: {
+        left: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
+        boxShadow: { duration: 0 },
+        opacity: { duration: 0.35, delay: 0.5, ease: "easeOut" }
+      }
+    },
+    hover: {
+      left: "100%",
+      opacity: 1,
+      boxShadow: "-25px 0 30px 6px rgba(0, 130, 255, 0.9), -70px 0 80px 16px rgba(82, 17, 221, 0.8), -140px 0 130px 28px rgba(0, 22, 216, 0.5)",
+      transition: {
+        left: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] },
+        boxShadow: { duration: 0, delay: 0.7 },
+        opacity: { duration: 0.15, delay: 0.7, ease: "easeIn" }
+      }
+    }
+  };
+
+  const handleHoverStart = () => {
+    setIsHovered(true);
+    setHasHovered(true);
+  };
+
+  const currentAnimationState = isHovered ? "hover" : (hasHovered ? "rest" : "hidden");
+
+  return (
+    <motion.div 
+      className="company-item"
+      style={{ opacity: itemOpacity }} 
+      onHoverStart={handleHoverStart}
+      onHoverEnd={() => setIsHovered(false)}
+      initial="hidden"
+      animate={currentAnimationState}
+    >
+      <div className="company-text-wrapper">
+        
+        <motion.div 
+          className="company-text-mask original-text"
+          style={{ backgroundImage: animatedGradient }} 
+          variants={originalTextVariants}
+        >
+          {company.name.trim()}
+        </motion.div>
+
+        <motion.div 
+          className="company-text-mask reveal-text"
+          variants={revealTextVariants}
+        >
+          <div className="reveal-content">
+            <span className="intern-position">{company.position.trim()}</span>
+            {company.time && <span className="intern-time">{company.time}</span>}
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="comet-scanner"
+          variants={scannerVariants}
+        />
+        
+      </div>
+    </motion.div>
+  );
+});
+
+export default function ExperienceListPage() {
+  const containerRef = useRef(null);
+
+  const { scrollYProgress: textScrollProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"]
+  });
+
+  const { scrollYProgress: bgScrollProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const bgY = useTransform(bgScrollProgress, [0, 1], ["-10%", "10%"]);
+
+  const companies = [
+    { name: "Architectural Design and Research Institute of Xi'an University of Architecture and Technology", position: "Architecture Intern", time: "2024.9-2025.9" },
+    { name: "Beijing Qinghua Tongheng Planning and Design Institute Co., Ltd. (THUPDI)", position: "Intern", time: "2025.11-2026.1" },
+    { name: "China United Northwest Institute for Engineering Design & Research Co., Ltd.", position: "Architecture Intern", time: "2026.3-2026.6" },
+    { name: "Diyouni Design Institute", position: "Teaching Assistant", time: "" },
+    { name: "Zhuchuang Architectural Design Studio", position: "Architecture Intern", time: "2026.1-2026.3" }
+  ];
+
+  return (
+    <section 
+      id="experience-list" 
+      className="experience-list-page"
+      ref={containerRef}
+    >
+      <motion.div 
+        className="parallax-star-bg"
+        style={{ 
+          y: bgY,
+          backgroundImage: `url(${starBg})` 
+        }}
+      />
+
+      <div className="company-list-container">
+        {companies.map((company, index) => (
+          <CompanyItem 
+            key={index}
+            index={index}
+            company={company}
+            scrollYProgress={textScrollProgress} 
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/experiencePage.css">
+/* 🌟 引入 Dela Gothic One 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+/* =========================================
+   Experience Page (沉浸式纯黑过渡页)
+   ========================================= */
+.experience-page {
+  position: relative;
+  width: 100%;
+  
+  /* 🌟 核心修改 1：从 66vh 再缩短约五分之一，变成 50vh（精确占据屏幕的一半） */
+  height: 50vh;          
+  
+  /* 🌟 核心修改 2：同步调小保底高度，防止在小屏幕上由于高度不够而被撑开 */
+  min-height: 400px;     
+  
+  background-color: black;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* =========================================
+   顶部镜像极光 (高度保持 50vh 不变)
+   ========================================= */
+.experience-aurora-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* 极光依然保持 50vh，因为页面现在也是 50vh，极光刚好覆盖这半屏空间并向下消散 */
+  height: 50vh; 
+  
+  transform: scaleY(-1); 
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* =========================================
+   Experiences 扫光文字
+   ========================================= */
+.exp-text-container {
+  position: absolute;
+  top: 60%; /* 相对位置保持在 60% 处不变 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.exp-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(5rem, 9vw, 9rem); 
+  letter-spacing: 2px;
+  margin: 0;
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  white-space: nowrap; /* 默认不换行 */
+}
+
+/* 🌟 新增：650px 以下允许换行，并激活 br 标签 */
+@media (max-width: 650px) {
+  .exp-text {
+    white-space: normal;
+    line-height: 1.1;
+  }
+  .mobile-break {
+    display: block !important;
+  }
+}
+
+.mobile-break {
+  display: none;
+}
+</file>
+
+<file path="src/components/generatedContent.css">
+/* =========================================
+   Generated Content Page (Cascade Carousel)
+   ========================================= */
+.generated-content-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  position: relative;
+  z-index: 30; /* 确保覆盖 AIGC 页面 */
+  margin-top: -100vh; /* 核心：向上滑动天然覆盖 */
+  overflow: hidden; 
+}
+
+/* =========================================
+   动态标题模块 (左侧锚定，蓝块绝对静止)
+   ========================================= */
+.gc-title-block {
+  position: absolute;
+  top: calc(18vh - 40px);
+  /* 🌟 将 left 从 52vw 加大到 60vw，让整个标题块（蓝块+文字）整体往右移动 */
+  left: 60vw; 
+  right: 5vw;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.gc-blue-square {
+  width: 35px;
+  height: 35px;
+  background-color: #0016d8; 
+  flex-shrink: 0;
+  margin-top: 5px; /* 微调以对齐首行文字的视觉中心 */
+}
+
+.gc-title-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(1.5rem, 2.8vw, 3.2rem); 
+  font-weight: 900;
+  line-height: 1.25; /* 让多行文本紧凑美观 */
+  color: #ffffff;
+  margin: 0;
+  margin-top: -10px;
+  letter-spacing: 1px;
+  word-wrap: break-word; /* 允许过长时自然换行 */
+}
+
+/* =========================================
+   无限画廊容器
+   ========================================= */
+.gc-carousel-container {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  touch-action: pan-y; /* 拦截水平拖拽的默认事件 */
+  cursor: grab;
+  z-index: 40;
+}
+
+.gc-carousel-container:active {
+  cursor: grabbing;
+}
+
+/* 响应式调整 (手机端) */
+@media (max-width: 900px) {
+  .gc-title-block {
+    top: calc(12vh - 40px);
+    left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
+    right: 10vw;
+    gap: 15px;
+  }
+  .gc-blue-square {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+  }
+  .gc-title-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+}
+</file>
+
+<file path="src/components/LandscapeWorksPage.jsx">
+import React, { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+  useSpring,
+  animate,
+  useVelocity,
+  useMotionValue
+} from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { useLenis } from 'lenis/react';
+import './landscapeWorksPage.css';
+
+import LProject1 from "../assets/LProject1.png";
+import LProject2 from "../assets/LProject2.png";
+import LProject3 from "../assets/LProject3.png";
+import LProject4 from "../assets/LProject4.png";
+import LProject5 from "../assets/LProject5.png";
+
+const DecodeText = ({ text, className = "", style = {} }) => {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const [renderedElements, setRenderedElements] = useState([]);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    let iteration = 0;
+    const lag = 3;
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      const newElements = [];
+      for (let i = 0; i < text.length; i++) {
+        if (iteration < i) {
+          newElements.push(<span key={i} style={{ visibility: "hidden" }}>{text[i]}</span>);
+        } else if (iteration >= i + lag) {
+          newElements.push(<span key={i}>{text[i]}</span>);
+        } else {
+          if (text[i] === ' ') {
+            newElements.push(<span key={i}> </span>);
+          } else {
+            newElements.push(<span key={i}>{letters[Math.floor(Math.random() * letters.length)]}</span>);
+          }
+        }
+      }
+      setRenderedElements(newElements);
+      if (iteration >= text.length + lag) clearInterval(intervalRef.current);
+      iteration += 1.5;
+    }, 15);
+    return () => clearInterval(intervalRef.current);
+  }, [text]);
+
+  return (
+    <span className={`decode-text-container ${className}`} style={{
+      fontFamily: "'SansSerifFLF', sans-serif",
+      whiteSpace: "pre-wrap", wordBreak: "break-word",
+      cursor: "default", display: "inline-block", ...style
+    }}>
+      {renderedElements.length > 0 ? renderedElements : <span style={{ visibility: 'hidden' }}>{text}</span>}
+    </span>
+  );
+};
+
+const projectDataConfig = {
+  0: {
+    title: "Jinan Huangtai Central Park",
+    subtitle: "Jinan, Shandong, China",
+    details: [
+      { label: "Site Area:", value: "Approximately 45 hectares" },
+      { label: "Commercial Gross Floor Area:", value: "2,300 m²" },
+      { label: "Completion Date:", value: "May 2024" }
+    ]
+  },
+  1: {
+    title: "Ecological Bird Habitat Riverside Park",
+    subtitle: "Mianyang, Sichuan, China",
+    details: [
+      { label: "Site Area:", value: "Approximately 10 hectares" },
+      { label: "Theme:", value: "Ecological Restoration and Bird Conservation" },
+      { label: "Completion Date:", value: "April 2022" }
+    ]
+  },
+  2: {
+    title: "Qianfo Mountain Plaza",
+    subtitle: "Jinan, Shandong, China",
+    details: [
+      { label: "Site Area:", value: "Approximately 10 hectares" },
+      { label: "Commercial Gross Floor Area:", value: "Approximately 1,500 m²" },
+      { label: "Completion Date:", value: "May 2023" }
+    ]
+  },
+  3: {
+    title: "Jiangshan Mountain Park",
+    subtitle: "Jinan, Shandong, China",
+    details: [
+      { label: "Site Area:", value: "Approximately 30 hectares" },
+      { label: "Theme:", value: "Disaster Prevention and Ecological Conservation" },
+      { label: "Completion Date:", value: "September 2023" }
+    ]
+  },
+  4: {
+    title: "FISU Games Themed Floral Landscape Design",
+    subtitle: "Chengdu, Sichuan, China",
+    details: [
+      { label: "Site Area:", value: "Approximately 3,000 m²" },
+      { label: "Completion Date:", value: "September 2022" }
+    ]
+  }
+};
+
+const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress }) => {
+  const scale = index === 0 ? 2.5 : index === 2 ? 1.7 : 2.05;
+  const baseRotateZ = { 0: 4, 1: -3, 2: 5, 3: -2, 4: 3 }[index];
+
+  const lagX = useTransform(smoothVelocity, [-3000, 0, 3000], [120, 0, -120]);
+  const rotateY = useTransform(smoothVelocity, [-3000, 0, 3000], [12, 0, -12]);
+  const skewXLag = useTransform(smoothVelocity, [-3000, 0, 3000], [6, 0, -6]);
+
+  const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
+  const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
+
+  const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
+  const zIndex = 30 - index;
+
+  return (
+    <motion.div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, x: wrapperX, y: parallaxY, zIndex, pointerEvents: 'none' }}>
+      <motion.div style={{ position: 'absolute', left: '50vw', top: '50%' }}>
+        <motion.img
+          src={config.image}
+          alt={`Work ${index + 1}`}
+          className="flying-photo"
+          style={{
+            position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
+            objectFit: 'cover', scale, rotateZ: baseRotateZ, transformOrigin: "50% 50%", pointerEvents: 'none',
+            x: lagX,
+            rotateY: rotateY,
+            skewX: skewXLag,
+            transformPerspective: 1000,
+            boxShadow: 'none',
+            WebkitBoxShadow: 'none',
+            z: 0, // 🌟 使用原生方式触发 GPU 层
+            willChange: 'transform'
+          }}
+        />
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => {
+  const navigate = useNavigate();
+  const scale = index === 0 ? 2.5 : index === 2 ? 1.7 : 2.05;
+  const projectData = projectDataConfig[index];
+
+  const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
+  const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
+
+  const titleLeft = -180 * scale - 40;
+  const titleTop = -120 * scale - 60;
+  const detailsLeft = 180 * scale - 320 + 40;
+  const detailsTop = 120 * scale - 180;
+
+  const parallaxMultiplier = { 0: 90, 1: -160, 2: 220, 3: -110, 4: 170 }[index];
+  const parallaxY = useTransform(sectionProgress, [0, 1], [-parallaxMultiplier, parallaxMultiplier]);
+
+  if (!projectData) return null;
+
+  return (
+    <motion.div style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, x: wrapperX, y: parallaxY, pointerEvents: 'none' }}>
+      <motion.div style={{ position: 'absolute', left: '50vw', top: '50%' }}>
+        <motion.div
+          style={{ position: 'absolute', left: titleLeft, top: titleTop, width: 340, pointerEvents: 'none', x: textLagX }}
+        >
+          <h2 style={{ fontSize: 24, margin: '0 0 6px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
+            <DecodeText text={projectData.title} />
+          </h2>
+          <h3 style={{ fontSize: 16, color: '#4a75ff', margin: 0, fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
+            <DecodeText text={projectData.subtitle} />
+          </h3>
+        </motion.div>
+
+        <motion.div
+          style={{ position: 'absolute', left: detailsLeft, top: detailsTop, width: 320, pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', textAlign: 'right', gap: 16, x: textLagX }}
+        >
+          {projectData.details.map((d, i) => (
+            <div key={i}>
+              <h4 style={{ fontSize: 14, margin: '0 0 4px', fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
+                <DecodeText text={d.label} />
+              </h4>
+              <p style={{ fontSize: 14, color: '#4a75ff', margin: 0, fontWeight: 'bold', fontFamily: "'SansSerifFLF', sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}>
+                <DecodeText text={d.value} />
+              </p>
+            </div>
+          ))}
+          <button
+            onClick={() => {
+              sessionStorage.setItem('returnToLandscape', 'true');
+              sessionStorage.setItem('landscapeGalleryX', galleryX.get());
+              navigate(`/project/LProject${index + 1}`);
+            }}
+            style={{
+              marginTop: 12, padding: '8px 24px', backgroundColor: '#001ede', color: 'white',
+              border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
+              fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto',
+              boxShadow: "0 4px 15px rgba(0,0,0,0.4)"
+            }}>Details</button>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default function LandscapeWorksPage() {
+  const containerRef = useRef(null);
+  const galleryX = useMotionValue(0);
+  const lenis = useLenis();
+
+  const galleryVelocity = useVelocity(galleryX);
+  const smoothVelocity = useSpring(galleryVelocity, { stiffness: 80, damping: 15 });
+
+  const inertiaRef = useRef(null);
+
+  const dragRef = useRef({
+    isDown: false,
+    startX: 0,
+    startGX: 0,
+    lastTime: 0,
+    lastX: 0,
+    velocity: 0
+  });
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        const cur = galleryX.get();
+        let next = cur - e.deltaX * 0.8;
+        next = Math.max(0, Math.min(3400, next));
+        galleryX.set(next);
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [galleryX]);
+
+  const onPointerDown = useCallback((e) => {
+    e.preventDefault();
+    inertiaRef.current?.stop();
+
+    const t = Date.now();
+    dragRef.current = {
+      isDown: true,
+      startX: e.clientX,
+      startGX: galleryX.get(),
+      lastTime: t,
+      lastX: e.clientX,
+      velocity: 0
+    };
+  }, [galleryX]);
+
+  const onPointerMove = useCallback((e) => {
+    if (!dragRef.current.isDown) return;
+    const now = Date.now();
+    const dx = e.clientX - dragRef.current.startX;
+    let newX = dragRef.current.startGX + dx;
+
+    newX = Math.max(0, Math.min(3400, newX));
+    galleryX.set(newX);
+
+    if (now - dragRef.current.lastTime > 16) {
+      const dt = now - dragRef.current.lastTime;
+      if (dt > 0) {
+        dragRef.current.velocity = (e.clientX - dragRef.current.lastX) / dt;
+      }
+      dragRef.current.lastTime = now;
+      dragRef.current.lastX = e.clientX;
+    }
+  }, [galleryX]);
+
+  const onPointerUp = useCallback(() => {
+    if (!dragRef.current.isDown) return;
+    dragRef.current.isDown = false;
+
+    const inertiaFactor = 0.12;
+    const currentX = galleryX.get();
+    const velocity = dragRef.current.velocity * 100;
+    let targetX = currentX + velocity * inertiaFactor;
+
+    targetX = Math.max(0, Math.min(3400, targetX));
+
+    inertiaRef.current = animate(currentX, targetX, {
+      type: "spring",
+      stiffness: 120,
+      damping: 18,
+      onUpdate: v => galleryX.set(v),
+      onComplete: () => { }
+    });
+  }, [galleryX]);
+
+  useEffect(() => {
+    const onMove = (e) => onPointerMove(e);
+    const onUp = () => onPointerUp();
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    return () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+    };
+  }, [onPointerMove, onPointerUp]);
+
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem('returnToLandscape') === 'true') {
+      const savedX = sessionStorage.getItem('landscapeGalleryX');
+      if (savedX !== null) {
+        galleryX.jump(parseFloat(savedX));
+      }
+      const el = containerRef.current;
+      if (el) {
+        const targetScroll = el.offsetTop;
+        window.scrollTo({ top: targetScroll, left: 0, behavior: 'instant' });
+      }
+    }
+  }, [galleryX]);
+
+  useEffect(() => {
+    if (sessionStorage.getItem('returnToLandscape') === 'true') {
+      if (lenis) {
+        sessionStorage.removeItem('returnToLandscape');
+        sessionStorage.removeItem('landscapeGalleryX');
+        const el = containerRef.current;
+        if (el) {
+          const targetScroll = el.offsetTop;
+          lenis.scrollTo(targetScroll, { immediate: true });
+        }
+      }
+    }
+  }, [lenis]);
+
+  const scatterConfigs = [
+    { image: LProject1 },
+    { image: LProject2 },
+    { image: LProject3 },
+    { image: LProject4 },
+    { image: LProject5 }
+  ];
+
+  const { scrollYProgress: enterProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"]
+  });
+
+  const { scrollYProgress: sectionProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const textY = useTransform(enterProgress, [0, 1], ["-10vh", "-130%"]);
+  const lightPercent = useTransform(enterProgress, [0, 0.5], [-20, 120]);
+  const stop1 = useTransform(lightPercent, v => `${v - 15}%`);
+  const stop2 = useTransform(lightPercent, v => `${v - 5}%`);
+  const stop3 = useTransform(lightPercent, v => `${v}%`);
+  const stop4 = useTransform(lightPercent, v => `${v + 10}%`);
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
+
+  return (
+    <section id="landscape" className="landscape-portfolio-section" ref={containerRef} style={{ height: '100vh', backgroundColor: '#000', position: 'relative', width: '100%', overflow: 'visible', zIndex: 150 }}>
+      
+      <div className="landscape-hint-text">
+        Swipe through the gallery to explore more projects.
+      </div>
+      <motion.div
+        style={{
+          y: textY,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          paddingLeft: '40px',
+          zIndex: 60,
+          pointerEvents: 'none'
+        }}
+      >
+        <motion.h1
+          className="landscape-main-title"
+          style={{ backgroundImage: animatedGradient }}
+        >
+          Landscape<br />Works
+        </motion.h1>
+      </motion.div>
+
+      <div
+        onPointerDown={onPointerDown}
+        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'none', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
+      >
+        <div className="landscape-bg-text">
+          Landscape
+        </div>
+
+        <motion.div style={{
+          x: 0,
+          position: 'absolute', left: 0, top: 0, width: '100vw', height: '100%', zIndex: 20,
+          pointerEvents: 'none'
+        }}>
+          {scatterConfigs.map((cfg, idx) => (
+            <PhotoItem
+              key={idx}
+              index={idx}
+              config={cfg}
+              galleryX={galleryX}
+              smoothVelocity={smoothVelocity}
+              sectionProgress={sectionProgress}
+            />
+          ))}
+        </motion.div>
+
+        <motion.div style={{
+          x: 0,
+          position: 'absolute', left: 0, top: 0, width: '100vw', height: '100%', zIndex: 40,
+          pointerEvents: 'none'
+        }}>
+          {scatterConfigs.map((cfg, idx) => (
+            <PhotoTextItem
+              key={`text-${idx}`}
+              index={idx}
+              galleryX={galleryX}
+              smoothVelocity={smoothVelocity}
+              sectionProgress={sectionProgress}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/Navbar.jsx">
+import React, { useState } from 'react'; 
+import GlassSurface from './GlassSurface'; 
+import './Navbar.css';
+import MenuIcon from '../assets/MenuIcon.png';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const menuVariants = {
+  hidden: { y: '-100%', transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+  visible: { 
+    y: 0, 
+    transition: { 
+      duration: 0.5, 
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.1,
+      delayChildren: 0.15
+    } 
+  }
+};
+
+const linkVariants = {
+  hidden: { y: -30, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { type: "spring", stiffness: 300, damping: 24 } 
+  }
+};
+
+export default function Navbar() { 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  return (
+    <>
+      {/* 1. Desktop Layout */}
+      <div className="desktop-nav">
+        {/* 导航栏容器（液态玻璃） */}
+        <header className="navbar-wrapper">
+          <GlassSurface 
+            width="800px"       
+            height="40px"       
+            borderRadius={30}   
+            blur={15}           
+            opacity={0.8}       
+            className="navbar-glass" 
+          >
+            <nav className="nav-links">
+              <a href="#aigc">AIGC</a>
+              <a href="#architecture">Architecture</a>
+              <a href="#landscape">Landscape</a>
+              <a href="#more">More</a>
+            </nav>
+          </GlassSurface>
+        </header>
+
+        {/* 右侧独立按钮组 (语言切换和 Contact me) */}
+        <div className="right-nav-group">
+          <button className="lang-btn">中文</button>
+          <a 
+            href="#contact" 
+            className="contact-btn"
+          >
+            Contact me
+          </a>
+        </div>
+      </div>
+
+      {/* 2. Mobile Layout */}
+      <div className="mobile-nav">
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <img src={MenuIcon} alt="Menu" />
+        </button>
+
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              className="mobile-fullscreen-menu"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={menuVariants}
+              style={{
+                position: 'fixed',
+                top: 0, left: 0, width: '100vw', height: '100vh',
+                backgroundColor: '#0016d8', /* 🌟 这里已改为你要求的 #0016d8 */
+                zIndex: 1999,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <nav className="mobile-fullscreen-nav-links">
+                {[
+                  { name: 'AIGC', href: '#aigc' },
+                  { name: 'Architecture', href: '#architecture' },
+                  { name: 'Landscape', href: '#landscape' },
+                  { name: 'More', href: '#more' },
+                  { name: '中文', isButton: true },
+                  { name: 'Contact me', href: '#contact' }
+                ].map((item, idx) => (
+                  <motion.div key={idx} variants={linkVariants}>
+                    {item.isButton ? (
+                      <button className="mobile-fullscreen-link" onClick={() => setIsMobileMenuOpen(false)}>{item.name}</button>
+                    ) : (
+                      <a href={item.href} className="mobile-fullscreen-link" onClick={() => setIsMobileMenuOpen(false)}>{item.name}</a>
+                    )}
+                  </motion.div>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
+  );
+}
+</file>
+
+<file path="src/components/programming.css">
+/* 🌟 Google Font & 字体定义 */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@font-face {
+  font-family: 'SonsieOne';
+  src: url('/fonts/SonsieOne-Regular.ttf') format('truetype');
+}
+
+.programming-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.programming-video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  box-sizing: border-box;
+  padding: 5vh 2vw; 
+}
+
+/* 🌟 标题包装层 */
+.bar-title-wrapper {
+  position: absolute;
+  top: 12%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 30;
+}
+
+/* 🌟 AI-Sorted 标题：永不裁切，且永远比视频略宽 */
+.bar-title {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  color: #0016d8;
+  margin: 0;
+  letter-spacing: 1px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  
+  /* 🌟 核心逻辑：
+     1. 宽度定死 90vw，确保它永远比最大 80vw 的视频宽，且屏幕左右各留 5vw 安全边距，绝不超出屏幕！
+     2. white-space: normal 允许文字在极端窄屏下自动向下换行，彻底杜绝裁切！ */
+  width: 90vw; 
+  white-space: normal; 
+  word-break: keep-all;
+  font-size: clamp(1.2rem, 6vw, 4.5rem);
+
+  animation: barTitleSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.8s forwards;
+}
+
+/* =========================================
+   视频网格容器 (终极比例锁定法)
+   ========================================= */
+.video-tight-wrapper {
+  position: relative;
+  
+  /* 🌟 核心杀招：数学级精确的缩放运算！
+     限制视频的最大宽度为 80vw，最大高度为 65vh。
+     如果你的视频是标准的 16:9 比例，这里的计算会确保容器在任何情况下都是绝对的 16:9！
+     【重要】：如果你的视频不是 16:9（比如是 16:10），请务必把下面的 16 / 9 全部替换掉！ */
+  width: min(80vw, calc(65vh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  
+  margin: 0 auto; 
+}
+
+/* 🌟 视频本体：彻底抛弃裁切，还原完整直角内容 */
+.programming-scroll-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 容器已经被 min() 完美塑造成原片比例，这里用 cover 像素级铺满，绝不留一丝黑缝 */
+  object-fit: cover; 
+  display: block;
+  z-index: 2;
+  border-radius: 0; /* 完全直角 */
+}
+
+/* =========================================
+   边缘流光 (无圆角紧身衣版)
+   ========================================= */
+.video-glow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; 
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  overflow: hidden; /* 强制外缘一刀切，保持极度锐利的直角边缘 */
+  border-radius: 0; /* 配合视频无圆角 */
+}
+
+.video-glow-overlay.glow-active {
+  opacity: 1;
+  transition: opacity 1.5s ease-in 1.65s; 
+}
+
+.glow-system {
+  position: absolute;
+  top: -100px; bottom: -100px;
+  left: -100px; right: -100px;
+  filter: blur(50px) brightness(2.8); 
+}
+
+.glow-color {
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+}
+
+.glow-color-1 {
+  background: conic-gradient(from 0deg, transparent 10%, #0044ff 30%, #ff0055 50%, transparent 60%);
+  animation: rotateGlow 3.5s linear infinite;
+}
+
+.glow-color-2 {
+  background: conic-gradient(from 180deg, transparent 10%, #00ff44 30%, #ffee00 50%, transparent 60%);
+  animation: rotateGlowReverse 5.5s linear infinite;
+}
+
+/* 🌟 黑洞：维持固定的直角与厚度 */
+.glow-black-hole {
+  position: absolute;
+  top: 130px; bottom: 130px;
+  left: 130px; right: 130px;
+  background: #000000;
+  border-radius: 0; /* 彻底变为直角内发光 */
+  z-index: 2; 
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateGlowReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* =========================================
+   其他元素动画排版 (维持不变)
+   ========================================= */
+.bar-image-wrapper {
+  position: absolute;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.bar-image {
+  width: auto;
+  max-width: 55vw;
+  max-height: 20vh;
+  opacity: 0;
+  animation: barImageSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.9s forwards;
+}
+
+@keyframes barTitleSlideIn {
+  0% { opacity: 0; transform: translateX(-100vw); }
+  85% { opacity: 1; transform: translateX(10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes barImageSlideIn {
+  0% { opacity: 0; transform: translateX(-100vw); }
+  85% { opacity: 1; transform: translateX(10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.clipo-interface-wrapper {
+  position: absolute; inset: 0; z-index: 40;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  pointer-events: none; gap: 24px; padding-top: 50px;
+}
+.clipo-interface-image {
+  max-width: 45%; max-height: 45%; opacity: 0;
+  animation: clipoImageRise 1.1s cubic-bezier(0.25, 1.2, 0.50, 1) 0.2s forwards;
+}
+.clipo-text-group { text-align: center; }
+.clipo-text-top { font-family: 'Dela Gothic One'; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #fff; opacity: 0; animation: clipoTextReveal 1.4s ease-out 0.05s forwards; margin: 0;}
+.clipo-text-bottom { font-family: 'SonsieOne'; font-size: clamp(2rem, 4vw, 3.5rem); color: #0016d8; opacity: 0; animation: clipoTextReveal 1.4s ease-out 0.15s forwards; margin: 0;}
+
+@keyframes clipoImageRise {
+  0% { opacity: 0; transform: scale(0.4) translateY(100vh); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes clipoTextReveal {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.clipo-interface-wrapper.clipo-exit { animation: oldContentExit 1.2s ease-in forwards; }
+@keyframes oldContentExit {
+  to { opacity: 0; transform: translateX(100vw); }
+}
+</file>
+
+<file path="src/components/Programming.jsx">
+import React, { useRef, useState, useEffect } from 'react';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
+import { useLenis } from 'lenis/react';
+import './programming.css';
+
+// 引入视频资源
+import Video2 from '../assets/Video2.mp4';
+import ClipoInterface from '../assets/ClipoInterface.png';
+import Bar from '../assets/Bar.png';
+
+export default function Programming() {
+  const sectionRef = useRef(null);
+  const videoRef = useRef(null);
+  
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const [showBarContent, setShowBarContent] = useState(false);
+
+  useEffect(() => {
+    if (!videoEnded) return;
+    const timer = setTimeout(() => setShowBarContent(true), 3700);
+    return () => clearTimeout(timer);
+  }, [videoEnded]);
+  
+  const lenis = useLenis();
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", () => {
+    if (!sectionRef.current || videoPlaying || videoEnded) return;
+    
+    const rect = sectionRef.current.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.25) {
+      setVideoPlaying(true);
+      videoRef.current?.play();
+    }
+  });
+
+  useEffect(() => {
+    if (!lenis) return;
+    const onScroll = ({ scroll }) => {
+      if (!sectionRef.current || videoEnded) return;
+      const targetScroll = sectionRef.current.offsetTop;
+      if (scroll > targetScroll + 1) {
+        lenis.scrollTo(targetScroll, { immediate: true });
+      }
+    };
+    lenis.on('scroll', onScroll);
+    return () => lenis.off('scroll', onScroll);
+  }, [lenis, videoEnded]);
+
+  return (
+    <section id="programming" className="programming-page" ref={sectionRef}>
+      <div className="programming-video-container">
+
+        <div className="video-tight-wrapper">
+          <video
+            ref={videoRef}
+            src={Video2}
+            className="programming-scroll-video"
+            preload="auto"
+            muted
+            playsInline
+            onEnded={() => setVideoEnded(true)}
+          />
+          
+          <div className={`video-glow-overlay ${showBarContent ? 'glow-active' : ''}`}>
+            <div className="glow-system">
+              <div className="glow-color glow-color-1"></div>
+              <div className="glow-color glow-color-2"></div>
+              <div className="glow-black-hole"></div>
+            </div>
+          </div>
+
+          {/* 🌟 核心修改：文字被移入包裹层，相对视频定位 */}
+          {showBarContent && (
+            <div className="bar-title-wrapper">
+              <p className="bar-title">AI-Sorted Clipboard History</p>
+            </div>
+          )}
+
+          {/* 🌟 核心修改：Bar图被移入包裹层，相对视频定位 */}
+          {showBarContent && (
+            <div className="bar-image-wrapper">
+              <img src={Bar} alt="Bar" className="bar-image" />
+            </div>
+          )}
+        </div>
+
+      </div>
+      
+      {videoEnded && (
+        <div className={`clipo-interface-wrapper ${showBarContent ? 'clipo-exit' : ''}`}>
+          <div className="clipo-text-group">
+            <p className="clipo-text-top">Vibe-Coding Works</p>
+            <p className="clipo-text-bottom">Clipo</p>
+          </div>
+          <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" />
+        </div>
+      )}
+    </section>
   );
 }
 </file>
@@ -5290,671 +6206,6 @@ html,
 }
 </file>
 
-<file path="src/components/ExperienceListPage.jsx">
-import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
-import './experienceListPage.css';
-import starBg from '../assets/Starbackground.png'; 
-
-const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [hasHovered, setHasHovered] = useState(false);
-  
-  const opacityStart = index * 0.12; 
-  const opacityEnd = opacityStart + 0.15; 
-  const itemOpacity = useTransform(scrollYProgress, [opacityStart, opacityEnd], [0, 1]);
-
-  const sweepStart = opacityStart + 0.1; 
-  const sweepEnd = sweepStart + 0.4; 
-  const percent = useTransform(scrollYProgress, [sweepStart, sweepEnd], [-20, 120]);
-
-  const stop1 = useTransform(percent, v => `${v - 15}%`); 
-  const stop2 = useTransform(percent, v => `${v - 5}%`);  
-  const stop3 = useTransform(percent, v => `${v}%`);      
-  const stop4 = useTransform(percent, v => `${v + 10}%`); 
-
-  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(255, 255, 255, 0.25) ${stop4})`;
-
-  // ================= 核心动画编排 =================
-  
-  // 1. 原公司名：放大缓冲 + 遮罩擦除
-  const originalTextVariants = {
-    hidden: { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
-    rest: { 
-      clipPath: "inset(0% 0% 0% 0%)", 
-      scale: 1, 
-      transition: { 
-        clipPath: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
-        // 🌟 修复：加入 0.4 秒的平滑回退，如果在放大中途移走鼠标，它会温柔地缩回去而不是瞬间闪现
-        scale: { duration: 0.4, ease: "easeOut" } 
-      } 
-    },
-    hover: { 
-      clipPath: "inset(0% 0% 0% 100%)", 
-      scale: 1.05, 
-      transition: { 
-        scale: { duration: 0.7, ease: "easeInOut" },
-        clipPath: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
-      } 
-    }
-  };
-
-  // 2. 职位信息揭示
-  const revealTextVariants = {
-    hidden: { clipPath: "inset(0% 100% 0% 0%)" },
-    rest: { 
-      clipPath: "inset(0% 100% 0% 0%)", 
-      transition: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] } 
-    },
-    hover: { 
-      clipPath: "inset(0% 0% 0% 0%)", 
-      transition: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
-    }
-  };
-
-  // 3. 竖直彗星光标
-  const scannerVariants = {
-    hidden: { opacity: 0, left: "0%" },
-    rest: {
-      left: "0%",
-      opacity: 0, 
-      boxShadow: "25px 0 30px 6px rgba(0, 130, 255, 0.9), 70px 0 80px 16px rgba(82, 17, 221, 0.8), 140px 0 130px 28px rgba(0, 22, 216, 0.5)",
-      transition: {
-        left: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
-        boxShadow: { duration: 0 },
-        opacity: { duration: 0.35, delay: 0.5, ease: "easeOut" }
-      }
-    },
-    hover: {
-      left: "100%",
-      opacity: 1,
-      boxShadow: "-25px 0 30px 6px rgba(0, 130, 255, 0.9), -70px 0 80px 16px rgba(82, 17, 221, 0.8), -140px 0 130px 28px rgba(0, 22, 216, 0.5)",
-      transition: {
-        left: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] },
-        boxShadow: { duration: 0, delay: 0.7 },
-        opacity: { duration: 0.15, delay: 0.7, ease: "easeIn" }
-      }
-    }
-  };
-
-  const handleHoverStart = () => {
-    setIsHovered(true);
-    setHasHovered(true);
-  };
-
-  const currentAnimationState = isHovered ? "hover" : (hasHovered ? "rest" : "hidden");
-
-  return (
-    <motion.div 
-      className="company-item"
-      style={{ opacity: itemOpacity }} 
-      onHoverStart={handleHoverStart}
-      onHoverEnd={() => setIsHovered(false)}
-      initial="hidden"
-      animate={currentAnimationState}
-    >
-      <div className="company-text-wrapper">
-        
-        <motion.div 
-          className="company-text-mask original-text"
-          style={{ backgroundImage: animatedGradient }} 
-          variants={originalTextVariants}
-        >
-          {company.name.trim()}
-        </motion.div>
-
-        <motion.div 
-          className="company-text-mask reveal-text"
-          variants={revealTextVariants}
-        >
-          <div className="reveal-content">
-            <span className="intern-position">{company.position.trim()}</span>
-            {company.time && <span className="intern-time">{company.time}</span>}
-          </div>
-        </motion.div>
-
-        <motion.div 
-          className="comet-scanner"
-          variants={scannerVariants}
-        />
-        
-      </div>
-    </motion.div>
-  );
-});
-
-export default function ExperienceListPage() {
-  const containerRef = useRef(null);
-
-  const { scrollYProgress: textScrollProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "start start"]
-  });
-
-  const { scrollYProgress: bgScrollProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const bgY = useTransform(bgScrollProgress, [0, 1], ["-10%", "10%"]);
-
-  const companies = [
-    { name: "Architectural Design and Research Institute of Xi'an University of Architecture and Technology", position: "Architecture Intern", time: "2024.9-2025.9" },
-    { name: "Beijing Qinghua Tongheng Planning and Design Institute Co., Ltd. (THUPDI)", position: "Intern", time: "2025.11-2026.1" },
-    { name: "China United Northwest Institute for Engineering Design & Research Co., Ltd.", position: "Architecture Intern", time: "2026.3-2026.6" },
-    { name: "Diyouni Design Institute", position: "Teaching Assistant", time: "" },
-    { name: "Zhuchuang Architectural Design Studio", position: "Architecture Intern", time: "2026.1-2026.3" }
-  ];
-
-  return (
-    <section 
-      id="experience-list" 
-      className="experience-list-page"
-      ref={containerRef}
-    >
-      <motion.div 
-        className="parallax-star-bg"
-        style={{ 
-          y: bgY,
-          backgroundImage: `url(${starBg})` 
-        }}
-      />
-
-      <div className="company-list-container">
-        {companies.map((company, index) => (
-          <CompanyItem 
-            key={index}
-            index={index}
-            company={company}
-            scrollYProgress={textScrollProgress} 
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
-</file>
-
-<file path="src/components/experiencePage.css">
-/* 🌟 引入 Dela Gothic One 字体 */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
-/* =========================================
-   Experience Page (沉浸式纯黑过渡页)
-   ========================================= */
-.experience-page {
-  position: relative;
-  width: 100%;
-  
-  /* 🌟 核心修改 1：从 66vh 再缩短约五分之一，变成 50vh（精确占据屏幕的一半） */
-  height: 50vh;          
-  
-  /* 🌟 核心修改 2：同步调小保底高度，防止在小屏幕上由于高度不够而被撑开 */
-  min-height: 400px;     
-  
-  background-color: black;
-  z-index: 10;
-  overflow: hidden;
-}
-
-/* =========================================
-   顶部镜像极光 (高度保持 50vh 不变)
-   ========================================= */
-.experience-aurora-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  
-  /* 极光依然保持 50vh，因为页面现在也是 50vh，极光刚好覆盖这半屏空间并向下消散 */
-  height: 50vh; 
-  
-  transform: scaleY(-1); 
-  z-index: 1;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-}
-
-/* =========================================
-   Experiences 扫光文字
-   ========================================= */
-.exp-text-container {
-  position: absolute;
-  top: 60%; /* 相对位置保持在 60% 处不变 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  z-index: 5;
-}
-
-.exp-text {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(5rem, 9vw, 9rem); 
-  letter-spacing: 2px;
-  margin: 0;
-  
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  white-space: nowrap; /* 默认不换行 */
-}
-
-/* 🌟 新增：650px 以下允许换行，并激活 br 标签 */
-@media (max-width: 650px) {
-  .exp-text {
-    white-space: normal;
-    line-height: 1.1;
-  }
-  .mobile-break {
-    display: block !important;
-  }
-}
-
-.mobile-break {
-  display: none;
-}
-</file>
-
-<file path="src/components/generatedContent.css">
-/* =========================================
-   Generated Content Page (Cascade Carousel)
-   ========================================= */
-.generated-content-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000;
-  position: relative;
-  z-index: 30; /* 确保覆盖 AIGC 页面 */
-  margin-top: -100vh; /* 核心：向上滑动天然覆盖 */
-  overflow: hidden; 
-}
-
-/* =========================================
-   动态标题模块 (左侧锚定，蓝块绝对静止)
-   ========================================= */
-.gc-title-block {
-  position: absolute;
-  top: calc(18vh - 40px);
-  /* 🌟 将 left 从 52vw 加大到 60vw，让整个标题块（蓝块+文字）整体往右移动 */
-  left: 60vw; 
-  right: 5vw;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  z-index: 50;
-  pointer-events: none;
-}
-
-.gc-blue-square {
-  width: 35px;
-  height: 35px;
-  background-color: #0016d8; 
-  flex-shrink: 0;
-  margin-top: 5px; /* 微调以对齐首行文字的视觉中心 */
-}
-
-.gc-title-text {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(1.5rem, 2.8vw, 3.2rem); 
-  font-weight: 900;
-  line-height: 1.25; /* 让多行文本紧凑美观 */
-  color: #ffffff;
-  margin: 0;
-  margin-top: -10px;
-  letter-spacing: 1px;
-  word-wrap: break-word; /* 允许过长时自然换行 */
-}
-
-/* =========================================
-   无限画廊容器
-   ========================================= */
-.gc-carousel-container {
-  position: absolute;
-  bottom: 40px;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  touch-action: pan-y; /* 拦截水平拖拽的默认事件 */
-  cursor: grab;
-  z-index: 40;
-}
-
-.gc-carousel-container:active {
-  cursor: grabbing;
-}
-
-/* 响应式调整 (手机端) */
-@media (max-width: 900px) {
-  .gc-title-block {
-    top: calc(12vh - 40px);
-    left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
-    right: 10vw;
-    gap: 15px;
-  }
-  .gc-blue-square {
-    width: 25px;
-    height: 25px;
-    margin-top: 3px;
-  }
-  .gc-title-text {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-  }
-}
-</file>
-
-<file path="src/components/GeneratedContent.jsx">
-import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
-import { motion, useScroll, useSpring, useTransform, useMotionValue, useMotionValueEvent, animate, AnimatePresence } from 'framer-motion';
-import './generatedContent.css';
-
-import GProject1 from '../assets/GProject1.png';
-import GProject2 from '../assets/GProject2.png';
-import GProject3 from '../assets/GProject3.png';
-import GProject4 from '../assets/GProject4.png';
-import GProject5 from '../assets/GProject5.png';
-import GProject6 from '../assets/GProject6.png';
-
-const projects = [
-  { id: 1, img: GProject1, title: "Conceptual rendering of a smart factory" },
-  { id: 2, img: GProject2, title: "Architectural rendering of a bus terminal" },
-  { id: 3, img: GProject3, title: "Bus terminal facade rendering" },
-  { id: 4, img: GProject4, title: "High-rise mixed-use complex rendering" },
-  { id: 5, img: GProject5, title: "Cyberpunk-style smart city poster" },
-  { id: 6, img: GProject6, title: "Bus transfer center rendering" },
-];
-
-/* =========================================
-   单张幻灯片组件
-   ========================================= */
-const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
-  // 将无限滚动的 progress 映射为 -1.5 到 4.5 的连续值
-  const originalP = useTransform(smoothProgress, val => {
-    let r = ((index - val) % 6 + 6) % 6;
-    if (r > 4.5) r -= 6;
-    return r;
-  });
-
-  // 入场散开动画：spreadProgress 从 0→1 时，图片从堆叠状态散开到正常位置
-  const p = useTransform([originalP, spreadProgress], ([orig, spread]) => orig * spread);
-
-  const left = useTransform(p,   [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['-63vw', '-42vw', '0vw', '42vw', '64vw', '82vw', '96vw', '110vw']);
-  const width = useTransform(p,  [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['42vw', '42vw', '42vw', '22vw', '18vw', '14vw', '12vw', '12vw']);
-  const height = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['75vh', '75vh', '75vh', '60vh', '45vh', '35vh', '25vh', '25vh']);
-  // zIndex 基于原始排布位置，不受散开动画影响，避免层级跳变
-  const zIndex = useTransform(originalP, val => Math.round(10 - val));
-
-  return (
-    <motion.div 
-      style={{ 
-        position: 'absolute', 
-        bottom: 0, 
-        left, width, height, zIndex,
-        opacity: 1, 
-        willChange: 'transform, width, height, left'
-      }}
-    >
-      <img 
-        src={img} 
-        alt={`Project ${index + 1}`} 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
-        draggable="false"
-      />
-    </motion.div>
-  );
-};
-
-/* =========================================
-   主组件
-   ========================================= */
-export default function GeneratedContent() {
-  const sectionRef = useRef(null);
-  const containerRef = useRef(null);
-  
-  // ===========================================
-  // 页面覆盖缓冲截断逻辑
-  // ===========================================
-  const [triggerPoint, setTriggerPoint] = useState(999999);
-
-  useLayoutEffect(() => {
-    const updatePoint = () => {
-      if (sectionRef.current) setTriggerPoint(sectionRef.current.offsetTop);
-    };
-    updatePoint();
-    window.addEventListener('resize', updatePoint);
-    return () => window.removeEventListener('resize', updatePoint);
-  }, []);
-
-  const { scrollY } = useScroll();
-  
-  // 画廊散开动画：页面从 50% 可见到 100% 可见期间，图片从堆叠向右散开
-  const { scrollYProgress: galleryEnterProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "start start"]
-  });
-  const spreadProgress = useTransform(galleryEnterProgress, [0.5, 1], [0, 1]);
-
-  const clampedScrollY = useTransform(scrollY, (y) => Math.min(y, triggerPoint));
-  const smoothClampedScrollY = useSpring(clampedScrollY, { stiffness: 100, damping: 30 });
-  const springOffset = useTransform(() => clampedScrollY.get() - smoothClampedScrollY.get());
-
-  // ===========================================
-  // 无限轮播物理逻辑
-  // ===========================================
-  const rawProgress = useMotionValue(0); 
-  const smoothProgress = useSpring(rawProgress, { stiffness: 80, damping: 15 });
-  const [activeIndex, setActiveIndex] = useState(0);
-  
-  const dragRef = useRef({ isDown: false, startX: 0, startP: 0, lastTime: 0, lastX: 0, velocity: 0 });
-  const inertiaRef = useRef(null);
-  const autoScrollRef = useRef(null);
-  const userInteractingRef = useRef(false);
-
-  // 画廊散开动画完成后，启动缓慢自动轮播
-  useEffect(() => {
-    const unsub = spreadProgress.on("change", (v) => {
-      if (v >= 1 && !userInteractingRef.current) {
-        autoScrollRef.current?.stop();
-        autoScrollRef.current = animate(rawProgress.get(), rawProgress.get() + 9999, {
-          duration: 9999 / 0.03, // 极慢速自动轮播
-          ease: "linear",
-          onUpdate: (v) => {
-            if (!userInteractingRef.current) rawProgress.set(v);
-          },
-        });
-      }
-    });
-    return () => {
-      unsub();
-      autoScrollRef.current?.stop();
-    };
-  }, [rawProgress, spreadProgress]);
-
-  // 用户交互时停止自动轮播
-  const stopAutoScroll = () => {
-    userInteractingRef.current = true;
-    autoScrollRef.current?.stop();
-  };
-
-  useMotionValueEvent(smoothProgress, "change", (latest) => {
-    const index = ((Math.round(latest) % 6) + 6) % 6;
-    if (index !== activeIndex) {
-      setActiveIndex(index);
-    }
-  });
-
-  // 滚轮滑动支持
-  useEffect(() => {
-    const handleWheel = (e) => {
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-        e.preventDefault();
-        stopAutoScroll();
-        rawProgress.set(rawProgress.get() + e.deltaX * 0.0015);
-      }
-    };
-    const el = containerRef.current;
-    if (el) el.addEventListener('wheel', handleWheel, { passive: false });
-    return () => {
-      if (el) el.removeEventListener('wheel', handleWheel);
-    };
-  }, [rawProgress]);
-
-  // 拖拽控制
-  const onPointerDown = (e) => {
-    stopAutoScroll();
-    dragRef.current = { 
-      isDown: true, startX: e.clientX, startP: rawProgress.get(), 
-      lastTime: Date.now(), lastX: e.clientX, velocity: 0 
-    };
-  };
-
-  const onPointerMove = (e) => {
-    if (!dragRef.current.isDown) return;
-    const dx = e.clientX - dragRef.current.startX;
-    
-    rawProgress.set(dragRef.current.startP - dx * 0.002);
-
-    const now = Date.now();
-    if (now - dragRef.current.lastTime > 16) {
-      const dt = now - dragRef.current.lastTime;
-      dragRef.current.velocity = (e.clientX - dragRef.current.lastX) / dt;
-      dragRef.current.lastTime = now;
-      dragRef.current.lastX = e.clientX;
-    }
-  };
-
-  const onPointerUp = () => {
-    if (!dragRef.current.isDown) return;
-    dragRef.current.isDown = false;
-    
-    const velocity = dragRef.current.velocity;
-    const targetP = rawProgress.get() - velocity * 0.4;
-    
-    inertiaRef.current = animate(rawProgress.get(), targetP, {
-      type: "spring", stiffness: 120, damping: 18,
-      onUpdate: v => rawProgress.set(v)
-    });
-  };
-
-  useEffect(() => {
-    document.addEventListener('pointermove', onPointerMove);
-    document.addEventListener('pointerup', onPointerUp);
-    return () => {
-      document.removeEventListener('pointermove', onPointerMove);
-      document.removeEventListener('pointerup', onPointerUp);
-    };
-  }, []);
-
-  return (
-    <motion.section 
-      id="generated-content" 
-      className="generated-content-page"
-      ref={sectionRef}
-      style={{ y: springOffset }} 
-    >
-      {/* 动态标题模块 */}
-      <div className="gc-title-block">
-        <div className="gc-blue-square"></div>
-        <AnimatePresence mode="wait">
-          <motion.h2 
-            key={activeIndex}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.25 }}
-            className="gc-title-text"
-          >
-            {projects[activeIndex].title}
-          </motion.h2>
-        </AnimatePresence>
-      </div>
-
-      {/* 无限循环画廊容器 */}
-      <div 
-        className="gc-carousel-container"
-        ref={containerRef}
-        onPointerDown={onPointerDown}
-      >
-        {projects.map((proj, i) => (
-          <GalleryItem 
-            key={proj.id} 
-            index={i} 
-            smoothProgress={smoothProgress} 
-            img={proj.img}
-            spreadProgress={spreadProgress}
-          />
-        ))}
-      </div>
-    </motion.section>
-  );
-}
-</file>
-
-<file path="src/App.jsx">
-import React from 'react';
-// 引入 Lenis 的 React 组件
-import { ReactLenis } from 'lenis/react';
-import './App.css';
-// 注意路径：必须包含 ./components/ 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import LandscapeWorksPage from './components/LandscapeWorksPage';
-import MoreWorksPage from './components/MoreWorksPage';
-import AIGCWorksPage from './components/AIGCWorksPage';
-import GeneratedContent from './components/GeneratedContent';
-import Programming from './components/Programming';
-import IntroductionPage from './components/IntroductionPage';
-import ExperiencePage from './components/ExperiencePage';
-import ExperienceListPage from './components/ExperienceListPage';
-import ArchitectureWorks from './components/ArchitectureWorks';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProjectDetailPage from './components/ProjectDetailPage';
-
-function Home() {
-  return (
-    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
-      <Navbar />
-      <Hero />
-      <IntroductionPage />
-      <ExperiencePage />
-      <ExperienceListPage />
-      <ArchitectureWorks />
-      <LandscapeWorksPage />
-      <AIGCWorksPage />
-      <GeneratedContent />
-      <Programming />
-      <MoreWorksPage />
-      
-      {/* 尾页 */}
-      <section id="contact" className="section">
-        <div className="contact-content">
-          <h1>Contact me</h1>
-          <p>E-mail: citiesxl@hotmail.com</p>
-        </div>
-        <div className="footer-blue-block">
-          <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
-        </div>
-      </section>
-    </ReactLenis> 
-  );
-}
-
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-</file>
-
 <file path="src/components/aigcWorksPage.css">
 /* =========================================
     AIGC Works Page
@@ -6074,102 +6325,6 @@ export default App;
     object-fit: cover;
     display: block;
     pointer-events: none;
-}
-</file>
-
-<file path="src/components/AIGCWorksPage.jsx">
-import { useRef, useState, useLayoutEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import DecryptedText from './DecryptedText';
-import './aigcWorksPage.css';
-
-import videoFile from '../assets/Video1.mp4';
-import ringImg from '../assets/Ring.png';
-
-export default function AIGCWorksPage() {
-  const sectionRef = useRef(null);
-
-  // 记录该 Section 的滚动阈值参数
-  const [scrollMetrics, setScrollMetrics] = useState({ start: 0, end: 1000 });
-
-  useLayoutEffect(() => {
-    const updateMetrics = () => {
-      if (sectionRef.current) {
-        const vh = window.innerHeight;
-        const top = sectionRef.current.offsetTop;
-        
-        // 🌟 核心修改点：将动画结束锚点从 800 改为 600
-        // 这样动画结束的那一刻，正好是 GeneratedContent 完全盖住屏幕的那一刻。
-        // 反之，当从 GeneratedContent 往上滑（露出 AIGC）的瞬间，动画就会立刻开始无缝倒放！
-        const animEnd = top + (4 * vh - 600);
-        
-        setScrollMetrics({ start: top, end: animEnd });
-      }
-    };
-
-    updateMetrics();
-    window.addEventListener('resize', updateMetrics);
-    return () => window.removeEventListener('resize', updateMetrics);
-  }, []);
-
-  // 将原生滚动直接映射到我们的阈值内
-  const { scrollY } = useScroll();
-  const ringProgress = useTransform(scrollY, [scrollMetrics.start, scrollMetrics.end], [0, 1]);
-  const smoothProgress = useSpring(ringProgress, { stiffness: 100, damping: 30 });
-
-  // 利用进度驱动 CSS 属性
-  const ringTop = useTransform(smoothProgress, [0, 1], ["230%", "50%"]);
-  const ringWidth = useTransform(smoothProgress, [0, 1], ["210vw", "300vw"]);
-
-  return (
-    <section id="aigc" className="aigc-portfolio-section" ref={sectionRef}>
-      {/* 原生粘性容器：取代锁定机制 */}
-      <div className="aigc-sticky-container">
-        <div className="aigc-video-container">
-          <video
-            src={videoFile}
-            className="aigc-scroll-video"
-            preload="auto"
-            muted
-            playsInline
-            autoPlay
-            loop
-          />
-        </div>
-        <div className="aigc-titles">
-          <DecryptedText
-            text="AIGC"
-            animateOn="view"
-            threshold={0.5}
-            speed={50}
-            maxIterations={30}
-            revealDirection="center"
-            className="aigc-title-char"
-            parentClassName="aigc-main-wrapper"
-          />
-          <DecryptedText
-            text="Works"
-            animateOn="view"
-            threshold={0.5}
-            speed={50}
-            maxIterations={30}
-            revealDirection="center"
-            className="aigc-title-char"
-            parentClassName="aigc-sub-wrapper"
-          />
-        </div>
-        <motion.img
-          src={ringImg}
-          alt="Ring"
-          className="aigc-ring"
-          style={{
-            top: ringTop,
-            width: ringWidth
-          }}
-        />
-      </div>
-    </section>
-  );
 }
 </file>
 
@@ -6315,6 +6470,325 @@ export default function AIGCWorksPage() {
   z-index: 10;
   pointer-events: none;
   opacity: 0; 
+}
+</file>
+
+<file path="src/components/AIGCWorksPage.jsx">
+import { useRef, useState, useLayoutEffect } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import DecryptedText from './DecryptedText';
+import './aigcWorksPage.css';
+
+import videoFile from '../assets/Video1.mp4';
+import ringImg from '../assets/Ring.png';
+
+export default function AIGCWorksPage() {
+  const sectionRef = useRef(null);
+
+  // 记录该 Section 的滚动阈值参数
+  const [scrollMetrics, setScrollMetrics] = useState({ start: 0, end: 1000 });
+
+  useLayoutEffect(() => {
+    const updateMetrics = () => {
+      if (sectionRef.current) {
+        const vh = window.innerHeight;
+        const top = sectionRef.current.offsetTop;
+        
+        // 动画结束的那一刻，正好是 GeneratedContent 完全盖住屏幕的那一刻。
+        const animEnd = top + (4 * vh - 600);
+        
+        setScrollMetrics({ start: top, end: animEnd });
+      }
+    };
+
+    updateMetrics();
+    window.addEventListener('resize', updateMetrics);
+    return () => window.removeEventListener('resize', updateMetrics);
+  }, []);
+
+  // 将原生滚动直接映射到我们的阈值内
+  const { scrollY } = useScroll();
+  const ringProgress = useTransform(scrollY, [scrollMetrics.start, scrollMetrics.end], [0, 1]);
+  const smoothProgress = useSpring(ringProgress, { stiffness: 100, damping: 30 });
+
+  // 🌟 核心性能优化：废弃 top 和 width，改用纯 GPU 加速的 y 和 scale
+  // 数学转换：原本 width 从 210vw -> 300vw，等价于基础 100vw 配合 scale 2.1 -> 3.0
+  const scale = useTransform(smoothProgress, [0, 1], [2.1, 3.0]);
+  
+  // 数学转换：原本 top 从 230vh -> 50vh，等价于基础 top 50%，y 轴额外向下偏移 180vh -> 0vh
+  // 注意：必须保留 -50% 的自身居中偏移量，以替代 CSS 中的 translate(-50%, -50%)
+  const y = useTransform(smoothProgress, [0, 1], ["calc(-50% + 180vh)", "calc(-50% + 0vh)"]);
+
+  return (
+    <section id="aigc" className="aigc-portfolio-section" ref={sectionRef}>
+      <div className="aigc-sticky-container">
+        <div className="aigc-video-container">
+          <video
+            src={videoFile}
+            className="aigc-scroll-video"
+            preload="auto"
+            muted
+            playsInline
+            autoPlay
+            loop
+          />
+        </div>
+        <div className="aigc-titles">
+          <DecryptedText
+            text="AIGC"
+            animateOn="view"
+            threshold={0.5}
+            speed={50}
+            maxIterations={30}
+            revealDirection="center"
+            className="aigc-title-char"
+            parentClassName="aigc-main-wrapper"
+          />
+          <DecryptedText
+            text="Works"
+            animateOn="view"
+            threshold={0.5}
+            speed={50}
+            maxIterations={30}
+            revealDirection="center"
+            className="aigc-title-char"
+            parentClassName="aigc-sub-wrapper"
+          />
+        </div>
+        
+        <motion.img
+          src={ringImg}
+          alt="Ring"
+          className="aigc-ring"
+          style={{
+            top: "50%",
+            left: "50%",
+            width: "100vw", // 基础宽度定死
+            x: "-50%",      // 水平居中偏移
+            y: y,           // GPU 垂直位移
+            scale: scale,   // GPU 缩放
+            z: 0,           // 🌟 强制开启 Framer Motion 的独立硬件加速层
+            willChange: "transform"
+          }}
+        />
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/GeneratedContent.jsx">
+import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
+import { motion, useScroll, useSpring, useTransform, useMotionValue, useMotionValueEvent, animate, AnimatePresence } from 'framer-motion';
+import './generatedContent.css';
+
+import GProject1 from '../assets/GProject1.png';
+import GProject2 from '../assets/GProject2.png';
+import GProject3 from '../assets/GProject3.png';
+import GProject4 from '../assets/GProject4.png';
+import GProject5 from '../assets/GProject5.png';
+import GProject6 from '../assets/GProject6.png';
+
+const projects = [
+  { id: 1, img: GProject1, title: "Conceptual rendering of a smart factory" },
+  { id: 2, img: GProject2, title: "Commercial complex rendering" },
+  { id: 3, img: GProject3, title: "Bus terminal facade rendering" },
+  { id: 4, img: GProject4, title: "High-rise mixed-use complex rendering" },
+  { id: 5, img: GProject5, title: "Cyberpunk-style smart city poster" },
+  { id: 6, img: GProject6, title: "Bus transfer center rendering" },
+];
+
+/* =========================================
+   单张幻灯片组件（高性能版）
+   ========================================= */
+const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
+  const originalP = useTransform(smoothProgress, val => {
+    let r = ((index - val) % 6 + 6) % 6;
+    if (r > 4.5) r -= 6;
+    return r;
+  });
+
+  const p = useTransform([originalP, spreadProgress], ([orig, spread]) => orig * spread);
+
+  const x = useTransform(p,   [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['-63vw', '-42vw', '0vw', '42vw', '64vw', '82vw', '96vw', '110vw']);
+  const width = useTransform(p,  [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['42vw', '42vw', '42vw', '22vw', '18vw', '14vw', '12vw', '12vw']);
+  const height = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['75vh', '75vh', '75vh', '60vh', '45vh', '35vh', '25vh', '25vh']);
+  const zIndex = useTransform(originalP, val => Math.round(10 - val));
+
+  const visibility = useTransform(p, val => (val < -1.6 || val > 4.6) ? 'hidden' : 'visible');
+
+  return (
+    <motion.div 
+      style={{ 
+        position: 'absolute', 
+        bottom: 0, 
+        left: 0,   
+        x,           
+        width, 
+        height, 
+        zIndex,
+        visibility,
+        opacity: 1, 
+        z: 0,        
+        contain: 'strict', 
+        willChange: 'transform' 
+      }}
+    >
+      <img 
+        src={img} 
+        alt={`Project ${index + 1}`} 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+        draggable="false"
+      />
+    </motion.div>
+  );
+};
+
+/* =========================================
+   主组件
+   ========================================= */
+export default function GeneratedContent() {
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+  
+  const [triggerPoint, setTriggerPoint] = useState(999999);
+
+  useLayoutEffect(() => {
+    const updatePoint = () => {
+      if (sectionRef.current) setTriggerPoint(sectionRef.current.offsetTop);
+    };
+    updatePoint();
+    window.addEventListener('resize', updatePoint);
+    return () => window.removeEventListener('resize', updatePoint);
+  }, []);
+
+  const { scrollY } = useScroll();
+  
+  const { scrollYProgress: galleryEnterProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "start start"]
+  });
+  const spreadProgress = useTransform(galleryEnterProgress, [0.5, 1], [0, 1]);
+
+  const clampedScrollY = useTransform(scrollY, (y) => Math.min(y, triggerPoint));
+  const smoothClampedScrollY = useSpring(clampedScrollY, { stiffness: 100, damping: 30 });
+  const springOffset = useTransform(() => clampedScrollY.get() - smoothClampedScrollY.get());
+
+  const rawProgress = useMotionValue(0); 
+  const smoothProgress = useSpring(rawProgress, { stiffness: 80, damping: 15 });
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  const dragRef = useRef({ isDown: false, startX: 0, startP: 0, lastTime: 0, lastX: 0, velocity: 0 });
+  const inertiaRef = useRef(null);
+
+  useMotionValueEvent(smoothProgress, "change", (latest) => {
+    const index = ((Math.round(latest) % 6) + 6) % 6;
+    if (index !== activeIndex) {
+      setActiveIndex(index);
+    }
+  });
+
+  useEffect(() => {
+    const handleWheel = (e) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        inertiaRef.current?.stop(); // 手动滑动时停止之前的惯性动画
+        rawProgress.set(rawProgress.get() + e.deltaX * 0.0015);
+      }
+    };
+    const el = containerRef.current;
+    if (el) el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      if (el) el.removeEventListener('wheel', handleWheel);
+    };
+  }, [rawProgress]);
+
+  const onPointerDown = (e) => {
+    inertiaRef.current?.stop(); // 鼠标/手指按下时，瞬间停止上次的惯性滑动
+    dragRef.current = { 
+      isDown: true, startX: e.clientX, startP: rawProgress.get(), 
+      lastTime: Date.now(), lastX: e.clientX, velocity: 0 
+    };
+  };
+
+  const onPointerMove = (e) => {
+    if (!dragRef.current.isDown) return;
+    const dx = e.clientX - dragRef.current.startX;
+    
+    rawProgress.set(dragRef.current.startP - dx * 0.002);
+
+    const now = Date.now();
+    if (now - dragRef.current.lastTime > 16) {
+      const dt = now - dragRef.current.lastTime;
+      dragRef.current.velocity = (e.clientX - dragRef.current.lastX) / dt;
+      dragRef.current.lastTime = now;
+      dragRef.current.lastX = e.clientX;
+    }
+  };
+
+  const onPointerUp = () => {
+    if (!dragRef.current.isDown) return;
+    dragRef.current.isDown = false;
+    
+    const velocity = dragRef.current.velocity;
+    const targetP = rawProgress.get() - velocity * 0.4;
+    
+    inertiaRef.current = animate(rawProgress.get(), targetP, {
+      type: "spring", stiffness: 120, damping: 18,
+      onUpdate: v => rawProgress.set(v)
+    });
+  };
+
+  useEffect(() => {
+    document.addEventListener('pointermove', onPointerMove);
+    document.addEventListener('pointerup', onPointerUp);
+    return () => {
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerup', onPointerUp);
+    };
+  }, []);
+
+  return (
+    <motion.section 
+      id="generated-content" 
+      className="generated-content-page"
+      ref={sectionRef}
+      style={{ y: springOffset }} 
+    >
+      <div className="gc-title-block">
+        <div className="gc-blue-square"></div>
+        <AnimatePresence mode="wait">
+          <motion.h2 
+            key={activeIndex}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.25 }}
+            className="gc-title-text"
+            style={{ willChange: 'opacity, transform' }}
+          >
+            {projects[activeIndex].title}
+          </motion.h2>
+        </AnimatePresence>
+      </div>
+
+      <div 
+        className="gc-carousel-container"
+        ref={containerRef}
+        onPointerDown={onPointerDown}
+      >
+        {projects.map((proj, i) => (
+          <GalleryItem 
+            key={proj.id} 
+            index={i} 
+            smoothProgress={smoothProgress} 
+            img={proj.img}
+            spreadProgress={spreadProgress}
+          />
+        ))}
+      </div>
+    </motion.section>
+  );
 }
 </file>
 
@@ -6660,6 +7134,87 @@ export default function AIGCWorksPage() {
 }
 </file>
 
+<file path="src/App.jsx">
+import React, { useState, useEffect } from 'react';
+import { ReactLenis } from 'lenis/react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import LandscapeWorksPage from './components/LandscapeWorksPage';
+import MoreWorksPage from './components/MoreWorksPage';
+import AIGCWorksPage from './components/AIGCWorksPage';
+import GeneratedContent from './components/GeneratedContent';
+import Programming from './components/Programming';
+import IntroductionPage from './components/IntroductionPage';
+import ExperiencePage from './components/ExperiencePage';
+import ExperienceListPage from './components/ExperienceListPage';
+import ArchitectureWorks from './components/ArchitectureWorks';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectDetailPage from './components/ProjectDetailPage';
+import LoadingScreen from './components/LoadingScreen'; // 🌟 引入刚建好的加载页
+
+function Home() {
+  // 记录整个网站资源是否加载完毕的全局状态
+  const [isAppLoaded, setIsAppLoaded] = useState(false);
+
+  // 在加载页未消失前，把滚动强制锁死在最顶部，防止手抖滑到下面
+  useEffect(() => {
+    if (!isAppLoaded) {
+      window.scrollTo(0, 0);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isAppLoaded]);
+
+  return (
+    <>
+      {/* 🌟 放置加载幕布，当它触发完成时更新全局状态 */}
+      <LoadingScreen onComplete={() => setIsAppLoaded(true)} />
+
+      <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+        <Navbar />
+        {/* 🌟 将状态传递给 Hero，让 Hero 等幕布拉开再播放酷炫入场 */}
+        <Hero isAppLoaded={isAppLoaded} />
+        <IntroductionPage />
+        <ExperiencePage />
+        <ExperienceListPage />
+        <ArchitectureWorks />
+        <LandscapeWorksPage />
+        <AIGCWorksPage />
+        <GeneratedContent />
+        <Programming />
+        <MoreWorksPage />
+        
+        <section id="contact" className="section">
+          <div className="contact-content">
+            <h1>Contact me</h1>
+            <p>E-mail: citiesxl@hotmail.com</p>
+          </div>
+          <div className="footer-blue-block">
+            <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
+          </div>
+        </section>
+      </ReactLenis> 
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+</file>
+
 <file path="src/components/ArchitectureWorks.jsx">
 import React, { useRef, useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import {
@@ -6995,6 +7550,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
             src={config.image}
             alt={`Work ${index + 1}`}
             className="flying-photo"
+            decoding="async" // 🌟 加入后台异步解码
             style={{
               position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
               objectFit: 'cover', rotateZ, scaleX, scaleY, filter, opacity, clipPath: clipPathStyle,
@@ -7002,7 +7558,9 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
               x: lagX,
               rotateY: rotateY,
               skewX: skewXLag,
-              transformPerspective: 1000
+              transformPerspective: 1000,
+              z: 0, // 🌟 正确触发硬件加速的方式，不再覆盖 transform
+              willChange: 'transform, filter'
             }}
           />
 
@@ -7136,7 +7694,6 @@ export default function ArchitectureWorks() {
       }
     };
 
-    // 修复：局部作用域监听，不再影响全局
     const container = containerRef.current;
     if (container) {
       container.addEventListener('wheel', handleWheel, { passive: false });
@@ -7450,7 +8007,6 @@ export default function IntroductionPage() {
       style={introStyles}
     >
 
-      {/* 🌟 第 1 层：最底层的背景水印文字 */}
       <div
         className="background-hello"
         style={{
@@ -7471,7 +8027,6 @@ export default function IntroductionPage() {
         Hello!
       </div>
 
-      {/* 🌟 第 2 层：极光背景层 */}
       <div className="aurora-bg-wrapper" style={{ zIndex: 1 }}>
         <Aurora
           colorStops={["#8599d2", "#0016d8", "#5211dd"]}
@@ -7481,10 +8036,8 @@ export default function IntroductionPage() {
         />
       </div>
 
-      {/* 🌟 第 3 层：交互内容层 */}
       <div className="intro-content">
 
-        {/* 提示：仅在窄屏且动画结束时显示 */}
         <motion.div 
           className="swipe-hint"
           style={{ opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]) }}
@@ -7494,8 +8047,15 @@ export default function IntroductionPage() {
 
         <motion.div
           className="boxes-scroll-wrapper"
-          style={{ x: boxesX, width: isCompact ? '100%' : '100vw', overflowX: 'visible', overflowY: 'visible' }}
           ref={dragRef}
+          style={{ 
+            x: boxesX, 
+            width: isCompact ? '100%' : '100vw', 
+            overflowX: 'visible', 
+            overflowY: 'visible',
+            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级，不锁死 transform
+            willChange: 'transform'
+          }}
         >
           <motion.div
             className="boxes-container"
@@ -7513,7 +8073,6 @@ export default function IntroductionPage() {
             }}
           >
 
-            {/* 左侧：Skills 框 */}
             <BorderGlow
               className="glass-box"
               backgroundColor="rgba(255, 255, 255, 0.03)"
@@ -7537,7 +8096,6 @@ export default function IntroductionPage() {
               </div>
             </BorderGlow>
 
-            {/* 中间：3D Profile Card */}
             <ProfileCard
               name="Liu Yuyang"
               title="Designer"
@@ -7548,7 +8106,6 @@ export default function IntroductionPage() {
               innerGradient="linear-gradient(145deg, rgba(20,20,40,0.8) 0%, rgba(82,17,221,0.2) 100%)"
             />
 
-            {/* 右侧：Education 框 */}
             <BorderGlow
               className="glass-box"
               backgroundColor="rgba(255, 255, 255, 0.03)"
@@ -7583,8 +8140,15 @@ export default function IntroductionPage() {
           </motion.div>
         </motion.div>
 
-        {/* 底部滑动大字 */}
-        <motion.div className="text-row" style={{ x: textX, y: isCompact ? 0 : '58%' }}>
+        <motion.div 
+          className="text-row" 
+          style={{ 
+            x: textX, 
+            y: isCompact ? 0 : '58%',
+            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级
+            willChange: 'transform'
+          }}
+        >
           <h2 className="keep-my-font-3">
             Who Am I - Skills - Education - Who Am I - Skills - Education
           </h2>
