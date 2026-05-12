@@ -18,7 +18,9 @@ export default function Programming() {
 
   useEffect(() => {
     if (!videoEnded) return;
-    const timer = setTimeout(() => setShowBarContent(true), 3700);
+    const timer = setTimeout(() => {
+      setShowBarContent(true);
+    }, 3700);
     return () => clearTimeout(timer);
   }, [videoEnded]);
   
@@ -63,7 +65,7 @@ export default function Programming() {
             playsInline
             onEnded={() => setVideoEnded(true)}
           />
-          
+
           {/* 边缘流光遮罩 */}
           <div className={`video-glow-overlay ${showBarContent ? 'glow-active' : ''}`}>
             <div className="glow-system">
@@ -100,6 +102,7 @@ export default function Programming() {
           <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" />
         </div>
       )}
+
     </section>
   );
 }

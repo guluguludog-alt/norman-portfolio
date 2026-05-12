@@ -126,7 +126,7 @@
 .video-glow-overlay.glow-active {
   /* 🌟 光效不透明度调低，增加一丝透明质感 */
   opacity: 0.85; 
-  transition: opacity 1.5s ease-in 1.65s; 
+  transition: opacity 1.5s ease-in 4.15s; 
 }
 
 .glow-system {
