@@ -7,7 +7,7 @@
 
 .programming-page {
   width: 100vw;
-  height: 100vh;
+  height: auto; 
   background-color: #000000;
   position: relative;
   z-index: 10;
@@ -16,7 +16,7 @@
 
 .programming-video-container {
   width: 100%;
-  height: 100%;
+  height: auto; 
   position: relative;
   z-index: 1; 
   display: flex;
@@ -24,27 +24,24 @@
   justify-content: center; 
   align-items: center; 
   box-sizing: border-box;
-  padding: 8vh 2vw 0 2vw; 
+  padding: 0; 
+  overflow: hidden; 
 }
 
-/* =========================================
-   视频容器 (Inline-block 动态吸附，防黑边缝隙)
-   ========================================= */
 .video-tight-wrapper {
   position: relative;
-  display: inline-block; 
+  display: block; 
+  width: 100vw;   
+  height: auto;  
   line-height: 0; 
   font-size: 0;
-  max-width: 90vw;
-  max-height: 82vh;
+  z-index: 10; 
 }
 
 .programming-scroll-video {
   display: block;
-  width: auto;
-  height: auto;
-  max-width: 90vw;
-  max-height: 82vh;
+  width: 100%;    
+  height: auto;   
   object-fit: contain; 
   z-index: 2;
   border-radius: 0; 
@@ -52,65 +49,116 @@
 }
 
 /* =========================================
-   内部排版 (相对视频动态定位)
+   🌟 全局公用：强制 GPU 渲染的失焦模糊动画
    ========================================= */
+@keyframes simpleFadeIn {
+  0% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
+  100% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
+}
 
-/* 🌟 标题定位：轻微偏上 (top: 25%) */
-.bar-title-wrapper {
+@keyframes simpleFadeOut {
+  0% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
+  100% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
+}
+
+/* =========================================
+   History 布局 (图左字右，模糊淡入)
+   ========================================= */
+.history-layout-container {
   position: absolute;
-  top: 25%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  /* 🌟 宽度定死为 115%，强制比视频框宽出 15% */
-  width: 115%; 
-  max-width: 96vw; 
+  inset: 0;
   z-index: 30;
   display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 0 10vw;
+  gap: 4vw;
+  pointer-events: none;
+  animation: simpleFadeIn 2s ease-in-out both;
+  will-change: filter, opacity;
+}
+
+.history-left-side {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.history-window-image {
+  width: auto;
+  max-width: 45vw;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.history-right-side {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2vw;
+}
+
+.powered-by-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5.5vw, 6rem);
+  line-height: 1.15;
+  text-align: left;
+  margin: 0;
+}
+
+/* =========================================
+   Bar 内容层及移出动画 (模糊淡出)
+   ========================================= */
+.bar-content-wrapper {
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  z-index: 30;
+  will-change: filter, opacity;
+}
+
+.bar-content-wrapper.bar-exit {
+  animation: simpleFadeOut 0.8s ease-in both;
+}
+
+.bar-title-wrapper {
+  position: absolute;
+  top: 25%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%; 
+  display: flex; justify-content: center;
+  container-type: inline-size; 
 }
 
 .bar-title {
   font-family: 'Dela Gothic One', cursive, sans-serif;
-  color: #0016d8;
+  color: #ffffff; 
   margin: 0;
   letter-spacing: 1px;
   text-align: center;
-  pointer-events: none;
-  opacity: 0;
-  width: 100%;
-  
-  /* 🌟 核心控制：强制一行显示不换行，配合字号让字符始终越出视频边缘 */
   white-space: nowrap; 
-  font-size: clamp(1.5rem, 4.2vw, 5.2rem);
-  
+  font-size: 4.6cqw; 
   line-height: 1.1;
-  animation: barTitleSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.8s forwards;
+  animation: simpleFadeIn 0.85s ease-out 0.8s both;
 }
 
-/* 🌟 Bar 图片定位：轻微下移 (bottom: 15%) */
 .bar-image-wrapper {
   position: absolute;
-  bottom: 25%; 
-  left: 50%;
+  bottom: 25%; left: 50%;
   transform: translate(-50%, 50%);
   width: 75%; 
-  max-width: 90vw;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
+  display: flex; justify-content: center;
 }
 
 .bar-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  opacity: 0;
-  animation: barImageSlideIn 0.85s cubic-bezier(0.25, 1.15, 0.50, 1) 0.9s forwards;
+  width: 100%; height: auto; object-fit: contain; 
+  animation: simpleFadeIn 0.85s ease-out 0.9s both;
 }
 
 /* =========================================
-   边缘流光 (无圆角直角贴合)
+   边缘与内部流光特效
    ========================================= */
 .video-glow-overlay {
   position: absolute;
@@ -124,18 +172,15 @@
 }
 
 .video-glow-overlay.glow-active {
-  /* 🌟 光效不透明度调低，增加一丝透明质感 */
-  opacity: 0.85; 
-  transition: opacity 1.5s ease-in 4.15s; 
+  opacity: 1; 
+  transition: opacity 0.8s ease-out; 
 }
 
 .glow-system {
   position: absolute;
   top: -100px; bottom: -100px;
   left: -100px; right: -100px;
-  
-  /* 🌟 降低 blur 半径让光圈收紧，拉高亮度和饱和度让光效“更明显、更锐利” */
-  filter: blur(35px) brightness(1.5) saturate(2); 
+  filter: blur(28px) brightness(1.5) saturate(4); 
 }
 
 .glow-color {
@@ -145,13 +190,13 @@
 }
 
 .glow-color-1 {
-  background: conic-gradient(from 0deg, transparent 10%, #0044ff 30%, #ff0055 50%, transparent 60%);
-  animation: rotateGlow 3.5s linear infinite;
+  background: conic-gradient(from 0deg, transparent 10%, #0033ff 30%, #ff003c 50%, transparent 60%);
+  animation: rotateGlow 2s linear infinite;
 }
 
 .glow-color-2 {
-  background: conic-gradient(from 180deg, transparent 10%, #00ff44 30%, #ffee00 50%, transparent 60%);
-  animation: rotateGlowReverse 5.5s linear infinite;
+  background: conic-gradient(from 180deg, transparent 10%, #00ff22 30%, #ffea00 50%, transparent 60%);
+  animation: rotateGlowReverse 3s linear infinite;
   mix-blend-mode: screen; 
 }
 
@@ -159,7 +204,7 @@
   position: absolute;
   top: 130px; bottom: 130px;
   left: 130px; right: 130px;
-  background: #000000;
+  background: rgba(0, 0, 0, 0.85); 
   border-radius: 0; 
   z-index: 2; 
 }
@@ -168,7 +213,7 @@
 @keyframes rotateGlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
 
 /* =========================================
-   Clipo 初始展示界面
+   Clipo 初始展示界面 (模糊淡入/淡出)
    ========================================= */
 .clipo-interface-wrapper {
   position: absolute; 
@@ -180,27 +225,106 @@
   align-items: center;
   pointer-events: none; 
   gap: 24px; 
-  
-  /* 🌟 轻微上移 Clipo 界面：从 100px 缩小到 20px */
   padding-top: 20px; 
   box-sizing: border-box;
+  will-change: filter, opacity;
+}
+
+.clipo-interface-wrapper.clipo-exit { 
+  animation: simpleFadeOut 1.2s ease-in both; 
 }
 
 .clipo-interface-image {
-  max-width: 45%; 
-  max-height: 45%; 
-  opacity: 0;
-  animation: clipoImageRise 1.1s cubic-bezier(0.25, 1.2, 0.50, 1) 0.2s forwards;
+  max-width: 55%; max-height: 55%; 
+  animation: simpleFadeIn 1.1s ease-out 0.2s both;
 }
 
 .clipo-text-group { text-align: center; }
-.clipo-text-top { font-family: 'Dela Gothic One'; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #fff; opacity: 0; animation: clipoTextReveal 1.4s ease-out 0.05s forwards; margin: 0;}
-.clipo-text-bottom { font-family: 'SonsieOne'; font-size: clamp(2rem, 4vw, 3.5rem); color: #0016d8; opacity: 0; animation: clipoTextReveal 1.4s ease-out 0.15s forwards; margin: 0;}
 
-@keyframes clipoImageRise { 0% { opacity: 0; transform: scale(0.4) translateY(100vh); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
-@keyframes clipoTextReveal { 0% { opacity: 0; transform: scale(0.85); } 100% { opacity: 1; transform: scale(1); } }
-.clipo-interface-wrapper.clipo-exit { animation: oldContentExit 1.2s ease-in forwards; }
-@keyframes oldContentExit { to { opacity: 0; transform: translateX(100vw); } }
+.clipo-text-top { 
+  font-family: 'Dela Gothic One'; 
+  font-size: clamp(2rem, 4vw, 3.2rem); 
+  color: #fff; 
+  margin: 0;
+  animation: simpleFadeIn 1.4s ease-out 0.05s both; 
+}
 
-@keyframes barTitleSlideIn { 0% { opacity: 0; transform: translateX(-100vw); } 85% { opacity: 1; transform: translateX(10px); } 100% { opacity: 1; transform: translateX(0); } }
-@keyframes barImageSlideIn { 0% { opacity: 0; transform: translateX(-100vw); } 85% { opacity: 1; transform: translateX(10px); } 100% { opacity: 1; transform: translateX(0); } }
+.clipo-text-bottom { 
+  font-family: 'SonsieOne'; 
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem); 
+  color: #0016d8; 
+  margin: 0;
+  animation: simpleFadeIn 1.4s ease-out 0.15s both; 
+}
+
+.fade-out-all {
+  animation: simpleFadeOut 1.5s ease-in both;
+  pointer-events: none;
+}
+
+/* =========================================
+   🌟 Macbook 完美叠合层
+   ========================================= */
+.macbook-overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 131.2%;
+  height: auto;
+  max-width: none;
+  transform: translate(-49.8%, -44.4%);
+  z-index: 50; 
+  pointer-events: none;
+}
+
+/* =========================================
+   🌟 苹果全家桶透明图层 (iMac & Mac Studio)
+   ========================================= */
+.apple-imac-layer {
+  position: absolute;
+  top: 50%;
+  width: 38vw; 
+  height: auto;
+  z-index: 5; 
+  pointer-events: none;
+}
+
+.apple-macstudio-layer {
+  position: absolute;
+  top: 50%;
+  width: 13vw; 
+  height: auto;
+  z-index: 20; 
+  pointer-events: none;
+}
+
+/* =========================================
+   🌟 右侧文字排版 (修正裁剪问题)
+   ========================================= */
+.sync-text-container {
+  position: absolute;
+  top: 50%;
+  z-index: 30;
+  width: 40vw;
+  pointer-events: none;
+  /* 🌟 确保文字容器本身不溢出隐藏 */
+  overflow: visible; 
+}
+
+.sync-text-container h2 {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  
+  /* 🌟 增加行高并给底部留白，彻底防止裁剪 */
+  line-height: 1.25;
+  padding-bottom: 0.2em;
+  
+  margin: 0;
+  text-align: left;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: no-repeat;
+  /* 🌟 确保背景扫光能够完全覆盖不被截断 */
+  background-size: 150% 100%; 
+}

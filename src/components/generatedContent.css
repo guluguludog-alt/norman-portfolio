@@ -16,8 +16,8 @@
    ========================================= */
 .gc-title-block {
   position: absolute;
-  top: calc(18vh - 40px);
-  /* 🌟 将 left 从 52vw 加大到 60vw，让整个标题块（蓝块+文字）整体往右移动 */
+  /* 🌟 修改点 1：将标题块整体上移 (从 18vh 改为 10vh) */
+  top: calc(10vh - 40px); 
   left: 60vw; 
   right: 5vw;
   display: flex;
@@ -52,7 +52,8 @@
    ========================================= */
 .gc-carousel-container {
   position: absolute;
-  bottom: 40px;
+  /* 🌟 修改点 2：将画廊底部留白增大，实现画廊整体向上推 (从 40px 改为 12vh) */
+  bottom: 12vh;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -68,7 +69,8 @@
 /* 响应式调整 (手机端) */
 @media (max-width: 900px) {
   .gc-title-block {
-    top: calc(12vh - 40px);
+    /* 🌟 修改点 3：手机端标题也同步上移 (从 12vh 改为 6vh) */
+    top: calc(6vh - 40px);
     left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
     right: 10vw;
     gap: 15px;
@@ -80,5 +82,10 @@
   }
   .gc-title-text {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  
+  .gc-carousel-container {
+    /* 🌟 手机端画廊也适当增高底部边距，保持协调 */
+    bottom: 10vh;
   }
 }
