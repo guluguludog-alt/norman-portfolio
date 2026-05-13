@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { useScroll, useMotionValueEvent, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { useInView, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import './programming.css';
 
 // 引入资源
@@ -10,10 +10,15 @@ import HistoryImg from '../assets/HistoryWindow.png';
 import Macbook from '../assets/Macbook.png';
 import iMacImg from '../assets/iMac.png';
 import MacstudioImg from '../assets/Macstudio.png';
+import GithubIcon from '../assets/Github.png';
+import FileIcon from '../assets/File.png';
+import PlaycircleIcon from '../assets/Playcircle.png';
 
-export default function Programming() {
+export default function Programming({ onUnlockScroll }) {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
+  
+  const isInView = useInView(sectionRef, { amount: 0.25 });
   
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
@@ -23,34 +28,33 @@ export default function Programming() {
   const [isRippling, setIsRippling] = useState(false);
   const [isGlowActive, setIsGlowActive] = useState(false);
   const [fadeOutAll, setFadeOutAll] = useState(false);
+  const hasUnlockedRef = useRef(false);
+
+  const [animationPhase, setAnimationPhase] = useState('idle');
+  const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
 
   const rippleScale = useMotionValue(0);
   const noiseOffsetY = useMotionValue(0);
   
-  // 🌟 主容器 (Video + MacBook)
   const containerScale = useMotionValue(1);
   const containerX = useMotionValue('0vw');
   const containerY = useMotionValue('0vh');
   const macbookOpacity = useMotionValue(0);
 
-  // 🌟 iMac 
-  const imacX = useMotionValue('-100vw'); 
+  const imacX = useMotionValue('calc(-50% - 100vw)'); 
   const imacY = useMotionValue('-50%'); 
   const imacOpacity = useMotionValue(0);
 
-  // 🌟 Mac Studio
-  const macStudioX = useMotionValue('-100vw'); 
+  const macStudioX = useMotionValue('calc(-50% + 100vw)'); 
   const macStudioY = useMotionValue('-50%'); 
   const macStudioOpacity = useMotionValue(0);
 
-  // 🌟 文字扫光
   const syncTextOpacity = useMotionValue(0);
   const syncTextBlur = useMotionValue(20);
-  const syncTextX = useMotionValue('40vw'); 
+  const syncTextX = useMotionValue('-50%'); 
   const syncTextY = useMotionValue('-50%'); 
   const syncTextBlurString = useTransform(syncTextBlur, (v) => `blur(${v}px)`);
 
-  // 🌟 扫光逻辑：暗白(未扫过) -> 蓝光(正在扫) -> 纯白(扫过之后永远保留)
   const sweepPercent = useMotionValue(-20);
   const stop1 = useTransform(sweepPercent, v => `${v - 20}%`); 
   const stop2 = useTransform(sweepPercent, v => `${v - 10}%`);  
@@ -58,89 +62,186 @@ export default function Programming() {
   const stop4 = useTransform(sweepPercent, v => `${v + 15}%`); 
   const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #0016d8 ${stop2}, #0016d8 ${stop3}, rgba(255,255,255,0.15) ${stop4})`;
 
+  const sweep2TextOpacity = useMotionValue(0);
+  const sweep2TextBlur = useMotionValue(20);
+  const sweep2TextBlurString = useTransform(sweep2TextBlur, (v) => `blur(${v}px)`);
+  const sweep2Percent = useMotionValue(-20);
+  const sweep2Stop1 = useTransform(sweep2Percent, v => `${v - 20}%`);
+  const sweep2Stop2 = useTransform(sweep2Percent, v => `${v - 10}%`);
+  const sweep2Stop3 = useTransform(sweep2Percent, v => `${v}%`);
+  const sweep2Stop4 = useTransform(sweep2Percent, v => `${v + 15}%`);
+  const animatedGradient2 = useMotionTemplate`linear-gradient(to right, #ffffff ${sweep2Stop1}, #0016d8 ${sweep2Stop2}, #0016d8 ${sweep2Stop3}, rgba(255,255,255,0.15) ${sweep2Stop4})`;
+
+  const buttonsOpacity = useMotionValue(0);
+  const buttonsBlur = useMotionValue(20);
+  const buttonsBlurString = useTransform(buttonsBlur, (v) => `blur(${v}px)`);
+  const buttonsX = useMotionValue('-50%');
+  const buttonsY = useMotionValue('-50%');
+
+  const playIconOpacity = useMotionValue(0);
+  const playIconBlur = useMotionValue(20);
+  const playIconBlurString = useTransform(playIconBlur, (v) => `blur(${v}px)`);
+
+  const getLayoutPositions = (isMobile) => {
+    if (isMobile) {
+      const wHeight = typeof window !== 'undefined' ? window.innerHeight : 1080;
+      const baseWidth = Math.max(wHeight, 400) * (16 / 9);
+      const targetWidth = 320; 
+      const dynamicScale = targetWidth / baseWidth;
+
+      return {
+        containerScale: dynamicScale, containerX: '0vw', containerY: '-16vh',
+        imacX: '-50%', imacY: '-50%', imacFinalOpacity: 0, 
+        macStudioX: 'calc(-50% + 28vw)', macStudioY: 'calc(-50% - 7vh)', 
+        text1X: '-50%', text1Y: 'calc(-50% + 10vh)',
+        buttonsX: '-50%', buttonsY: 'calc(-50% + 10vh + 35vw)' 
+      };
+    } else {
+      return {
+        containerScale: 0.252, containerX: '-14vw', containerY: '6.7vw', 
+        imacX: 'calc(-50% - 30vw)', imacY: 'calc(-50% + 1.0vw)', imacFinalOpacity: 1, 
+        macStudioX: 'calc(-50% - 2vw)', macStudioY: 'calc(-50% + 12.3vw)', 
+        text1X: 'calc(-50% + 24vw)', text1Y: 'calc(-50% - 1vw)', 
+        buttonsX: 'calc(-50% + 24vw)', buttonsY: 'calc(-50% + 16.5vw)' 
+      };
+    }
+  };
+
+  const applyFinalLayout = useCallback((instant = false) => {
+    const layout = getLayoutPositions(isMobileRef.current);
+    const duration = instant ? 0.01 : 1.2;
+    const ease = [0.85, 0, 0.15, 1];
+
+    animate(containerScale, layout.containerScale, { duration, ease });
+    animate(containerX, layout.containerX, { duration, ease });
+    animate(containerY, layout.containerY, { duration, ease });
+    animate(macbookOpacity, 1, { duration, ease });
+
+    animate(imacX, layout.imacX, { duration, ease });
+    animate(imacY, layout.imacY, { duration, ease });
+    animate(imacOpacity, layout.imacFinalOpacity, { duration, ease });
+
+    animate(macStudioX, layout.macStudioX, { duration, ease });
+    animate(macStudioY, layout.macStudioY, { duration, ease });
+    animate(macStudioOpacity, 1, { duration, ease });
+
+    animate(syncTextX, layout.text1X, { duration: 0.01 });
+    animate(syncTextY, layout.text1Y, { duration: 0.01 });
+    animate(buttonsX, layout.buttonsX, { duration: 0.01 });
+    animate(buttonsY, layout.buttonsY, { duration: 0.01 });
+  }, [containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity, syncTextX, syncTextY, buttonsX, buttonsY]);
+
   useEffect(() => {
-    if (!videoEnded) return;
+    const handleResize = () => {
+      isMobileRef.current = window.innerWidth <= 900;
+      if (animationPhase === 'finished') {
+        applyFinalLayout(true); 
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [animationPhase, applyFinalLayout]);
 
-    const timer1 = setTimeout(() => {
-      setShowBarContent(true);
-
-      const timer2 = setTimeout(() => {
-        setShowHistory(true);
-
-        const timer3 = setTimeout(() => {
-          setIsRippling(true);
-          setIsGlowActive(true);
-
-          animate(rippleScale, [0, 35, 0], { duration: 0.8, ease: "easeInOut" });
-          animate(noiseOffsetY, [0, -1200], { duration: 0.8, ease: "linear" });
-          animate(containerScale, [1, 1.04, 1], { duration: 0.8, ease: "easeInOut" });
-
-          setTimeout(() => {
-            setIsRippling(false);
-          }, 800);
-
-           const timer4 = setTimeout(() => {
-             setFadeOutAll(true);
-           }, 5500);
-
-           // 阶段 5: 全家桶排版集结
-           const timer5 = setTimeout(() => {
-              const dynamicNonLinearEasing = [0.85, 0, 0.15, 1];
-              const animDuration = 1.2; 
-
-              // 1. MacBook (位置保持你认为正确的状态)
-              animate(containerScale, 0.252, { duration: animDuration, ease: dynamicNonLinearEasing });
-              animate(containerX, '-14vw', { duration: animDuration, ease: dynamicNonLinearEasing });
-              animate(containerY, '12vh', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(macbookOpacity, 1, { duration: animDuration, ease: dynamicNonLinearEasing });
-
-              // 2. iMac - 🌟 大幅下移以对齐 Mac Studio 底边 (从 16.5vh 增加到 28vh)
-              animate(imacX, '-32vw', { duration: animDuration, ease: dynamicNonLinearEasing });
-              animate(imacY, 'calc(-50% + 22vh - 12vw)', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(imacOpacity, 1, { duration: animDuration, ease: dynamicNonLinearEasing });
-
-              // 3. Mac Studio (位置保持你认为正确的状态)
-              animate(macStudioX, '-2vw', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(macStudioY, 'calc(-50% + 22vh)', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(macStudioOpacity, 1, { duration: animDuration, ease: dynamicNonLinearEasing });
-
-              // 4. 文字动画
-              setTimeout(() => {
-                animate(syncTextOpacity, 1, { duration: 0.8, ease: "easeOut" });
-                animate(syncTextBlur, 0, { duration: 0.8, ease: "easeOut" });
-                
-                animate(syncTextX, '32vw', { duration: 0.8, ease: "easeOut" }); 
-                animate(syncTextY, 'calc(-50% + 4vh)', { duration: 0.8, ease: "easeOut" }); 
-                
-                animate(sweepPercent, 130, { duration: 2.2, ease: "easeInOut" });
-              }, 600);
-
-           }, 7000);
-
-           return () => {
-             clearTimeout(timer4);
-             clearTimeout(timer5);
-           };
-        }, 2000);
-
-        return () => clearTimeout(timer3);
-      }, 4150);
-
-      return () => clearTimeout(timer2);
-    }, 3700);
-
-    return () => clearTimeout(timer1);
-  }, [videoEnded, rippleScale, noiseOffsetY, containerScale, macbookOpacity, imacX, imacOpacity, macStudioX, macStudioOpacity, syncTextOpacity, syncTextBlur, syncTextX, sweepPercent]); 
-  
-  const { scrollY } = useScroll();
-  useMotionValueEvent(scrollY, "change", () => {
-    if (!sectionRef.current || videoPlaying || videoEnded) return;
-    const rect = sectionRef.current.getBoundingClientRect();
-    if (rect.top <= window.innerHeight * 0.25) {
+  useEffect(() => {
+    if (isInView && !videoPlaying && !videoEnded) {
       setVideoPlaying(true);
       videoRef.current?.play();
     }
-  });
+  }, [isInView, videoPlaying, videoEnded]);
+
+  useEffect(() => {
+    if (!videoEnded) return;
+
+    const t1 = setTimeout(() => setShowBarContent(true), 3700);
+    const t2 = setTimeout(() => setShowHistory(true), 4150);
+    
+    const t3 = setTimeout(() => {
+      setIsRippling(true);
+      setIsGlowActive(true);
+      animate(rippleScale, [0, 45, 0], { duration: 0.8, ease: "easeInOut" });
+      animate(noiseOffsetY, [0, -1200], { duration: 0.8, ease: "linear" });
+      animate(containerScale, [1, 1.04, 1], { duration: 0.8, ease: "easeInOut" });
+      setTimeout(() => setIsRippling(false), 800);
+    }, 6150);
+
+    const t4 = setTimeout(() => setFadeOutAll(true), 11650);
+
+    const t5 = setTimeout(() => {
+      setAnimationPhase('finished');
+      applyFinalLayout(false); 
+
+      setTimeout(() => {
+        animate(syncTextOpacity, 1, { duration: 0.8 });
+        animate(syncTextBlur, 0, { duration: 0.8 });
+        animate(sweepPercent, 130, { duration: 2.2, ease: "easeInOut" });
+
+        setTimeout(() => {
+          animate(syncTextOpacity, 0, { duration: 0.8 });
+          animate(syncTextBlur, 20, { duration: 0.8 });
+
+          setTimeout(() => {
+            animate(sweep2TextOpacity, 1, { duration: 0.8 });
+            animate(sweep2TextBlur, 0, { duration: 0.8 });
+            animate(sweep2Percent, 130, { duration: 2.2, ease: "easeInOut" });
+
+            animate(buttonsOpacity, 1, { duration: 0.8 });
+            animate(buttonsBlur, 0, { duration: 0.8 });
+            animate(playIconOpacity, 1, { duration: 0.8 });
+            animate(playIconBlur, 0, { duration: 0.8 });
+
+            if (!hasUnlockedRef.current) {
+              hasUnlockedRef.current = true;
+              onUnlockScroll?.();
+            }
+          }, 800);
+        }, 4200);
+      }, 1200);
+
+    }, 13150);
+
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
+  }, [videoEnded, applyFinalLayout, containerScale, rippleScale, noiseOffsetY, syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, onUnlockScroll]); 
+
+  const handleReset = useCallback(() => {
+    setAnimationPhase('idle');
+    animate(syncTextOpacity, 0, { duration: 0.01 });
+    animate(syncTextBlur, 20, { duration: 0.01 });
+    animate(sweepPercent, -20, { duration: 0.01 });
+    animate(sweep2TextOpacity, 0, { duration: 0.01 });
+    animate(sweep2TextBlur, 20, { duration: 0.01 });
+    animate(sweep2Percent, -20, { duration: 0.01 });
+    animate(buttonsOpacity, 0, { duration: 0.01 });
+    animate(buttonsBlur, 20, { duration: 0.01 });
+    animate(playIconOpacity, 0, { duration: 0.01 });
+    animate(playIconBlur, 20, { duration: 0.01 });
+    
+    animate(containerScale, 1, { duration: 0.01 });
+    animate(containerX, '0vw', { duration: 0.01 });
+    animate(containerY, '0vh', { duration: 0.01 });
+    animate(macbookOpacity, 0, { duration: 0.01 });
+    
+    animate(imacX, 'calc(-50% - 100vw)', { duration: 0.01 });
+    animate(imacY, '-50%', { duration: 0.01 });
+    animate(imacOpacity, 0, { duration: 0.01 });
+    
+    animate(macStudioX, 'calc(-50% + 100vw)', { duration: 0.01 });
+    animate(macStudioY, '-50%', { duration: 0.01 });
+    animate(macStudioOpacity, 0, { duration: 0.01 });
+    
+    setVideoPlaying(false);
+    setVideoEnded(false);
+    setShowBarContent(false);
+    setShowHistory(false);
+    setIsRippling(false);
+    setIsGlowActive(false);
+    setFadeOutAll(false);
+    
+    setVideoPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  }, [syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity]);
 
   return (
     <section id="programming" className="programming-page" ref={sectionRef}>
@@ -156,22 +257,13 @@ export default function Programming() {
 
       <div className="programming-video-container">
         <motion.img 
-          src={iMacImg} 
-          alt="iMac" 
-          className="apple-imac-layer"
+          src={iMacImg} alt="iMac" className="apple-imac-layer"
           style={{ x: imacX, y: imacY, opacity: imacOpacity }}
         />
 
         <motion.div 
           className="video-tight-wrapper"
-          style={{ 
-            filter: isRippling ? 'url(#water-ripple)' : 'none',
-            scale: containerScale,
-            x: containerX,
-            y: containerY,
-            z: 0,
-            willChange: isRippling ? 'filter, transform' : 'auto'
-          }}
+          style={{ filter: isRippling ? 'url(#water-ripple)' : 'none', scale: containerScale, x: containerX, y: containerY, z: 0, willChange: isRippling ? 'filter, transform' : 'auto' }}
         >
           <video ref={videoRef} src={Video2} className="programming-scroll-video" preload="auto" muted playsInline onEnded={() => setVideoEnded(true)} />
 
@@ -185,65 +277,81 @@ export default function Programming() {
 
           {showBarContent && (
             <div className={`bar-content-wrapper ${showHistory ? 'bar-exit' : ''}`}>
-              <div className="bar-title-wrapper">
-                <p className="bar-title">AI-Sorted Clipboard History</p>
-              </div>
-              <div className="bar-image-wrapper">
-                <img src={Bar} alt="Bar" className="bar-image" />
-              </div>
+              <div className="bar-title-wrapper"><p className="bar-title">AI-Sorted Clipboard History</p></div>
+              <div className="bar-image-wrapper"><img src={Bar} alt="Bar" className="bar-image" /></div>
             </div>
           )}
 
           {showHistory && (
             <div className={`history-layout-container ${fadeOutAll ? 'fade-out-all' : ''}`}>
-              <div className="history-left-side">
-                <img src={HistoryImg} alt="History Window" className="history-window-image" />
-              </div>
-              <div className="history-right-side">
-                <p className="powered-by-text">Powered by<br/>AI</p>
-              </div>
+              <div className="history-left-side"><img src={HistoryImg} alt="History Window" className="history-window-image" /></div>
+              <div className="history-right-side"><p className="powered-by-text">Powered by<br/>AI</p></div>
             </div>
           )}
 
           <motion.img 
-            src={Macbook} 
-            alt="Macbook Overlay" 
-            className="macbook-overlay-image" 
-            style={{ opacity: macbookOpacity }} 
+            src={Macbook} alt="Macbook Overlay" className="macbook-overlay-image" 
+            style={{ opacity: macbookOpacity, top: '50%', left: '50%', x: '-49.8%', y: '-44.4%' }} 
           />
         </motion.div>
 
         <motion.img 
-          src={MacstudioImg} 
-          alt="Mac Studio" 
-          className="apple-macstudio-layer"
+          src={MacstudioImg} alt="Mac Studio" className="apple-macstudio-layer"
           style={{ x: macStudioX, y: macStudioY, opacity: macStudioOpacity }}
         />
 
         <motion.div 
           className="sync-text-container"
-          style={{ 
-            opacity: syncTextOpacity, 
-            x: syncTextX, 
-            y: syncTextY,
-            filter: syncTextBlurString 
-          }}
+          style={{ opacity: syncTextOpacity, x: syncTextX, y: syncTextY, filter: syncTextBlurString }}
         >
-          <motion.h2 style={{ backgroundImage: animatedGradient }}>
-            Seamlessly<br/>sync across<br/>your Macs
-          </motion.h2>
+          <motion.h2 style={{ backgroundImage: animatedGradient }}>Seamlessly<br/>sync across<br/>your Macs</motion.h2>
+        </motion.div>
+
+        <motion.div 
+          className="sync-text-container sync-text-second"
+          style={{ opacity: sweep2TextOpacity, x: syncTextX, y: syncTextY, filter: sweep2TextBlurString }}
+        >
+          <motion.h2 style={{ backgroundImage: animatedGradient2 }}>Clipo is a free<br/>and open-source<br/>project</motion.h2>
+        </motion.div>
+
+        <motion.div 
+          className="sweep2-buttons-row"
+          style={{ opacity: buttonsOpacity, filter: buttonsBlurString, x: buttonsX, y: buttonsY }}
+        >
+          <motion.button className="sweep2-btn" initial="rest" whileHover="hover" animate="rest" variants={{ rest: { scale: 1 }, hover: { scale: 1.05 } }}>
+            <motion.div variants={{ rest: { width: "auto", opacity: 1 }, hover: { width: 0, opacity: 0 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: 'max-content' }}><img src={GithubIcon} alt="Github" className="sweep2-btn-icon" /><span>Github</span></div>
+            </motion.div>
+            <motion.div variants={{ rest: { width: 0, opacity: 0 }, hover: { width: "auto", opacity: 1 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ width: 'max-content' }}><span className="sweep2-btn-hover-text">Available Soon</span></div>
+            </motion.div>
+          </motion.button>
+          
+          <motion.button className="sweep2-btn" initial="rest" whileHover="hover" animate="rest" variants={{ rest: { scale: 1 }, hover: { scale: 1.05 } }}>
+            <motion.div variants={{ rest: { width: "auto", opacity: 1 }, hover: { width: 0, opacity: 0 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: 'max-content' }}><img src={FileIcon} alt="File" className="sweep2-btn-icon" /><span>dmg</span></div>
+            </motion.div>
+            <motion.div variants={{ rest: { width: 0, opacity: 0 }, hover: { width: "auto", opacity: 1 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ width: 'max-content' }}><span className="sweep2-btn-hover-text">Available Soon</span></div>
+            </motion.div>
+          </motion.button>
         </motion.div>
       </div>
       
       {videoEnded && (
         <div className={`clipo-interface-wrapper ${showBarContent ? 'clipo-exit' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
-          <div className="clipo-text-group">
-            <p className="clipo-text-top">Vibe-Coding Works</p>
-            <p className="clipo-text-bottom">Clipo</p>
-          </div>
+          <div className="clipo-text-group"><p className="clipo-text-top">Vibe-Coding Works</p><p className="clipo-text-bottom">Clipo</p></div>
           <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" />
         </div>
       )}
+
+      <motion.div 
+        className="programming-play-container"
+        style={{ opacity: playIconOpacity, filter: playIconBlurString }}
+      >
+        <span className="programming-play-label">Replay</span>
+        <div className="programming-play-icon" onClick={handleReset}><img src={PlaycircleIcon} alt="Replay" /></div>
+      </motion.div>
     </section>
   );
 }
