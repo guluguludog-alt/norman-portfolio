@@ -19,7 +19,7 @@ const projects = [
 ];
 
 /* =========================================
-   单张幻灯片组件（高性能版）
+   单张幻灯片组件（极致性能版）
    ========================================= */
 const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
   const originalP = useTransform(smoothProgress, val => {
@@ -49,14 +49,15 @@ const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
         zIndex,
         visibility,
         opacity: 1, 
-        z: 0,        
-        contain: 'strict', 
-        willChange: 'transform' 
+        z: 0, // 🌟 性能优化 1：为每一张动态变化的图片分配独立的 GPU 渲染层，防止互相干扰
+        contain: 'strict', // 告诉浏览器这个盒子里的变化不会影响外部排版
+        willChange: 'transform, width, height' // 🌟 性能优化 2：提前预告浏览器宽高会变化，分配专属内存
       }}
     >
       <img 
         src={img} 
         alt={`Project ${index + 1}`} 
+        decoding="async" // 🌟 性能优化 3：把昂贵的图片解码操作移入后台线程，防止主线程(滚动)卡顿
         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
         draggable="false"
       />
@@ -112,7 +113,7 @@ export default function GeneratedContent() {
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
-        inertiaRef.current?.stop(); // 手动滑动时停止之前的惯性动画
+        inertiaRef.current?.stop(); 
         rawProgress.set(rawProgress.get() + e.deltaX * 0.0015);
       }
     };
@@ -124,7 +125,7 @@ export default function GeneratedContent() {
   }, [rawProgress]);
 
   const onPointerDown = (e) => {
-    inertiaRef.current?.stop(); // 鼠标/手指按下时，瞬间停止上次的惯性滑动
+    inertiaRef.current?.stop(); 
     dragRef.current = { 
       isDown: true, startX: e.clientX, startP: rawProgress.get(), 
       lastTime: Date.now(), lastX: e.clientX, velocity: 0 
@@ -173,7 +174,11 @@ export default function GeneratedContent() {
       id="generated-content" 
       className="generated-content-page"
       ref={sectionRef}
-      style={{ y: springOffset }} 
+      style={{ 
+        y: springOffset, 
+        z: 0, // 🌟 性能优化 4：非常关键！为带有滚动物理引擎的整块 Section 开辟独立的显卡处理通道，消灭随全局滚动带来的卡顿。
+        willChange: 'transform' 
+      }} 
     >
       <div className="gc-title-block">
         <div className="gc-blue-square"></div>
@@ -185,7 +190,7 @@ export default function GeneratedContent() {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.25 }}
             className="gc-title-text"
-            style={{ willChange: 'opacity, transform' }}
+            style={{ willChange: 'opacity, transform' }} // 🌟 性能优化 5：提前预告浏览器标题会隐现
           >
             {projects[activeIndex].title}
           </motion.h2>

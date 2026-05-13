@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useInView, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import './programming.css';
 
-// 引入资源
-import Video2 from '../assets/Video2.mp4';
+// 🌟 1. 引入经过 FFmpeg 优化后的视频文件
+import Video2 from '../assets/Video2_web.mp4';
 import ClipoInterface from '../assets/ClipoInterface.png';
 import Bar from '../assets/Bar.png';
 import HistoryImg from '../assets/HistoryWindow.png';
@@ -14,7 +14,7 @@ import GithubIcon from '../assets/Github.png';
 import FileIcon from '../assets/File.png';
 import PlaycircleIcon from '../assets/Playcircle.png';
 
-export default function Programming({ onUnlockScroll }) {
+export default function Programming() {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
   
@@ -28,7 +28,6 @@ export default function Programming({ onUnlockScroll }) {
   const [isRippling, setIsRippling] = useState(false);
   const [isGlowActive, setIsGlowActive] = useState(false);
   const [fadeOutAll, setFadeOutAll] = useState(false);
-  const hasUnlockedRef = useRef(false);
 
   const [animationPhase, setAnimationPhase] = useState('idle');
   const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
@@ -99,10 +98,10 @@ export default function Programming({ onUnlockScroll }) {
     } else {
       return {
         containerScale: 0.252, containerX: '-14vw', containerY: '6.7vw', 
-        imacX: 'calc(-50% - 30vw)', imacY: 'calc(-50% + 1.0vw)', imacFinalOpacity: 1, 
+        imacX: 'calc(-50% - 30vw)', imacY: 'calc(-50% + 0.5vw)', imacFinalOpacity: 1, 
         macStudioX: 'calc(-50% - 2vw)', macStudioY: 'calc(-50% + 12.3vw)', 
-        text1X: 'calc(-50% + 24vw)', text1Y: 'calc(-50% - 1vw)', 
-        buttonsX: 'calc(-50% + 24vw)', buttonsY: 'calc(-50% + 16.5vw)' 
+        text1X: 'calc(-50% + 30vw)', text1Y: 'calc(-50% - 4vw)', 
+        buttonsX: 'calc(-50% + 30vw)', buttonsY: 'calc(-50% + 13.5vw)' 
       };
     }
   };
@@ -189,10 +188,6 @@ export default function Programming({ onUnlockScroll }) {
             animate(playIconOpacity, 1, { duration: 0.8 });
             animate(playIconBlur, 0, { duration: 0.8 });
 
-            if (!hasUnlockedRef.current) {
-              hasUnlockedRef.current = true;
-              onUnlockScroll?.();
-            }
           }, 800);
         }, 4200);
       }, 1200);
@@ -200,7 +195,7 @@ export default function Programming({ onUnlockScroll }) {
     }, 13150);
 
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
-  }, [videoEnded, applyFinalLayout, containerScale, rippleScale, noiseOffsetY, syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, onUnlockScroll]); 
+  }, [videoEnded, applyFinalLayout, containerScale, rippleScale, noiseOffsetY, syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur]); 
 
   const handleReset = useCallback(() => {
     setAnimationPhase('idle');
@@ -265,7 +260,20 @@ export default function Programming({ onUnlockScroll }) {
           className="video-tight-wrapper"
           style={{ filter: isRippling ? 'url(#water-ripple)' : 'none', scale: containerScale, x: containerX, y: containerY, z: 0, willChange: isRippling ? 'filter, transform' : 'auto' }}
         >
-          <video ref={videoRef} src={Video2} className="programming-scroll-video" preload="auto" muted playsInline onEnded={() => setVideoEnded(true)} />
+          {/* 🌟 2. 极致优化的 video 标签 */}
+          <video 
+            ref={videoRef} 
+            src={Video2} 
+            className="programming-scroll-video" 
+            preload="metadata" /* 将 auto 改为 metadata 释放内存 */
+            muted 
+            playsInline 
+            onEnded={() => setVideoEnded(true)}
+            style={{ 
+              willChange: 'transform', 
+              transform: 'translateZ(0)' /* 强制 GPU 硬件加速 */
+            }} 
+          />
 
           <div className={`video-glow-overlay ${isGlowActive ? 'glow-active' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
             <div className="glow-system">
@@ -311,7 +319,7 @@ export default function Programming({ onUnlockScroll }) {
           className="sync-text-container sync-text-second"
           style={{ opacity: sweep2TextOpacity, x: syncTextX, y: syncTextY, filter: sweep2TextBlurString }}
         >
-          <motion.h2 style={{ backgroundImage: animatedGradient2 }}>Clipo is a free<br/>and open-source<br/>project</motion.h2>
+          <motion.h2 style={{ backgroundImage: animatedGradient2 }}>Clipo is free<br/>and open-source</motion.h2>
         </motion.div>
 
         <motion.div 

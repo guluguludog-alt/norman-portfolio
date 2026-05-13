@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { ReactLenis, useLenis } from 'lenis/react';
+import React, { useState, useEffect } from 'react';
+import { ReactLenis } from 'lenis/react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,6 +8,7 @@ import MoreWorksPage from './components/MoreWorksPage';
 import AIGCWorksPage from './components/AIGCWorksPage';
 import GeneratedContent from './components/GeneratedContent';
 import Programming from './components/Programming';
+import MySpacePage from './components/MySpacePage';
 import IntroductionPage from './components/IntroductionPage';
 import ExperiencePage from './components/ExperiencePage';
 import ExperienceListPage from './components/ExperienceListPage';
@@ -20,8 +21,6 @@ import LoadingScreen from './components/LoadingScreen'; // 🌟 引入刚建好�
 function Home() {
   // 记录整个网站资源是否加载完毕的全局状态
   const [isAppLoaded, setIsAppLoaded] = useState(false);
-  const [programmingUnlocked, setProgrammingUnlocked] = useState(false);
-  const lenis = useLenis();
 
   // 在加载页未消失前，把滚动强制锁死在最顶部，防止手抖滑到下面
   useEffect(() => {
@@ -32,14 +31,6 @@ function Home() {
       document.body.style.overflow = '';
     }
   }, [isAppLoaded]);
-
-  // When programming unlocks, refresh lenis to recalculate scroll bounds
-  const handleProgrammingUnlock = useCallback(() => {
-    setProgrammingUnlocked(true);
-    setTimeout(() => {
-      lenis?.resize();
-    }, 100);
-  }, [lenis]);
 
   return (
     <>
@@ -57,21 +48,18 @@ function Home() {
         <LandscapeWorksPage />
         <AIGCWorksPage />
         <GeneratedContent />
-        <Programming onUnlockScroll={handleProgrammingUnlock} />
-        {programmingUnlocked && (
-          <>
-            <MoreWorksPage />
-            <section id="contact" className="section">
-              <div className="contact-content">
-                <h1>Contact me</h1>
-                <p>E-mail: citiesxl@hotmail.com</p>
-              </div>
-              <div className="footer-blue-block">
-                <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
-              </div>
-            </section>
-          </>
-        )}
+        <Programming />
+        <MySpacePage />
+        <MoreWorksPage />
+        <section id="contact" className="section">
+          <div className="contact-content">
+            <h1>Contact me</h1>
+            <p>E-mail: citiesxl@hotmail.com</p>
+          </div>
+          <div className="footer-blue-block">
+            <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
+          </div>
+        </section>
       </ReactLenis> 
     </>
   );

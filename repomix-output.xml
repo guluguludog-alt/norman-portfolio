@@ -40,189 +40,457 @@ The content is organized as follows:
 </file_summary>
 
 <directory_structure>
+public/
+  fonts/
+    Aquatico-Regular.otf
+    SansSerifFLF.otf
+    SonsieOne-Regular.ttf
+  myspace_frames/
+    frame_0001.jpg
+    frame_0002.jpg
+    frame_0003.jpg
+    frame_0004.jpg
+    frame_0005.jpg
+    frame_0006.jpg
+    frame_0007.jpg
+    frame_0008.jpg
+    frame_0009.jpg
+    frame_0010.jpg
+    frame_0011.jpg
+    frame_0012.jpg
+    frame_0013.jpg
+    frame_0014.jpg
+    frame_0015.jpg
+    frame_0016.jpg
+    frame_0017.jpg
+    frame_0018.jpg
+    frame_0019.jpg
+    frame_0020.jpg
+    frame_0021.jpg
+    frame_0022.jpg
+    frame_0023.jpg
+    frame_0024.jpg
+    frame_0025.jpg
+    frame_0026.jpg
+    frame_0027.jpg
+    frame_0028.jpg
+    frame_0029.jpg
+    frame_0030.jpg
+    frame_0031.jpg
+    frame_0032.jpg
+    frame_0033.jpg
+    frame_0034.jpg
+    frame_0035.jpg
+    frame_0036.jpg
+    frame_0037.jpg
+    frame_0038.jpg
+    frame_0039.jpg
+    frame_0040.jpg
+    frame_0041.jpg
+    frame_0042.jpg
+    frame_0043.jpg
+    frame_0044.jpg
+    frame_0045.jpg
+    frame_0046.jpg
+    frame_0047.jpg
+    frame_0048.jpg
+    frame_0049.jpg
+    frame_0050.jpg
+    frame_0051.jpg
+    frame_0052.jpg
+    frame_0053.jpg
+    frame_0054.jpg
+    frame_0055.jpg
+    frame_0056.jpg
+    frame_0057.jpg
+    frame_0058.jpg
+    frame_0059.jpg
+    frame_0060.jpg
+    frame_0061.jpg
+    frame_0062.jpg
+    frame_0063.jpg
+    frame_0064.jpg
+    frame_0065.jpg
+    frame_0066.jpg
+    frame_0067.jpg
+    frame_0068.jpg
+    frame_0069.jpg
+    frame_0070.jpg
+    frame_0071.jpg
+    frame_0072.jpg
+    frame_0073.jpg
+    frame_0074.jpg
+    frame_0075.jpg
+    frame_0076.jpg
+    frame_0077.jpg
+    frame_0078.jpg
+    frame_0079.jpg
+    frame_0080.jpg
+    frame_0081.jpg
+    frame_0082.jpg
+    frame_0083.jpg
+    frame_0084.jpg
+    frame_0085.jpg
+    frame_0086.jpg
+    frame_0087.jpg
+    frame_0088.jpg
+    frame_0089.jpg
+    frame_0090.jpg
+    frame_0091.jpg
+    frame_0092.jpg
+    frame_0093.jpg
+    frame_0094.jpg
+    frame_0095.jpg
+    frame_0096.jpg
+    frame_0097.jpg
+    frame_0098.jpg
+    frame_0099.jpg
+    frame_0100.jpg
+    frame_0101.jpg
+    frame_0102.jpg
+    frame_0103.jpg
+    frame_0104.jpg
+    frame_0105.jpg
+    frame_0106.jpg
+    frame_0107.jpg
+    frame_0108.jpg
+    frame_0109.jpg
+    frame_0110.jpg
+    frame_0111.jpg
+    frame_0112.jpg
+    frame_0113.jpg
+    frame_0114.jpg
+    frame_0115.jpg
+    frame_0116.jpg
+    frame_0117.jpg
+    frame_0118.jpg
+    frame_0119.jpg
+    frame_0120.jpg
+    frame_0121.jpg
+    frame_0122.jpg
+    frame_0123.jpg
+    frame_0124.jpg
+    frame_0125.jpg
+    frame_0126.jpg
+    frame_0127.jpg
+    frame_0128.jpg
+    frame_0129.jpg
+    frame_0130.jpg
+    frame_0131.jpg
+    frame_0132.jpg
+    frame_0133.jpg
+    frame_0134.jpg
+    frame_0135.jpg
+    frame_0136.jpg
+    frame_0137.jpg
+    frame_0138.jpg
+    frame_0139.jpg
+    frame_0140.jpg
+    frame_0141.jpg
+    frame_0142.jpg
+    frame_0143.jpg
+    frame_0144.jpg
+    frame_0145.jpg
+    frame_0146.jpg
+    frame_0147.jpg
+    frame_0148.jpg
+    frame_0149.jpg
+    frame_0150.jpg
+    frame_0151.jpg
+    frame_0152.jpg
+    frame_0153.jpg
+    frame_0154.jpg
+    frame_0155.jpg
+    frame_0156.jpg
+  background_layer.png
+  background_layerpng.png
+  favicon.svg
+  icons.svg
+  pixel_layer.png
+src/
+  assets/
+    avatar.png
+    Bar.png
+    ClipoInterface.png
+    File.png
+    Github.png
+    GProject1.png
+    GProject2.png
+    GProject3.png
+    GProject4.png
+    GProject5.png
+    GProject6.png
+    hero.png
+    History.png
+    HistoryWindow.png
+    iMac.png
+    LProject1.png
+    LProject2.png
+    LProject3.png
+    LProject4.png
+    LProject5.png
+    MacBook.png
+    Macstudio.png
+    MenuIcon.png
+    Playcircle.png
+    Project1.jpg
+    Project2.jpg
+    Project3.jpg
+    Project4.jpg
+    Project5.jpg
+    react.svg
+    Ring.png
+    Starbackground.png
+    Video1.mp4
+    Video2.mp4
+    vite.svg
+  components/
+    projects/
+      LProject1.css
+      LProject1.jsx
+      LProject2.css
+      LProject2.jsx
+      LProject3.css
+      LProject3.jsx
+      LProject4.css
+      LProject4.jsx
+      LProject5.css
+      LProject5.jsx
+      Project1.css
+      Project1.jsx
+      Project2.css
+      Project2.jsx
+      Project3.css
+      Project3.jsx
+      Project4.css
+      Project4.jsx
+      Project5.css
+      Project5.jsx
+    aigcWorksPage.css
+    AIGCWorksPage.jsx
+    architectureWorks.css
+    ArchitectureWorks.jsx
+    AuroraEffect.css
+    AuroraEffect.jsx
+    BorderGlow.css
+    BorderGlow.jsx
+    decodeText.css
+    DecodeText.jsx
+    DecryptedText.jsx
+    experienceListPage.css
+    ExperienceListPage.jsx
+    experiencePage.css
+    ExperiencePage.jsx
+    generatedContent.css
+    GeneratedContent.jsx
+    GlassSurface.css
+    GlassSurface.jsx
+    Hero.jsx
+    introductionPage.css
+    IntroductionPage.jsx
+    landscapeWorksPage.css
+    LandscapeWorksPage.jsx
+    loadingScreen.css
+    LoadingScreen.jsx
+    moreWorksPage.css
+    MoreWorksPage.jsx
+    mySpacePage.css
+    MySpacePage.jsx
+    Navbar.css
+    Navbar.jsx
+    PortfolioSection.jsx
+    ProfileCard.css
+    ProfileCard.jsx
+    programming.css
+    Programming.jsx
+    projectDetailPage.css
+    ProjectDetailPage.jsx
+    RotatingText.jsx
+  App.css
+  App.jsx
+  index.css
+  main.jsx
 .gitignore
+CatText.mp4
 eslint.config.js
+extract_jpg.js
 index.html
 package.json
-public/background_layer.png
-public/background_layerpng.png
-public/favicon.svg
-public/fonts/Aquatico-Regular.otf
-public/fonts/SansSerifFLF.otf
-public/fonts/SonsieOne-Regular.ttf
-public/icons.svg
-public/pixel_layer.png
 README.md
 scratch_gen_lprojects.js
 scratch_gen_projects.js
-src/App.css
-src/App.jsx
-src/assets/avatar.png
-src/assets/Bar.png
-src/assets/ClipoInterface.png
-src/assets/File.png
-src/assets/Github.png
-src/assets/GProject1.png
-src/assets/GProject2.png
-src/assets/GProject3.png
-src/assets/GProject4.png
-src/assets/GProject5.png
-src/assets/GProject6.png
-src/assets/hero.png
-src/assets/History.png
-src/assets/HistoryWindow.png
-src/assets/iMac.png
-src/assets/LProject1.png
-src/assets/LProject2.png
-src/assets/LProject3.png
-src/assets/LProject4.png
-src/assets/LProject5.png
-src/assets/MacBook.png
-src/assets/Macstudio.png
-src/assets/MenuIcon.png
-src/assets/Playcircle.png
-src/assets/Project1.jpg
-src/assets/Project2.jpg
-src/assets/Project3.jpg
-src/assets/Project4.jpg
-src/assets/Project5.jpg
-src/assets/react.svg
-src/assets/Ring.png
-src/assets/Starbackground.png
-src/assets/Video1.mp4
-src/assets/Video2.mp4
-src/assets/vite.svg
-src/components/aigcWorksPage.css
-src/components/AIGCWorksPage.jsx
-src/components/architectureWorks.css
-src/components/ArchitectureWorks.jsx
-src/components/AuroraEffect.css
-src/components/AuroraEffect.jsx
-src/components/BorderGlow.css
-src/components/BorderGlow.jsx
-src/components/decodeText.css
-src/components/DecodeText.jsx
-src/components/DecryptedText.jsx
-src/components/experienceListPage.css
-src/components/ExperienceListPage.jsx
-src/components/experiencePage.css
-src/components/ExperiencePage.jsx
-src/components/generatedContent.css
-src/components/GeneratedContent.jsx
-src/components/GlassSurface.css
-src/components/GlassSurface.jsx
-src/components/Hero.jsx
-src/components/introductionPage.css
-src/components/IntroductionPage.jsx
-src/components/landscapeWorksPage.css
-src/components/LandscapeWorksPage.jsx
-src/components/loadingScreen.css
-src/components/LoadingScreen.jsx
-src/components/moreWorksPage.css
-src/components/MoreWorksPage.jsx
-src/components/Navbar.css
-src/components/Navbar.jsx
-src/components/PortfolioSection.jsx
-src/components/ProfileCard.css
-src/components/ProfileCard.jsx
-src/components/programming.css
-src/components/Programming.jsx
-src/components/projectDetailPage.css
-src/components/ProjectDetailPage.jsx
-src/components/projects/LProject1.css
-src/components/projects/LProject1.jsx
-src/components/projects/LProject2.css
-src/components/projects/LProject2.jsx
-src/components/projects/LProject3.css
-src/components/projects/LProject3.jsx
-src/components/projects/LProject4.css
-src/components/projects/LProject4.jsx
-src/components/projects/LProject5.css
-src/components/projects/LProject5.jsx
-src/components/projects/Project1.css
-src/components/projects/Project1.jsx
-src/components/projects/Project2.css
-src/components/projects/Project2.jsx
-src/components/projects/Project3.css
-src/components/projects/Project3.jsx
-src/components/projects/Project4.css
-src/components/projects/Project4.jsx
-src/components/projects/Project5.css
-src/components/projects/Project5.jsx
-src/components/RotatingText.jsx
-src/index.css
-src/main.jsx
 vite.config.js
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
 
-<file path=".gitignore">
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+<file path="src/components/mySpacePage.css">
+/* src/components/mySpacePage.css */
 
-node_modules
-dist
-dist-ssr
-*.local
+.my-space-page-container {
+  background-color: #000;
+  position: relative;
+  z-index: 99; 
+  width: 100%;
+  /* 严格锁定高度为1个屏幕，不干涉任何排版 */
+  height: 100vh; 
+  /* 居中包裹 Canvas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.myspace-sequence-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+/* =========================================
+   PC端布局 (>900px): 撑满、无留白、不裁切
+   ========================================= */
+@media (min-width: 901px) {
+  .myspace-sequence-canvas {
+    object-fit: fill; 
+  }
+}
+
+/* =========================================
+   移动端布局 (<=900px): 上下不裁切，左右可裁切
+   ========================================= */
+@media (max-width: 900px) {
+  .myspace-sequence-canvas {
+    object-fit: cover;
+    object-position: center;
+  }
+}
 </file>
 
-<file path="eslint.config.js">
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
+<file path="src/components/MySpacePage.jsx">
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import { useScroll, useMotionValueEvent } from 'framer-motion';
+import './mySpacePage.css';
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      globals: globals.browser,
-      parserOptions: { ecmaFeatures: { jsx: true } },
-    },
-  },
-])
+// 🌟 更新为你实际抽出的 156 帧
+const TOTAL_FRAMES = 156; 
+
+export default function MySpacePage() {
+  const sectionRef = useRef(null);
+  const canvasRef = useRef(null);
+  const [images, setImages] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  const metricsRef = useRef({ top: 0, vh: 1000 });
+
+  // --- 1. 预加载图片 ---
+  useEffect(() => {
+    const loadedImages = [];
+    let loadCount = 0;
+    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+      const img = new Image();
+      img.src = `/myspace_frames/frame_${String(i).padStart(4, '0')}.jpg`;
+      img.onload = () => {
+        loadCount++;
+        if (loadCount === TOTAL_FRAMES) {
+          setImages(loadedImages);
+          setIsLoaded(true);
+        }
+      };
+      loadedImages.push(img);
+    }
+  }, []);
+
+  // --- 2. Canvas 绘制 ---
+  const drawFrame = (index) => {
+    if (!canvasRef.current || !images[index]) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    canvas.width = 1920;
+    canvas.height = 1080;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(images[index], 0, 0, canvas.width, canvas.height);
+  };
+
+  useEffect(() => {
+    if (isLoaded) drawFrame(0);
+  }, [isLoaded]);
+
+  // --- 3. 获取容器精确坐标 ---
+  useLayoutEffect(() => {
+    const calculateMetrics = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        metricsRef.current = {
+          top: rect.top + scrollTop,
+          vh: window.innerHeight
+        };
+      }
+    };
+    calculateMetrics();
+    window.addEventListener('resize', calculateMetrics);
+    return () => window.removeEventListener('resize', calculateMetrics);
+  }, []);
+
+  // --- 4. 监听滚动并映射动画 ---
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (!isLoaded) return;
+    const { top, vh } = metricsRef.current;
+
+    // 🌟 动画起点：页面从下方出现一半 (50vh)
+    let start = top - vh * 0.5;
+    
+    // 🌟 动画终点：页面向上滑出 1/4，也就是还剩下 3/4 (75vh) 在视野中
+    let end = top + vh * 0.25; 
+    
+    let progress = (latest - start) / (end - start);
+    
+    // 严格限制进度在 0 ~ 1 之间
+    progress = Math.max(0, Math.min(1, progress));
+
+    const frameIndex = Math.floor(progress * (TOTAL_FRAMES - 1));
+    requestAnimationFrame(() => drawFrame(frameIndex));
+  });
+
+  return (
+    <section id="myspace" className="my-space-page-container" ref={sectionRef}>
+      <canvas ref={canvasRef} className="myspace-sequence-canvas" />
+    </section>
+  );
+}
 </file>
 
-<file path="index.html">
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>architecture-portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<file path="extract_jpg.js">
+import fs from 'fs';
+import { execSync } from 'child_process';
+import path from 'path';
+
+// 获取当前路径
+const currentDir = process.cwd();
+const inputVideo = path.join(currentDir, 'CatText.mp4');
+const outputDir = path.join(currentDir, 'public', 'myspace_frames');
+
+// 创建存放图片的文件夹
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
+
+console.log('开始抽帧 (极高画质 JPG 模式)，正在处理中，请稍候...');
+
+// 🌟 核心变化：这里输出的是 .jpg，彻底绕开之前的 libwebp 报错！
+const cmd = `ffmpeg -i "${inputVideo}" -vf fps=30 -q:v 5 "${outputDir}/frame_%04d.jpg"`;
+
+try {
+  // 执行命令
+  execSync(cmd, { stdio: 'inherit' });
+  console.log('✅ 完美！抽帧成功！图片已存入 public/myspace_frames 文件夹。');
+} catch (error) {
+  console.error('❌ 抽帧还是失败了，原因：', error.message);
+}
 </file>
 
 <file path="public/favicon.svg">
@@ -256,218 +524,692 @@ export default defineConfig([
 </svg>
 </file>
 
-<file path="README.md">
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-</file>
-
-<file path="scratch_gen_lprojects.js">
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const titles = {
-  1: "Jinan Huangtai Central Park",
-  2: "Ecological Bird Habitat Riverside Park",
-  3: "Qianfo Mountain Plaza",
-  4: "Jiangshan Mountain Park",
-  5: "FISU Games Themed Floral Landscape Design"
-};
-
-const dir = path.join(__dirname, 'src', 'components', 'projects');
-
-for (let i = 1; i <= 5; i++) {
-  const jsxContent = `import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject${i}.css';
-
-export default function LProject${i}() {
-  return (
-    <div className="project-detail-page lproject${i}-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          ${titles[i]}
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project ${i}. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject ${i} ]</span>
-      </div>
-    </div>
-  );
-}
-`;
-
-  const cssContent = `.lproject${i}-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject${i}-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject${i}-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject${i}-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject${i}-page .project-placeholder-gallery span {
-  color: #444444;
-}
-`;
-
-  fs.writeFileSync(path.join(dir, `LProject${i}.jsx`), jsxContent);
-  fs.writeFileSync(path.join(dir, `LProject${i}.css`), cssContent);
-}
-
-console.log("LProjects generated successfully.");
-</file>
-
-<file path="scratch_gen_projects.js">
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const titles = {
-  1: "International Port Culture Service Center",
-  2: "Digital Industrial Park Headquarters",
-  3: "Conceptual Design of New Energy Headquarters",
-  4: "High-Rise Urban Mixed-Use Complex",
-  5: "Adaptive Reuse Design of the Former Glass Factory"
-};
-
-const dir = path.join(__dirname, 'src', 'components', 'projects');
-if (!fs.existsSync(dir)) {
-  fs.mkdirSync(dir, { recursive: true });
-}
-
-for (let i = 1; i <= 5; i++) {
-  const jsxContent = `import React from 'react';
-import { motion } from 'framer-motion';
-import './Project${i}.css';
-
-export default function Project${i}() {
-  return (
-    <div className="project-detail-page project${i}-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          ${titles[i]}
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project ${i}. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project ${i} ]</span>
-      </div>
-    </div>
-  );
-}
-`;
-
-  const cssContent = `.project${i}-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project${i}-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project${i}-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project${i}-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project${i}-page .project-placeholder-gallery span {
-  color: #444444;
-}
-`;
-
-  fs.writeFileSync(path.join(dir, `Project${i}.jsx`), jsxContent);
-  fs.writeFileSync(path.join(dir, `Project${i}.css`), cssContent);
-}
-
-console.log("Projects generated successfully.");
-</file>
-
 <file path="src/assets/react.svg">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
 </file>
 
 <file path="src/assets/vite.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/projects/LProject1.css">
+.lproject1-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject1-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject1-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject1-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject1-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject1.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject1.css';
+
+export default function LProject1() {
+  return (
+    <div className="project-detail-page lproject1-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Jinan Huangtai Central Park
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 1. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 1 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject2.css">
+.lproject2-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject2-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject2-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject2-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject2-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject2.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject2.css';
+
+export default function LProject2() {
+  return (
+    <div className="project-detail-page lproject2-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Ecological Bird Habitat Riverside Park
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 2. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 2 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject3.css">
+.lproject3-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject3-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject3-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject3-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject3-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject3.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject3.css';
+
+export default function LProject3() {
+  return (
+    <div className="project-detail-page lproject3-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Qianfo Mountain Plaza
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 3. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 3 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject4.css">
+.lproject4-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject4-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject4-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject4-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject4-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject4.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject4.css';
+
+export default function LProject4() {
+  return (
+    <div className="project-detail-page lproject4-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Jiangshan Mountain Park
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 4. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 4 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/LProject5.css">
+.lproject5-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject5-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject5-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject5-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject5-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/LProject5.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject5.css';
+
+export default function LProject5() {
+  return (
+    <div className="project-detail-page lproject5-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          FISU Games Themed Floral Landscape Design
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 5. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject 5 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project1.css">
+.project1-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project1-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project1-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project1-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project1-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project1.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project1.css';
+
+export default function Project1() {
+  return (
+    <div className="project-detail-page project1-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          International Port Culture Service Center
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 1. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 1 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project2.css">
+.project2-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project2-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project2-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project2-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project2-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project2.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project2.css';
+
+export default function Project2() {
+  return (
+    <div className="project-detail-page project2-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Digital Industrial Park Headquarters
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 2. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 2 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project3.css">
+.project3-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project3-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project3-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project3-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project3-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project3.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project3.css';
+
+export default function Project3() {
+  return (
+    <div className="project-detail-page project3-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Conceptual Design of New Energy Headquarters
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 3. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 3 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project4.css">
+.project4-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project4-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project4-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project4-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project4-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project4.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project4.css';
+
+export default function Project4() {
+  return (
+    <div className="project-detail-page project4-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          High-Rise Urban Mixed-Use Complex
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 4. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 4 ]</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/projects/Project5.css">
+.project5-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project5-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project5-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project5-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project5-page .project-placeholder-gallery span {
+  color: #444444;
+}
+</file>
+
+<file path="src/components/projects/Project5.jsx">
+import React from 'react';
+import { motion } from 'framer-motion';
+import './Project5.css';
+
+export default function Project5() {
+  return (
+    <div className="project-detail-page project5-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          Adaptive Reuse Design of the Former Glass Factory
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project 5. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project 5 ]</span>
+      </div>
+    </div>
+  );
+}
 </file>
 
 <file path="src/components/AuroraEffect.css">
@@ -2414,686 +3156,6 @@ export default function ProjectDetailPage() {
 }
 </file>
 
-<file path="src/components/projects/LProject1.css">
-.lproject1-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject1-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject1-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject1-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject1-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject1.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject1.css';
-
-export default function LProject1() {
-  return (
-    <div className="project-detail-page lproject1-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Jinan Huangtai Central Park
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 1. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 1 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject2.css">
-.lproject2-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject2-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject2-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject2-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject2-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject2.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject2.css';
-
-export default function LProject2() {
-  return (
-    <div className="project-detail-page lproject2-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Ecological Bird Habitat Riverside Park
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 2. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 2 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject3.css">
-.lproject3-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject3-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject3-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject3-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject3-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject3.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject3.css';
-
-export default function LProject3() {
-  return (
-    <div className="project-detail-page lproject3-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Qianfo Mountain Plaza
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 3. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 3 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject4.css">
-.lproject4-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject4-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject4-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject4-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject4-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject4.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject4.css';
-
-export default function LProject4() {
-  return (
-    <div className="project-detail-page lproject4-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Jiangshan Mountain Park
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 4. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 4 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/LProject5.css">
-.lproject5-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.lproject5-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.lproject5-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.lproject5-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lproject5-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/LProject5.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './LProject5.css';
-
-export default function LProject5() {
-  return (
-    <div className="project-detail-page lproject5-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          FISU Games Themed Floral Landscape Design
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project 5. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for LProject 5 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project1.css">
-.project1-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project1-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project1-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project1-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project1-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project1.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project1.css';
-
-export default function Project1() {
-  return (
-    <div className="project-detail-page project1-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          International Port Culture Service Center
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 1. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 1 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project2.css">
-.project2-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project2-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project2-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project2-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project2-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project2.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project2.css';
-
-export default function Project2() {
-  return (
-    <div className="project-detail-page project2-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Digital Industrial Park Headquarters
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 2. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 2 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project3.css">
-.project3-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project3-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project3-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project3-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project3-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project3.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project3.css';
-
-export default function Project3() {
-  return (
-    <div className="project-detail-page project3-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Conceptual Design of New Energy Headquarters
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 3. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 3 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project4.css">
-.project4-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project4-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project4-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project4-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project4-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project4.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project4.css';
-
-export default function Project4() {
-  return (
-    <div className="project-detail-page project4-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          High-Rise Urban Mixed-Use Complex
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 4. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 4 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
-<file path="src/components/projects/Project5.css">
-.project5-page {
-  padding: 120px 40px;
-  min-height: 200vh;
-}
-
-.project5-page .project-hero-title {
-  font-size: 4rem;
-  font-family: 'Dela Gothic One', sans-serif;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.project5-page .project-description {
-  font-size: 1.2rem;
-  color: #888888;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.project5-page .project-placeholder-gallery {
-  margin-top: 100px;
-  width: 100%;
-  height: 600px;
-  background-color: #111111;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.project5-page .project-placeholder-gallery span {
-  color: #444444;
-}
-</file>
-
-<file path="src/components/projects/Project5.jsx">
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Project5.css';
-
-export default function Project5() {
-  return (
-    <div className="project-detail-page project5-page">
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h1 className="project-hero-title">
-          Adaptive Reuse Design of the Former Glass Factory
-        </h1>
-        <p className="project-description">
-          This is a sandbox for you to build out the deeply customized, complex layout for Project 5. 
-          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
-          3D elements, or extensive text descriptions here.
-        </p>
-      </motion.div>
-      
-      {/* 留出大量空间以便测试上下滚动 */}
-      <div className="project-placeholder-gallery">
-        <span>[ Complex Gallery Area Placeholder for Project 5 ]</span>
-      </div>
-    </div>
-  );
-}
-</file>
-
 <file path="src/index.css">
 
 </file>
@@ -3110,6 +3172,279 @@ createRoot(document.getElementById('root')).render(
 )
 </file>
 
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+  },
+])
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>architecture-portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="scratch_gen_lprojects.js">
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const titles = {
+  1: "Jinan Huangtai Central Park",
+  2: "Ecological Bird Habitat Riverside Park",
+  3: "Qianfo Mountain Plaza",
+  4: "Jiangshan Mountain Park",
+  5: "FISU Games Themed Floral Landscape Design"
+};
+
+const dir = path.join(__dirname, 'src', 'components', 'projects');
+
+for (let i = 1; i <= 5; i++) {
+  const jsxContent = `import React from 'react';
+import { motion } from 'framer-motion';
+import './LProject${i}.css';
+
+export default function LProject${i}() {
+  return (
+    <div className="project-detail-page lproject${i}-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          ${titles[i]}
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Landscape Project ${i}. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for LProject ${i} ]</span>
+      </div>
+    </div>
+  );
+}
+`;
+
+  const cssContent = `.lproject${i}-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.lproject${i}-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.lproject${i}-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.lproject${i}-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lproject${i}-page .project-placeholder-gallery span {
+  color: #444444;
+}
+`;
+
+  fs.writeFileSync(path.join(dir, `LProject${i}.jsx`), jsxContent);
+  fs.writeFileSync(path.join(dir, `LProject${i}.css`), cssContent);
+}
+
+console.log("LProjects generated successfully.");
+</file>
+
+<file path="scratch_gen_projects.js">
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const titles = {
+  1: "International Port Culture Service Center",
+  2: "Digital Industrial Park Headquarters",
+  3: "Conceptual Design of New Energy Headquarters",
+  4: "High-Rise Urban Mixed-Use Complex",
+  5: "Adaptive Reuse Design of the Former Glass Factory"
+};
+
+const dir = path.join(__dirname, 'src', 'components', 'projects');
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+for (let i = 1; i <= 5; i++) {
+  const jsxContent = `import React from 'react';
+import { motion } from 'framer-motion';
+import './Project${i}.css';
+
+export default function Project${i}() {
+  return (
+    <div className="project-detail-page project${i}-page">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="project-hero-title">
+          ${titles[i]}
+        </h1>
+        <p className="project-description">
+          This is a sandbox for you to build out the deeply customized, complex layout for Project ${i}. 
+          You can add massive hero images, scroll-triggered animations (using framer-motion useScroll), 
+          3D elements, or extensive text descriptions here.
+        </p>
+      </motion.div>
+      
+      {/* 留出大量空间以便测试上下滚动 */}
+      <div className="project-placeholder-gallery">
+        <span>[ Complex Gallery Area Placeholder for Project ${i} ]</span>
+      </div>
+    </div>
+  );
+}
+`;
+
+  const cssContent = `.project${i}-page {
+  padding: 120px 40px;
+  min-height: 200vh;
+}
+
+.project${i}-page .project-hero-title {
+  font-size: 4rem;
+  font-family: 'Dela Gothic One', sans-serif;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.project${i}-page .project-description {
+  font-size: 1.2rem;
+  color: #888888;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.project${i}-page .project-placeholder-gallery {
+  margin-top: 100px;
+  width: 100%;
+  height: 600px;
+  background-color: #111111;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project${i}-page .project-placeholder-gallery span {
+  color: #444444;
+}
+`;
+
+  fs.writeFileSync(path.join(dir, `Project${i}.jsx`), jsxContent);
+  fs.writeFileSync(path.join(dir, `Project${i}.css`), cssContent);
+}
+
+console.log("Projects generated successfully.");
+</file>
+
 <file path="vite.config.js">
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -3119,45 +3454,6 @@ export default defineConfig({
   plugins: [react()],
   base: './',
 })
-</file>
-
-<file path="package.json">
-{
-  "name": "architecture-portfolio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.1",
-    "framer-motion": "^12.38.0",
-    "lenis": "^1.3.23",
-    "maath": "^0.10.8",
-    "motion": "^12.38.0",
-    "ogl": "^1.0.11",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "react-router-dom": "^7.15.0",
-    "three": "^0.184.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "vite": "^8.0.10"
-  }
-}
 </file>
 
 <file path="src/components/architectureWorks.css">
@@ -4524,448 +4820,42 @@ export default function RotatingText() {
 }
 </file>
 
-<file path="src/App.css">
-/* =========================================
-   基础重置与全局设置 (包含 React 的 #root)
-   ========================================= */
-@font-face {
-    font-family: 'Aquatico';
-    src: url('/fonts/Aquatico-Regular.otf') format('opentype');
-    /* 改成了 /fonts/... */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SansSerifFLF';
-    src: url('/fonts/SansSerifFLF.otf') format('opentype');
-    /* 改成了 /fonts/... */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ⚠️ 关键修复：加入 #root 确保 React 挂载节点撑满全屏，并配置跨平台字体栈 */
-body,
-html,
-#root {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
-    overflow-x: clip;
-
-    /* 现代跨平台标准中英文字体栈 */
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
-}
-
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-/* 背景闪烁动画 */
-@keyframes flicker {
-    0% {
-        opacity: 0.7;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.7;
-    }
-}
-
-/* =========================================
-   顶部导航栏 (由 Navbar.css 管理)
-   ========================================= */
-
-/* 所有导航栏样式已移至 navbar.css */
-
-/* =========================================
-   每个全屏页面区块通用样式
-   ========================================= */
-.section {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-}
-
-/* =========================================
-   第一页：首页 (Hero)
-   ========================================= */
-#home {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-}
-
-.bg-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.bg-layer {
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.bg-layer-1 {
-    z-index: 1;
-}
-
-.bg-layer-2 {
-    z-index: 2;
-    mix-blend-mode: screen;
-    opacity: 0.8;
-}
-
-/* 主大字 */
-.title-main {
-    position: absolute;
-    left: 8vw;
-    top: 45%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: all 0.5s ease;
-}
-
-.title-main h1 {
-    /* 🌟 修改点：把 SansSerifFLF 放在最前面作为首选英文字体 */
-    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif;
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
-}
-
-/* 名字 */
-.title-name {
-    position: absolute;
-    right: 5vw;
-    bottom: 22vh;
-    z-index: 10;
-    transition: all 0.5s ease;
-}
-
-.title-name h2 {
-    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif;
-    font-style: normal;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-}
-
-@media (max-width: 900px) {
-    .title-main {
-        left: 0;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-
-    .title-main h1 {
-        /* 提升至 18vw 以确保完全撑满屏幕宽度 */
-        font-size: 18vw;
-    }
-
-    .title-name {
-        left: 0;
-        right: 0;
-        bottom: 15vh;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-
-    .title-name h2 {
-        /* 标题 3 的字号设定为标题 1 的二分之一 (18vw * 0.5 = 9vw) */
-        font-size: 9vw;
-    }
-}
-
-/* 滚动提示动画 */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
-    animation: bounce 2s infinite ease-in-out;
-    cursor: pointer;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-.scroll-arrow {
-    margin-top: 5px;
-    width: 20px;
-    height: 20px;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    transform: rotate(45deg);
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-    }
-
-    50% {
-        transform: translate(-50%, 15px);
-    }
-}
-
-/* =========================================
-   作品展示页 (Portfolio Section)
-   ========================================= */
-.portfolio-section {
-    background-color: #03102c;
-}
-
-.diffuse-light {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(10, 80, 255, 0.3) 0%, rgba(3, 16, 44, 0) 50%);
-    z-index: 0;
-    animation: moveLight 15s infinite alternate linear;
-    pointer-events: none;
-}
-
-@keyframes moveLight {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(10%, 5%) scale(1.2);
-    }
-
-    100% {
-        transform: translate(-5%, 15%) scale(0.9);
-    }
-}
-
-.hover-bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: 1;
-    filter: blur(10px) brightness(0.4);
-}
-
-.section-title {
-    position: relative;
-    z-index: 10;
-    padding-left: 10vw;
-    margin-top: -5vh;
-}
-
-.section-title h2 {
-    font-size: 4rem;
-    font-weight: bold;
-    line-height: 1.1;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-}
-
-.section-title span {
-    font-weight: 300;
-    font-size: 3rem;
-}
-
-.gallery-wrapper {
-    position: relative;
-    width: 100%;
-    margin-top: 10vh;
-    z-index: 10;
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-}
-
-.gallery-track {
-    display: flex;
-    gap: 40px;
-    overflow-x: auto;
-    padding: 50px 0 50px 10vw;
-    scrollbar-width: none;
-}
-
-.gallery-track::-webkit-scrollbar {
-    display: none;
-}
-
-.gallery-item {
-    min-width: 400px;
-    height: 250px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    filter: grayscale(100%);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.gallery-item .project-title {
-    position: absolute;
-    bottom: 15px;
-    right: 20px;
-    font-size: 1.2rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-@keyframes blueGlow {
-    0% {
-        box-shadow: 0 0 15px 5px rgba(0, 100, 255, 0.4);
-    }
-
-    50% {
-        box-shadow: 0 0 25px 10px rgba(0, 130, 255, 0.7);
-    }
-
-    100% {
-        box-shadow: 0 0 15px 5px rgba(0, 100, 255, 0.4);
-    }
-}
-
-.gallery-item:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-    animation: blueGlow 2s infinite alternate;
-    z-index: 20;
-}
-
-.gallery-item:hover .project-title {
-    opacity: 1;
-}
-
-.scroll-hint {
-    position: absolute;
-    right: 15vw;
-    bottom: 15vh;
-    font-size: 14px;
-    z-index: 10;
-    text-align: right;
-    opacity: 0.7;
-}
-
-/* =========================================
-   最后一页 (尾页 Contact)
-   ========================================= */
-#contact {
-    background: #fff;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.contact-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10vw;
-}
-
-.contact-content h1 {
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-.contact-content p {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-.footer-blue-block {
-    width: 100%;
-    height: 35vh;
-    background-color: #003399;
-    display: flex;
-    align-items: flex-end;
-    padding: 20px 40px;
-    color: #fff;
-}
-
-.footer-blue-block p {
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-/* =========================================
-   字体类控制修复 (跨平台适配)
-   ========================================= */
-
-.keep-my-font,
-.keep-my-font span {
-    /* 🌟 修改点：把 SansSerifFLF 放在解码动画文字的首选位置 */
-    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
-    font-weight: 400 !important;
-}
-
-.keep-my-font-name,
-.keep-my-font-name span {
-    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif !important;
-    font-weight: 400 !important;
-}
-
-.keep-my-font-3,
-.keep-my-font-3 span {
-    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif !important;
-    font-weight: 900 !important;
+<file path="package.json">
+{
+  "name": "architecture-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "framer-motion": "^12.38.0",
+    "lenis": "^1.3.23",
+    "maath": "^0.10.8",
+    "motion": "^12.38.0",
+    "ogl": "^1.0.11",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.15.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "vite": "^8.0.10"
+  }
 }
 </file>
 
@@ -5802,6 +5692,451 @@ export default function Navbar() {
 }
 </file>
 
+<file path="src/App.css">
+/* =========================================
+   基础重置与全局设置 (包含 React 的 #root)
+   ========================================= */
+@font-face {
+    font-family: 'Aquatico';
+    src: url('/fonts/Aquatico-Regular.otf') format('opentype');
+    /* 改成了 /fonts/... */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SansSerifFLF';
+    src: url('/fonts/SansSerifFLF.otf') format('opentype');
+    /* 改成了 /fonts/... */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ⚠️ 关键修复：加入 #root 确保 React 挂载节点撑满全屏，并配置跨平台字体栈 */
+body,
+html,
+#root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-x: clip;
+
+    /* 现代跨平台标准中英文字体栈 */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* 背景闪烁动画 */
+@keyframes flicker {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* =========================================
+   顶部导航栏 (由 Navbar.css 管理)
+   ========================================= */
+
+/* 所有导航栏样式已移至 navbar.css */
+
+/* =========================================
+   每个全屏页面区块通用样式
+   ========================================= */
+.section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* =========================================
+   第一页：首页 (Hero)
+   ========================================= */
+#home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-layer {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bg-layer-1 {
+    z-index: 1;
+}
+
+.bg-layer-2 {
+    z-index: 2;
+    mix-blend-mode: screen;
+    opacity: 0.8;
+}
+
+/* 主大字 */
+.title-main {
+    position: absolute;
+    left: 8vw;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.title-main h1 {
+    /* 🌟 修改点：把 SansSerifFLF 放在最前面作为首选英文字体 */
+    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+}
+
+/* 名字 */
+.title-name {
+    position: absolute;
+    right: 5vw;
+    bottom: 22vh;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.title-name h2 {
+    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif;
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 900px) {
+    .title-main {
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-main h1 {
+        /* 提升至 18vw 以确保完全撑满屏幕宽度 */
+        font-size: 18vw;
+    }
+
+    .title-name {
+        left: 0;
+        right: 0;
+        bottom: 15vh;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-name h2 {
+        /* 标题 3 的字号设定为标题 1 的二分之一 (18vw * 0.5 = 9vw) */
+        font-size: 9vw;
+    }
+}
+
+/* 滚动提示动画 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    animation: bounce 2s infinite ease-in-out;
+    cursor: pointer;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.scroll-arrow {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 15px);
+    }
+}
+
+/* =========================================
+   作品展示页 (Portfolio Section)
+   ========================================= */
+.portfolio-section {
+    background-color: #03102c;
+}
+
+.diffuse-light {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(10, 80, 255, 0.3) 0%, rgba(3, 16, 44, 0) 50%);
+    z-index: 0;
+    animation: moveLight 15s infinite alternate linear;
+    pointer-events: none;
+}
+
+@keyframes moveLight {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(10%, 5%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-5%, 15%) scale(0.9);
+    }
+}
+
+.hover-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    filter: blur(10px) brightness(0.4);
+}
+
+.section-title {
+    position: relative;
+    z-index: 10;
+    padding-left: 10vw;
+    margin-top: -5vh;
+}
+
+.section-title h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.section-title span {
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 10vh;
+    z-index: 10;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gallery-track {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 50px 0 50px 10vw;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    min-width: 400px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    filter: grayscale(100%);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.gallery-item .project-title {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes blueGlow {
+    0% {
+        box-shadow: 0 0 15px 5px rgba(0, 100, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 25px 10px rgba(0, 130, 255, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 15px 5px rgba(0, 100, 255, 0.4);
+    }
+}
+
+.gallery-item:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+    animation: blueGlow 2s infinite alternate;
+    z-index: 20;
+}
+
+.gallery-item:hover .project-title {
+    opacity: 1;
+}
+
+.scroll-hint {
+    position: absolute;
+    right: 15vw;
+    bottom: 15vh;
+    font-size: 14px;
+    z-index: 10;
+    text-align: right;
+    opacity: 0.7;
+}
+
+/* =========================================
+   最后一页 (尾页 Contact)
+   ========================================= */
+#contact {
+    background: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+}
+
+.contact-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.contact-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.footer-blue-block {
+    width: 100%;
+    height: 35vh;
+    background-color: #003399;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 40px;
+    color: #fff;
+}
+
+.footer-blue-block p {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   字体类控制修复 (跨平台适配)
+   ========================================= */
+
+.keep-my-font,
+.keep-my-font span {
+    /* 🌟 修改点：把 SansSerifFLF 放在解码动画文字的首选位置 */
+    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.keep-my-font-name,
+.keep-my-font-name span {
+    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.keep-my-font-3,
+.keep-my-font-3 span {
+    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif !important;
+    font-weight: 900 !important;
+}
+</file>
+
 <file path="src/components/aigcWorksPage.css">
 /* =========================================
     AIGC Works Page
@@ -6161,100 +6496,6 @@ export default function Navbar() {
     bottom: 10vh;
   }
 }
-</file>
-
-<file path="src/App.jsx">
-import React, { useState, useEffect, useCallback } from 'react';
-import { ReactLenis, useLenis } from 'lenis/react';
-import './App.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import LandscapeWorksPage from './components/LandscapeWorksPage';
-import MoreWorksPage from './components/MoreWorksPage';
-import AIGCWorksPage from './components/AIGCWorksPage';
-import GeneratedContent from './components/GeneratedContent';
-import Programming from './components/Programming';
-import IntroductionPage from './components/IntroductionPage';
-import ExperiencePage from './components/ExperiencePage';
-import ExperienceListPage from './components/ExperienceListPage';
-import ArchitectureWorks from './components/ArchitectureWorks';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProjectDetailPage from './components/ProjectDetailPage';
-import LoadingScreen from './components/LoadingScreen'; // 🌟 引入刚建好的加载页
-
-function Home() {
-  // 记录整个网站资源是否加载完毕的全局状态
-  const [isAppLoaded, setIsAppLoaded] = useState(false);
-  const [programmingUnlocked, setProgrammingUnlocked] = useState(false);
-  const lenis = useLenis();
-
-  // 在加载页未消失前，把滚动强制锁死在最顶部，防止手抖滑到下面
-  useEffect(() => {
-    if (!isAppLoaded) {
-      window.scrollTo(0, 0);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  }, [isAppLoaded]);
-
-  // When programming unlocks, refresh lenis to recalculate scroll bounds
-  const handleProgrammingUnlock = useCallback(() => {
-    setProgrammingUnlocked(true);
-    setTimeout(() => {
-      lenis?.resize();
-    }, 100);
-  }, [lenis]);
-
-  return (
-    <>
-      {/* 🌟 放置加载幕布，当它触发完成时更新全局状态 */}
-      <LoadingScreen onComplete={() => setIsAppLoaded(true)} />
-
-      <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
-        <Navbar />
-        {/* 🌟 将状态传递给 Hero，让 Hero 等幕布拉开再播放酷炫入场 */}
-        <Hero isAppLoaded={isAppLoaded} />
-        <IntroductionPage />
-        <ExperiencePage />
-        <ExperienceListPage />
-        <ArchitectureWorks />
-        <LandscapeWorksPage />
-        <AIGCWorksPage />
-        <GeneratedContent />
-        <Programming onUnlockScroll={handleProgrammingUnlock} />
-        {programmingUnlocked && (
-          <>
-            <MoreWorksPage />
-            <section id="contact" className="section">
-              <div className="contact-content">
-                <h1>Contact me</h1>
-                <p>E-mail: citiesxl@hotmail.com</p>
-              </div>
-              <div className="footer-blue-block">
-                <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
-              </div>
-            </section>
-          </>
-        )}
-      </ReactLenis> 
-    </>
-  );
-}
-
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
 </file>
 
 <file path="src/components/AIGCWorksPage.jsx">
@@ -6918,914 +7159,86 @@ export default function GeneratedContent() {
 }
 </file>
 
-<file path="src/components/programming.css">
-/* 🌟 Google Font & 字体定义 */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-@font-face {
-  font-family: 'SonsieOne';
-  src: url('/fonts/SonsieOne-Regular.ttf') format('truetype');
-}
+<file path="src/App.jsx">
+import React, { useState, useEffect } from 'react';
+import { ReactLenis } from 'lenis/react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import LandscapeWorksPage from './components/LandscapeWorksPage';
+import MoreWorksPage from './components/MoreWorksPage';
+import AIGCWorksPage from './components/AIGCWorksPage';
+import GeneratedContent from './components/GeneratedContent';
+import Programming from './components/Programming';
+import MySpacePage from './components/MySpacePage';
+import IntroductionPage from './components/IntroductionPage';
+import ExperiencePage from './components/ExperiencePage';
+import ExperienceListPage from './components/ExperienceListPage';
+import ArchitectureWorks from './components/ArchitectureWorks';
 
-.programming-page {
-  width: 100vw;
-  height: auto; 
-  background-color: #000000;
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectDetailPage from './components/ProjectDetailPage';
+import LoadingScreen from './components/LoadingScreen'; // 🌟 引入刚建好的加载页
 
-.programming-video-container {
-  width: 100%;
-  height: auto; 
-  position: relative;
-  z-index: 1; 
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  box-sizing: border-box;
-  padding: 0; 
-  overflow: hidden; 
-}
+function Home() {
+  // 记录整个网站资源是否加载完毕的全局状态
+  const [isAppLoaded, setIsAppLoaded] = useState(false);
 
-.video-tight-wrapper {
-  position: relative;
-  display: block; 
-  width: 100vw;   
-  height: auto;  
-  line-height: 0; 
-  font-size: 0;
-  z-index: 10; 
-}
-
-.programming-scroll-video {
-  display: block;
-  width: 100%;    
-  height: auto;   
-  object-fit: contain; 
-  z-index: 2;
-  border-radius: 0; 
-  position: relative;
-}
-
-/* =========================================
-   🌟 全局公用：强制 GPU 渲染的失焦模糊动画
-   ========================================= */
-@keyframes simpleFadeIn {
-  0% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
-  100% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
-}
-
-@keyframes simpleFadeOut {
-  0% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
-  100% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
-}
-
-/* =========================================
-   History 布局 (图左字右，模糊淡入)
-   ========================================= */
-.history-layout-container {
-  position: absolute;
-  inset: 0;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10vw;
-  gap: 4vw;
-  pointer-events: none;
-  animation: simpleFadeIn 2s ease-in-out both;
-  will-change: filter, opacity;
-}
-
-.history-left-side {
-  flex: 1.2;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.history-window-image {
-  width: auto;
-  max-width: 45vw;
-  height: auto;
-  max-height: 70vh;
-  object-fit: contain;
-}
-
-.history-right-side {
-  flex: 0.8;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 2vw;
-}
-
-.powered-by-text {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  color: #ffffff;
-  font-size: clamp(2.5rem, 5.5vw, 6rem);
-  line-height: 1.15;
-  text-align: left;
-  margin: 0;
-}
-
-/* =========================================
-   Bar 内容层及移出动画 (模糊淡出)
-   ========================================= */
-.bar-content-wrapper {
-  position: absolute; 
-  inset: 0; 
-  pointer-events: none; 
-  z-index: 30;
-  will-change: filter, opacity;
-}
-
-.bar-content-wrapper.bar-exit {
-  animation: simpleFadeOut 0.8s ease-in both;
-}
-
-.bar-title-wrapper {
-  position: absolute;
-  top: 25%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%; 
-  display: flex; justify-content: center;
-  container-type: inline-size; 
-}
-
-.bar-title {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  color: #ffffff; 
-  margin: 0;
-  letter-spacing: 1px;
-  text-align: center;
-  white-space: nowrap; 
-  font-size: 4.6cqw; 
-  line-height: 1.1;
-  animation: simpleFadeIn 0.85s ease-out 0.8s both;
-}
-
-.bar-image-wrapper {
-  position: absolute;
-  bottom: 25%; left: 50%;
-  transform: translate(-50%, 50%);
-  width: 75%; 
-  display: flex; justify-content: center;
-}
-
-.bar-image {
-  width: 100%; height: auto; object-fit: contain; 
-  animation: simpleFadeIn 0.85s ease-out 0.9s both;
-}
-
-/* =========================================
-   边缘与内部流光特效
-   ========================================= */
-.video-glow-overlay {
-  position: absolute;
-  inset: 0; 
-  z-index: 10; 
-  pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: screen;
-  overflow: hidden; 
-  border-radius: 0; 
-}
-
-.video-glow-overlay.glow-active {
-  opacity: 1; 
-  transition: opacity 0.8s ease-out; 
-}
-
-.glow-system {
-  position: absolute;
-  top: -100px; bottom: -100px;
-  left: -100px; right: -100px;
-  filter: blur(28px) brightness(1.5) saturate(4); 
-}
-
-.glow-color {
-  position: absolute;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
-}
-
-.glow-color-1 {
-  background: conic-gradient(from 0deg, transparent 10%, #0033ff 30%, #ff003c 50%, transparent 60%);
-  animation: rotateGlow 2s linear infinite;
-}
-
-.glow-color-2 {
-  background: conic-gradient(from 180deg, transparent 10%, #00ff22 30%, #ffea00 50%, transparent 60%);
-  animation: rotateGlowReverse 3s linear infinite;
-  mix-blend-mode: screen; 
-}
-
-.glow-black-hole {
-  position: absolute;
-  top: 130px; bottom: 130px;
-  left: 130px; right: 130px;
-  background: rgba(0, 0, 0, 0.85); 
-  border-radius: 0; 
-  z-index: 2; 
-}
-
-@keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes rotateGlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
-
-/* =========================================
-   Clipo 初始展示界面 (模糊淡入/淡出)
-   ========================================= */
-.clipo-interface-wrapper {
-  position: absolute; 
-  inset: 0; 
-  z-index: 40;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  pointer-events: none; 
-  gap: 24px; 
-  padding-top: 20px; 
-  box-sizing: border-box;
-  will-change: filter, opacity;
-}
-
-.clipo-interface-wrapper.clipo-exit { 
-  animation: simpleFadeOut 1.2s ease-in both; 
-}
-
-.clipo-interface-image {
-  max-width: 55%; max-height: 55%; 
-  animation: simpleFadeIn 1.1s ease-out 0.2s both;
-}
-
-.clipo-text-group { text-align: center; }
-
-.clipo-text-top { 
-  font-family: 'Dela Gothic One'; 
-  font-size: clamp(2rem, 4vw, 3.2rem); 
-  color: #fff; 
-  margin: 0;
-  animation: simpleFadeIn 1.4s ease-out 0.05s both; 
-}
-
-.clipo-text-bottom { 
-  font-family: 'SonsieOne'; 
-  font-size: clamp(2.8rem, 5.5vw, 4.5rem); 
-  color: #0016d8; 
-  margin: 0;
-  animation: simpleFadeIn 1.4s ease-out 0.15s both; 
-}
-
-.fade-out-all {
-  animation: simpleFadeOut 1.5s ease-in both;
-  pointer-events: none;
-}
-
-/* =========================================
-   🌟 Macbook 完美叠合层
-   ========================================= */
-.macbook-overlay-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 131.2%;
-  height: auto;
-  max-width: none;
-  transform: translate(-49.8%, -44.4%);
-  z-index: 50; 
-  pointer-events: none;
-}
-
-/* =========================================
-   🌟 苹果全家桶透明图层 (iMac & Mac Studio)
-   ========================================= */
-.apple-imac-layer {
-  position: absolute;
-  top: 50%;
-  width: 38vw; 
-  height: auto;
-  z-index: 5; 
-  pointer-events: none;
-}
-
-.apple-macstudio-layer {
-  position: absolute;
-  top: 50%;
-  width: 13vw; 
-  height: auto;
-  z-index: 20; 
-  pointer-events: none;
-}
-
-/* =========================================
-   🌟 右侧文字排版 (修正裁剪问题)
-   ========================================= */
-.sync-text-container {
-  position: absolute;
-  top: 50%;
-  z-index: 30;
-  width: 40vw;
-  pointer-events: none;
-  /* 🌟 确保文字容器本身不溢出隐藏 */
-  overflow: visible; 
-}
-
-.sync-text-container h2 {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(2.5rem, 4.5vw, 5rem);
-  
-  /* 🌟 增加行高并给底部留白，彻底防止裁剪 */
-  line-height: 1.25;
-  padding-bottom: 0.2em;
-  
-  margin: 0;
-  text-align: left;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-repeat: no-repeat;
-  /* 🌟 确保背景扫光能够完全覆盖不被截断 */
-  background-size: 150% 100%; 
-}
-
-/* =========================================
-   🌟 第二段扫光文字 (Clipo is a free...)
-   ========================================= */
-.sync-text-second h2 {
-  font-size: clamp(1.8rem, 3.2vw, 3.6rem);
-  line-height: 1.3;
-}
-
-/* =========================================
-   🌟 按钮行
-   ========================================= */
-.sweep2-buttons-row {
-  position: absolute;
-  top: 50%;
-  z-index: 35;
-  display: flex;
-  gap: 20px;
-  pointer-events: auto;
-  width: 40vw;
-  justify-content: flex-start;
-  padding-left: 0;
-}
-
-.sweep2-btn {
-  /* 🌟 添加 flex 布局，确保内部两个 div 永远水平排布且居中 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  background: #ffffff;
-  border: none;
-  border-radius: 12px;
-  padding: 14px 28px;
-  cursor: pointer;
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-  color: #000000;
-  letter-spacing: 1px;
-  /* 🌟 必须去掉 CSS 中对 transform 和 scale 的所有干扰，否则会打架 */
-  transition: box-shadow 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.sweep2-btn:hover {
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
-}
-
-.sweep2-btn-icon {
-  width: clamp(20px, 1.8vw, 26px);
-  height: auto;
-  object-fit: contain;
-}
-
-/* =========================================
-   🌟 Playcircle 图标 + Replay 文字 (右下角)
-   ========================================= */
-.programming-play-container {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  z-index: 60;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  pointer-events: auto;
-}
-
-.programming-play-label {
-  font-family: 'SansSerifFLF', 'Georgia', serif;
-  font-size: clamp(12px, 1.2vw, 15px);
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 3px;
-}
-
-.programming-play-icon {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  flex-shrink: 0;
-}
-
-.programming-play-icon:hover {
-  transform: scale(1.15);
-}
-
-.programming-play-icon img {
-  width: clamp(40px, 5vw, 60px);
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
-}
-
-/* =========================================
-   🌟 Button hover text
-   ========================================= */
-.sweep2-btn-hover-text {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  color: #666666;
-  letter-spacing: 1px;
-  white-space: nowrap;
-}
-</file>
-
-<file path="src/components/Programming.jsx">
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { useScroll, useMotionValueEvent, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
-import './programming.css';
-
-// 引入资源
-import Video2 from '../assets/Video2.mp4';
-import ClipoInterface from '../assets/ClipoInterface.png';
-import Bar from '../assets/Bar.png';
-import HistoryImg from '../assets/HistoryWindow.png';
-import Macbook from '../assets/Macbook.png';
-import iMacImg from '../assets/iMac.png';
-import MacstudioImg from '../assets/Macstudio.png';
-import GithubIcon from '../assets/Github.png';
-import FileIcon from '../assets/File.png';
-import PlaycircleIcon from '../assets/Playcircle.png';
-
-export default function Programming({ onUnlockScroll }) {
-  const sectionRef = useRef(null);
-  const videoRef = useRef(null);
-  
-  const [videoPlaying, setVideoPlaying] = useState(false);
-  const [videoEnded, setVideoEnded] = useState(false);
-  
-  const [showBarContent, setShowBarContent] = useState(false);
-  const [showHistory, setShowHistory] = useState(false);
-  const [isRippling, setIsRippling] = useState(false);
-  const [isGlowActive, setIsGlowActive] = useState(false);
-  const [fadeOutAll, setFadeOutAll] = useState(false);
-  const hasUnlockedRef = useRef(false);
-
-  const rippleScale = useMotionValue(0);
-  const noiseOffsetY = useMotionValue(0);
-  
-  // 🌟 主容器 (Video + MacBook)
-  const containerScale = useMotionValue(1);
-  const containerX = useMotionValue('0vw');
-  const containerY = useMotionValue('0vh');
-  const macbookOpacity = useMotionValue(0);
-
-  // 🌟 iMac 
-  const imacX = useMotionValue('-100vw'); 
-  const imacY = useMotionValue('-50%'); 
-  const imacOpacity = useMotionValue(0);
-
-  // 🌟 Mac Studio
-  const macStudioX = useMotionValue('-100vw'); 
-  const macStudioY = useMotionValue('-50%'); 
-  const macStudioOpacity = useMotionValue(0);
-
-  // 🌟 文字扫光 - 第一段 "Seamlessly sync across your Macs"
-  const syncTextOpacity = useMotionValue(0);
-  const syncTextBlur = useMotionValue(20);
-  const syncTextX = useMotionValue('40vw'); 
-  const syncTextY = useMotionValue('-50%'); 
-  const syncTextBlurString = useTransform(syncTextBlur, (v) => `blur(${v}px)`);
-
-  // 🌟 扫光逻辑：暗白(未扫过) -> 蓝光(正在扫) -> 纯白(扫过之后永远保留)
-  const sweepPercent = useMotionValue(-20);
-  const stop1 = useTransform(sweepPercent, v => `${v - 20}%`); 
-  const stop2 = useTransform(sweepPercent, v => `${v - 10}%`);  
-  const stop3 = useTransform(sweepPercent, v => `${v}%`);      
-  const stop4 = useTransform(sweepPercent, v => `${v + 15}%`); 
-  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #0016d8 ${stop2}, #0016d8 ${stop3}, rgba(255,255,255,0.15) ${stop4})`;
-
-  // 🌟 文字扫光 - 第二段 "Clipo is a free and open-source project"
-  const sweep2TextOpacity = useMotionValue(0);
-  const sweep2TextBlur = useMotionValue(20);
-  const sweep2TextBlurString = useTransform(sweep2TextBlur, (v) => `blur(${v}px)`);
-  const sweep2Percent = useMotionValue(-20);
-  const sweep2Stop1 = useTransform(sweep2Percent, v => `${v - 20}%`);
-  const sweep2Stop2 = useTransform(sweep2Percent, v => `${v - 10}%`);
-  const sweep2Stop3 = useTransform(sweep2Percent, v => `${v}%`);
-  const sweep2Stop4 = useTransform(sweep2Percent, v => `${v + 15}%`);
-  const animatedGradient2 = useMotionTemplate`linear-gradient(to right, #ffffff ${sweep2Stop1}, #0016d8 ${sweep2Stop2}, #0016d8 ${sweep2Stop3}, rgba(255,255,255,0.15) ${sweep2Stop4})`;
-
-  // 🌟 按钮和 Play 图标
-  const buttonsOpacity = useMotionValue(0);
-  const buttonsBlur = useMotionValue(20);
-  const buttonsBlurString = useTransform(buttonsBlur, (v) => `blur(${v}px)`);
-  const buttonsY = useMotionValue('-50%');
-  const playIconOpacity = useMotionValue(0);
-  const playIconBlur = useMotionValue(20);
-  const playIconBlurString = useTransform(playIconBlur, (v) => `blur(${v}px)`);
-
-  // 🌟 Reset all animations
-  const handleReset = useCallback(() => {
-    // Reset all motion values
-    animate(syncTextOpacity, 0, { duration: 0.01 });
-    animate(syncTextBlur, 20, { duration: 0.01 });
-    animate(sweepPercent, -20, { duration: 0.01 });
-    animate(sweep2TextOpacity, 0, { duration: 0.01 });
-    animate(sweep2TextBlur, 20, { duration: 0.01 });
-    animate(sweep2Percent, -20, { duration: 0.01 });
-    animate(buttonsOpacity, 0, { duration: 0.01 });
-    animate(buttonsBlur, 20, { duration: 0.01 });
-    animate(buttonsY, '-50%', { duration: 0.01 });
-    animate(playIconOpacity, 0, { duration: 0.01 });
-    animate(playIconBlur, 20, { duration: 0.01 });
-    animate(containerScale, 1, { duration: 0.01 });
-    animate(containerX, '0vw', { duration: 0.01 });
-    animate(containerY, '0vh', { duration: 0.01 });
-    animate(macbookOpacity, 0, { duration: 0.01 });
-    animate(imacX, '-100vw', { duration: 0.01 });
-    animate(imacY, '-50%', { duration: 0.01 });
-    animate(imacOpacity, 0, { duration: 0.01 });
-    animate(macStudioX, '-100vw', { duration: 0.01 });
-    animate(macStudioY, '-50%', { duration: 0.01 });
-    animate(macStudioOpacity, 0, { duration: 0.01 });
-    animate(rippleScale, 0, { duration: 0.01 });
-    animate(noiseOffsetY, 0, { duration: 0.01 });
-    
-    // Reset all state
-    setVideoPlaying(false);
-    setVideoEnded(false);
-    setShowBarContent(false);
-    setShowHistory(false);
-    setIsRippling(false);
-    setIsGlowActive(false);
-    setFadeOutAll(false);
-    
-    // Restart video immediately (bypass scroll-based trigger)
-    setVideoPlaying(true);
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    }
-  }, []);
-
+  // 在加载页未消失前，把滚动强制锁死在最顶部，防止手抖滑到下面
   useEffect(() => {
-    if (!videoEnded) return;
-
-    const timer1 = setTimeout(() => {
-      setShowBarContent(true);
-
-      const timer2 = setTimeout(() => {
-        setShowHistory(true);
-
-        const timer3 = setTimeout(() => {
-          setIsRippling(true);
-          setIsGlowActive(true);
-
-          animate(rippleScale, [0, 35, 0], { duration: 0.8, ease: "easeInOut" });
-          animate(noiseOffsetY, [0, -1200], { duration: 0.8, ease: "linear" });
-          animate(containerScale, [1, 1.04, 1], { duration: 0.8, ease: "easeInOut" });
-
-          setTimeout(() => {
-            setIsRippling(false);
-          }, 800);
-
-           const timer4 = setTimeout(() => {
-             setFadeOutAll(true);
-           }, 5500);
-
-           // 阶段 5: 全家桶排版集结
-           const timer5 = setTimeout(() => {
-              const dynamicNonLinearEasing = [0.85, 0, 0.15, 1];
-              const animDuration = 1.2; 
-
-              // 1. MacBook
-              animate(containerScale, 0.252, { duration: animDuration, ease: dynamicNonLinearEasing });
-              animate(containerX, '-14vw', { duration: animDuration, ease: dynamicNonLinearEasing });
-              animate(containerY, '12vh', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(macbookOpacity, 1, { duration: animDuration, ease: dynamicNonLinearEasing });
-
-              // 2. iMac
-              animate(imacX, '-32vw', { duration: animDuration, ease: dynamicNonLinearEasing });
-              animate(imacY, 'calc(-50% + 22vh - 12vw)', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(imacOpacity, 1, { duration: animDuration, ease: dynamicNonLinearEasing });
-
-              // 3. Mac Studio
-              animate(macStudioX, '-2vw', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(macStudioY, 'calc(-50% + 22vh)', { duration: animDuration, ease: dynamicNonLinearEasing }); 
-              animate(macStudioOpacity, 1, { duration: animDuration, ease: dynamicNonLinearEasing });
-
-              // 4. 第一段文字动画 (sweep 1)
-              setTimeout(() => {
-                animate(syncTextOpacity, 1, { duration: 0.8, ease: "easeOut" });
-                animate(syncTextBlur, 0, { duration: 0.8, ease: "easeOut" });
-                animate(syncTextX, '32vw', { duration: 0.8, ease: "easeOut" }); 
-                animate(syncTextY, 'calc(-50% + 4vh)', { duration: 0.8, ease: "easeOut" }); 
-                animate(sweepPercent, 130, { duration: 2.2, ease: "easeInOut" });
-
-                // 🔥 After sweep 1 completes (2.2s) + 2s delay → fade out first text
-                const sweep1EndDelay = 2200 + 2000; // sweep duration + 2s wait
-                const fadeOutTimer = setTimeout(() => {
-                  // Fade out first text with blur
-                  animate(syncTextOpacity, 0, { duration: 0.8, ease: "easeIn" });
-                  animate(syncTextBlur, 20, { duration: 0.8, ease: "easeIn" });
-
-                  // After fade out completes (~0.8s), show second text with sweep + buttons + play icon
-                  const showSecondTextTimer = setTimeout(() => {
-                    // Show second sweep text
-                    animate(sweep2TextOpacity, 1, { duration: 0.8, ease: "easeOut" });
-                    animate(sweep2TextBlur, 0, { duration: 0.8, ease: "easeOut" });
-                    animate(sweep2Percent, 130, { duration: 2.2, ease: "easeInOut" });
-
-                    // Show buttons and play icon simultaneously with blur fade-in
-                    animate(buttonsOpacity, 1, { duration: 0.8, ease: "easeOut" });
-                    animate(buttonsBlur, 0, { duration: 0.8, ease: "easeOut" });
-                    animate(buttonsY, 'calc(-50% + 22vh)', { duration: 0.8, ease: "easeOut" });
-                    animate(playIconOpacity, 1, { duration: 0.8, ease: "easeOut" });
-                    animate(playIconBlur, 0, { duration: 0.8, ease: "easeOut" });
-
-                    // 🔓 Unlock scroll only on first playthrough
-                    if (!hasUnlockedRef.current) {
-                      hasUnlockedRef.current = true;
-                      onUnlockScroll?.();
-                    }
-                  }, 800);
-
-                  return () => clearTimeout(showSecondTextTimer);
-                }, sweep1EndDelay);
-
-                return () => clearTimeout(fadeOutTimer);
-              }, 600);
-
-           }, 7000);
-
-           return () => {
-             clearTimeout(timer4);
-             clearTimeout(timer5);
-           };
-        }, 2000);
-
-        return () => clearTimeout(timer3);
-      }, 4150);
-
-      return () => clearTimeout(timer2);
-    }, 3700);
-
-    return () => clearTimeout(timer1);
-  }, [videoEnded]); 
-  
-  const { scrollY } = useScroll();
-  useMotionValueEvent(scrollY, "change", () => {
-    if (!sectionRef.current || videoPlaying || videoEnded) return;
-    const rect = sectionRef.current.getBoundingClientRect();
-    if (rect.top <= window.innerHeight * 0.25) {
-      setVideoPlaying(true);
-      videoRef.current?.play();
+    if (!isAppLoaded) {
+      window.scrollTo(0, 0);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
-  });
+  }, [isAppLoaded]);
 
   return (
-    <section id="programming" className="programming-page" ref={sectionRef}>
-      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
-        <defs>
-          <filter id="water-ripple" x="-20%" y="-20%" width="140%" height="140%">
-            <feTurbulence type="turbulence" baseFrequency="0.0005 0.002" numOctaves="1" result="noise" />
-            <motion.feOffset in="noise" dy={noiseOffsetY} result="movingNoise" />
-            <motion.feDisplacementMap in="SourceGraphic" in2="movingNoise" scale={rippleScale} xChannelSelector="R" yChannelSelector="G" />
-          </filter>
-        </defs>
-      </svg>
+    <>
+      {/* 🌟 放置加载幕布，当它触发完成时更新全局状态 */}
+      <LoadingScreen onComplete={() => setIsAppLoaded(true)} />
 
-      <div className="programming-video-container">
-        <motion.img 
-          src={iMacImg} 
-          alt="iMac" 
-          className="apple-imac-layer"
-          style={{ x: imacX, y: imacY, opacity: imacOpacity }}
-        />
-
-        <motion.div 
-          className="video-tight-wrapper"
-          style={{ 
-            filter: isRippling ? 'url(#water-ripple)' : 'none',
-            scale: containerScale,
-            x: containerX,
-            y: containerY,
-            z: 0,
-            willChange: isRippling ? 'filter, transform' : 'auto'
-          }}
-        >
-          <video ref={videoRef} src={Video2} className="programming-scroll-video" preload="auto" muted playsInline onEnded={() => setVideoEnded(true)} />
-
-          <div className={`video-glow-overlay ${isGlowActive ? 'glow-active' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
-            <div className="glow-system">
-              <div className="glow-color glow-color-1"></div>
-              <div className="glow-color glow-color-2"></div>
-              <div className="glow-black-hole"></div>
-            </div>
+      <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+        <Navbar />
+        {/* 🌟 将状态传递给 Hero，让 Hero 等幕布拉开再播放酷炫入场 */}
+        <Hero isAppLoaded={isAppLoaded} />
+        <IntroductionPage />
+        <ExperiencePage />
+        <ExperienceListPage />
+        <ArchitectureWorks />
+        <LandscapeWorksPage />
+        <AIGCWorksPage />
+        <GeneratedContent />
+        <Programming />
+        <MySpacePage />
+        <MoreWorksPage />
+        <section id="contact" className="section">
+          <div className="contact-content">
+            <h1>Contact me</h1>
+            <p>E-mail: citiesxl@hotmail.com</p>
           </div>
-
-          {showBarContent && (
-            <div className={`bar-content-wrapper ${showHistory ? 'bar-exit' : ''}`}>
-              <div className="bar-title-wrapper">
-                <p className="bar-title">AI-Sorted Clipboard History</p>
-              </div>
-              <div className="bar-image-wrapper">
-                <img src={Bar} alt="Bar" className="bar-image" />
-              </div>
-            </div>
-          )}
-
-          {showHistory && (
-            <div className={`history-layout-container ${fadeOutAll ? 'fade-out-all' : ''}`}>
-              <div className="history-left-side">
-                <img src={HistoryImg} alt="History Window" className="history-window-image" />
-              </div>
-              <div className="history-right-side">
-                <p className="powered-by-text">Powered by<br/>AI</p>
-              </div>
-            </div>
-          )}
-
-          <motion.img 
-            src={Macbook} 
-            alt="Macbook Overlay" 
-            className="macbook-overlay-image" 
-            style={{ opacity: macbookOpacity }} 
-          />
-        </motion.div>
-
-        <motion.img 
-          src={MacstudioImg} 
-          alt="Mac Studio" 
-          className="apple-macstudio-layer"
-          style={{ x: macStudioX, y: macStudioY, opacity: macStudioOpacity }}
-        />
-
-        {/* 🌟 第一段扫光文字 - "Seamlessly sync across your Macs" */}
-        <motion.div 
-          className="sync-text-container"
-          style={{ 
-            opacity: syncTextOpacity, 
-            x: syncTextX, 
-            y: syncTextY,
-            filter: syncTextBlurString 
-          }}
-        >
-          <motion.h2 style={{ backgroundImage: animatedGradient }}>
-            Seamlessly<br/>sync across<br/>your Macs
-          </motion.h2>
-        </motion.div>
-
-        {/* 🌟 第二段扫光文字 - "Clipo is a free and open-source project" */}
-        <motion.div 
-          className="sync-text-container sync-text-second"
-          style={{ 
-            opacity: sweep2TextOpacity, 
-            x: syncTextX, 
-            y: syncTextY,
-            filter: sweep2TextBlurString 
-          }}
-        >
-          <motion.h2 style={{ backgroundImage: animatedGradient2 }}>
-            Clipo is a free<br/>and open-source<br/>project
-          </motion.h2>
-        </motion.div>
-
-        {/* 🌟 弹性宽度按钮区域 (完全丢弃 Buggy 的 Layout 属性) */}
-        <motion.div 
-          className="sweep2-buttons-row"
-          style={{ 
-            opacity: buttonsOpacity,
-            filter: buttonsBlurString,
-            x: syncTextX,
-            y: buttonsY,
-          }}
-        >
-          {/* GitHub Button */}
-          <motion.button
-            className="sweep2-btn"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-            variants={{
-              rest: { scale: 1 },
-              hover: { scale: 1.05 }
-            }}
-          >
-            {/* 默认状态：Github */}
-            <motion.div
-              variants={{
-                rest: { width: "auto", opacity: 1 },
-                hover: { width: 0, opacity: 0 }
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 22 }}
-              style={{ overflow: "hidden", display: "flex", alignItems: "center" }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: 'max-content' }}>
-                <img src={GithubIcon} alt="Github" className="sweep2-btn-icon" />
-                <span>Github</span>
-              </div>
-            </motion.div>
-            
-            {/* 悬浮状态：Available Soon */}
-            <motion.div
-              variants={{
-                rest: { width: 0, opacity: 0 },
-                hover: { width: "auto", opacity: 1 }
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 22 }}
-              style={{ overflow: "hidden", display: "flex", alignItems: "center" }}
-            >
-              <div style={{ width: 'max-content' }}>
-                <span className="sweep2-btn-hover-text">Available Soon</span>
-              </div>
-            </motion.div>
-          </motion.button>
-          
-          {/* DMG Button */}
-          <motion.button
-            className="sweep2-btn"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-            variants={{
-              rest: { scale: 1 },
-              hover: { scale: 1.05 }
-            }}
-          >
-            {/* 默认状态：dmg */}
-            <motion.div
-              variants={{
-                rest: { width: "auto", opacity: 1 },
-                hover: { width: 0, opacity: 0 }
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 22 }}
-              style={{ overflow: "hidden", display: "flex", alignItems: "center" }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: 'max-content' }}>
-                <img src={FileIcon} alt="File" className="sweep2-btn-icon" />
-                <span>dmg</span>
-              </div>
-            </motion.div>
-
-            {/* 悬浮状态：Available Soon */}
-            <motion.div
-              variants={{
-                rest: { width: 0, opacity: 0 },
-                hover: { width: "auto", opacity: 1 }
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 22 }}
-              style={{ overflow: "hidden", display: "flex", alignItems: "center" }}
-            >
-              <div style={{ width: 'max-content' }}>
-                <span className="sweep2-btn-hover-text">Available Soon</span>
-              </div>
-            </motion.div>
-          </motion.button>
-
-        </motion.div>
-      </div>
-      
-      {videoEnded && (
-        <div className={`clipo-interface-wrapper ${showBarContent ? 'clipo-exit' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
-          <div className="clipo-text-group">
-            <p className="clipo-text-top">Vibe-Coding Works</p>
-            <p className="clipo-text-bottom">Clipo</p>
+          <div className="footer-blue-block">
+            <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
           </div>
-          <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" />
-        </div>
-      )}
-
-      {/* 🌟 Playcircle 图标 + Replay 文字 - 右下角 */}
-      <motion.div 
-        className="programming-play-container"
-        style={{ 
-          opacity: playIconOpacity,
-          filter: playIconBlurString
-        }}
-      >
-        <span className="programming-play-label">Replay</span>
-        <div className="programming-play-icon" onClick={handleReset}>
-          <img src={PlaycircleIcon} alt="Replay" />
-        </div>
-      </motion.div>
-    </section>
+        </section>
+      </ReactLenis> 
+    </>
   );
 }
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
 </file>
 
 <file path="src/components/ArchitectureWorks.jsx">
@@ -8768,6 +8181,633 @@ export default function IntroductionPage() {
         </motion.div>
 
       </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/programming.css">
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@font-face {
+  font-family: 'SonsieOne';
+  src: url('/fonts/SonsieOne-Regular.ttf') format('truetype');
+}
+
+.programming-page {
+  width: 100vw;
+  height: auto; 
+  background-color: #000000;
+  position: relative;
+  z-index: 10;
+  overflow: hidden; 
+}
+
+.programming-video-container {
+  width: 100%;
+  height: auto; 
+  position: relative;
+  z-index: 1; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  box-sizing: border-box;
+  padding: 0; 
+  overflow: hidden; 
+}
+
+.video-tight-wrapper {
+  position: relative;
+  display: block; 
+  width: 100vw;        
+  height: auto;        
+  line-height: 0; 
+  font-size: 0;
+  z-index: 10; 
+}
+
+.programming-scroll-video {
+  display: block;
+  width: 100%;    
+  height: auto;        
+  object-fit: contain; 
+  z-index: 2;
+  border-radius: 0; 
+  position: relative;
+}
+
+@keyframes simpleFadeIn {
+  0% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
+  100% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
+}
+
+@keyframes simpleFadeOut {
+  0% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
+  100% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
+}
+
+/* History 容器全局默认配置 */
+.history-layout-container { position: absolute; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; padding: 0 10%; gap: 4%; pointer-events: none; animation: simpleFadeIn 2s ease-in-out both; will-change: filter, opacity; container-type: inline-size; }
+.history-left-side { flex: 1.2; display: flex; justify-content: flex-end; }
+.history-window-image { width: auto; max-width: 45%; height: auto; max-height: 70%; object-fit: contain; }
+.history-right-side { flex: 0.8; display: flex; justify-content: flex-start; padding-left: 2%; }
+.powered-by-text { font-family: 'Dela Gothic One', cursive, sans-serif; color: #ffffff; font-size: clamp(2rem, 5.5cqw, 6rem); line-height: 1.15; text-align: left; margin: 0; }
+
+.bar-content-wrapper { position: absolute; inset: 0; pointer-events: none; z-index: 30; will-change: filter, opacity; container-type: inline-size;}
+.bar-content-wrapper.bar-exit { animation: simpleFadeOut 0.8s ease-in both; }
+.bar-title-wrapper { position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); width: 95%; display: flex; justify-content: center; }
+.bar-title { font-family: 'Dela Gothic One', cursive, sans-serif; color: #ffffff; margin: 0; letter-spacing: 1px; text-align: center; white-space: nowrap; font-size: 4.6cqw; line-height: 1.1; animation: simpleFadeIn 0.85s ease-out 0.8s both; }
+.bar-image-wrapper { position: absolute; bottom: 25%; left: 50%; transform: translate(-50%, 50%); width: 75%; display: flex; justify-content: center; }
+.bar-image { width: 100%; height: auto; object-fit: contain; animation: simpleFadeIn 0.85s ease-out 0.9s both; }
+
+.video-glow-overlay { position: absolute; inset: 0; z-index: 10; pointer-events: none; opacity: 0; mix-blend-mode: screen; overflow: hidden; border-radius: 0; }
+.video-glow-overlay.glow-active { opacity: 1; transition: opacity 0.8s ease-out; }
+.glow-system { position: absolute; top: -100px; bottom: -100px; left: -100px; right: -100px; filter: blur(28px) brightness(1.5) saturate(4); }
+.glow-color { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; }
+.glow-color-1 { background: conic-gradient(from 0deg, transparent 10%, #0033ff 30%, #ff003c 50%, transparent 60%); animation: rotateGlow 2s linear infinite; }
+.glow-color-2 { background: conic-gradient(from 180deg, transparent 10%, #00ff22 30%, #ffea00 50%, transparent 60%); animation: rotateGlowReverse 3s linear infinite; mix-blend-mode: screen; }
+.glow-black-hole { position: absolute; top: 130px; bottom: 130px; left: 130px; right: 130px; background: rgba(0, 0, 0, 0.85); border-radius: 0; z-index: 2; }
+
+@keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rotateGlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+.clipo-interface-wrapper { position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; gap: 24px; padding-top: 20px; box-sizing: border-box; will-change: filter, opacity; }
+.clipo-interface-wrapper.clipo-exit { animation: simpleFadeOut 1.2s ease-in both; }
+.clipo-interface-image { max-width: 55%; max-height: 55%; animation: simpleFadeIn 1.1s ease-out 0.2s both; }
+.clipo-text-group { text-align: center; }
+.clipo-text-top { font-family: 'Dela Gothic One'; font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; margin: 0; animation: simpleFadeIn 1.4s ease-out 0.05s both; }
+.clipo-text-bottom { font-family: 'SonsieOne'; font-size: clamp(2.8rem, 5.5vw, 4.5rem); color: #0016d8; margin: 0; animation: simpleFadeIn 1.4s ease-out 0.15s both; }
+.fade-out-all { animation: simpleFadeOut 1.5s ease-in both; pointer-events: none; }
+
+.macbook-overlay-image { position: absolute; width: 131.2%; height: auto; max-width: none; z-index: 50; pointer-events: none; }
+
+.apple-imac-layer,
+.apple-macstudio-layer,
+.sync-text-container,
+.sweep2-buttons-row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+}
+
+/* =========================================
+   🌟 全局公用文字属性
+   ========================================= */
+.sync-text-container h2 {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  line-height: 1.25;
+  padding-bottom: 0.2em;
+  margin: 0;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 150% 100%; 
+}
+
+/* 按钮通用属性 */
+.sweep2-btn {
+  display: flex; align-items: center; justify-content: center;
+  background: #ffffff; border: none; 
+  border-radius: clamp(8px, 1vw, 12px);
+  padding: clamp(8px, 1vw, 14px) clamp(16px, 2vw, 28px);
+  cursor: pointer;
+  font-family: 'Dela Gothic One', cursive, sans-serif; 
+  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  color: #000000; letter-spacing: 1px;
+  transition: box-shadow 0.2s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sweep2-btn:hover { box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); }
+.sweep2-btn-icon { width: clamp(16px, 1.5vw, 26px); height: auto; object-fit: contain; }
+.sweep2-btn-hover-text { font-family: 'Dela Gothic One', cursive, sans-serif; font-size: clamp(0.6rem, 0.8vw, 1rem); color: #666666; letter-spacing: 1px; white-space: nowrap; }
+
+.programming-play-container { position: absolute; bottom: 30px; right: 30px; z-index: 60; display: flex; align-items: center; gap: 12px; pointer-events: auto; }
+.programming-play-label { font-family: 'SansSerifFLF', 'Georgia', serif; font-size: clamp(12px, 1.2vw, 15px); color: rgba(255, 255, 255, 0.7); letter-spacing: 3px; }
+.programming-play-icon { cursor: pointer; transition: transform 0.2s ease; flex-shrink: 0; }
+.programming-play-icon:hover { transform: scale(1.15); }
+.programming-play-icon img { width: clamp(40px, 5vw, 60px); height: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); }
+
+
+/* =========================================
+   🌟 移动端专属响应式核心 (<= 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  .programming-page, .programming-video-container {
+    min-height: 100vh;
+  }
+  
+  .video-tight-wrapper {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;          
+    aspect-ratio: 16 / 9;   
+    width: auto;            
+    flex-shrink: 0;         
+  }
+
+  .programming-scroll-video {
+    height: 100%;
+    object-fit: cover;      
+  }
+
+  .apple-imac-layer {
+    display: none !important; 
+  }
+
+  .apple-macstudio-layer {
+    width: 135px; 
+    z-index: 20; 
+  }
+
+  .sync-text-container {
+    width: 85vw; 
+    text-align: left;
+  }
+  
+  /* 🌟 移动端：保持先前的 40% 缩小设置 */
+  .sync-text-container h2,
+  .sync-text-second h2 {
+    text-align: left;
+    padding: 0; 
+    font-size: clamp(2.3rem, 5.7vw, 4.2rem) !important; 
+  }
+  
+  .sweep2-buttons-row {
+    width: 85vw; 
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0;
+    pointer-events: auto;
+    gap: clamp(10px, 1.5vw, 20px);
+  }
+
+  /* 移动端溢出保护区 */
+  .history-layout-container {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 5vw;
+    box-sizing: border-box;
+  }
+
+  .history-left-side {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .history-window-image {
+    max-width: 100%;
+    max-height: 45vh;
+  }
+
+  .history-right-side {
+    flex: 1;
+    padding-left: 4vw;
+  }
+
+  .powered-by-text {
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    white-space: normal; 
+    line-height: 1.2;
+  }
+
+  .bar-content-wrapper {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .bar-title {
+    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    white-space: normal;
+  }
+}
+
+
+/* =========================================
+   🌟 PC 端响应式核心 (> 900px)
+   ========================================= */
+@media (min-width: 901px) {
+  .apple-imac-layer { width: 38vw; height: auto; z-index: 5; }
+  .apple-macstudio-layer { width: 13vw; height: auto; z-index: 20; }
+  
+  .sync-text-container { width: 40vw; text-align: left; }
+  
+  /* 🌟 核心修改：PC 端两段文字完全保持统一的 clamp 大小 */
+  .sync-text-container h2,
+  .sync-text-second h2 {
+    padding: 0 5vw; 
+    font-size: clamp(1.4rem, 4vw, 5.2rem) !important; 
+  }
+  
+  .sweep2-buttons-row { 
+    width: 40vw; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    pointer-events: auto; 
+    padding: 0 5vw; 
+    gap: clamp(10px, 1.5vw, 20px);
+  }
+}
+</file>
+
+<file path="src/components/Programming.jsx">
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { useInView, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
+import './programming.css';
+
+// 引入资源
+import Video2 from '../assets/Video2.mp4';
+import ClipoInterface from '../assets/ClipoInterface.png';
+import Bar from '../assets/Bar.png';
+import HistoryImg from '../assets/HistoryWindow.png';
+import Macbook from '../assets/Macbook.png';
+import iMacImg from '../assets/iMac.png';
+import MacstudioImg from '../assets/Macstudio.png';
+import GithubIcon from '../assets/Github.png';
+import FileIcon from '../assets/File.png';
+import PlaycircleIcon from '../assets/Playcircle.png';
+
+export default function Programming() {
+  const sectionRef = useRef(null);
+  const videoRef = useRef(null);
+  
+  const isInView = useInView(sectionRef, { amount: 0.25 });
+  
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
+  
+  const [showBarContent, setShowBarContent] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
+  const [isRippling, setIsRippling] = useState(false);
+  const [isGlowActive, setIsGlowActive] = useState(false);
+  const [fadeOutAll, setFadeOutAll] = useState(false);
+
+  const [animationPhase, setAnimationPhase] = useState('idle');
+  const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
+
+  const rippleScale = useMotionValue(0);
+  const noiseOffsetY = useMotionValue(0);
+  
+  const containerScale = useMotionValue(1);
+  const containerX = useMotionValue('0vw');
+  const containerY = useMotionValue('0vh');
+  const macbookOpacity = useMotionValue(0);
+
+  const imacX = useMotionValue('calc(-50% - 100vw)'); 
+  const imacY = useMotionValue('-50%'); 
+  const imacOpacity = useMotionValue(0);
+
+  const macStudioX = useMotionValue('calc(-50% + 100vw)'); 
+  const macStudioY = useMotionValue('-50%'); 
+  const macStudioOpacity = useMotionValue(0);
+
+  const syncTextOpacity = useMotionValue(0);
+  const syncTextBlur = useMotionValue(20);
+  const syncTextX = useMotionValue('-50%'); 
+  const syncTextY = useMotionValue('-50%'); 
+  const syncTextBlurString = useTransform(syncTextBlur, (v) => `blur(${v}px)`);
+
+  const sweepPercent = useMotionValue(-20);
+  const stop1 = useTransform(sweepPercent, v => `${v - 20}%`); 
+  const stop2 = useTransform(sweepPercent, v => `${v - 10}%`);  
+  const stop3 = useTransform(sweepPercent, v => `${v}%`);      
+  const stop4 = useTransform(sweepPercent, v => `${v + 15}%`); 
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #0016d8 ${stop2}, #0016d8 ${stop3}, rgba(255,255,255,0.15) ${stop4})`;
+
+  const sweep2TextOpacity = useMotionValue(0);
+  const sweep2TextBlur = useMotionValue(20);
+  const sweep2TextBlurString = useTransform(sweep2TextBlur, (v) => `blur(${v}px)`);
+  const sweep2Percent = useMotionValue(-20);
+  const sweep2Stop1 = useTransform(sweep2Percent, v => `${v - 20}%`);
+  const sweep2Stop2 = useTransform(sweep2Percent, v => `${v - 10}%`);
+  const sweep2Stop3 = useTransform(sweep2Percent, v => `${v}%`);
+  const sweep2Stop4 = useTransform(sweep2Percent, v => `${v + 15}%`);
+  const animatedGradient2 = useMotionTemplate`linear-gradient(to right, #ffffff ${sweep2Stop1}, #0016d8 ${sweep2Stop2}, #0016d8 ${sweep2Stop3}, rgba(255,255,255,0.15) ${sweep2Stop4})`;
+
+  const buttonsOpacity = useMotionValue(0);
+  const buttonsBlur = useMotionValue(20);
+  const buttonsBlurString = useTransform(buttonsBlur, (v) => `blur(${v}px)`);
+  const buttonsX = useMotionValue('-50%');
+  const buttonsY = useMotionValue('-50%');
+
+  const playIconOpacity = useMotionValue(0);
+  const playIconBlur = useMotionValue(20);
+  const playIconBlurString = useTransform(playIconBlur, (v) => `blur(${v}px)`);
+
+  const getLayoutPositions = (isMobile) => {
+    if (isMobile) {
+      const wHeight = typeof window !== 'undefined' ? window.innerHeight : 1080;
+      const baseWidth = Math.max(wHeight, 400) * (16 / 9);
+      const targetWidth = 320; 
+      const dynamicScale = targetWidth / baseWidth;
+
+      return {
+        containerScale: dynamicScale, containerX: '0vw', containerY: '-16vh',
+        imacX: '-50%', imacY: '-50%', imacFinalOpacity: 0, 
+        macStudioX: 'calc(-50% + 28vw)', macStudioY: 'calc(-50% - 7vh)', 
+        text1X: '-50%', text1Y: 'calc(-50% + 10vh)',
+        buttonsX: '-50%', buttonsY: 'calc(-50% + 10vh + 35vw)' 
+      };
+    } else {
+      return {
+        containerScale: 0.252, containerX: '-14vw', containerY: '6.7vw', 
+        imacX: 'calc(-50% - 30vw)', imacY: 'calc(-50% + 0.5vw)', imacFinalOpacity: 1, 
+        macStudioX: 'calc(-50% - 2vw)', macStudioY: 'calc(-50% + 12.3vw)', 
+        text1X: 'calc(-50% + 30vw)', text1Y: 'calc(-50% - 4vw)', 
+        buttonsX: 'calc(-50% + 30vw)', buttonsY: 'calc(-50% + 13.5vw)' 
+      };
+    }
+  };
+
+  const applyFinalLayout = useCallback((instant = false) => {
+    const layout = getLayoutPositions(isMobileRef.current);
+    const duration = instant ? 0.01 : 1.2;
+    const ease = [0.85, 0, 0.15, 1];
+
+    animate(containerScale, layout.containerScale, { duration, ease });
+    animate(containerX, layout.containerX, { duration, ease });
+    animate(containerY, layout.containerY, { duration, ease });
+    animate(macbookOpacity, 1, { duration, ease });
+
+    animate(imacX, layout.imacX, { duration, ease });
+    animate(imacY, layout.imacY, { duration, ease });
+    animate(imacOpacity, layout.imacFinalOpacity, { duration, ease });
+
+    animate(macStudioX, layout.macStudioX, { duration, ease });
+    animate(macStudioY, layout.macStudioY, { duration, ease });
+    animate(macStudioOpacity, 1, { duration, ease });
+
+    animate(syncTextX, layout.text1X, { duration: 0.01 });
+    animate(syncTextY, layout.text1Y, { duration: 0.01 });
+    animate(buttonsX, layout.buttonsX, { duration: 0.01 });
+    animate(buttonsY, layout.buttonsY, { duration: 0.01 });
+  }, [containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity, syncTextX, syncTextY, buttonsX, buttonsY]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      isMobileRef.current = window.innerWidth <= 900;
+      if (animationPhase === 'finished') {
+        applyFinalLayout(true); 
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [animationPhase, applyFinalLayout]);
+
+  useEffect(() => {
+    if (isInView && !videoPlaying && !videoEnded) {
+      setVideoPlaying(true);
+      videoRef.current?.play();
+    }
+  }, [isInView, videoPlaying, videoEnded]);
+
+  useEffect(() => {
+    if (!videoEnded) return;
+
+    const t1 = setTimeout(() => setShowBarContent(true), 3700);
+    const t2 = setTimeout(() => setShowHistory(true), 4150);
+    
+    const t3 = setTimeout(() => {
+      setIsRippling(true);
+      setIsGlowActive(true);
+      animate(rippleScale, [0, 45, 0], { duration: 0.8, ease: "easeInOut" });
+      animate(noiseOffsetY, [0, -1200], { duration: 0.8, ease: "linear" });
+      animate(containerScale, [1, 1.04, 1], { duration: 0.8, ease: "easeInOut" });
+      setTimeout(() => setIsRippling(false), 800);
+    }, 6150);
+
+    const t4 = setTimeout(() => setFadeOutAll(true), 11650);
+
+    const t5 = setTimeout(() => {
+      setAnimationPhase('finished');
+      applyFinalLayout(false); 
+
+      setTimeout(() => {
+        animate(syncTextOpacity, 1, { duration: 0.8 });
+        animate(syncTextBlur, 0, { duration: 0.8 });
+        animate(sweepPercent, 130, { duration: 2.2, ease: "easeInOut" });
+
+        setTimeout(() => {
+          animate(syncTextOpacity, 0, { duration: 0.8 });
+          animate(syncTextBlur, 20, { duration: 0.8 });
+
+          setTimeout(() => {
+            animate(sweep2TextOpacity, 1, { duration: 0.8 });
+            animate(sweep2TextBlur, 0, { duration: 0.8 });
+            animate(sweep2Percent, 130, { duration: 2.2, ease: "easeInOut" });
+
+            animate(buttonsOpacity, 1, { duration: 0.8 });
+            animate(buttonsBlur, 0, { duration: 0.8 });
+            animate(playIconOpacity, 1, { duration: 0.8 });
+            animate(playIconBlur, 0, { duration: 0.8 });
+
+          }, 800);
+        }, 4200);
+      }, 1200);
+
+    }, 13150);
+
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
+  }, [videoEnded, applyFinalLayout, containerScale, rippleScale, noiseOffsetY, syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur]); 
+
+  const handleReset = useCallback(() => {
+    setAnimationPhase('idle');
+    animate(syncTextOpacity, 0, { duration: 0.01 });
+    animate(syncTextBlur, 20, { duration: 0.01 });
+    animate(sweepPercent, -20, { duration: 0.01 });
+    animate(sweep2TextOpacity, 0, { duration: 0.01 });
+    animate(sweep2TextBlur, 20, { duration: 0.01 });
+    animate(sweep2Percent, -20, { duration: 0.01 });
+    animate(buttonsOpacity, 0, { duration: 0.01 });
+    animate(buttonsBlur, 20, { duration: 0.01 });
+    animate(playIconOpacity, 0, { duration: 0.01 });
+    animate(playIconBlur, 20, { duration: 0.01 });
+    
+    animate(containerScale, 1, { duration: 0.01 });
+    animate(containerX, '0vw', { duration: 0.01 });
+    animate(containerY, '0vh', { duration: 0.01 });
+    animate(macbookOpacity, 0, { duration: 0.01 });
+    
+    animate(imacX, 'calc(-50% - 100vw)', { duration: 0.01 });
+    animate(imacY, '-50%', { duration: 0.01 });
+    animate(imacOpacity, 0, { duration: 0.01 });
+    
+    animate(macStudioX, 'calc(-50% + 100vw)', { duration: 0.01 });
+    animate(macStudioY, '-50%', { duration: 0.01 });
+    animate(macStudioOpacity, 0, { duration: 0.01 });
+    
+    setVideoPlaying(false);
+    setVideoEnded(false);
+    setShowBarContent(false);
+    setShowHistory(false);
+    setIsRippling(false);
+    setIsGlowActive(false);
+    setFadeOutAll(false);
+    
+    setVideoPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  }, [syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity]);
+
+  return (
+    <section id="programming" className="programming-page" ref={sectionRef}>
+      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
+        <defs>
+          <filter id="water-ripple" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="turbulence" baseFrequency="0.0005 0.002" numOctaves="1" result="noise" />
+            <motion.feOffset in="noise" dy={noiseOffsetY} result="movingNoise" />
+            <motion.feDisplacementMap in="SourceGraphic" in2="movingNoise" scale={rippleScale} xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
+
+      <div className="programming-video-container">
+        <motion.img 
+          src={iMacImg} alt="iMac" className="apple-imac-layer"
+          style={{ x: imacX, y: imacY, opacity: imacOpacity }}
+        />
+
+        <motion.div 
+          className="video-tight-wrapper"
+          style={{ filter: isRippling ? 'url(#water-ripple)' : 'none', scale: containerScale, x: containerX, y: containerY, z: 0, willChange: isRippling ? 'filter, transform' : 'auto' }}
+        >
+          <video ref={videoRef} src={Video2} className="programming-scroll-video" preload="auto" muted playsInline onEnded={() => setVideoEnded(true)} />
+
+          <div className={`video-glow-overlay ${isGlowActive ? 'glow-active' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
+            <div className="glow-system">
+              <div className="glow-color glow-color-1"></div>
+              <div className="glow-color glow-color-2"></div>
+              <div className="glow-black-hole"></div>
+            </div>
+          </div>
+
+          {showBarContent && (
+            <div className={`bar-content-wrapper ${showHistory ? 'bar-exit' : ''}`}>
+              <div className="bar-title-wrapper"><p className="bar-title">AI-Sorted Clipboard History</p></div>
+              <div className="bar-image-wrapper"><img src={Bar} alt="Bar" className="bar-image" /></div>
+            </div>
+          )}
+
+          {showHistory && (
+            <div className={`history-layout-container ${fadeOutAll ? 'fade-out-all' : ''}`}>
+              <div className="history-left-side"><img src={HistoryImg} alt="History Window" className="history-window-image" /></div>
+              <div className="history-right-side"><p className="powered-by-text">Powered by<br/>AI</p></div>
+            </div>
+          )}
+
+          <motion.img 
+            src={Macbook} alt="Macbook Overlay" className="macbook-overlay-image" 
+            style={{ opacity: macbookOpacity, top: '50%', left: '50%', x: '-49.8%', y: '-44.4%' }} 
+          />
+        </motion.div>
+
+        <motion.img 
+          src={MacstudioImg} alt="Mac Studio" className="apple-macstudio-layer"
+          style={{ x: macStudioX, y: macStudioY, opacity: macStudioOpacity }}
+        />
+
+        <motion.div 
+          className="sync-text-container"
+          style={{ opacity: syncTextOpacity, x: syncTextX, y: syncTextY, filter: syncTextBlurString }}
+        >
+          <motion.h2 style={{ backgroundImage: animatedGradient }}>Seamlessly<br/>sync across<br/>your Macs</motion.h2>
+        </motion.div>
+
+        <motion.div 
+          className="sync-text-container sync-text-second"
+          style={{ opacity: sweep2TextOpacity, x: syncTextX, y: syncTextY, filter: sweep2TextBlurString }}
+        >
+          <motion.h2 style={{ backgroundImage: animatedGradient2 }}>Clipo is free<br/>and open-source</motion.h2>
+        </motion.div>
+
+        <motion.div 
+          className="sweep2-buttons-row"
+          style={{ opacity: buttonsOpacity, filter: buttonsBlurString, x: buttonsX, y: buttonsY }}
+        >
+          <motion.button className="sweep2-btn" initial="rest" whileHover="hover" animate="rest" variants={{ rest: { scale: 1 }, hover: { scale: 1.05 } }}>
+            <motion.div variants={{ rest: { width: "auto", opacity: 1 }, hover: { width: 0, opacity: 0 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: 'max-content' }}><img src={GithubIcon} alt="Github" className="sweep2-btn-icon" /><span>Github</span></div>
+            </motion.div>
+            <motion.div variants={{ rest: { width: 0, opacity: 0 }, hover: { width: "auto", opacity: 1 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ width: 'max-content' }}><span className="sweep2-btn-hover-text">Available Soon</span></div>
+            </motion.div>
+          </motion.button>
+          
+          <motion.button className="sweep2-btn" initial="rest" whileHover="hover" animate="rest" variants={{ rest: { scale: 1 }, hover: { scale: 1.05 } }}>
+            <motion.div variants={{ rest: { width: "auto", opacity: 1 }, hover: { width: 0, opacity: 0 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', width: 'max-content' }}><img src={FileIcon} alt="File" className="sweep2-btn-icon" /><span>dmg</span></div>
+            </motion.div>
+            <motion.div variants={{ rest: { width: 0, opacity: 0 }, hover: { width: "auto", opacity: 1 } }} transition={{ type: "spring", stiffness: 400, damping: 22 }} style={{ overflow: "hidden", display: "flex", alignItems: "center" }}>
+              <div style={{ width: 'max-content' }}><span className="sweep2-btn-hover-text">Available Soon</span></div>
+            </motion.div>
+          </motion.button>
+        </motion.div>
+      </div>
+      
+      {videoEnded && (
+        <div className={`clipo-interface-wrapper ${showBarContent ? 'clipo-exit' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
+          <div className="clipo-text-group"><p className="clipo-text-top">Vibe-Coding Works</p><p className="clipo-text-bottom">Clipo</p></div>
+          <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" />
+        </div>
+      )}
+
+      <motion.div 
+        className="programming-play-container"
+        style={{ opacity: playIconOpacity, filter: playIconBlurString }}
+      >
+        <span className="programming-play-label">Replay</span>
+        <div className="programming-play-icon" onClick={handleReset}><img src={PlaycircleIcon} alt="Replay" /></div>
+      </motion.div>
     </section>
   );
 }

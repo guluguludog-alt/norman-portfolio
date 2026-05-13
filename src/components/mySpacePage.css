@@ -1,0 +1,40 @@
+/* src/components/mySpacePage.css */
+
+.my-space-page-container {
+  background-color: #000;
+  position: relative;
+  z-index: 99; 
+  width: 100%;
+  /* 严格锁定高度为1个屏幕，不干涉任何排版 */
+  height: 100vh; 
+  /* 居中包裹 Canvas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.myspace-sequence-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+/* =========================================
+   PC端布局 (>900px): 撑满、无留白、不裁切
+   ========================================= */
+@media (min-width: 901px) {
+  .myspace-sequence-canvas {
+    object-fit: fill; 
+  }
+}
+
+/* =========================================
+   移动端布局 (<=900px): 上下不裁切，左右可裁切
+   ========================================= */
+@media (max-width: 900px) {
+  .myspace-sequence-canvas {
+    object-fit: cover;
+    object-position: center;
+  }
+}
