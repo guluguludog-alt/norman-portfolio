@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useInView, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import './programming.css';
 
-// 🌟 1. 引入经过 FFmpeg 优化后的视频文件
 import Video2 from '../assets/Video2_web.mp4';
 import ClipoInterface from '../assets/ClipoInterface.png';
 import Bar from '../assets/Bar.png';
@@ -131,22 +130,34 @@ export default function Programming() {
   }, [containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity, syncTextX, syncTextY, buttonsX, buttonsY]);
 
   useEffect(() => {
+    let lastWidth = window.innerWidth;
     const handleResize = () => {
-      isMobileRef.current = window.innerWidth <= 900;
-      if (animationPhase === 'finished') {
-        applyFinalLayout(true); 
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+        isMobileRef.current = currentWidth <= 900;
+        if (animationPhase === 'finished') {
+          applyFinalLayout(true); 
+        }
       }
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [animationPhase, applyFinalLayout]);
 
+  // 🌟 性能优化：精确控制视频的启停，滑走即刻销毁后台解码占用
   useEffect(() => {
-    if (isInView && !videoPlaying && !videoEnded) {
-      setVideoPlaying(true);
-      videoRef.current?.play();
+    if (videoRef.current) {
+      if (isInView && !videoEnded) {
+        setVideoPlaying(true);
+        videoRef.current.play().catch(e => console.log("等待交互", e));
+      } else {
+        setVideoPlaying(false);
+        // 🌟 核心：滑出屏幕，立刻停止播放！
+        videoRef.current.pause(); 
+      }
     }
-  }, [isInView, videoPlaying, videoEnded]);
+  }, [isInView, videoEnded]);
 
   useEffect(() => {
     if (!videoEnded) return;
@@ -252,26 +263,25 @@ export default function Programming() {
 
       <div className="programming-video-container">
         <motion.img 
-          src={iMacImg} alt="iMac" className="apple-imac-layer"
-          style={{ x: imacX, y: imacY, opacity: imacOpacity }}
+          src={iMacImg} alt="iMac" className="apple-imac-layer" decoding="async"
+          style={{ x: imacX, y: imacY, opacity: imacOpacity, z: 0, willChange: 'transform, opacity' }}
         />
 
         <motion.div 
           className="video-tight-wrapper"
-          style={{ filter: isRippling ? 'url(#water-ripple)' : 'none', scale: containerScale, x: containerX, y: containerY, z: 0, willChange: isRippling ? 'filter, transform' : 'auto' }}
+          style={{ filter: isRippling ? 'url(#water-ripple)' : 'none', scale: containerScale, x: containerX, y: containerY, z: 0, willChange: isRippling ? 'filter, transform' : 'transform' }}
         >
-          {/* 🌟 2. 极致优化的 video 标签 */}
           <video 
             ref={videoRef} 
             src={Video2} 
             className="programming-scroll-video" 
-            preload="metadata" /* 将 auto 改为 metadata 释放内存 */
+            preload="metadata"
             muted 
             playsInline 
             onEnded={() => setVideoEnded(true)}
             style={{ 
               willChange: 'transform', 
-              transform: 'translateZ(0)' /* 强制 GPU 硬件加速 */
+              transform: 'translateZ(0)' 
             }} 
           />
 
@@ -286,26 +296,26 @@ export default function Programming() {
           {showBarContent && (
             <div className={`bar-content-wrapper ${showHistory ? 'bar-exit' : ''}`}>
               <div className="bar-title-wrapper"><p className="bar-title">AI-Sorted Clipboard History</p></div>
-              <div className="bar-image-wrapper"><img src={Bar} alt="Bar" className="bar-image" /></div>
+              <div className="bar-image-wrapper"><img src={Bar} alt="Bar" className="bar-image" decoding="async" /></div>
             </div>
           )}
 
           {showHistory && (
             <div className={`history-layout-container ${fadeOutAll ? 'fade-out-all' : ''}`}>
-              <div className="history-left-side"><img src={HistoryImg} alt="History Window" className="history-window-image" /></div>
+              <div className="history-left-side"><img src={HistoryImg} alt="History Window" className="history-window-image" decoding="async" /></div>
               <div className="history-right-side"><p className="powered-by-text">Powered by<br/>AI</p></div>
             </div>
           )}
 
           <motion.img 
-            src={Macbook} alt="Macbook Overlay" className="macbook-overlay-image" 
-            style={{ opacity: macbookOpacity, top: '50%', left: '50%', x: '-49.8%', y: '-44.4%' }} 
+            src={Macbook} alt="Macbook Overlay" className="macbook-overlay-image" decoding="async"
+            style={{ opacity: macbookOpacity, top: '50%', left: '50%', x: '-49.8%', y: '-44.4%', z: 0 }} 
           />
         </motion.div>
 
         <motion.img 
-          src={MacstudioImg} alt="Mac Studio" className="apple-macstudio-layer"
-          style={{ x: macStudioX, y: macStudioY, opacity: macStudioOpacity }}
+          src={MacstudioImg} alt="Mac Studio" className="apple-macstudio-layer" decoding="async"
+          style={{ x: macStudioX, y: macStudioY, opacity: macStudioOpacity, z: 0, willChange: 'transform, opacity' }}
         />
 
         <motion.div 
@@ -349,7 +359,7 @@ export default function Programming() {
       {videoEnded && (
         <div className={`clipo-interface-wrapper ${showBarContent ? 'clipo-exit' : ''} ${fadeOutAll ? 'fade-out-all' : ''}`}>
           <div className="clipo-text-group"><p className="clipo-text-top">Vibe-Coding Works</p><p className="clipo-text-bottom">Clipo</p></div>
-          <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" />
+          <img src={ClipoInterface} alt="Clipo Interface" className="clipo-interface-image" decoding="async" />
         </div>
       )}
 

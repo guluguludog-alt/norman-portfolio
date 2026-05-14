@@ -11,6 +11,8 @@
   position: relative;
   z-index: 10;
   overflow: hidden; 
+  /* 🌟 性能优化 1：渲染隔离，告诉浏览器这里的动画绝不影响外部排版 */
+  contain: paint layout;
 }
 
 .programming-video-container {
@@ -53,11 +55,11 @@
 }
 
 @keyframes simpleFadeOut {
-  0% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); }
-  100% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); }
+  0% { opacity: 1; filter: blur(0px); -webkit-filter: blur(0px); visibility: visible; }
+  /* 🌟 性能优化 2：渐出动画结束后彻底隐藏，切断渲染树消耗 */
+  100% { opacity: 0; filter: blur(20px); -webkit-filter: blur(20px); visibility: hidden; }
 }
 
-/* History 容器全局默认配置 */
 .history-layout-container { position: absolute; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; padding: 0 10%; gap: 4%; pointer-events: none; animation: simpleFadeIn 2s ease-in-out both; will-change: filter, opacity; container-type: inline-size; }
 .history-left-side { flex: 1.2; display: flex; justify-content: flex-end; }
 .history-window-image { width: auto; max-width: 45%; height: auto; max-height: 70%; object-fit: contain; }
@@ -71,8 +73,10 @@
 .bar-image-wrapper { position: absolute; bottom: 25%; left: 50%; transform: translate(-50%, 50%); width: 75%; display: flex; justify-content: center; }
 .bar-image { width: 100%; height: auto; object-fit: contain; animation: simpleFadeIn 0.85s ease-out 0.9s both; }
 
-.video-glow-overlay { position: absolute; inset: 0; z-index: 10; pointer-events: none; opacity: 0; mix-blend-mode: screen; overflow: hidden; border-radius: 0; }
-.video-glow-overlay.glow-active { opacity: 1; transition: opacity 0.8s ease-out; }
+/* 🌟 性能优化 3：平时设置为 visibility: hidden，彻底阻止高斯模糊和伪层在后台偷吃 GPU */
+.video-glow-overlay { position: absolute; inset: 0; z-index: 10; pointer-events: none; opacity: 0; visibility: hidden; mix-blend-mode: screen; overflow: hidden; border-radius: 0; transition: opacity 0.8s ease-out, visibility 0s 0.8s; }
+.video-glow-overlay.glow-active { opacity: 1; visibility: visible; transition: opacity 0.8s ease-out, visibility 0s; }
+
 .glow-system { position: absolute; top: -100px; bottom: -100px; left: -100px; right: -100px; filter: blur(28px) brightness(1.5) saturate(4); }
 .glow-color { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; }
 .glow-color-1 { background: conic-gradient(from 0deg, transparent 10%, #0033ff 30%, #ff003c 50%, transparent 60%); animation: rotateGlow 2s linear infinite; }
@@ -178,7 +182,6 @@
     text-align: left;
   }
   
-  /* 🌟 移动端：字体调大 25% */
   .sync-text-container h2,
   .sync-text-second h2 {
     text-align: left;
@@ -198,7 +201,6 @@
     gap: clamp(10px, 1.5vw, 20px);
   }
 
-  /* 移动端溢出保护区 */
   .history-layout-container {
     width: 100vw;
     left: 50%;
@@ -240,7 +242,6 @@
   }
 }
 
-
 /* =========================================
    🌟 PC 端响应式核心 (> 900px)
    ========================================= */
@@ -250,7 +251,6 @@
   
   .sync-text-container { width: 40vw; text-align: left; }
   
-  /* 🌟 核心修改：PC 端两段文字完全保持统一的 clamp 大小 */
   .sync-text-container h2,
   .sync-text-second h2 {
     padding: 0 5vw; 

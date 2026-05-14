@@ -38,8 +38,9 @@
   cursor: crosshair; 
 }
 
+/* 🌟 增加高度 (vh) 响应式限制，防止文字和右下角的字重叠 */
 .myspace-main-text {
-  font-size: clamp(4rem, 9.5vw, 12rem);
+  font-size: clamp(3rem, min(9.5vw, 14vh), 12rem);
   letter-spacing: -0.04em;
   text-transform: uppercase;
   display: inline-block;
@@ -89,7 +90,7 @@
 .animated-sticker-scene {
   position: absolute;
   perspective: 1200px; 
-  /* 🌟 默认透明度为 0，防止页面刚加载或进度为 0 时闪现 */
+  /* 🌟 默认透明度为 0，配合JS使其变成出场动画 */
   opacity: 0;
   transition: opacity 0.2s ease-out;
   will-change: opacity, transform;
@@ -151,7 +152,7 @@
   right: 3vw;
   color: #888888;
   font-family: 'SansSerifFLF', sans-serif;
-  font-size: 2.5rem; /* 设定为 2.5rem */
+  font-size: 2.5rem; 
   letter-spacing: 0.02em;
   z-index: 50;
   pointer-events: none;
@@ -164,7 +165,8 @@
   }
   
   .myspace-main-text {
-    font-size: clamp(3rem, 12vw, 6rem);
+    /* 🌟 手机端同样加上高度响应式限制 (10vh) */
+    font-size: clamp(2.5rem, min(12vw, 10vh), 6rem);
   }
   
   .myspace-text-line {

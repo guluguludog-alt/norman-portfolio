@@ -1,11 +1,6 @@
+/* src/components/AuroraEffect.css */
 .aurora-container {
   width: 100%;
   height: 100%;
-}
-
-.aurora-container {
-  /* 其他原有的样式保持不变 */
-  
-  /* 添加这行，将整个容器垂直翻转 */
-  transform: scaleY(-1); 
+  transform: scaleY(-1); /* 🌟 必须保留，用来维持全局默认从底部发光 */
 }

@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { useScroll, useMotionValueEvent } from 'framer-motion'; // 🌟 引入滚动监听
 import RotatingText from "./RotatingText";
 import DecryptedText from "./DecryptedText";
 
-// 🌟 接收来自 App 传来的 isAppLoaded 状态
 export default function Hero({ isAppLoaded }) {
   const [offset, setOffset] = useState({ x: 40, y: -30 });
   const [opacity, setOpacity] = useState(0);
+  const [isScrolledPast, setIsScrolledPast] = useState(false); // 🌟 记录是否已经滑过首屏
+
+  const { scrollY } = useScroll();
+
+  // 🌟 性能优化：当向下滑动超过一个屏幕高度时，标记为滑过
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > window.innerHeight) {
+      if (!isScrolledPast) setIsScrolledPast(true);
+    } else {
+      if (isScrolledPast) setIsScrolledPast(false);
+    }
+  });
 
   useEffect(() => {
-    // 🌟 当且仅当加载页滑走时，才触发背景和文字的进场动画
     if (isAppLoaded) {
       setOffset({ x: 0, y: 0 });
       setOpacity(1);
@@ -16,7 +27,12 @@ export default function Hero({ isAppLoaded }) {
   }, [isAppLoaded]);
 
   return (
-    <section id="home" className="section">
+    <section 
+      id="home" 
+      className="section"
+      // 🌟 核心：滑过之后设置为 hidden，告诉浏览器彻底停止计算被遮挡的 CSS 动画（如背景层的闪烁和提示箭头的 bounce）
+      style={{ visibility: isScrolledPast ? 'hidden' : 'visible' }}
+    >
       <div className="bg-container">
         <img 
           src="/background_layer.png" 
@@ -50,10 +66,10 @@ export default function Hero({ isAppLoaded }) {
       </div>
       
       <div className="title-main">
-        {/* 🌟 用 isAppLoaded 锁住文字组件，阻止乱码组件提前进入视口并强行播放 */}
         {isAppLoaded && (
           <h1>
-            <RotatingText /><br />{" "}
+            {/* 🌟 核心：把暂停信号传给循环文字组件 */}
+            <RotatingText isPaused={isScrolledPast} /><br />{" "}
             <DecryptedText 
               text="Designer" 
               parentClassName="keep-my-font"

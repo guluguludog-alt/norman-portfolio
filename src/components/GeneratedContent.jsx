@@ -19,7 +19,7 @@ const projects = [
 ];
 
 /* =========================================
-   单张幻灯片组件（极致性能版）
+   单张幻灯片组件（保留了性能优化）
    ========================================= */
 const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
   const originalP = useTransform(smoothProgress, val => {
@@ -49,15 +49,15 @@ const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
         zIndex,
         visibility,
         opacity: 1, 
-        z: 0, // 🌟 性能优化 1：为每一张动态变化的图片分配独立的 GPU 渲染层，防止互相干扰
-        contain: 'strict', // 告诉浏览器这个盒子里的变化不会影响外部排版
-        willChange: 'transform, width, height' // 🌟 性能优化 2：提前预告浏览器宽高会变化，分配专属内存
+        z: 0, // 🌟 性能优化：给每个图层独立的 GPU 通道
+        contain: 'strict', // 防止影响外部重绘
+        willChange: 'transform, width, height'
       }}
     >
       <img 
         src={img} 
         alt={`Project ${index + 1}`} 
-        decoding="async" // 🌟 性能优化 3：把昂贵的图片解码操作移入后台线程，防止主线程(滚动)卡顿
+        decoding="async" // 🌟 性能优化：强制后台解码，防主线程卡顿
         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
         draggable="false"
       />
@@ -72,6 +72,7 @@ export default function GeneratedContent() {
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   
+  // 🌟 恢复：计算触发页面 Q弹吸附 的 Y 轴阀值
   const [triggerPoint, setTriggerPoint] = useState(999999);
 
   useLayoutEffect(() => {
@@ -91,6 +92,7 @@ export default function GeneratedContent() {
   });
   const spreadProgress = useTransform(galleryEnterProgress, [0.5, 1], [0, 1]);
 
+  // 🌟 恢复：页面的惯性移动效果逻辑
   const clampedScrollY = useTransform(scrollY, (y) => Math.min(y, triggerPoint));
   const smoothClampedScrollY = useSpring(clampedScrollY, { stiffness: 100, damping: 30 });
   const springOffset = useTransform(() => clampedScrollY.get() - smoothClampedScrollY.get());
@@ -175,8 +177,8 @@ export default function GeneratedContent() {
       className="generated-content-page"
       ref={sectionRef}
       style={{ 
-        y: springOffset, 
-        z: 0, // 🌟 性能优化 4：非常关键！为带有滚动物理引擎的整块 Section 开辟独立的显卡处理通道，消灭随全局滚动带来的卡顿。
+        y: springOffset, /* 🌟 恢复的页面整体惯性阻尼移动效果 */
+        z: 0, 
         willChange: 'transform' 
       }} 
     >
@@ -190,7 +192,7 @@ export default function GeneratedContent() {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.25 }}
             className="gc-title-text"
-            style={{ willChange: 'opacity, transform' }} // 🌟 性能优化 5：提前预告浏览器标题会隐现
+            style={{ willChange: 'opacity, transform' }}
           >
             {projects[activeIndex].title}
           </motion.h2>

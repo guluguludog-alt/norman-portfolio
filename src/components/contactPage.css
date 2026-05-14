@@ -1,6 +1,5 @@
-/* =========================================
-   尾页 (Contact Page) — 纯黑背景
-   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
 #contact,
 .contact-section {
   position: relative;
@@ -9,4 +8,178 @@
   overflow: hidden;
   z-index: 10;
   background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 极光层 */
+.contact-aurora-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh; 
+  z-index: 0; 
+  pointer-events: none;
+}
+
+/* 背景文字拉伸 */
+.contact-banner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  width: 100%;
+  padding: 0 1vw; 
+  white-space: nowrap;
+  margin-top: -0.2vw;
+  z-index: 1; 
+}
+
+.contact-letter {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  color: #0016d8;
+  font-size: 12.2vw; 
+  line-height: 0.72; 
+  pointer-events: none;
+}
+
+/* 玻璃卡片 */
+.contact-glass-card {
+  position: absolute;
+  top: 48%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  max-width: 1200px;
+  height: 60vh;
+  background: rgba(255, 255, 255, 0.02); 
+  backdrop-filter: blur(40px) saturate(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  z-index: 20; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-content-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 6vw;
+  align-items: stretch;
+  width: 85%;
+}
+
+.contact-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 🌟 标题文字调大 (1.6rem -> 1.9rem) */
+.contact-heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 3rem 0;
+  letter-spacing: 0.5px;
+}
+
+.contact-links-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 🌟 正文链接调大 (1.1rem -> 1.35rem) */
+.contact-link {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-link:hover {
+  opacity: 0.7;
+}
+
+.contact-divider {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+}
+
+/* 邮箱图标：已移除 invert(1) */
+.contact-mail-icon {
+  width: 28px;
+  height: auto;
+  display: block;
+}
+
+.mail-icon-link {
+  margin-top: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.mail-icon-link:hover {
+  transform: scale(1.15);
+}
+
+/* Back to Top 药丸按钮 */
+.contact-back-to-top {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  padding: 12px 36px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 25;
+}
+
+.contact-back-to-top:hover {
+  opacity: 0.8;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* 页脚 */
+.contact-footer {
+  position: absolute;
+  bottom: 25px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 30;
+}
+
+.footer-left, .footer-center { flex: 1; }
+.footer-right { flex: 1; text-align: right; line-height: 1.4; }
+.footer-center { text-align: center; }
+
+@media (max-width: 900px) {
+  .contact-glass-card { height: auto; padding: 60px 0; }
+  .contact-content-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-divider { width: 50%; height: 1px; margin: 0 auto; }
+  .contact-heading { font-size: 1.6rem; margin-bottom: 2rem; }
+  .contact-link { font-size: 1.15rem; }
 }
