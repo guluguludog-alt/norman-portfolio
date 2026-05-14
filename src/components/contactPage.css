@@ -1,0 +1,12 @@
+/* =========================================
+   尾页 (Contact Page) — 纯黑背景
+   ========================================= */
+#contact,
+.contact-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  background: #000;
+}

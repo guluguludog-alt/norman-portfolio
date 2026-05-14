@@ -4,11 +4,12 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LandscapeWorksPage from './components/LandscapeWorksPage';
-import MoreWorksPage from './components/MoreWorksPage';
 import AIGCWorksPage from './components/AIGCWorksPage';
 import GeneratedContent from './components/GeneratedContent';
 import Programming from './components/Programming';
 import MySpacePage from './components/MySpacePage';
+import MySpaceListPage from './components/MySpaceListPage';
+import ContactPage from './components/ContactPage';
 import IntroductionPage from './components/IntroductionPage';
 import ExperiencePage from './components/ExperiencePage';
 import ExperienceListPage from './components/ExperienceListPage';
@@ -50,16 +51,8 @@ function Home() {
         <GeneratedContent />
         <Programming />
         <MySpacePage />
-        <MoreWorksPage />
-        <section id="contact" className="section">
-          <div className="contact-content">
-            <h1>Contact me</h1>
-            <p>E-mail: citiesxl@hotmail.com</p>
-          </div>
-          <div className="footer-blue-block">
-            <p>© 2026 Yang's Architectural Design Studio. All rights reserved.</p>
-          </div>
-        </section>
+        <MySpaceListPage />
+        <ContactPage />
       </ReactLenis> 
     </>
   );

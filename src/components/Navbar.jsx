@@ -47,7 +47,7 @@ export default function Navbar() {
               <a href="#aigc">AIGC</a>
               <a href="#architecture">Architecture</a>
               <a href="#landscape">Landscape</a>
-              <a href="#more">More</a>
+              <a href="#myspace">More</a>
             </nav>
           </GlassSurface>
         </header>
@@ -97,7 +97,7 @@ export default function Navbar() {
                   { name: 'AIGC', href: '#aigc' },
                   { name: 'Architecture', href: '#architecture' },
                   { name: 'Landscape', href: '#landscape' },
-                  { name: 'More', href: '#more' },
+                  { name: 'More', href: '#myspace' },
                   { name: '中文', isButton: true },
                   { name: 'Contact me', href: '#contact' }
                 ].map((item, idx) => (

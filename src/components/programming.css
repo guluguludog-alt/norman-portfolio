@@ -178,12 +178,12 @@
     text-align: left;
   }
   
-  /* 🌟 移动端：保持先前的 40% 缩小设置 */
+  /* 🌟 移动端：字体调大 25% */
   .sync-text-container h2,
   .sync-text-second h2 {
     text-align: left;
     padding: 0; 
-    font-size: clamp(2.3rem, 5.7vw, 4.2rem) !important; 
+    font-size: clamp(2.875rem, 7.125vw, 5.25rem) !important; 
   }
   
   .sweep2-buttons-row {

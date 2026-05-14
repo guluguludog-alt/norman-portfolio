@@ -375,50 +375,6 @@ html,
 }
 
 /* =========================================
-   最后一页 (尾页 Contact)
-   ========================================= */
-#contact {
-    background: #fff;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.contact-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10vw;
-}
-
-.contact-content h1 {
-    font-size: 4rem;
-    font-weight: 300;
-}
-
-.contact-content p {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-.footer-blue-block {
-    width: 100%;
-    height: 35vh;
-    background-color: #003399;
-    display: flex;
-    align-items: flex-end;
-    padding: 20px 40px;
-    color: #fff;
-}
-
-.footer-blue-block p {
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-/* =========================================
    字体类控制修复 (跨平台适配)
    ========================================= */
 
