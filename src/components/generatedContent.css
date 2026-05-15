@@ -74,9 +74,10 @@
 /* 响应式调整 (手机端) */
 @media (max-width: 900px) {
   .generated-content-page {
-    margin-top: -100vh; /* 移动端也使用覆盖效果 */
-    z-index: 30; /* 保持覆盖层级 */
-    height: 100vh;
+    margin-top: 0; /* 移动端正常文档流，不覆盖 AIGC */
+    z-index: 20;
+    height: auto;
+    min-height: 100vh;
   }
 
   .gc-title-block {
