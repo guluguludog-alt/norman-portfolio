@@ -70,6 +70,13 @@
     .aigc-portfolio-section {
         margin: 0;
         padding: 0;
+        /* 移动端没有 Ring 动画，大幅减少滚动空间 */
+        height: calc(200vh - 200px);
+    }
+
+    .aigc-sticky-container {
+        position: sticky;
+        top: 0;
     }
 
     .aigc-video-container {
@@ -90,6 +97,10 @@
 
     .aigc-sub-wrapper {
         font-size: 8vw;
+    }
+
+    .aigc-ring {
+        display: none;
     }
 }
 

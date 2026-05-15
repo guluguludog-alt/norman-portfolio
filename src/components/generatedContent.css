@@ -73,9 +73,15 @@
 
 /* 响应式调整 (手机端) */
 @media (max-width: 900px) {
+  .generated-content-page {
+    margin-top: -100vh; /* 移动端也使用覆盖效果 */
+    z-index: 30; /* 保持覆盖层级 */
+    height: 100vh;
+  }
+
   .gc-title-block {
-    /* 🌟 修改点 3：手机端标题也同步上移 (从 12vh 改为 6vh) */
-    top: calc(6vh - 40px);
+    /* 🌟 手机端标题适当下移 */
+    top: calc(12vh - 40px);
     left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
     right: 10vw;
     gap: 15px;

@@ -75,11 +75,27 @@ export default function GeneratedContent() {
   const projects = getProjects(t);
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
+  const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
+  const [isMobile, setIsMobile] = useState(isMobileRef.current);
   
+  // 🌟 检测屏幕宽度变化
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 900;
+      if (mobile !== isMobileRef.current) {
+        isMobileRef.current = mobile;
+        setIsMobile(mobile);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // 🌟 恢复：计算触发页面 Q弹吸附 的 Y 轴阀值
   const [triggerPoint, setTriggerPoint] = useState(999999);
 
   useLayoutEffect(() => {
+    if (isMobileRef.current) return; // 移动端不需要惯性移动
     const updatePoint = () => {
       if (sectionRef.current) setTriggerPoint(sectionRef.current.offsetTop);
     };
@@ -181,7 +197,7 @@ export default function GeneratedContent() {
       className={`generated-content-page${isChinese ? ' zh-lang' : ''}`}
       ref={sectionRef}
       style={{ 
-        y: springOffset, /* 🌟 恢复的页面整体惯性阻尼移动效果 */
+        y: 0, /* 移除惯性阻尼移动效果 */
         z: 0, 
         willChange: 'transform' 
       }} 

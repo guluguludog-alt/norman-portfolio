@@ -1,69 +1,70 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import { SpeedInsights } from "@vercel/speed-insights/react"; // 🌟 新增：导入性能监测组件
+import { ReactLenis } from 'lenis/react';
+import './App.css';
 import Navbar from './components/Navbar';
-import AuroraEffect from './components/AuroraEffect';
-import Home from './components/Home';
-import Introduction from './components/Introduction';
+import Hero from './components/Hero';
+import LandscapeWorksPage from './components/LandscapeWorksPage';
+import AIGCWorksPage from './components/AIGCWorksPage';
+import GeneratedContent from './components/GeneratedContent';
 import Programming from './components/Programming';
-import ArchitectureWorks from './components/ArchitectureWorks';
+import MySpacePage from './components/MySpacePage';
+import MySpaceListPage from './components/MySpaceListPage';
 import ContactPage from './components/ContactPage';
-import ProjectDetailPage from './components/ProjectDetailPage';
-import { useScrollSection } from './hooks/useScrollSection';
+import IntroductionPage from './components/IntroductionPage';
+import ExperiencePage from './components/ExperiencePage';
+import ExperienceListPage from './components/ExperienceListPage';
+import ArchitectureWorks from './components/ArchitectureWorks';
 
-// 内部 Home 组件，用于管理单页滚动逻辑
-const HomePage = () => {
-  const { activeSection, scrollToSection } = useScrollSection();
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectDetailPage from './components/ProjectDetailPage';
+import LoadingScreen from './components/LoadingScreen'; // 🌟 引入刚建好的加载页
+
+function Home() {
+  // 记录整个网站资源是否加载完毕的全局状态
+  const [isAppLoaded, setIsAppLoaded] = useState(false);
+
+  // 在加载页未消失前，把滚动强制锁死在最顶部，防止手抖滑到下面
+  useEffect(() => {
+    if (!isAppLoaded) {
+      window.scrollTo(0, 0);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isAppLoaded]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <section id="introduction">
-        <Introduction />
-      </section>
-      <section id="programming">
-        <Programming />
-      </section>
-      <section id="architecture">
+    <>
+      {/* 🌟 放置加载幕布，当它触发完成时更新全局状态 */}
+      <LoadingScreen onComplete={() => setIsAppLoaded(true)} />
+
+      <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
+        <Navbar />
+        {/* 🌟 将状态传递给 Hero，让 Hero 等幕布拉开再播放酷炫入场 */}
+        <Hero isAppLoaded={isAppLoaded} />
+        <IntroductionPage />
+        <ExperiencePage />
+        <ExperienceListPage />
         <ArchitectureWorks />
-      </section>
-      <section id="contact">
+        <LandscapeWorksPage />
+        <AIGCWorksPage />
+        <GeneratedContent />
+        <Programming />
+        <MySpacePage />
+        <MySpaceListPage />
         <ContactPage />
-      </section>
-    </motion.div>
+      </ReactLenis> 
+    </>
   );
-};
+}
 
 function App() {
   return (
-    <Router basename="/">
-      <div className="app-container" style={{ position: 'relative', width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
-        {/* 全局导航栏 */}
-        <Navbar />
-
-        {/* 极光背景效果 */}
-        <AuroraEffect />
-
-        {/* 路由配置与页面切换动画 */}
-        <AnimatePresence mode="wait">
-          <Routes>
-            {/* 主页：包含 Introduction, Programming, Architecture, Contact 等 Section */}
-            <Route path="/" element={<HomePage />} />
-            
-            {/* 项目详情页 */}
-            <Route path="/project/:id" element={<ProjectDetailPage />} />
-          </Routes>
-        </AnimatePresence>
-
-        {/* 🌟 新增：Vercel Speed Insights 组件 */}
-        {/* 它在页面上不可见，但会自动收集性能数据 */}
-        <SpeedInsights />
-      </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+      </Routes>
     </Router>
   );
 }
