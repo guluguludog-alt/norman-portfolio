@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SonsieOne';
-  src: url('/fonts/SonsieOne-Regular.ttf') format('truetype');
+  src: url('../../public/fonts/SonsieOne-Regular.ttf') format('truetype');
 }
 
 .programming-page {
