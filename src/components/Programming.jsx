@@ -7,7 +7,7 @@ import Video2 from '../assets/Video2_web.mp4';
 import ClipoInterface from '../assets/ClipoInterface.png';
 import Bar from '../assets/Bar.png';
 import HistoryImg from '../assets/HistoryWindow.png';
-import Macbook from '../assets/Macbook.png';
+import Macbook from '../assets/MacBook.png';
 import iMacImg from '../assets/iMac.png';
 import MacstudioImg from '../assets/Macstudio.png';
 import GithubIcon from '../assets/Github.png';
