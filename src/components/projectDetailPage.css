@@ -22,7 +22,6 @@
   font-weight: 500;
   font-size: 14px;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
