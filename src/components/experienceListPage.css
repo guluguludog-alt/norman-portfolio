@@ -115,12 +115,13 @@
 
 /* 移除了旧的内部 mask，防止双层裁剪影响性能 */
 .company-text-mask {
-  font-family: "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
-  font-size: clamp(2.2rem, 2.5vw, 2.6rem); 
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
+  font-size: var(--zh-font-size, clamp(2.2rem, 2.5vw, 2.6rem));
   font-weight: 600;
   white-space: normal; 
   line-height: 1.4; 
   word-wrap: break-word; 
+  letter-spacing: var(--zh-letter-spacing, 0.02em);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;

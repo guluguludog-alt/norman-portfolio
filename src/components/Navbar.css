@@ -27,6 +27,12 @@
   width: 100% !important; 
   padding: 0 !important; 
   display: flex !important;
+  overflow: visible !important;
+}
+
+/* GlassSurface itself needs overflow visible for dropdown */
+.navbar-glass {
+  overflow: visible !important;
 }
 
 /* 前四个按钮的容器：撑满并使用 space-evenly 完美均匀分布 */
@@ -37,6 +43,13 @@
   align-items: center;
   margin: 0;
   padding: 0;
+}
+
+/* More dropdown wrapper */
+.more-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 /* 前四个链接文字样式 */
@@ -52,6 +65,46 @@
 .nav-links a:hover {
   opacity: 0.7;
   transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* More Dropdown Menu                        */
+/* ========================================= */
+.more-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 8px 0;
+  min-width: 150px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 0;
+  z-index: 1001;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.more-dropdown-item {
+  text-decoration: none;
+  color: #ffffff !important;
+  mix-blend-mode: normal !important;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.more-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* ========================================= */

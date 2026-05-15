@@ -11,6 +11,7 @@ import {
 } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useLenis } from 'lenis/react';
+import { useTranslation } from 'react-i18next';
 import './landscapeWorksPage.css';
 
 import LProject1 from "../assets/LProject1.png";
@@ -31,13 +32,16 @@ const DecodeText = ({ text, className = "", style = {} }) => {
     intervalRef.current = setInterval(() => {
       const newElements = [];
       for (let i = 0; i < text.length; i++) {
+        const isNonAscii = text.charCodeAt(i) > 127;
         if (iteration < i) {
           newElements.push(<span key={i} style={{ visibility: "hidden" }}>{text[i]}</span>);
         } else if (iteration >= i + lag) {
           newElements.push(<span key={i}>{text[i]}</span>);
         } else {
-          if (text[i] === ' ') {
-            newElements.push(<span key={i}> </span>);
+          if (text[i] === ' ' || text[i] === '\n') {
+            newElements.push(<span key={i}>{text[i]}</span>);
+          } else if (isNonAscii) {
+            newElements.push(<span key={i}>{text[i]}</span>);
           } else {
             newElements.push(<span key={i}>{letters[Math.floor(Math.random() * letters.length)]}</span>);
           }
@@ -61,52 +65,52 @@ const DecodeText = ({ text, className = "", style = {} }) => {
   );
 };
 
-const projectDataConfig = {
+const getProjectDataConfig = (t) => ({
   0: {
-    title: "Jinan Huangtai Central Park",
-    subtitle: "Jinan, Shandong, China",
+    title: t('landscape.project1.title'),
+    subtitle: t('landscape.project1.subtitle'),
     details: [
-      { label: "Site Area:", value: "Approximately 45 hectares" },
-      { label: "Commercial Gross Floor Area:", value: "2,300 m²" },
-      { label: "Completion Date:", value: "May 2024" }
+      { label: t('landscape.project1.label1'), value: t('landscape.project1.value1') },
+      { label: t('landscape.project1.label2'), value: t('landscape.project1.value2') },
+      { label: t('landscape.project1.label3'), value: t('landscape.project1.value3') }
     ]
   },
   1: {
-    title: "Ecological Bird Habitat Riverside Park",
-    subtitle: "Mianyang, Sichuan, China",
+    title: t('landscape.project2.title'),
+    subtitle: t('landscape.project2.subtitle'),
     details: [
-      { label: "Site Area:", value: "Approximately 10 hectares" },
-      { label: "Theme:", value: "Ecological Restoration and Bird Conservation" },
-      { label: "Completion Date:", value: "April 2022" }
+      { label: t('landscape.project2.label1'), value: t('landscape.project2.value1') },
+      { label: t('landscape.project2.label2'), value: t('landscape.project2.value2') },
+      { label: t('landscape.project2.label3'), value: t('landscape.project2.value3') }
     ]
   },
   2: {
-    title: "Qianfo Mountain Plaza",
-    subtitle: "Jinan, Shandong, China",
+    title: t('landscape.project3.title'),
+    subtitle: t('landscape.project3.subtitle'),
     details: [
-      { label: "Site Area:", value: "Approximately 10 hectares" },
-      { label: "Commercial Gross Floor Area:", value: "Approximately 1,500 m²" },
-      { label: "Completion Date:", value: "May 2023" }
+      { label: t('landscape.project3.label1'), value: t('landscape.project3.value1') },
+      { label: t('landscape.project3.label2'), value: t('landscape.project3.value2') },
+      { label: t('landscape.project3.label3'), value: t('landscape.project3.value3') }
     ]
   },
   3: {
-    title: "Jiangshan Mountain Park",
-    subtitle: "Jinan, Shandong, China",
+    title: t('landscape.project4.title'),
+    subtitle: t('landscape.project4.subtitle'),
     details: [
-      { label: "Site Area:", value: "Approximately 30 hectares" },
-      { label: "Theme:", value: "Disaster Prevention and Ecological Conservation" },
-      { label: "Completion Date:", value: "September 2023" }
+      { label: t('landscape.project4.label1'), value: t('landscape.project4.value1') },
+      { label: t('landscape.project4.label2'), value: t('landscape.project4.value2') },
+      { label: t('landscape.project4.label3'), value: t('landscape.project4.value3') }
     ]
   },
   4: {
-    title: "FISU Games Themed Floral Landscape Design",
-    subtitle: "Chengdu, Sichuan, China",
+    title: t('landscape.project5.title'),
+    subtitle: t('landscape.project5.subtitle'),
     details: [
-      { label: "Site Area:", value: "Approximately 3,000 m²" },
-      { label: "Completion Date:", value: "September 2022" }
+      { label: t('landscape.project5.label1'), value: t('landscape.project5.value1') },
+      { label: t('landscape.project5.label2'), value: t('landscape.project5.value2') }
     ]
   }
-};
+});
 
 const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress }) => {
   const scale = index === 0 ? 2.5 : index === 2 ? 1.7 : 2.05;
@@ -147,10 +151,10 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
   );
 };
 
-const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => {
+const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress, t }) => {
   const navigate = useNavigate();
   const scale = index === 0 ? 2.5 : index === 2 ? 1.7 : 2.05;
-  const projectData = projectDataConfig[index];
+  const projectData = getProjectDataConfig(t)[index];
 
   const textLagX = useTransform(smoothVelocity, [-3000, 0, 3000], [60, 0, -60]);
   const wrapperX = useTransform(galleryX, v => `calc(${v}px + 50vw - 560px - ${index * 850}px)`);
@@ -203,7 +207,7 @@ const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => 
               border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
               fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto',
               boxShadow: "0 4px 15px rgba(0,0,0,0.4)"
-            }}>Details</button>
+            }}>{t('landscape.details')}</button>
         </motion.div>
       </motion.div>
     </motion.div>
@@ -211,6 +215,7 @@ const PhotoTextItem = ({ index, galleryX, smoothVelocity, sectionProgress }) => 
 };
 
 export default function LandscapeWorksPage() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const galleryX = useMotionValue(0);
   const lenis = useLenis();
@@ -374,7 +379,7 @@ export default function LandscapeWorksPage() {
     <section id="landscape" className="landscape-portfolio-section" ref={containerRef} style={{ height: '100vh', backgroundColor: '#000', position: 'relative', width: '100%', overflow: 'visible', zIndex: 150 }}>
       
       <div className="landscape-hint-text">
-        Swipe through the gallery to explore more projects.
+        {t('landscape.swipeHint')}
       </div>
       <motion.div
         style={{
@@ -432,6 +437,7 @@ export default function LandscapeWorksPage() {
               galleryX={galleryX}
               smoothVelocity={smoothVelocity}
               sectionProgress={sectionProgress}
+              t={t}
             />
           ))}
         </motion.div>

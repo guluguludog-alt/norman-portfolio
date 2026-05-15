@@ -1,5 +1,6 @@
 import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useMotionValueEvent, animate, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './generatedContent.css';
 
 import GProject1 from '../assets/GProject1.png';
@@ -9,13 +10,13 @@ import GProject4 from '../assets/GProject4.png';
 import GProject5 from '../assets/GProject5.png';
 import GProject6 from '../assets/GProject6.png';
 
-const projects = [
-  { id: 1, img: GProject1, title: "Conceptual rendering of a smart factory" },
-  { id: 2, img: GProject2, title: "Commercial complex rendering" },
-  { id: 3, img: GProject3, title: "Bus terminal facade rendering" },
-  { id: 4, img: GProject4, title: "High-rise mixed-use complex rendering" },
-  { id: 5, img: GProject5, title: "Cyberpunk-style smart city poster" },
-  { id: 6, img: GProject6, title: "Bus transfer center rendering" },
+const getProjects = (t) => [
+  { id: 1, img: GProject1, title: t('generatedContent.project1') },
+  { id: 2, img: GProject2, title: t('generatedContent.project2') },
+  { id: 3, img: GProject3, title: t('generatedContent.project3') },
+  { id: 4, img: GProject4, title: t('generatedContent.project4') },
+  { id: 5, img: GProject5, title: t('generatedContent.project5') },
+  { id: 6, img: GProject6, title: t('generatedContent.project6') },
 ];
 
 /* =========================================
@@ -69,6 +70,9 @@ const GalleryItem = ({ index, smoothProgress, img, spreadProgress }) => {
    主组件
    ========================================= */
 export default function GeneratedContent() {
+  const { t, i18n } = useTranslation();
+  const isChinese = i18n.language === 'zh';
+  const projects = getProjects(t);
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   
@@ -174,7 +178,7 @@ export default function GeneratedContent() {
   return (
     <motion.section 
       id="generated-content" 
-      className="generated-content-page"
+      className={`generated-content-page${isChinese ? ' zh-lang' : ''}`}
       ref={sectionRef}
       style={{ 
         y: springOffset, /* 🌟 恢复的页面整体惯性阻尼移动效果 */

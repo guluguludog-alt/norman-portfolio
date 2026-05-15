@@ -13,6 +13,7 @@ import {
 } from 'framer-motion';
 import { ReactLenis, useLenis } from 'lenis/react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './architectureWorks.css';
 
 import Project1 from "../assets/Project1.jpg";
@@ -36,13 +37,16 @@ const DecodeText = ({ text, className = "", style = {} }) => {
     intervalRef.current = setInterval(() => {
       const newElements = [];
       for (let i = 0; i < text.length; i++) {
+        const isNonAscii = text.charCodeAt(i) > 127;
         if (iteration < i) {
           newElements.push(<span key={i} style={{ visibility: "hidden" }}>{text[i]}</span>);
         } else if (iteration >= i + lag) {
           newElements.push(<span key={i}>{text[i]}</span>);
         } else {
-          if (text[i] === ' ') {
-            newElements.push(<span key={i}> </span>);
+          if (text[i] === ' ' || text[i] === '\n') {
+            newElements.push(<span key={i}>{text[i]}</span>);
+          } else if (isNonAscii) {
+            newElements.push(<span key={i}>{text[i]}</span>);
           } else {
             newElements.push(<span key={i}>{letters[Math.floor(Math.random() * letters.length)]}</span>);
           }
@@ -69,57 +73,57 @@ const DecodeText = ({ text, className = "", style = {} }) => {
 /* ============================
    项目数据
    ============================ */
-const projectDataConfig = {
+const getProjectDataConfig = (t) => ({
   1: {
-    title: "Beichuan Erma Exhibition Hall",
-    subtitle: "Mianyang, Sichuan Province，China",
+    title: t('architecture.project1.title'),
+    subtitle: t('architecture.project1.subtitle'),
     details: [
-      { label: "Building Program:", value: "Embroidery Exhibition Hall and Rural Theater" },
-      { label: "Completion Date:", value: "September 2021" }
+      { label: t('architecture.project1.label1'), value: t('architecture.project1.value1') },
+      { label: t('architecture.project1.label2'), value: t('architecture.project1.value2') }
     ]
   },
   0: {
-    title: "Mahuangliang Art House Hotel Design",
-    subtitle: "Yulin, Shaanxi Province，China",
+    title: t('architecture.project2.title'),
+    subtitle: t('architecture.project2.subtitle'),
     details: [
-      { label: "Gross Floor Area:", value: "Approximately 10,000 m²" },
-      { label: "Number of Guest Rooms:", value: "Approximately 40 Rooms" },
-      { label: "Completion Date:", value: "October 2024" }
+      { label: t('architecture.project2.label1'), value: t('architecture.project2.value1') },
+      { label: t('architecture.project2.label2'), value: t('architecture.project2.value2') },
+      { label: t('architecture.project2.label3'), value: t('architecture.project2.value3') }
     ]
   },
   4: {
-    title: "Adaptive Reuse Design of the Former Glass Factory",
-    subtitle: "Urumqi, Xinjiang，China",
+    title: t('architecture.project3.title'),
+    subtitle: t('architecture.project3.subtitle'),
     details: [
-      { label: "Building Program:", value: "Commercial, Marketplace, and Cultural & Creative Park" },
-      { label: "Completion Date:", value: "March 2025" }
+      { label: t('architecture.project3.label1'), value: t('architecture.project3.value1') },
+      { label: t('architecture.project3.label2'), value: t('architecture.project3.value2') }
     ]
   },
   3: {
-    title: "High-Rise Urban Mixed-Use Complex",
-    subtitle: "Zhengzhou, Henan Province，China",
+    title: t('architecture.project4.title'),
+    subtitle: t('architecture.project4.subtitle'),
     details: [
-      { label: "Gross Floor Area:", value: "49,929.1 m²" },
-      { label: "Number of Floors:", value: "22 Above Ground, 2 Below Ground" },
-      { label: "Building Density:", value: "49.9%" },
-      { label: "Completion Date:", value: "June 2025" }
+      { label: t('architecture.project4.label1'), value: t('architecture.project4.value1') },
+      { label: t('architecture.project4.label2'), value: t('architecture.project4.value2') },
+      { label: t('architecture.project4.label3'), value: t('architecture.project4.value3') },
+      { label: t('architecture.project4.label4'), value: t('architecture.project4.value4') }
     ]
   },
   2: {
-    title: "Xiangning County Nursing Home",
-    subtitle: "Linfen, Shanxi Province，China",
+    title: t('architecture.project5.title'),
+    subtitle: t('architecture.project5.subtitle'),
     details: [
-      { label: "Number of Beds:", value: "200 Beds" },
-      { label: "Gross Floor Area:", value: "Approximately 10,000 m²" },
-      { label: "Completion Date:", value: "October 2025" }
+      { label: t('architecture.project5.label1'), value: t('architecture.project5.value1') },
+      { label: t('architecture.project5.label2'), value: t('architecture.project5.value2') },
+      { label: t('architecture.project5.label3'), value: t('architecture.project5.value3') }
     ]
   }
-};
+});
 
 /* ============================
    PhotoItem 组件
    ============================ */
-const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocity, galleryX }) => {
+const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocity, galleryX, t }) => {
   const navigate = useNavigate();
   const lerp = (start, end, t) => start + (end - start) * t;
   const easeInOut = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -301,7 +305,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
   const zIndex = useTransform(() => Math.round(30 - visualSlotIndex));
   const filter = useMotionTemplate`blur(${blurVal}px) brightness(${brightVal}) saturate(${satVal})`;
 
-  const projectData = projectDataConfig[index];
+  const projectData = getProjectDataConfig(t)[index];
 
   const lagX = useTransform(smoothVelocity, [-3000, 0, 3000], [120, 0, -120]);
   const rotateY = useTransform(smoothVelocity, [-3000, 0, 3000], [12, 0, -12]);
@@ -392,7 +396,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
                       border: 'none', borderRadius: 6, fontSize: 14, fontWeight: 'bold', cursor: 'pointer', alignSelf: 'flex-end',
                       fontFamily: "'SansSerifFLF', sans-serif", pointerEvents: 'auto'
                     }}
-                  >Details</button>
+                  >{t('architecture.details')}</button>
                 </motion.div>
               </>
             )}
@@ -407,6 +411,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
    ArchitectureWorks 主组件
    ============================ */
 export default function ArchitectureWorks() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const galleryX = useMotionValue(0);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -628,7 +633,7 @@ export default function ArchitectureWorks() {
   ];
 
   return (
-    <section id="architecture-works" className="architecture-works-section" ref={containerRef}>
+    <section id="architecture" className="architecture-works-section" ref={containerRef}>
       <div className="sticky-viewport"
         onPointerDown={onPointerDown}
         style={{ touchAction: 'none', cursor: isExpanded ? 'grab' : 'default', perspective: 1500 }}
@@ -681,6 +686,7 @@ export default function ArchitectureWorks() {
               showText={showText}
               smoothVelocity={smoothVelocity}
               galleryX={galleryX}
+              t={t}
             />
           ))}
         </motion.div>

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence, useMotionValue } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import AnimatedSticker from './AnimatedSticker'; 
 import './mySpaceListPage.css';
 
@@ -69,6 +70,7 @@ const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, onHover, o
 };
 
 export default function MySpaceListPage() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -91,10 +93,10 @@ export default function MySpaceListPage() {
   const lines = [
     { text: "MY CAT", images: [Cat1Img, Cat2Img, Cat3Img, Cat4Img, Cat5Img] },
     { text: "MY FRIENDS", images: [Friends1Img, Friends2Img, Friends3Img, Friends4Img] },
-    { text: "MY MUSIC", images: [Music1Img, Music2Img, Music3Img, Music4Img, Music5Img] },
-    { text: "MY MOVIE", images: [Movie1Img, Movie2Img, Movie3Img, Movie4Img] },
-    { text: "MY GAMES", images: [GamesImg] },
-    { text: "MY BOOKS", images: [Books1Img, Books2Img] }
+    { text: "FREQUENCY", images: [Music1Img, Music2Img, Music3Img, Music4Img, Music5Img] },
+    { text: "FRAMES I LOVE", images: [Movie1Img, Movie2Img, Movie3Img, Movie4Img] },
+    { text: "GAMES I PLAY", images: [GamesImg] },
+    { text: "BOOKS I KEEP", images: [Books1Img, Books2Img] }
   ];
 
   // 🌟 独立进度控制：确保 scroll 没到 0.1 / 0.25 之前，progress 严格为 0，从而触发隐藏状态
@@ -140,7 +142,7 @@ export default function MySpaceListPage() {
       </div>
 
       <div className="myspace-hover-hint">
-        Hover over the text to preview the image.
+        {t('myspaceList.hoverHint')}
       </div>
 
       <AnimatePresence>

@@ -1,11 +1,13 @@
 import React, { useRef, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLenis } from 'lenis/react';
+import { useTranslation } from 'react-i18next';
 import Aurora from './AuroraEffect'; 
 import MailIcon from '../assets/Mailicon.png';
 import './contactPage.css';
 
 export default function ContactPage() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const lenis = useLenis();
 
@@ -98,7 +100,7 @@ export default function ContactPage() {
           className="contact-back-to-top"
           onClick={scrollToTop}
         >
-          Back to Top
+          {t('contact.backToTop')}
         </button>
       </div>
 

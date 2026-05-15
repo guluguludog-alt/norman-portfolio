@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './experienceListPage.css';
 import starBg from '../assets/Starbackground.png'; 
 
@@ -132,6 +133,8 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
 
 export default function ExperienceListPage() {
   const containerRef = useRef(null);
+  const { t, i18n } = useTranslation();
+  const isChinese = i18n.language === 'zh';
 
   const { scrollYProgress: textScrollProgress } = useScroll({
     target: containerRef,
@@ -146,11 +149,11 @@ export default function ExperienceListPage() {
   const bgY = useTransform(bgScrollProgress, [0, 1], ["-10%", "10%"]);
 
   const companies = [
-    { name: "Architectural Design and Research Institute of Xi'an University of Architecture and Technology", position: "Architecture Intern", time: "2024.9-2025.9" },
-    { name: "Beijing Qinghua Tongheng Planning and Design Institute Co., Ltd. (THUPDI)", position: "Intern", time: "2025.11-2026.1" },
-    { name: "China United Northwest Institute for Engineering Design & Research Co., Ltd.", position: "Architecture Intern", time: "2026.3-2026.6" },
-    { name: "Diyouni Design Institute", position: "Teaching Assistant", time: "" },
-    { name: "Zhuchuang Architectural Design Studio", position: "Architecture Intern", time: "2026.1-2026.3" }
+    { name: t('experienceList.company1'), position: t('experienceList.position1'), time: t('experienceList.time1') },
+    { name: t('experienceList.company2'), position: t('experienceList.position2'), time: t('experienceList.time2') },
+    { name: t('experienceList.company3'), position: t('experienceList.position3'), time: t('experienceList.time3') },
+    { name: t('experienceList.company4'), position: t('experienceList.position4'), time: t('experienceList.time4') },
+    { name: t('experienceList.company5'), position: t('experienceList.position5'), time: t('experienceList.time5') }
   ];
 
   return (
@@ -167,7 +170,7 @@ export default function ExperienceListPage() {
         }}
       />
 
-      <div className="company-list-container">
+      <div className="company-list-container" style={isChinese ? { '--zh-font-size': 'clamp(2.6rem, 3vw, 3.2rem)', '--zh-letter-spacing': '0.15em' } : {}}>
         {companies.map((company, index) => (
           <CompanyItem 
             key={index}

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useInView, useMotionValue, animate, motion, useTransform, useMotionTemplate } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './programming.css';
 
 import Video2 from '../assets/Video2_web.mp4';
@@ -14,6 +15,9 @@ import FileIcon from '../assets/File.png';
 import PlaycircleIcon from '../assets/Playcircle.png';
 
 export default function Programming() {
+  const { t, i18n } = useTranslation();
+  const isChinese = i18n.language === 'zh';
+  const syncFontFamily = "'Dela Gothic One', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', '华文黑体', 'STHeiti', 'Segoe UI', Arial, 'Microsoft YaHei', '微软雅黑', sans-serif";
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
   
@@ -250,7 +254,7 @@ export default function Programming() {
   }, [syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity]);
 
   return (
-    <section id="programming" className="programming-page" ref={sectionRef}>
+    <section id="programming" className={`programming-page${isChinese ? ' zh-lang' : ''}`} ref={sectionRef}>
       <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
         <defs>
           <filter id="water-ripple" x="-20%" y="-20%" width="140%" height="140%">
@@ -322,14 +326,14 @@ export default function Programming() {
           className="sync-text-container"
           style={{ opacity: syncTextOpacity, x: syncTextX, y: syncTextY, filter: syncTextBlurString }}
         >
-          <motion.h2 style={{ backgroundImage: animatedGradient }}>Seamlessly<br/>sync across<br/>your Macs</motion.h2>
+          <motion.h2 style={{ backgroundImage: animatedGradient, fontFamily: syncFontFamily }}>{t('programming.syncTitle')}</motion.h2>
         </motion.div>
 
         <motion.div 
           className="sync-text-container sync-text-second"
           style={{ opacity: sweep2TextOpacity, x: syncTextX, y: syncTextY, filter: sweep2TextBlurString }}
         >
-          <motion.h2 style={{ backgroundImage: animatedGradient2 }}>Clipo is free<br/>and open-source</motion.h2>
+          <motion.h2 style={{ backgroundImage: animatedGradient2, fontFamily: syncFontFamily }}>{t('programming.clipoTitle')}</motion.h2>
         </motion.div>
 
         <motion.div 

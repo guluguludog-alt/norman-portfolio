@@ -36,8 +36,8 @@
 }
 
 .gc-title-text {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(1.5rem, 2.8vw, 3.2rem); 
+  font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 2.8rem); 
   font-weight: 900;
   line-height: 1.25; /* 让多行文本紧凑美观 */
   color: #ffffff;
@@ -45,6 +45,11 @@
   margin-top: -10px;
   letter-spacing: 1px;
   word-wrap: break-word; /* 允许过长时自然换行 */
+}
+
+/* 中文模式：移除 Dela Gothic One，使用标准中文字体栈 */
+.zh-lang .gc-title-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
 }
 
 /* =========================================

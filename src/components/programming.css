@@ -64,12 +64,12 @@
 .history-left-side { flex: 1.2; display: flex; justify-content: flex-end; }
 .history-window-image { width: auto; max-width: 45%; height: auto; max-height: 70%; object-fit: contain; }
 .history-right-side { flex: 0.8; display: flex; justify-content: flex-start; padding-left: 2%; }
-.powered-by-text { font-family: 'Dela Gothic One', cursive, sans-serif; color: #ffffff; font-size: clamp(2rem, 5.5cqw, 6rem); line-height: 1.15; text-align: left; margin: 0; }
+.powered-by-text { font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif; color: #ffffff; font-size: clamp(2rem, 5.5cqw, 6rem); line-height: 1.15; text-align: left; margin: 0; }
 
 .bar-content-wrapper { position: absolute; inset: 0; pointer-events: none; z-index: 30; will-change: filter, opacity; container-type: inline-size;}
 .bar-content-wrapper.bar-exit { animation: simpleFadeOut 0.8s ease-in both; }
 .bar-title-wrapper { position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); width: 95%; display: flex; justify-content: center; }
-.bar-title { font-family: 'Dela Gothic One', cursive, sans-serif; color: #ffffff; margin: 0; letter-spacing: 1px; text-align: center; white-space: nowrap; font-size: 4.6cqw; line-height: 1.1; animation: simpleFadeIn 0.85s ease-out 0.8s both; }
+.bar-title { font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif; color: #ffffff; margin: 0; letter-spacing: 1px; text-align: center; white-space: nowrap; font-size: 4.6cqw; line-height: 1.1; animation: simpleFadeIn 0.85s ease-out 0.8s both; }
 .bar-image-wrapper { position: absolute; bottom: 25%; left: 50%; transform: translate(-50%, 50%); width: 75%; display: flex; justify-content: center; }
 .bar-image { width: 100%; height: auto; object-fit: contain; animation: simpleFadeIn 0.85s ease-out 0.9s both; }
 
@@ -90,8 +90,8 @@
 .clipo-interface-wrapper.clipo-exit { animation: simpleFadeOut 1.2s ease-in both; }
 .clipo-interface-image { max-width: 55%; max-height: 55%; animation: simpleFadeIn 1.1s ease-out 0.2s both; }
 .clipo-text-group { text-align: center; }
-.clipo-text-top { font-family: 'Dela Gothic One'; font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; margin: 0; animation: simpleFadeIn 1.4s ease-out 0.05s both; }
-.clipo-text-bottom { font-family: 'SonsieOne'; font-size: clamp(2.8rem, 5.5vw, 4.5rem); color: #0016d8; margin: 0; animation: simpleFadeIn 1.4s ease-out 0.15s both; }
+.clipo-text-top { font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); color: #fff; margin: 0; animation: simpleFadeIn 1.4s ease-out 0.05s both; }
+.clipo-text-bottom { font-family: 'SonsieOne', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif; font-size: clamp(2.8rem, 5.5vw, 4.5rem); color: #0016d8; margin: 0; animation: simpleFadeIn 1.4s ease-out 0.15s both; }
 .fade-out-all { animation: simpleFadeOut 1.5s ease-in both; pointer-events: none; }
 
 .macbook-overlay-image { position: absolute; width: 131.2%; height: auto; max-width: none; z-index: 50; pointer-events: none; }
@@ -110,8 +110,9 @@
    🌟 全局公用文字属性
    ========================================= */
 .sync-text-container h2 {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
   line-height: 1.25;
+  white-space: pre-line;
   padding-bottom: 0.2em;
   margin: 0;
   color: transparent;
@@ -128,7 +129,7 @@
   border-radius: clamp(8px, 1vw, 12px);
   padding: clamp(8px, 1vw, 14px) clamp(16px, 2vw, 28px);
   cursor: pointer;
-  font-family: 'Dela Gothic One', cursive, sans-serif; 
+  font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif; 
   font-size: clamp(0.7rem, 1vw, 1.1rem);
   color: #000000; letter-spacing: 1px;
   transition: box-shadow 0.2s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -136,7 +137,7 @@
 
 .sweep2-btn:hover { box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); }
 .sweep2-btn-icon { width: clamp(16px, 1.5vw, 26px); height: auto; object-fit: contain; }
-.sweep2-btn-hover-text { font-family: 'Dela Gothic One', cursive, sans-serif; font-size: clamp(0.6rem, 0.8vw, 1rem); color: #666666; letter-spacing: 1px; white-space: nowrap; }
+.sweep2-btn-hover-text { font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif; font-size: clamp(0.6rem, 0.8vw, 1rem); color: #666666; letter-spacing: 1px; white-space: nowrap; }
 
 .programming-play-container { position: absolute; bottom: 30px; right: 30px; z-index: 60; display: flex; align-items: center; gap: 12px; pointer-events: auto; }
 .programming-play-label { font-family: 'SansSerifFLF', 'Georgia', serif; font-size: clamp(12px, 1.2vw, 15px); color: rgba(255, 255, 255, 0.7); letter-spacing: 3px; }
@@ -240,6 +241,15 @@
     font-size: clamp(1.2rem, 5vw, 2.5rem);
     white-space: normal;
   }
+}
+
+/* =========================================
+   🌟 中文模式：使用标准中文字体栈，移除 Dela Gothic One / SonsieOne
+   ========================================= */
+.zh-lang .sweep2-btn,
+.zh-lang .sweep2-btn-hover-text,
+.zh-lang .sync-text-container h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
 }
 
 /* =========================================

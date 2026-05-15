@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "aigc": "AIGC",
+    "architecture": "建筑",
+    "landscape": "景观",
+    "more": "更多",
+    "contactMe": "联系我"
+  },
+  "introduction": {
+    "skills": "技能",
+    "education": "教育背景",
+    "school1": "山东建筑大学",
+    "major1": "风景园林",
+    "degree1": "学士",
+    "school2": "西安建筑科技大学",
+    "major2": "建筑学",
+    "degree2": "硕士"
+  },
+  "experienceList": {
+    "company1": "西安建筑科技大学建筑设计研究院",
+    "position1": "建筑实习生",
+    "time1": "2024.9-2025.9",
+    "company2": "北京清华同衡规划设计研究院有限公司",
+    "position2": "实习生",
+    "time2": "2025.11-2026.1",
+    "company3": "中联西北工程设计研究院有限公司",
+    "position3": "建筑实习生",
+    "time3": "2026.3-2026.6",
+    "company4": "迪优尼设计学院",
+    "position4": "助教",
+    "time4": "",
+    "company5": "筑创建筑设计工作室",
+    "position5": "建筑实习生",
+    "time5": "2026.1-2026.3"
+  },
+  "architecture": {
+    "project1": {
+      "title": "北川尔玛展览馆",
+      "subtitle": "四川绵阳",
+      "label1": "建筑功能：",
+      "value1": "刺绣展览馆与乡村剧场",
+      "label2": "完成日期：",
+      "value2": "2021年9月"
+    },
+    "project2": {
+      "title": "麻黄梁艺术酒店设计",
+      "subtitle": "陕西榆林",
+      "label1": "建筑面积：",
+      "value1": "约10,000 m²",
+      "label2": "客房数量：",
+      "value2": "约40间",
+      "label3": "完成日期：",
+      "value3": "2024年10月"
+    },
+    "project3": {
+      "title": "旧玻璃厂改造设计",
+      "subtitle": "新疆乌鲁木齐",
+      "label1": "建筑功能：",
+      "value1": "商业、集市及文创园区",
+      "label2": "完成日期：",
+      "value2": "2025年3月"
+    },
+    "project4": {
+      "title": "城市高层综合体",
+      "subtitle": "河南郑州",
+      "label1": "建筑面积：",
+      "value1": "49,929.1 m²",
+      "label2": "层数：",
+      "value2": "地上22层，地下2层",
+      "label3": "建筑密度：",
+      "value3": "49.9%",
+      "label4": "完成日期：",
+      "value4": "2025年6月"
+    },
+    "project5": {
+      "title": "乡宁县养老院",
+      "subtitle": "山西临汾",
+      "label1": "床位数量：",
+      "value1": "200张",
+      "label2": "建筑面积：",
+      "value2": "约10,000 m²",
+      "label3": "完成日期：",
+      "value3": "2025年10月"
+    },
+    "details": "详情"
+  },
+  "landscape": {
+    "project1": {
+      "title": "济南黄台中央公园",
+      "subtitle": "山东济南",
+      "label1": "用地面积：",
+      "value1": "约45公顷",
+      "label2": "商业建筑面积：",
+      "value2": "2,300 m²",
+      "label3": "完成日期：",
+      "value3": "2024年5月"
+    },
+    "project2": {
+      "title": "生态鸟类栖息地滨江公园",
+      "subtitle": "四川绵阳",
+      "label1": "用地面积：",
+      "value1": "约10公顷",
+      "label2": "主题：",
+      "value2": "生态修复与鸟类保护",
+      "label3": "完成日期：",
+      "value3": "2022年4月"
+    },
+    "project3": {
+      "title": "千佛山广场",
+      "subtitle": "山东济南",
+      "label1": "用地面积：",
+      "value1": "约10公顷",
+      "label2": "商业建筑面积：",
+      "value2": "约1,500 m²",
+      "label3": "完成日期：",
+      "value3": "2023年5月"
+    },
+    "project4": {
+      "title": "蒋山山体公园",
+      "subtitle": "山东济南",
+      "label1": "用地面积：",
+      "value1": "约30公顷",
+      "label2": "主题：",
+      "value2": "防灾减灾与生态保育",
+      "label3": "完成日期：",
+      "value3": "2023年9月"
+    },
+    "project5": {
+      "title": "大运会主题花卉景观设计",
+      "subtitle": "四川成都",
+      "label1": "用地面积：",
+      "value1": "约3,000 m²",
+      "label2": "完成日期：",
+      "value2": "2022年9月"
+    },
+    "details": "详情",
+    "swipeHint": "左右拖动查看更多项目"
+  },
+  "generatedContent": {
+    "project1": "智能工厂概念效果图",
+    "project2": "商业综合体效果图",
+    "project3": "公交枢纽立面效果图",
+    "project4": "高层综合体效果图",
+    "project5": "赛博朋克风格智慧城市海报",
+    "project6": "公交换乘中心效果图"
+  },
+  "programming": {
+    "syncTitle": "无缝\n同步至你的\n全部 Mac",
+    "clipoTitle": "Clipo 免费\n且开源"
+  },
+  "myspaceList": {
+    "hoverHint": "将光标放在文字上来查看图片"
+  },
+  "hero": {
+    "scroll": "向下滚动"
+  },
+  "contact": {
+    "backToTop": "返回顶部"
+  }
+}

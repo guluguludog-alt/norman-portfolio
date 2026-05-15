@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "aigc": "AIGC",
+    "architecture": "Architecture",
+    "landscape": "Landscape",
+    "more": "More",
+    "contactMe": "Contact me"
+  },
+  "introduction": {
+    "skills": "Skills",
+    "education": "Education",
+    "school1": "Shandong Jianzhu University",
+    "major1": "Landscape Architecture",
+    "degree1": "Bachelor",
+    "school2": "Xi'an University of\nArchitecture and Technology",
+    "major2": "Architecture",
+    "degree2": "Master"
+  },
+  "experienceList": {
+    "company1": "Architectural Design and Research Institute of Xi'an University of Architecture and Technology",
+    "position1": "Architecture Intern",
+    "time1": "2024.9-2025.9",
+    "company2": "Beijing Qinghua Tongheng Planning and Design Institute Co., Ltd. (THUPDI)",
+    "position2": "Intern",
+    "time2": "2025.11-2026.1",
+    "company3": "China United Northwest Institute for Engineering Design & Research Co., Ltd.",
+    "position3": "Architecture Intern",
+    "time3": "2026.3-2026.6",
+    "company4": "Diyouni Design Institute",
+    "position4": "Teaching Assistant",
+    "time4": "",
+    "company5": "Zhuchuang Architectural Design Studio",
+    "position5": "Architecture Intern",
+    "time5": "2026.1-2026.3"
+  },
+  "architecture": {
+    "project1": {
+      "title": "Beichuan Erma Exhibition Hall",
+      "subtitle": "Mianyang, Sichuan Province, China",
+      "label1": "Building Program:",
+      "value1": "Embroidery Exhibition Hall and Rural Theater",
+      "label2": "Completion Date:",
+      "value2": "September 2021"
+    },
+    "project2": {
+      "title": "Mahuangliang Art House Hotel Design",
+      "subtitle": "Yulin, Shaanxi Province, China",
+      "label1": "Gross Floor Area:",
+      "value1": "Approximately 10,000 m²",
+      "label2": "Number of Guest Rooms:",
+      "value2": "Approximately 40 Rooms",
+      "label3": "Completion Date:",
+      "value3": "October 2024"
+    },
+    "project3": {
+      "title": "Adaptive Reuse Design of the Former Glass Factory",
+      "subtitle": "Urumqi, Xinjiang, China",
+      "label1": "Building Program:",
+      "value1": "Commercial, Marketplace, and Cultural & Creative Park",
+      "label2": "Completion Date:",
+      "value2": "March 2025"
+    },
+    "project4": {
+      "title": "High-Rise Urban Mixed-Use Complex",
+      "subtitle": "Zhengzhou, Henan Province, China",
+      "label1": "Gross Floor Area:",
+      "value1": "49,929.1 m²",
+      "label2": "Number of Floors:",
+      "value2": "22 Above Ground, 2 Below Ground",
+      "label3": "Building Density:",
+      "value3": "49.9%",
+      "label4": "Completion Date:",
+      "value4": "June 2025"
+    },
+    "project5": {
+      "title": "Xiangning County Nursing Home",
+      "subtitle": "Linfen, Shanxi Province, China",
+      "label1": "Number of Beds:",
+      "value1": "200 Beds",
+      "label2": "Gross Floor Area:",
+      "value2": "Approximately 10,000 m²",
+      "label3": "Completion Date:",
+      "value3": "October 2025"
+    },
+    "details": "Details"
+  },
+  "landscape": {
+    "project1": {
+      "title": "Jinan Huangtai Central Park",
+      "subtitle": "Jinan, Shandong, China",
+      "label1": "Site Area:",
+      "value1": "Approximately 45 hectares",
+      "label2": "Commercial Gross Floor Area:",
+      "value2": "2,300 m²",
+      "label3": "Completion Date:",
+      "value3": "May 2024"
+    },
+    "project2": {
+      "title": "Ecological Bird Habitat Riverside Park",
+      "subtitle": "Mianyang, Sichuan, China",
+      "label1": "Site Area:",
+      "value1": "Approximately 10 hectares",
+      "label2": "Theme:",
+      "value2": "Ecological Restoration and Bird Conservation",
+      "label3": "Completion Date:",
+      "value3": "April 2022"
+    },
+    "project3": {
+      "title": "Qianfo Mountain Plaza",
+      "subtitle": "Jinan, Shandong, China",
+      "label1": "Site Area:",
+      "value1": "Approximately 10 hectares",
+      "label2": "Commercial Gross Floor Area:",
+      "value2": "Approximately 1,500 m²",
+      "label3": "Completion Date:",
+      "value3": "May 2023"
+    },
+    "project4": {
+      "title": "Jiangshan Mountain Park",
+      "subtitle": "Jinan, Shandong, China",
+      "label1": "Site Area:",
+      "value1": "Approximately 30 hectares",
+      "label2": "Theme:",
+      "value2": "Disaster Prevention and Ecological Conservation",
+      "label3": "Completion Date:",
+      "value3": "September 2023"
+    },
+    "project5": {
+      "title": "FISU Games Themed Floral Landscape Design",
+      "subtitle": "Chengdu, Sichuan, China",
+      "label1": "Site Area:",
+      "value1": "Approximately 3,000 m²",
+      "label2": "Completion Date:",
+      "value2": "September 2022"
+    },
+    "details": "Details",
+    "swipeHint": "Swipe through the gallery to explore more projects."
+  },
+  "generatedContent": {
+    "project1": "Smart Factory Conceptual Rendering",
+    "project2": "Commercial Complex Rendering",
+    "project3": "Bus Terminal Facade Rendering",
+    "project4": "High-Rise Mixed-Use Complex Rendering",
+    "project5": "Cyberpunk-Style Smart City Poster",
+    "project6": "Bus Transfer Center Rendering"
+  },
+  "programming": {
+    "syncTitle": "Seamlessly\nsync across\nyour Macs",
+    "clipoTitle": "Clipo is free\nand open-source"
+  },
+  "myspaceList": {
+    "hoverHint": "Hover over the text to preview the image."
+  },
+  "hero": {
+    "scroll": "Scroll"
+  },
+  "contact": {
+    "backToTop": "Back to Top"
+  }
+}

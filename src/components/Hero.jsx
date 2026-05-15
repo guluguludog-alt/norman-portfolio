@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion'; // 🌟 引入滚动监听
+import { useTranslation } from 'react-i18next';
 import RotatingText from "./RotatingText";
 import DecryptedText from "./DecryptedText";
 
 export default function Hero({ isAppLoaded }) {
+  const { t } = useTranslation();
   const [offset, setOffset] = useState({ x: 40, y: -30 });
   const [opacity, setOpacity] = useState(0);
   const [isScrolledPast, setIsScrolledPast] = useState(false); // 🌟 记录是否已经滑过首屏
@@ -102,7 +104,7 @@ export default function Hero({ isAppLoaded }) {
       </div>
 
       <div className="scroll-indicator" onClick={() => document.getElementById('introduction').scrollIntoView()}>
-        Scroll
+        {t('hero.scroll')}
         <div className="scroll-arrow"></div>
       </div>
     </section>

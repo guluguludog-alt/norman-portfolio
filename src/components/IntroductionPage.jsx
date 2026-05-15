@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './introductionPage.css';
 import Aurora from './AuroraEffect';
 import BorderGlow from './BorderGlow';
@@ -8,6 +9,7 @@ import avatarImg from '../assets/avatar.png';
 
 export default function IntroductionPage() {
   const targetRef = useRef(null);
+  const { t } = useTranslation();
 
   const dragRef = useRef(null);
   const dragX = useMotionValue(0);
@@ -156,7 +158,7 @@ export default function IntroductionPage() {
               fillOpacity={0}
             >
               <div className="box-inner-content">
-                <h3 className="box-title">Skills</h3>
+                <h3 className="box-title">{t('introduction.skills')}</h3>
                 <div className="skills-list">
                   {skills.map((skill, index) => (
                     <div className="skill-item" key={index}>
@@ -189,23 +191,23 @@ export default function IntroductionPage() {
               fillOpacity={0}
             >
               <div className="box-inner-content">
-                <h3 className="box-title">Education</h3>
+                <h3 className="box-title">{t('introduction.education')}</h3>
 
                 <div className="edu-item">
-                  <h4 className="school-name">Shandong Jianzhu University</h4>
+                  <h4 className="school-name">{t('introduction.school1')}</h4>
                   <div className="edu-divider"></div>
                   <div className="edu-details">
-                    <span className="major">Landscape Architecture</span>
-                    <span className="degree blue-text">Bachelor</span>
+                    <span className="major">{t('introduction.major1')}</span>
+                    <span className="degree blue-text">{t('introduction.degree1')}</span>
                   </div>
                 </div>
 
                 <div className="edu-item" style={{ marginTop: '40px' }}>
-                  <h4 className="school-name">Xi'an University of<br />Architecture and Technology</h4>
+                  <h4 className="school-name">{t('introduction.school2')}</h4>
                   <div className="edu-divider"></div>
                   <div className="edu-details">
-                    <span className="major">Architecture</span>
-                    <span className="degree blue-text">Master</span>
+                    <span className="major">{t('introduction.major2')}</span>
+                    <span className="degree blue-text">{t('introduction.degree2')}</span>
                   </div>
                 </div>
               </div>
