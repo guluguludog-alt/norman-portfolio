@@ -43,6 +43,7 @@ The content is organized as follows:
 public/
   fonts/
     Aquatico-Regular.otf
+    DelaGothicOne-Regular.ttf
     SansSerifFLF.otf
     SonsieOne-Regular.ttf
   myspace_frames/
@@ -2064,56 +2065,6 @@ export default function LoadingScreen({ onComplete }) {
 }
 </file>
 
-<file path="src/components/mySpacePage.css">
-/* src/components/mySpacePage.css */
-
-.my-space-page-container {
-  background-color: #000;
-  position: relative;
-  z-index: 99; 
-  width: 100%;
-  /* 严格锁定高度为1个屏幕，不干涉任何排版 */
-  height: 100vh; 
-  /* 居中包裹 Canvas */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.myspace-sequence-canvas {
-  width: 100vw;
-  height: 100vh;
-  display: block;
-}
-
-/* =========================================
-   PC端布局 (>900px): 撑满、无留白、不裁切
-   ========================================= */
-@media (min-width: 901px) {
-  .myspace-sequence-canvas {
-    object-fit: fill; 
-  }
-}
-
-/* =========================================
-   移动端布局 (<=900px): 图片缩小60%，上下对齐页面边缘，左右可出页面
-   ========================================= */
-@media (max-width: 900px) {
-  .my-space-page-container {
-    height: 40vh;
-    overflow: visible;
-  }
-
-  .myspace-sequence-canvas {
-    width: auto;
-    height: 40vh;
-    aspect-ratio: 1920 / 1080;
-    object-fit: fill;
-  }
-}
-</file>
-
 <file path="src/components/PortfolioSection.jsx">
 import React, { useState, useRef } from 'react';
 
@@ -2895,7 +2846,14 @@ export default i18n;
 </file>
 
 <file path="src/index.css">
-
+/* Dela Gothic One - Local Font */
+@font-face {
+  font-family: 'Dela Gothic One';
+  src: url('/fonts/DelaGothicOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 </file>
 
 <file path=".gitignore">
@@ -4033,387 +3991,53 @@ export default function ExperiencePage() {
 }
 </file>
 
-<file path="src/components/mySpaceListPage.css">
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+<file path="src/components/mySpacePage.css">
+/* src/components/mySpacePage.css */
 
-.my-space-list-page-container {
+.my-space-page-container {
   background-color: #000;
   position: relative;
-  z-index: 110; 
+  z-index: 99; 
   width: 100%;
-  height: 100vh;
-  margin-top: 0; 
-  overflow: visible; 
-}
-
-.myspace-text-container {
-  position: absolute;
-  top: -25vh; 
-  left: 0;
+  /* 严格锁定高度为1个屏幕，不干涉任何排版 */
+  height: 100vh; 
+  /* 居中包裹 Canvas */
   display: flex;
-  flex-direction: column;
-  pointer-events: none;
-  overflow: visible; 
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.myspace-text-line {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  display: inline-flex;
-  align-items: baseline; 
-  line-height: 1.1;      
-  padding: 0.2em 0;
-  margin-top: -0.1em;
-  margin-bottom: -0.1em;
-  white-space: nowrap;
-  width: fit-content;
-  overflow: visible;
-  pointer-events: auto;
-  cursor: crosshair; 
-}
-
-/* 🌟 增加高度 (vh) 响应式限制，防止文字和右下角的字重叠 */
-.myspace-main-text {
-  font-size: clamp(3rem, min(9.5vw, 14vh), 12rem);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  display: inline-block;
+.myspace-sequence-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
 }
 
 /* =========================================
-   鼠标跟随预览图片样式
+   PC端布局 (>900px): 撑满、无留白、不裁切
    ========================================= */
-.myspace-hover-image-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: clamp(220px, 20vw, 360px);
-  aspect-ratio: 4 / 5;
-  pointer-events: none; 
-  z-index: 9999;
-  margin-left: 3vw; 
-  margin-top: -15vh;
-  border-radius: 16px;
-  overflow: hidden; 
-}
-
-.myspace-hover-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+@media (min-width: 901px) {
+  .myspace-sequence-canvas {
+    object-fit: fill; 
+  }
 }
 
 /* =========================================
-   React版 PNG 贴纸样式
+   移动端布局 (<=900px): 图片缩小60%，上下对齐页面边缘，左右可出页面
    ========================================= */
-.myspace-stickers-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.animated-sticker-scene {
-  position: absolute;
-  perspective: 1200px; 
-  /* 🌟 默认透明度为 0，配合JS使其变成出场动画 */
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-  will-change: opacity, transform;
-}
-
-.sticker-layer {
-  position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
-  background-size: 100% 100%; 
-  background-repeat: no-repeat; 
-  background-position: center;
-  backface-visibility: hidden;
-  will-change: transform, -webkit-mask-image;
-}
-
-.sticker-pasted {
-  z-index: 2;
-}
-
-.sticker-unpasted {
-  z-index: 3;
-  filter: drop-shadow(-15px 25px 20px rgba(0,0,0,0.6));
-}
-
-.distortion-overlay {
-  position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
-  z-index: 4;
-  pointer-events: none;
-  mix-blend-mode: overlay; 
-  will-change: background;
-}
-
-.sticker-cat-face {
-  top: -20vh; 
-  left: 10vw; 
-  width: clamp(150px, 15vw, 250px);
-}
-
-.sticker-eyes-below {
-  top: 18vh;  
-  left: 65vw; 
-  width: clamp(180px, 20vw, 300px);
-  z-index: 20; 
-}
-
-/* =========================================
-   右下角 Hover 提示文字
-   ========================================= */
-.myspace-hover-hint {
-  position: absolute;
-  bottom: 4vh;
-  right: 3vw;
-  color: #888888;
-  font-family: 'SansSerifFLF', sans-serif;
-  font-size: 2.5rem; 
-  letter-spacing: 0.02em;
-  z-index: 50;
-  pointer-events: none;
-}
-
-/* 手机端适配 */
 @media (max-width: 900px) {
-  .my-space-list-page-container {
-    height: 70vh;
-  }
-  
-  .myspace-text-container {
-    top: 5vh; 
-    transform: scaleY(1.4);
-    transform-origin: top left;
-  }
-  
-  .myspace-main-text {
-    /* 手机端提高字体大小下限，保证大字清晰可见 */
-    font-size: clamp(2rem, min(10vw, 10vh), 5rem);
-  }
-  
-  .myspace-text-line {
-    line-height: 1.3;
-    letter-spacing: 0.02em;
-  }
-  
-  .sticker-cat-face {
-    top: 10vh;
-    left: 15vw;
-    width: clamp(100px, 18vw, 180px);
-  }
-  
-  .sticker-eyes-below {
-    top: 35vh;
-    left: 60vw;
-    width: clamp(120px, 25vw, 200px);
+  .my-space-page-container {
+    height: 40vh;
+    overflow: visible;
   }
 
-  /* 手机端隐藏提示文字与预览交互 */
-  .myspace-hover-hint {
-    display: none; 
+  .myspace-sequence-canvas {
+    width: auto;
+    height: 40vh;
+    aspect-ratio: 1920 / 1080;
+    object-fit: fill;
   }
-  
-  .myspace-hover-image-wrapper {
-    display: none;
-  }
-}
-</file>
-
-<file path="src/components/MySpaceListPage.jsx">
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence, useMotionValue } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import AnimatedSticker from './AnimatedSticker'; 
-import './mySpaceListPage.css';
-
-// 导入贴纸
-import CatStickerImg from '../assets/CatSticker1.png';
-import EyesStickerImg from '../assets/EyesSticker.png';
-
-// 导入所有悬浮预览序列图
-import Cat1Img from '../assets/Cat1.jpg';
-import Cat2Img from '../assets/Cat2.jpg';
-import Cat3Img from '../assets/Cat3.jpg';
-import Cat4Img from '../assets/Cat4.jpg';
-import Cat5Img from '../assets/Cat5.jpg';
-import Friends1Img from '../assets/Friends1.jpg';
-import Friends2Img from '../assets/Friends2.jpg';
-import Friends3Img from '../assets/Friends3.jpg';
-import Friends4Img from '../assets/Friends4.jpg';
-import Music1Img from '../assets/Music1.jpg';
-import Music2Img from '../assets/Music2.jpg';
-import Music3Img from '../assets/Music3.jpg';
-import Music4Img from '../assets/Music4.jpg';
-import Music5Img from '../assets/Music5.jpg';
-import Movie1Img from '../assets/Movie1.jpg';
-import Movie2Img from '../assets/Movie2.jpg';
-import Movie3Img from '../assets/Movie3.jpg';
-import Movie4Img from '../assets/Movie4.jpg';
-import GamesImg from '../assets/Games.jpg';
-import Books1Img from '../assets/Books1.jpg';
-import Books2Img from '../assets/Books2.jpg';
-
-const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, onHover, onLeave }) => {
-  const animStart = 0.2;
-  const animEnd = 1.0; 
-  const duration = animEnd - animStart;
-  const step = duration / totalLines;
-  const start = animStart + index * step * 0.7; 
-  const end = Math.min(start + step * 1.5, 1); 
-
-  const percent = useTransform(scrollYProgress, [start, end], [-20, 120]);
-
-  const stop1 = useTransform(percent, v => `${v - 15}%`); 
-  const stop2 = useTransform(percent, v => `${v - 5}%`);  
-  const stop3 = useTransform(percent, v => `${v}%`);      
-  const stop4 = useTransform(percent, v => `${v + 10}%`); 
-
-  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #ffffff ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
-
-  const handlePointerMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    let hoverPercent = x / rect.width;
-    hoverPercent = Math.max(0, Math.min(1, hoverPercent));
-    onHover(index, hoverPercent);
-  };
-
-  return (
-    <motion.h1 
-      className="myspace-text-line" 
-      style={{ backgroundImage: animatedGradient }}
-      onPointerEnter={handlePointerMove}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={onLeave}
-    >
-      <span className="myspace-main-text">{lineData.text}</span>
-    </motion.h1>
-  );
-};
-
-export default function MySpaceListPage() {
-  const { t } = useTranslation();
-  const containerRef = useRef(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const [hoverData, setHoverData] = useState({ lineIndex: null, percent: 0 });
-
-  useEffect(() => {
-    const updateMousePos = (e) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
-    window.addEventListener('pointermove', updateMousePos);
-    return () => window.removeEventListener('pointermove', updateMousePos);
-  }, [mouseX, mouseY]);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "start start"]
-  });
-
-  const lines = [
-    { text: "MY CAT", images: [Cat1Img, Cat2Img, Cat3Img, Cat4Img, Cat5Img] },
-    { text: "MY FRIENDS", images: [Friends1Img, Friends2Img, Friends3Img, Friends4Img] },
-    { text: "FREQUENCY", images: [Music1Img, Music2Img, Music3Img, Music4Img, Music5Img] },
-    { text: "FRAMES I LOVE", images: [Movie1Img, Movie2Img, Movie3Img, Movie4Img] },
-    { text: "GAMES I PLAY", images: [GamesImg] },
-    { text: "BOOKS I KEEP", images: [Books1Img, Books2Img] }
-  ];
-
-  // 🌟 独立进度控制：确保 scroll 没到 0.1 / 0.25 之前，progress 严格为 0，从而触发隐藏状态
-  const catProgress = useTransform(scrollYProgress, [0.1, 0.8], [0, 1]);
-  const eyesProgress = useTransform(scrollYProgress, [0.25, 0.95], [0, 1]);
-
-  const activeLine = hoverData.lineIndex !== null ? lines[hoverData.lineIndex] : null;
-  let currentImageSrc = null;
-  if (activeLine && activeLine.images?.length > 0) {
-    const imgCount = activeLine.images.length;
-    const imgIndex = Math.min(Math.floor(hoverData.percent * imgCount), imgCount - 1);
-    currentImageSrc = activeLine.images[imgIndex];
-  }
-
-  return (
-    <section id="myspace-list" className="my-space-list-page-container" ref={containerRef}>
-      
-      <div className="myspace-text-container">
-        {lines.map((lineData, index) => (
-          <AnimatedLine 
-            key={index} 
-            lineData={lineData} 
-            index={index} 
-            totalLines={lines.length} 
-            scrollYProgress={scrollYProgress} 
-            onHover={(i, pct) => setHoverData({ lineIndex: i, percent: pct })}
-            onLeave={() => setHoverData({ lineIndex: null, percent: 0 })}
-          />
-        ))}
-      </div>
-
-      <div className="myspace-stickers-container">
-        <AnimatedSticker 
-          src={CatStickerImg} 
-          className="sticker-cat-face" 
-          progress={catProgress} 
-        />
-        <AnimatedSticker 
-          src={EyesStickerImg} 
-          className="sticker-eyes-below" 
-          progress={eyesProgress} 
-        />
-      </div>
-
-      <div className="myspace-hover-hint">
-        {t('myspaceList.hoverHint')}
-      </div>
-
-      <AnimatePresence>
-        {currentImageSrc && (
-          <motion.div
-            className="myspace-hover-image-wrapper"
-            style={{ x: mouseX, y: mouseY }}
-            initial={{ opacity: 0, filter: 'blur(15px)' }}
-            animate={{ opacity: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, filter: 'blur(15px)' }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-          >
-            <AnimatePresence>
-              <motion.img
-                key={currentImageSrc} 
-                src={currentImageSrc}
-                className="myspace-hover-image"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15, ease: "linear" }}
-              />
-            </AnimatePresence>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-    </section>
-  );
 }
 </file>
 
@@ -4962,6 +4586,750 @@ export default defineConfig({
 })
 </file>
 
+<file path="src/components/experiencePage.css">
+/* =========================================
+   Experience Page (沉浸式纯黑过渡页)
+   ========================================= */
+.experience-page {
+  position: relative;
+  width: 100%;
+  
+  /* 🌟 核心修改 1：从 66vh 再缩短约五分之一，变成 50vh（精确占据屏幕的一半） */
+  height: 50vh;          
+  
+  /* 🌟 核心修改 2：同步调小保底高度，防止在小屏幕上由于高度不够而被撑开 */
+  min-height: 400px;     
+  
+  background-color: black;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* =========================================
+   顶部镜像极光 (高度保持 50vh 不变)
+   ========================================= */
+.experience-aurora-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* 极光依然保持 50vh，因为页面现在也是 50vh，极光刚好覆盖这半屏空间并向下消散 */
+  height: 50vh; 
+  
+  transform: scaleY(-1); 
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* =========================================
+   Experiences 扫光文字
+   ========================================= */
+.exp-text-container {
+  position: absolute;
+  top: 60%; /* 相对位置保持在 60% 处不变 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.exp-text {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  font-size: clamp(5rem, 9vw, 9rem); 
+  letter-spacing: 2px;
+  margin: 0;
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  white-space: nowrap; /* 默认不换行 */
+}
+
+/* 🌟 新增：650px 以下允许换行，并激活 br 标签 */
+@media (max-width: 650px) {
+  .exp-text {
+    white-space: normal;
+    line-height: 1.1;
+  }
+  .mobile-break {
+    display: block !important;
+  }
+}
+
+.mobile-break {
+  display: none;
+}
+</file>
+
+<file path="src/components/mySpaceListPage.css">
+.my-space-list-page-container {
+  background-color: #000;
+  position: relative;
+  z-index: 110; 
+  width: 100%;
+  height: 100vh;
+  margin-top: 0; 
+  overflow: visible; 
+}
+
+.myspace-text-container {
+  position: absolute;
+  top: -25vh; 
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  overflow: visible; 
+}
+
+.myspace-text-line {
+  font-family: 'Dela Gothic One', cursive, sans-serif;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-flex;
+  align-items: baseline; 
+  line-height: 1.1;      
+  padding: 0.2em 0;
+  margin-top: -0.1em;
+  margin-bottom: -0.1em;
+  white-space: nowrap;
+  width: fit-content;
+  overflow: visible;
+  pointer-events: auto;
+  cursor: crosshair; 
+}
+
+/* 🌟 增加高度 (vh) 响应式限制，防止文字和右下角的字重叠 */
+.myspace-main-text {
+  font-size: clamp(3rem, min(9.5vw, 14vh), 12rem);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* =========================================
+   鼠标跟随预览图片样式
+   ========================================= */
+.myspace-hover-image-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: clamp(220px, 20vw, 360px);
+  aspect-ratio: 4 / 5;
+  pointer-events: none; 
+  z-index: 9999;
+  margin-left: 3vw; 
+  margin-top: -15vh;
+  border-radius: 16px;
+  overflow: hidden; 
+}
+
+.myspace-hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================================
+   React版 PNG 贴纸样式
+   ========================================= */
+.myspace-stickers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.animated-sticker-scene {
+  position: absolute;
+  perspective: 1200px; 
+  /* 🌟 默认透明度为 0，配合JS使其变成出场动画 */
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  will-change: opacity, transform;
+}
+
+.sticker-layer {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background-size: 100% 100%; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  backface-visibility: hidden;
+  will-change: transform, -webkit-mask-image;
+}
+
+.sticker-pasted {
+  z-index: 2;
+}
+
+.sticker-unpasted {
+  z-index: 3;
+  filter: drop-shadow(-15px 25px 20px rgba(0,0,0,0.6));
+}
+
+.distortion-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  z-index: 4;
+  pointer-events: none;
+  mix-blend-mode: overlay; 
+  will-change: background;
+}
+
+.sticker-cat-face {
+  top: -20vh; 
+  left: 10vw; 
+  width: clamp(150px, 15vw, 250px);
+}
+
+.sticker-eyes-below {
+  top: 18vh;  
+  left: 65vw; 
+  width: clamp(180px, 20vw, 300px);
+  z-index: 20; 
+}
+
+/* =========================================
+   右下角 Hover 提示文字
+   ========================================= */
+.myspace-hover-hint {
+  position: absolute;
+  bottom: 4vh;
+  right: 3vw;
+  color: #888888;
+  font-family: 'SansSerifFLF', sans-serif;
+  font-size: 2.5rem; 
+  letter-spacing: 0.02em;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* 手机端适配 */
+@media (max-width: 900px) {
+  .my-space-list-page-container {
+    height: 70vh;
+  }
+  
+  .myspace-text-container {
+    top: 5vh; 
+    transform: scaleY(1.4);
+    transform-origin: top left;
+  }
+  
+  .myspace-main-text {
+    /* 手机端提高字体大小下限，保证大字清晰可见 */
+    font-size: clamp(2rem, min(10vw, 10vh), 5rem);
+  }
+  
+  .myspace-text-line {
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  
+  .sticker-cat-face {
+    top: 10vh;
+    left: 15vw;
+    width: clamp(100px, 18vw, 180px);
+  }
+  
+  .sticker-eyes-below {
+    top: 35vh;
+    left: 60vw;
+    width: clamp(120px, 25vw, 200px);
+  }
+
+  /* 手机端隐藏提示文字与预览交互 */
+  .myspace-hover-hint {
+    display: none; 
+  }
+  
+  .myspace-hover-image-wrapper {
+    display: none;
+  }
+}
+</file>
+
+<file path="src/components/MySpaceListPage.jsx">
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence, useMotionValue } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import AnimatedSticker from './AnimatedSticker'; 
+import './mySpaceListPage.css';
+
+// 导入贴纸
+import CatStickerImg from '../assets/CatSticker1.png';
+import EyesStickerImg from '../assets/EyesSticker.png';
+
+// 导入所有悬浮预览序列图
+import Cat1Img from '../assets/Cat1.jpg';
+import Cat2Img from '../assets/Cat2.jpg';
+import Cat3Img from '../assets/Cat3.jpg';
+import Cat4Img from '../assets/Cat4.jpg';
+import Cat5Img from '../assets/Cat5.jpg';
+import Friends1Img from '../assets/Friends1.jpg';
+import Friends2Img from '../assets/Friends2.jpg';
+import Friends3Img from '../assets/Friends3.jpg';
+import Friends4Img from '../assets/Friends4.jpg';
+import Music1Img from '../assets/Music1.jpg';
+import Music2Img from '../assets/Music2.jpg';
+import Music3Img from '../assets/Music3.jpg';
+import Music4Img from '../assets/Music4.jpg';
+import Music5Img from '../assets/Music5.jpg';
+import Movie1Img from '../assets/Movie1.jpg';
+import Movie2Img from '../assets/Movie2.jpg';
+import Movie3Img from '../assets/Movie3.jpg';
+import Movie4Img from '../assets/Movie4.jpg';
+import GamesImg from '../assets/Games.jpg';
+import Books1Img from '../assets/Books1.jpg';
+import Books2Img from '../assets/Books2.jpg';
+
+const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, onToggle }) => {
+  const animStart = 0.2;
+  const animEnd = 1.0; 
+  const duration = animEnd - animStart;
+  const step = duration / totalLines;
+  const start = animStart + index * step * 0.7; 
+  const end = Math.min(start + step * 1.5, 1); 
+
+  const percent = useTransform(scrollYProgress, [start, end], [-20, 120]);
+
+  const stop1 = useTransform(percent, v => `${v - 15}%`); 
+  const stop2 = useTransform(percent, v => `${v - 5}%`);  
+  const stop3 = useTransform(percent, v => `${v}%`);      
+  const stop4 = useTransform(percent, v => `${v + 10}%`); 
+
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #ffffff ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
+
+  // 🌟 核心：改为点击判定
+  const handleClick = (e) => {
+    // 如果当前项已经处于激活状态，再次点击将其关闭
+    if (isActive) {
+      onToggle(null, 0);
+    } else {
+      // 如果未激活，计算点击位置，并展开图片
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      let clickPercent = x / rect.width;
+      clickPercent = Math.max(0, Math.min(1, clickPercent));
+      onToggle(index, clickPercent);
+    }
+  };
+
+  return (
+    <motion.h1 
+      className="myspace-text-line" 
+      style={{ backgroundImage: animatedGradient }}
+      onClick={handleClick} /* 🌟 将交互改为 Click */
+    >
+      <span className="myspace-main-text">{lineData.text}</span>
+    </motion.h1>
+  );
+};
+
+export default function MySpaceListPage() {
+  const { t } = useTranslation();
+  const containerRef = useRef(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  // 🌟 状态存储目前激活的数据，lineIndex 为 null 即代表全部关闭
+  const [activeData, setActiveData] = useState({ lineIndex: null, percent: 0 });
+
+  // 保留全局鼠标移动侦测，为了让展示出来的预览图可以丝滑地跟着鼠标走
+  useEffect(() => {
+    const updateMousePos = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener('pointermove', updateMousePos);
+    return () => window.removeEventListener('pointermove', updateMousePos);
+  }, [mouseX, mouseY]);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"]
+  });
+
+  const lines = [
+    { text: "MY CAT", images: [Cat1Img, Cat2Img, Cat3Img, Cat4Img, Cat5Img] },
+    { text: "MY FRIENDS", images: [Friends1Img, Friends2Img, Friends3Img, Friends4Img] },
+    { text: "FREQUENCY", images: [Music1Img, Music2Img, Music3Img, Music4Img, Music5Img] },
+    { text: "FRAMES I LOVE", images: [Movie1Img, Movie2Img, Movie3Img, Movie4Img] },
+    { text: "GAMES I PLAY", images: [GamesImg] },
+    { text: "BOOKS I KEEP", images: [Books1Img, Books2Img] }
+  ];
+
+  const catProgress = useTransform(scrollYProgress, [0.1, 0.8], [0, 1]);
+  const eyesProgress = useTransform(scrollYProgress, [0.25, 0.95], [0, 1]);
+
+  // 根据当前激活的索引渲染图片
+  const activeLine = activeData.lineIndex !== null ? lines[activeData.lineIndex] : null;
+  let currentImageSrc = null;
+  if (activeLine && activeLine.images?.length > 0) {
+    const imgCount = activeLine.images.length;
+    const imgIndex = Math.min(Math.floor(activeData.percent * imgCount), imgCount - 1);
+    currentImageSrc = activeLine.images[imgIndex];
+  }
+
+  return (
+    <section id="myspace-list" className="my-space-list-page-container" ref={containerRef}>
+      
+      <div className="myspace-text-container">
+        {lines.map((lineData, index) => (
+          <AnimatedLine 
+            key={index} 
+            lineData={lineData} 
+            index={index} 
+            totalLines={lines.length} 
+            scrollYProgress={scrollYProgress} 
+            isActive={activeData.lineIndex === index}
+            onToggle={(i, pct) => setActiveData({ lineIndex: i, percent: pct })}
+          />
+        ))}
+      </div>
+
+      <div className="myspace-stickers-container">
+        <AnimatedSticker 
+          src={CatStickerImg} 
+          className="sticker-cat-face" 
+          progress={catProgress} 
+        />
+        <AnimatedSticker 
+          src={EyesStickerImg} 
+          className="sticker-eyes-below" 
+          progress={eyesProgress} 
+        />
+      </div>
+
+      <div className="myspace-hover-hint">
+        {/* 如果需要，您可以去 json 文件把提示字由 hover 稍微改为 click */}
+        {t('myspaceList.hoverHint')}
+      </div>
+
+      <AnimatePresence>
+        {currentImageSrc && (
+          <motion.div
+            className="myspace-hover-image-wrapper"
+            style={{ x: mouseX, y: mouseY }}
+            initial={{ opacity: 0, filter: 'blur(15px)' }}
+            animate={{ opacity: 1, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, filter: 'blur(15px)' }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+          >
+            <AnimatePresence>
+              <motion.img
+                key={currentImageSrc} 
+                src={currentImageSrc}
+                className="myspace-hover-image"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15, ease: "linear" }}
+              />
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/Navbar.css">
+/* ========================================= */
+/* 1. 顶部全局包裹层 (居中液态玻璃)          */
+/* ========================================= */
+.navbar-wrapper {
+  position: fixed;   /* 固定在屏幕顶部，脱离文档流 */
+  top: 30px;
+  left: 0;
+  width: 100%;       /* 撑满整个屏幕宽度 */
+  height: 60px;      /* 设定高度，为了内部元素对齐 */
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* 保证里面的玻璃组件永远在屏幕正中间 */
+  align-items: center;     /* 垂直方向居中 */
+  pointer-events: none;    /* 外层透明区域不阻挡鼠标点击网页下方内容 */
+}
+
+/* 恢复实体元素的鼠标点击功能 */
+.navbar-glass, .contact-btn {
+  pointer-events: auto; 
+}
+
+/* ========================================= */
+/* 2. 玻璃组件内部强制排版                   */
+/* ========================================= */
+/* 强制覆盖 GlassSurface 组件自带的居中属性，让它内部变成 100% 宽度 */
+.navbar-glass .glass-surface__content {
+  width: 100% !important; 
+  padding: 0 !important; 
+  display: flex !important;
+  overflow: visible !important;
+}
+
+/* GlassSurface itself needs overflow visible for dropdown */
+.navbar-glass {
+  overflow: visible !important;
+}
+
+/* 前四个按钮的容器：撑满并使用 space-evenly 完美均匀分布 */
+.nav-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* More dropdown wrapper */
+.more-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 前四个链接文字样式 */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff; /* 必须是纯白 */
+  mix-blend-mode: difference; /* 🌟 新增：开启反色魔法 */
+  font-weight: 400;
+  font-size: 1rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* More Dropdown Menu                        */
+/* ========================================= */
+.more-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 8px 0;
+  min-width: 150px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 0;
+  z-index: 1001;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.more-dropdown-item {
+  text-decoration: none;
+  color: #ffffff !important;
+  mix-blend-mode: normal !important;
+  font-weight: 400;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.more-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ========================================= */
+/* 3. 右侧独立按钮组                         */
+/* ========================================= */
+.right-nav-group {
+  position: fixed;
+  top: 45px;
+  right: 40px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  pointer-events: none;
+}
+
+.right-nav-group > * {
+  pointer-events: auto;
+}
+
+a.contact-btn,
+a.contact-btn:link,
+a.contact-btn:visited,
+a.contact-btn:hover,
+a.contact-btn:active,
+.lang-btn {
+  color: #ffffff; /* 必须是纯白 */
+  text-decoration: none;
+  white-space: nowrap;
+  
+  font-size: 1rem;
+  font-weight: 400;
+  
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+  
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover,
+.lang-btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* 4. 移动端响应式布局 (宽度小于 1200px 时)   */
+/* ========================================= */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 35px;
+    right: 40px;
+    z-index: 2000;
+  }
+
+  .mobile-menu-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    position: relative;
+    z-index: 2001;
+  }
+
+  .mobile-menu-btn img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-menu-btn:hover img {
+    transform: scale(1.1);
+  }
+
+  /* 全屏表单内的链接容器 */
+  .mobile-fullscreen-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .mobile-fullscreen-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    outline: none;
+    font-family: 'SansSerifFLF', sans-serif;
+  }
+
+  .mobile-fullscreen-link:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+</file>
+
+<file path="src/components/RotatingText.jsx">
+import React, { useState, useEffect } from 'react';
+import DecryptedText from './DecryptedText';
+
+// 🌟 接收 isPaused 属性
+export default function RotatingText({ isPaused }) {
+  const words = ['Architectural', 'Landscape', 'AIGC'];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // 🌟 如果被盖住了，就不要启动定时器（停止无限 React 状态更新）
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [isPaused]); // 🌟 依赖项中加入 isPaused，随时启停
+
+  return (
+    <span style={{ display: 'inline-block', minWidth: '220px', textAlign: 'center' }}>
+      {/* 🌟 如果被遮挡，直接渲染静态文字，杀死内部乱码组件的 IntersectionObserver 和动画计算 */}
+      {isPaused ? (
+        <span className="keep-my-font">{words[currentIndex]}</span>
+      ) : (
+        <DecryptedText
+          key={currentIndex} 
+          text={words[currentIndex]}
+          parentClassName="keep-my-font"
+          animateOn="view"
+          speed={60}
+          maxIterations={12}
+          sequential={true}
+          revealDirection="start"
+          useOriginalCharsOnly={false}
+        />
+      )}
+    </span>
+  );
+}
+</file>
+
 <file path="src/components/architectureWorks.css">
 /* =========================================
    Architecture Works 基础设置
@@ -5072,9 +5440,46 @@ export default defineConfig({
   margin: 0;
 }
 
-.folder-ui-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-.folder-count { font-family: -apple-system, sans-serif; font-size: 3.5rem; font-weight: 700; color: #ffffff; line-height: 1; }
-.folder-circle-icon { width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+/* 🌟 核心修改 2：彻底隐藏底部的 "05" 计数和圆形图标 */
+.folder-ui-bottom { 
+  display: none; 
+}
+.folder-count { display: none; }
+.folder-circle-icon { display: none; }
+
+
+/* =========================================
+   🌟 核心修改 3：移动端布局下文件夹减小10%并下沉至部分隐藏在页面外
+   ========================================= */
+@media (max-width: 900px) {
+  .folder-piece { 
+    width: 90vw; 
+    height: 64vw; 
+    min-width: 0; 
+    min-height: 0;
+    /* 设为负值，使其往下沉，部分超出页面底端外 */
+    bottom: -6vh; 
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .folder-front-glass { 
+    width: 90vw; 
+    height: 57.6vw; 
+    min-width: 0; 
+    min-height: 0;
+    /* 同步下移 */
+    bottom: -6vh; 
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 5% 8%;
+  }
+
+  .folder-ui-top h3 { font-size: 1.5rem; }
+  .folder-ui-top p { font-size: 0.9rem; }
+}
 
 /* =========================================
    照片层
@@ -5097,7 +5502,6 @@ export default defineConfig({
   margin-top: -130px;  
   object-fit: cover;
   border-radius: 8px;
-  /* 🌟 已彻底移除原来的白色 border，实现无边框纯净效果 */
   border: none; 
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
   will-change: transform, filter;
@@ -5126,8 +5530,6 @@ export default defineConfig({
 </file>
 
 <file path="src/components/contactPage.css">
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
 #contact,
 .contact-section {
   position: relative;
@@ -5434,550 +5836,6 @@ export default function ContactPage() {
 }
 </file>
 
-<file path="src/components/experiencePage.css">
-/* 🌟 引入 Dela Gothic One 字体 */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
-/* =========================================
-   Experience Page (沉浸式纯黑过渡页)
-   ========================================= */
-.experience-page {
-  position: relative;
-  width: 100%;
-  
-  /* 🌟 核心修改 1：从 66vh 再缩短约五分之一，变成 50vh（精确占据屏幕的一半） */
-  height: 50vh;          
-  
-  /* 🌟 核心修改 2：同步调小保底高度，防止在小屏幕上由于高度不够而被撑开 */
-  min-height: 400px;     
-  
-  background-color: black;
-  z-index: 10;
-  overflow: hidden;
-}
-
-/* =========================================
-   顶部镜像极光 (高度保持 50vh 不变)
-   ========================================= */
-.experience-aurora-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  
-  /* 极光依然保持 50vh，因为页面现在也是 50vh，极光刚好覆盖这半屏空间并向下消散 */
-  height: 50vh; 
-  
-  transform: scaleY(-1); 
-  z-index: 1;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-}
-
-/* =========================================
-   Experiences 扫光文字
-   ========================================= */
-.exp-text-container {
-  position: absolute;
-  top: 60%; /* 相对位置保持在 60% 处不变 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  z-index: 5;
-}
-
-.exp-text {
-  font-family: 'Dela Gothic One', cursive, sans-serif;
-  font-size: clamp(5rem, 9vw, 9rem); 
-  letter-spacing: 2px;
-  margin: 0;
-  
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  white-space: nowrap; /* 默认不换行 */
-}
-
-/* 🌟 新增：650px 以下允许换行，并激活 br 标签 */
-@media (max-width: 650px) {
-  .exp-text {
-    white-space: normal;
-    line-height: 1.1;
-  }
-  .mobile-break {
-    display: block !important;
-  }
-}
-
-.mobile-break {
-  display: none;
-}
-</file>
-
-<file path="src/components/Navbar.css">
-/* ========================================= */
-/* 1. 顶部全局包裹层 (居中液态玻璃)          */
-/* ========================================= */
-.navbar-wrapper {
-  position: fixed;   /* 固定在屏幕顶部，脱离文档流 */
-  top: 30px;
-  left: 0;
-  width: 100%;       /* 撑满整个屏幕宽度 */
-  height: 60px;      /* 设定高度，为了内部元素对齐 */
-  z-index: 1000;
-  display: flex;
-  justify-content: center; /* 保证里面的玻璃组件永远在屏幕正中间 */
-  align-items: center;     /* 垂直方向居中 */
-  pointer-events: none;    /* 外层透明区域不阻挡鼠标点击网页下方内容 */
-}
-
-/* 恢复实体元素的鼠标点击功能 */
-.navbar-glass, .contact-btn {
-  pointer-events: auto; 
-}
-
-/* ========================================= */
-/* 2. 玻璃组件内部强制排版                   */
-/* ========================================= */
-/* 强制覆盖 GlassSurface 组件自带的居中属性，让它内部变成 100% 宽度 */
-.navbar-glass .glass-surface__content {
-  width: 100% !important; 
-  padding: 0 !important; 
-  display: flex !important;
-  overflow: visible !important;
-}
-
-/* GlassSurface itself needs overflow visible for dropdown */
-.navbar-glass {
-  overflow: visible !important;
-}
-
-/* 前四个按钮的容器：撑满并使用 space-evenly 完美均匀分布 */
-.nav-links {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* More dropdown wrapper */
-.more-dropdown-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-/* 前四个链接文字样式 */
-.nav-links a {
-  text-decoration: none;
-  color: #ffffff; /* 必须是纯白 */
-  mix-blend-mode: difference; /* 🌟 新增：开启反色魔法 */
-  font-weight: 400;
-  font-size: 1rem;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.nav-links a:hover {
-  opacity: 0.7;
-  transform: translateY(-2px);
-}
-
-/* ========================================= */
-/* More Dropdown Menu                        */
-/* ========================================= */
-.more-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  padding: 8px 0;
-  min-width: 150px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 0;
-  z-index: 1001;
-  pointer-events: auto;
-  overflow: hidden;
-}
-
-.more-dropdown-item {
-  text-decoration: none;
-  color: #ffffff !important;
-  mix-blend-mode: normal !important;
-  font-weight: 400;
-  font-size: 0.95rem;
-  padding: 10px 24px;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
-  white-space: nowrap;
-}
-
-.more-dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* ========================================= */
-/* 3. 右侧独立按钮组                         */
-/* ========================================= */
-.right-nav-group {
-  position: fixed;
-  top: 45px;
-  right: 40px;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  pointer-events: none;
-}
-
-.right-nav-group > * {
-  pointer-events: auto;
-}
-
-a.contact-btn,
-a.contact-btn:link,
-a.contact-btn:visited,
-a.contact-btn:hover,
-a.contact-btn:active,
-.lang-btn {
-  color: #ffffff; /* 必须是纯白 */
-  text-decoration: none;
-  white-space: nowrap;
-  
-  font-size: 1rem;
-  font-weight: 400;
-  
-  border: none;
-  outline: none;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
-  padding: 0;
-  
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.contact-btn:hover,
-.lang-btn:hover {
-  opacity: 0.7;
-  transform: translateY(-2px);
-}
-
-/* ========================================= */
-/* 4. 移动端响应式布局 (宽度小于 1200px 时)   */
-/* ========================================= */
-.mobile-nav {
-  display: none;
-}
-
-@media (max-width: 1200px) {
-  .desktop-nav {
-    display: none;
-  }
-  
-  .mobile-nav {
-    display: block;
-    position: fixed;
-    top: 35px;
-    right: 40px;
-    z-index: 2000;
-  }
-
-  .mobile-menu-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    outline: none;
-    position: relative;
-    z-index: 2001;
-  }
-
-  .mobile-menu-btn img {
-    width: 32px;
-    height: 32px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.2s ease;
-  }
-
-  .mobile-menu-btn:hover img {
-    transform: scale(1.1);
-  }
-
-  /* 全屏表单内的链接容器 */
-  .mobile-fullscreen-nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-
-  .mobile-fullscreen-link {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 2rem;
-    font-weight: 500;
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    white-space: nowrap;
-    outline: none;
-    font-family: 'SansSerifFLF', sans-serif;
-  }
-
-  .mobile-fullscreen-link:hover {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
-}
-</file>
-
-<file path="src/components/RotatingText.jsx">
-import React, { useState, useEffect } from 'react';
-import DecryptedText from './DecryptedText';
-
-// 🌟 接收 isPaused 属性
-export default function RotatingText({ isPaused }) {
-  const words = ['Architectural', 'Landscape', 'AIGC'];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    // 🌟 如果被盖住了，就不要启动定时器（停止无限 React 状态更新）
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, [isPaused]); // 🌟 依赖项中加入 isPaused，随时启停
-
-  return (
-    <span style={{ display: 'inline-block', minWidth: '220px', textAlign: 'center' }}>
-      {/* 🌟 如果被遮挡，直接渲染静态文字，杀死内部乱码组件的 IntersectionObserver 和动画计算 */}
-      {isPaused ? (
-        <span className="keep-my-font">{words[currentIndex]}</span>
-      ) : (
-        <DecryptedText
-          key={currentIndex} 
-          text={words[currentIndex]}
-          parentClassName="keep-my-font"
-          animateOn="view"
-          speed={60}
-          maxIterations={12}
-          sequential={true}
-          revealDirection="start"
-          useOriginalCharsOnly={false}
-        />
-      )}
-    </span>
-  );
-}
-</file>
-
-<file path="src/components/ExperienceListPage.jsx">
-import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import './experienceListPage.css';
-import starBg from '../assets/Starbackground.png'; 
-
-const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [hasHovered, setHasHovered] = useState(false);
-  
-  const opacityStart = index * 0.12; 
-  const opacityEnd = opacityStart + 0.15; 
-  const itemOpacity = useTransform(scrollYProgress, [opacityStart, opacityEnd], [0, 1]);
-
-  const sweepStart = opacityStart + 0.1; 
-  const sweepEnd = sweepStart + 0.4; 
-  const percent = useTransform(scrollYProgress, [sweepStart, sweepEnd], [-20, 120]);
-
-  const stop1 = useTransform(percent, v => `${v - 15}%`); 
-  const stop2 = useTransform(percent, v => `${v - 5}%`);  
-  const stop3 = useTransform(percent, v => `${v}%`);      
-  const stop4 = useTransform(percent, v => `${v + 10}%`); 
-
-  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(255, 255, 255, 0.25) ${stop4})`;
-
-  // ================= 核心动画编排 =================
-  
-  // 1. 原公司名：放大缓冲 + 遮罩擦除
-  const originalTextVariants = {
-    hidden: { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
-    rest: { 
-      clipPath: "inset(0% 0% 0% 0%)", 
-      scale: 1, 
-      transition: { 
-        clipPath: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
-        // 🌟 修复：加入 0.4 秒的平滑回退，如果在放大中途移走鼠标，它会温柔地缩回去而不是瞬间闪现
-        scale: { duration: 0.4, ease: "easeOut" } 
-      } 
-    },
-    hover: { 
-      clipPath: "inset(0% 0% 0% 100%)", 
-      scale: 1.05, 
-      transition: { 
-        scale: { duration: 0.7, ease: "easeInOut" },
-        clipPath: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
-      } 
-    }
-  };
-
-  // 2. 职位信息揭示
-  const revealTextVariants = {
-    hidden: { clipPath: "inset(0% 100% 0% 0%)" },
-    rest: { 
-      clipPath: "inset(0% 100% 0% 0%)", 
-      transition: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] } 
-    },
-    hover: { 
-      clipPath: "inset(0% 0% 0% 0%)", 
-      transition: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
-    }
-  };
-
-  // 3. 竖直彗星光标
-  const scannerVariants = {
-    hidden: { opacity: 0, left: "0%" },
-    rest: {
-      left: "0%",
-      opacity: 0, 
-      boxShadow: "25px 0 30px 6px rgba(0, 130, 255, 0.9), 70px 0 80px 16px rgba(82, 17, 221, 0.8), 140px 0 130px 28px rgba(0, 22, 216, 0.5)",
-      transition: {
-        left: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
-        boxShadow: { duration: 0 },
-        opacity: { duration: 0.35, delay: 0.5, ease: "easeOut" }
-      }
-    },
-    hover: {
-      left: "100%",
-      opacity: 1,
-      boxShadow: "-25px 0 30px 6px rgba(0, 130, 255, 0.9), -70px 0 80px 16px rgba(82, 17, 221, 0.8), -140px 0 130px 28px rgba(0, 22, 216, 0.5)",
-      transition: {
-        left: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] },
-        boxShadow: { duration: 0, delay: 0.7 },
-        opacity: { duration: 0.15, delay: 0.7, ease: "easeIn" }
-      }
-    }
-  };
-
-  const handleHoverStart = () => {
-    setIsHovered(true);
-    setHasHovered(true);
-  };
-
-  const currentAnimationState = isHovered ? "hover" : (hasHovered ? "rest" : "hidden");
-
-  return (
-    <motion.div 
-      className="company-item"
-      style={{ opacity: itemOpacity }} 
-      onHoverStart={handleHoverStart}
-      onHoverEnd={() => setIsHovered(false)}
-      initial="hidden"
-      animate={currentAnimationState}
-    >
-      <div className="company-text-wrapper">
-        
-        <motion.div 
-          className="company-text-mask original-text"
-          style={{ backgroundImage: animatedGradient }} 
-          variants={originalTextVariants}
-        >
-          {company.name.trim()}
-        </motion.div>
-
-        <motion.div 
-          className="company-text-mask reveal-text"
-          variants={revealTextVariants}
-        >
-          <div className="reveal-content">
-            <span className="intern-position">{company.position.trim()}</span>
-            {company.time && <span className="intern-time">{company.time}</span>}
-          </div>
-        </motion.div>
-
-        <motion.div 
-          className="comet-scanner"
-          variants={scannerVariants}
-        />
-        
-      </div>
-    </motion.div>
-  );
-});
-
-export default function ExperienceListPage() {
-  const containerRef = useRef(null);
-  const { t, i18n } = useTranslation();
-  const isChinese = i18n.language === 'zh';
-
-  const { scrollYProgress: textScrollProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "start start"]
-  });
-
-  const { scrollYProgress: bgScrollProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const bgY = useTransform(bgScrollProgress, [0, 1], ["-10%", "10%"]);
-
-  const companies = [
-    { name: t('experienceList.company1'), position: t('experienceList.position1'), time: t('experienceList.time1') },
-    { name: t('experienceList.company2'), position: t('experienceList.position2'), time: t('experienceList.time2') },
-    { name: t('experienceList.company3'), position: t('experienceList.position3'), time: t('experienceList.time3') },
-    { name: t('experienceList.company4'), position: t('experienceList.position4'), time: t('experienceList.time4') },
-    { name: t('experienceList.company5'), position: t('experienceList.position5'), time: t('experienceList.time5') }
-  ];
-
-  return (
-    <section 
-      id="experience-list" 
-      className="experience-list-page"
-      ref={containerRef}
-    >
-      <motion.div 
-        className="parallax-star-bg"
-        style={{ 
-          y: bgY,
-          backgroundImage: `url(${starBg})` 
-        }}
-      />
-
-      <div className="company-list-container" style={isChinese ? { '--zh-font-size': 'clamp(2.6rem, 3vw, 3.2rem)', '--zh-letter-spacing': '0.15em' } : {}}>
-        {companies.map((company, index) => (
-          <CompanyItem 
-            key={index}
-            index={index}
-            company={company}
-            scrollYProgress={textScrollProgress} 
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
-</file>
-
 <file path="src/components/Hero.jsx">
 import React, { useState, useEffect } from 'react';
 import { useScroll, useMotionValueEvent } from 'framer-motion'; // 🌟 引入滚动监听
@@ -6087,6 +5945,340 @@ export default function Hero({ isAppLoaded }) {
       <div className="scroll-indicator" onClick={() => document.getElementById('introduction').scrollIntoView()}>
         {t('hero.scroll')}
         <div className="scroll-arrow"></div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/experienceListPage.css">
+/* =========================================
+   Experience List Page 基础设置
+   ========================================= */
+.experience-list-page {
+  position: relative;
+  width: 100%;
+  height: auto;          
+  min-height: 60vh;      
+  padding: 15vh 0;
+  background-color: black; 
+  z-index: 90; 
+  overflow: hidden; 
+}
+
+/* 视差背景层 */
+.parallax-star-bg {
+  position: absolute;
+  top: -10%; 
+  left: 0;
+  width: 100%;
+  height: 120%; 
+  background-size: 100% 100%; 
+  background-position: center;      
+  background-repeat: no-repeat;     
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+/* =========================================
+   公司列表排版容器
+   ========================================= */
+.company-list-container {
+  position: relative;
+  z-index: 5; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; 
+  padding: 0 10%; 
+}
+
+.company-item {
+  cursor: pointer; 
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* =========================================
+   字体排版 & 扫光遮罩组合特效
+   ========================================= */
+
+.company-text-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  transform-origin: center center; 
+  /* 🌟 核心修改：将渐变遮罩移到父盒子，这样光标到达两侧边缘时会被自然隐没 */
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 15%, 
+    rgba(0, 0, 0, 1) 85%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 1) 15%, 
+    rgba(0, 0, 0, 1) 85%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.original-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+}
+
+.reveal-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  
+  background-image: none !important;
+  -webkit-text-fill-color: #0016d8 !important; 
+  color: #0016d8 !important;
+  text-shadow: 0 0 15px rgba(0, 22, 216, 0.6), 0 0 30px rgba(82, 17, 221, 0.5);
+}
+
+.reveal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* 允许换行 */
+  gap: 1.5rem; /* 减小间距以便换行 */
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+}
+
+.intern-position, .intern-time {
+  white-space: nowrap; /* 恢复为不换行 */
+  display: inline-block;
+}
+
+/* 移除了旧的内部 mask，防止双层裁剪影响性能 */
+.company-text-mask {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
+  font-size: var(--zh-font-size, clamp(2.2rem, 2.5vw, 2.6rem));
+  font-weight: 600;
+  white-space: normal; 
+  line-height: 1.4; 
+  word-wrap: break-word; 
+  letter-spacing: var(--zh-letter-spacing, 0.02em);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* =========================================
+   彗星光标 (Comet Scanner)
+   ========================================= */
+.comet-scanner {
+  position: absolute;
+  top: -15%;       
+  bottom: -15%;
+  width: 3px;      
+  background: #ffffff;
+  border-radius: 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0; 
+}
+</file>
+
+<file path="src/components/ExperienceListPage.jsx">
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import './experienceListPage.css';
+import starBg from '../assets/Starbackground.png'; 
+
+const CompanyItem = React.memo(({ company, index, scrollYProgress, isActive, onClick }) => {
+  // 使用 hasActivated 记录是否曾经被激活过，以便触发回退动画
+  const [hasActivated, setHasActivated] = useState(false);
+
+  useEffect(() => {
+    if (isActive) setHasActivated(true);
+  }, [isActive]);
+  
+  const opacityStart = index * 0.12; 
+  const opacityEnd = opacityStart + 0.15; 
+  const itemOpacity = useTransform(scrollYProgress, [opacityStart, opacityEnd], [0, 1]);
+
+  const sweepStart = opacityStart + 0.1; 
+  const sweepEnd = sweepStart + 0.4; 
+  const percent = useTransform(scrollYProgress, [sweepStart, sweepEnd], [-20, 120]);
+
+  const stop1 = useTransform(percent, v => `${v - 15}%`); 
+  const stop2 = useTransform(percent, v => `${v - 5}%`);  
+  const stop3 = useTransform(percent, v => `${v}%`);      
+  const stop4 = useTransform(percent, v => `${v + 10}%`); 
+
+  const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #8599d2 ${stop2}, #0016d8 ${stop3}, rgba(255, 255, 255, 0.25) ${stop4})`;
+
+  // ================= 核心动画编排 =================
+  
+  const originalTextVariants = {
+    hidden: { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
+    rest: { 
+      clipPath: "inset(0% 0% 0% 0%)", 
+      scale: 1, 
+      transition: { 
+        clipPath: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
+        scale: { duration: 0.4, ease: "easeOut" } 
+      } 
+    },
+    hover: { 
+      clipPath: "inset(0% 0% 0% 100%)", 
+      scale: 1.05, 
+      transition: { 
+        scale: { duration: 0.7, ease: "easeInOut" },
+        clipPath: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
+      } 
+    }
+  };
+
+  const revealTextVariants = {
+    hidden: { clipPath: "inset(0% 100% 0% 0%)" },
+    rest: { 
+      clipPath: "inset(0% 100% 0% 0%)", 
+      transition: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] } 
+    },
+    hover: { 
+      clipPath: "inset(0% 0% 0% 0%)", 
+      transition: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] } 
+    }
+  };
+
+  const scannerVariants = {
+    hidden: { opacity: 0, left: "0%" },
+    rest: {
+      left: "0%",
+      opacity: 0, 
+      boxShadow: "25px 0 30px 6px rgba(0, 130, 255, 0.9), 70px 0 80px 16px rgba(82, 17, 221, 0.8), 140px 0 130px 28px rgba(0, 22, 216, 0.5)",
+      transition: {
+        left: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
+        boxShadow: { duration: 0 },
+        opacity: { duration: 0.35, delay: 0.5, ease: "easeOut" }
+      }
+    },
+    hover: {
+      left: "100%",
+      opacity: 1,
+      boxShadow: "-25px 0 30px 6px rgba(0, 130, 255, 0.9), -70px 0 80px 16px rgba(82, 17, 221, 0.8), -140px 0 130px 28px rgba(0, 22, 216, 0.5)",
+      transition: {
+        left: { duration: 0.85, delay: 0.7, ease: [0.4, 0, 0.2, 1] },
+        boxShadow: { duration: 0, delay: 0.7 },
+        opacity: { duration: 0.15, delay: 0.7, ease: "easeIn" }
+      }
+    }
+  };
+
+  // 🌟 根据属性直接判定当前应处于哪种动画状态
+  const currentAnimationState = isActive ? "hover" : (hasActivated ? "rest" : "hidden");
+
+  return (
+    <motion.div 
+      className="company-item"
+      style={{ opacity: itemOpacity }} 
+      onClick={onClick} /* 🌟 核心：Hover 改为 onClick */
+      initial="hidden"
+      animate={currentAnimationState}
+    >
+      <div className="company-text-wrapper">
+        
+        <motion.div 
+          className="company-text-mask original-text"
+          style={{ backgroundImage: animatedGradient }} 
+          variants={originalTextVariants}
+        >
+          {company.name.trim()}
+        </motion.div>
+
+        <motion.div 
+          className="company-text-mask reveal-text"
+          variants={revealTextVariants}
+        >
+          <div className="reveal-content">
+            <span className="intern-position">{company.position.trim()}</span>
+            {company.time && <span className="intern-time">{company.time}</span>}
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="comet-scanner"
+          variants={scannerVariants}
+        />
+        
+      </div>
+    </motion.div>
+  );
+});
+
+export default function ExperienceListPage() {
+  const containerRef = useRef(null);
+  const { t, i18n } = useTranslation();
+  const isChinese = i18n.language === 'zh';
+  
+  // 🌟 核心状态：记录当前展开的是哪个索引。null 代表全部关闭。
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const { scrollYProgress: textScrollProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"]
+  });
+
+  const { scrollYProgress: bgScrollProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const bgY = useTransform(bgScrollProgress, [0, 1], ["-10%", "10%"]);
+
+  const companies = [
+    { name: t('experienceList.company1'), position: t('experienceList.position1'), time: t('experienceList.time1') },
+    { name: t('experienceList.company2'), position: t('experienceList.position2'), time: t('experienceList.time2') },
+    { name: t('experienceList.company3'), position: t('experienceList.position3'), time: t('experienceList.time3') },
+    { name: t('experienceList.company4'), position: t('experienceList.position4'), time: t('experienceList.time4') },
+    { name: t('experienceList.company5'), position: t('experienceList.position5'), time: t('experienceList.time5') }
+  ];
+
+  return (
+    <section 
+      id="experience-list" 
+      className="experience-list-page"
+      ref={containerRef}
+    >
+      <motion.div 
+        className="parallax-star-bg"
+        style={{ 
+          y: bgY,
+          backgroundImage: `url(${starBg})` 
+        }}
+      />
+
+      <div className="company-list-container" style={isChinese ? { '--zh-font-size': 'clamp(2.6rem, 3vw, 3.2rem)', '--zh-letter-spacing': '0.15em' } : {}}>
+        {companies.map((company, index) => (
+          <CompanyItem 
+            key={index}
+            index={index}
+            company={company}
+            scrollYProgress={textScrollProgress}
+            isActive={activeIndex === index} 
+            onClick={() => setActiveIndex(activeIndex === index ? null : index)} /* 🌟 触发点击事件 */
+          />
+        ))}
       </div>
     </section>
   );
@@ -6238,7 +6430,7 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
             transformPerspective: 1000,
             boxShadow: 'none',
             WebkitBoxShadow: 'none',
-            z: 0, // 🌟 使用原生方式触发 GPU 层
+            z: 0, 
             willChange: 'transform'
           }}
         />
@@ -6321,16 +6513,23 @@ export default function LandscapeWorksPage() {
 
   const inertiaRef = useRef(null);
 
+  // 🌟 核心：引入触控事件状态锁
   const dragRef = useRef({
     isDown: false,
     startX: 0,
+    startY: 0,
     startGX: 0,
     lastTime: 0,
     lastX: 0,
-    velocity: 0
+    velocity: 0,
+    axis: null
   });
 
+  // 🌟 核心绑定：原生 TouchMove 阻断默认滚动
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
@@ -6341,38 +6540,58 @@ export default function LandscapeWorksPage() {
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel);
+    const handleTouchMove = (e) => {
+      if (dragRef.current.axis === 'x') {
+        if (e.cancelable) e.preventDefault();
       }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('touchmove', handleTouchMove);
     };
   }, [galleryX]);
 
   const onPointerDown = useCallback((e) => {
-    e.preventDefault();
+    // 移除 e.preventDefault() 允许原生上下滑动启动
     inertiaRef.current?.stop();
 
-    const t = Date.now();
     dragRef.current = {
       isDown: true,
       startX: e.clientX,
+      startY: e.clientY,
       startGX: galleryX.get(),
-      lastTime: t,
+      lastTime: Date.now(),
       lastX: e.clientX,
-      velocity: 0
+      velocity: 0,
+      axis: null
     };
   }, [galleryX]);
 
   const onPointerMove = useCallback((e) => {
     if (!dragRef.current.isDown) return;
-    const now = Date.now();
+    
     const dx = e.clientX - dragRef.current.startX;
-    let newX = dragRef.current.startGX + dx;
+    const dy = e.clientY - dragRef.current.startY;
 
+    // 🌟 滑动意图侦测：当手指移动超过 5px 时锁定轴向
+    if (!dragRef.current.axis) {
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        dragRef.current.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      }
+    }
+
+    // 🌟 如果判定为上下滚动，彻底抛弃画廊逻辑，归还控制权给页面
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const sensitivity = isMobile ? 1.8 : 1; 
+
+    const now = Date.now();
+    let newX = dragRef.current.startGX + dx * sensitivity;
     newX = Math.max(0, Math.min(3400, newX));
     galleryX.set(newX);
 
@@ -6390,17 +6609,20 @@ export default function LandscapeWorksPage() {
     if (!dragRef.current.isDown) return;
     dragRef.current.isDown = false;
 
-    const inertiaFactor = 0.12;
+    // 如果判定为上下滚动，不需要触发画廊的横向回弹惯性
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const inertiaFactor = isMobile ? 0.08 : 0.12;
     const currentX = galleryX.get();
     const velocity = dragRef.current.velocity * 100;
     let targetX = currentX + velocity * inertiaFactor;
-
     targetX = Math.max(0, Math.min(3400, targetX));
 
     inertiaRef.current = animate(currentX, targetX, {
       type: "spring",
-      stiffness: 120,
-      damping: 18,
+      stiffness: isMobile ? 160 : 120,
+      damping: isMobile ? 22 : 18,
       onUpdate: v => galleryX.set(v),
       onComplete: () => { }
     });
@@ -6411,9 +6633,12 @@ export default function LandscapeWorksPage() {
     const onUp = () => onPointerUp();
     document.addEventListener('pointermove', onMove);
     document.addEventListener('pointerup', onUp);
+    document.addEventListener('touchcancel', onUp); // 🌟 防卡死
+    
     return () => {
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('touchcancel', onUp);
     };
   }, [onPointerMove, onPointerUp]);
 
@@ -6496,9 +6721,10 @@ export default function LandscapeWorksPage() {
         </motion.h1>
       </motion.div>
 
+      {/* 🌟 核心：为容器添加 touch-action: pan-y，让浏览器原生处理竖向滚动 */}
       <div
         onPointerDown={onPointerDown}
-        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'none', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
+        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'pan-y', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
       >
         <div className="landscape-bg-text">
           Landscape
@@ -6540,285 +6766,6 @@ export default function LandscapeWorksPage() {
       </div>
     </section>
   );
-}
-</file>
-
-<file path="src/components/aigcWorksPage.css">
-/* =========================================
-    AIGC Works Page
-    ========================================= */
-.aigc-portfolio-section {
-    background-color: #000000;
-    position: relative;
-    width: 100vw;
-    /* 精确计算的滚动空间，用于满足 3/4 触发和结束溢出 200px 的数学条件 */
-    height: calc(500vh - 600px); 
-    z-index: 10;
-}
-
-.aigc-sticky-container {
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* =========================================
-    视频容器
-    ========================================= */
-.aigc-video-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1; /* 底层 */
-}
-
-/* =========================================
-    页面标题
-    ========================================= */
-.aigc-titles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5; /* 在视频之上，但在 Ring 之下 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.aigc-main-wrapper {
-    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
-    font-size: 9rem;
-    font-weight: 900;
-    color: #0016d8;
-    line-height: 1;
-}
-
-.aigc-sub-wrapper {
-    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
-    font-size: 4.5rem;
-    font-weight: 900;
-    color: #0016d8;
-    line-height: 1;
-}
-
-.aigc-title-char {
-    color: inherit;
-}
-
-/* =========================================
-   响应式
-   ========================================= */
-@media (max-width: 900px) {
-    .aigc-portfolio-section {
-        margin: 0;
-        padding: 0;
-        /* 移动端没有 Ring 动画，大幅减少滚动空间 */
-        height: calc(200vh - 200px);
-    }
-
-    .aigc-sticky-container {
-        position: sticky;
-        top: 0;
-    }
-
-    .aigc-video-container {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .aigc-scroll-video {
-        object-fit: cover;
-        object-position: calc(50% - 100px) center;
-    }
-
-    .aigc-main-wrapper {
-        font-size: 16vw;
-    }
-
-    .aigc-sub-wrapper {
-        font-size: 8vw;
-    }
-
-    .aigc-ring {
-        display: none;
-    }
-}
-
-/* =========================================
-    Ring 图片
-    ========================================= */
-.aigc-ring {
-    position: absolute;
-    top: 230%;
-    left: 50%;
-    width: 210vw;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* 中间层：确保盖住标题和视频 */
-    pointer-events: none;
-    will-change: top, width;
-}
-
-/* =========================================
-    视频本体
-    ========================================= */
-.aigc-scroll-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-}
-</file>
-
-<file path="src/components/experienceListPage.css">
-/* =========================================
-   Experience List Page 基础设置
-   ========================================= */
-.experience-list-page {
-  position: relative;
-  width: 100%;
-  height: auto;          
-  min-height: 60vh;      
-  padding: 15vh 0;
-  background-color: black; 
-  z-index: 90; 
-  overflow: hidden; 
-}
-
-/* 视差背景层 */
-.parallax-star-bg {
-  position: absolute;
-  top: -10%; 
-  left: 0;
-  width: 100%;
-  height: 120%; 
-  background-size: 100% 100%; 
-  background-position: center;      
-  background-repeat: no-repeat;     
-  z-index: 1; 
-  pointer-events: none; 
-}
-
-/* =========================================
-   公司列表排版容器
-   ========================================= */
-.company-list-container {
-  position: relative;
-  z-index: 5; 
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px; 
-  padding: 0 10%; 
-}
-
-.company-item {
-  cursor: pointer; 
-  width: 100%;
-  text-align: center;
-  position: relative;
-}
-
-/* =========================================
-   字体排版 & 扫光遮罩组合特效
-   ========================================= */
-
-.company-text-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  transform-origin: center center; 
-  /* 🌟 核心修改：将渐变遮罩移到父盒子，这样光标到达两侧边缘时会被自然隐没 */
-  -webkit-mask-image: linear-gradient(
-    to right, 
-    rgba(0, 0, 0, 0) 0%, 
-    rgba(0, 0, 0, 1) 15%, 
-    rgba(0, 0, 0, 1) 85%, 
-    rgba(0, 0, 0, 0) 100%
-  );
-  mask-image: linear-gradient(
-    to right, 
-    rgba(0, 0, 0, 0) 0%, 
-    rgba(0, 0, 0, 1) 15%, 
-    rgba(0, 0, 0, 1) 85%, 
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-.original-text {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  width: 100%;
-}
-
-.reveal-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  
-  background-image: none !important;
-  -webkit-text-fill-color: #0016d8 !important; 
-  color: #0016d8 !important;
-  text-shadow: 0 0 15px rgba(0, 22, 216, 0.6), 0 0 30px rgba(82, 17, 221, 0.5);
-}
-
-.reveal-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* 允许换行 */
-  gap: 1.5rem; /* 减小间距以便换行 */
-  width: 100%;
-  height: 100%;
-  padding: 10px 0;
-}
-
-.intern-position, .intern-time {
-  white-space: nowrap; /* 恢复为不换行 */
-  display: inline-block;
-}
-
-/* 移除了旧的内部 mask，防止双层裁剪影响性能 */
-.company-text-mask {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
-  font-size: var(--zh-font-size, clamp(2.2rem, 2.5vw, 2.6rem));
-  font-weight: 600;
-  white-space: normal; 
-  line-height: 1.4; 
-  word-wrap: break-word; 
-  letter-spacing: var(--zh-letter-spacing, 0.02em);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/* =========================================
-   彗星光标 (Comet Scanner)
-   ========================================= */
-.comet-scanner {
-  position: absolute;
-  top: -15%;       
-  bottom: -15%;
-  width: 3px;      
-  background: #ffffff;
-  border-radius: 4px;
-  z-index: 10;
-  pointer-events: none;
-  opacity: 0; 
 }
 </file>
 
@@ -6989,335 +6936,6 @@ export default function Navbar() {
 }
 </file>
 
-<file path="src/App.css">
-/* =========================================
-   基础重置与全局设置 (包含 React 的 #root)
-   ========================================= */
-@font-face {
-    font-family: 'Aquatico';
-    src: url('/fonts/Aquatico-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SansSerifFLF';
-    src: url('/fonts/SansSerifFLF.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html,
-#root {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
-    overflow-x: clip;
-
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
-}
-
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-/* 背景闪烁动画 */
-@keyframes flicker {
-    0% { opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { opacity: 0.7; }
-}
-
-/* =========================================
-   每个全屏页面区块通用样式 
-   ========================================= */
-.section,
-.generated-content-page,
-.programming-page {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-    /* 🌟 已彻底移除 content-visibility: auto，防止边界抖动 */
-}
-
-/* =========================================
-   第一页：首页 (Hero)
-   ========================================= */
-#home {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-}
-
-.bg-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.bg-layer {
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    object-fit: cover;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.bg-layer-1 { z-index: 1; }
-.bg-layer-2 { z-index: 2; mix-blend-mode: screen; opacity: 0.8; }
-
-/* 主大字 */
-.title-main {
-    position: absolute;
-    left: 8vw;
-    top: 45%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: all 0.5s ease;
-}
-
-.title-main h1 {
-    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif;
-    font-size: 10rem;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
-}
-
-/* 名字 */
-.title-name {
-    position: absolute;
-    right: 5vw;
-    bottom: 22vh;
-    z-index: 10;
-    transition: all 0.5s ease;
-}
-
-.title-name h2 {
-    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif;
-    font-style: normal;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-}
-
-@media (max-width: 900px) {
-    .title-main {
-        left: 0;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-    .title-main h1 { font-size: 18vw; }
-
-    .title-name {
-        left: 0;
-        right: 0;
-        bottom: 15vh;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-    }
-    .title-name h2 { font-size: 9vw; }
-}
-
-/* 滚动提示动画 */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
-    animation: bounce 2s infinite ease-in-out;
-    cursor: pointer;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-.scroll-arrow {
-    margin-top: 5px;
-    width: 20px;
-    height: 20px;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    transform: rotate(45deg);
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, 15px); }
-}
-
-/* =========================================
-   作品展示页 (Portfolio Section)
-   ========================================= */
-.portfolio-section { background-color: #03102c; }
-
-.diffuse-light {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(10, 80, 255, 0.3) 0%, rgba(3, 16, 44, 0) 50%);
-    z-index: 0;
-    animation: moveLight 15s infinite alternate linear;
-    pointer-events: none;
-}
-
-@keyframes moveLight {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(10%, 5%) scale(1.2); }
-    100% { transform: translate(-5%, 15%) scale(0.9); }
-}
-
-.hover-bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: 1;
-    filter: blur(10px) brightness(0.4);
-}
-
-.section-title {
-    position: relative;
-    z-index: 10;
-    padding-left: 10vw;
-    margin-top: -5vh;
-}
-
-.section-title h2 {
-    font-size: 4rem;
-    font-weight: bold;
-    line-height: 1.1;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-}
-
-.section-title span { font-weight: 300; font-size: 3rem; }
-
-.gallery-wrapper {
-    position: relative;
-    width: 100%;
-    margin-top: 10vh;
-    z-index: 10;
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-}
-
-.gallery-track {
-    display: flex;
-    gap: 40px;
-    overflow-x: auto;
-    padding: 50px 0 50px 10vw;
-    scrollbar-width: none;
-}
-
-.gallery-track::-webkit-scrollbar { display: none; }
-
-.gallery-item {
-    min-width: 400px;
-    height: 250px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
-    filter: grayscale(100%);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    will-change: transform, filter;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.gallery-item .project-title {
-    position: absolute;
-    bottom: 15px;
-    right: 20px;
-    font-size: 1.2rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.gallery-item:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02) translateZ(0);
-    z-index: 20;
-}
-
-.gallery-item:hover .project-title { opacity: 1; }
-
-.scroll-hint {
-    position: absolute;
-    right: 15vw;
-    bottom: 15vh;
-    font-size: 14px;
-    z-index: 10;
-    text-align: right;
-    opacity: 0.7;
-}
-
-/* =========================================
-   字体类控制修复 (跨平台适配)
-   ========================================= */
-.keep-my-font, .keep-my-font span {
-    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
-    font-weight: 400 !important;
-}
-
-.keep-my-font-name, .keep-my-font-name span {
-    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif !important;
-    font-weight: 400 !important;
-}
-
-.keep-my-font-3, .keep-my-font-3 span {
-    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif !important;
-    font-weight: 900 !important;
-}
-</file>
-
 <file path="package.json">
 {
   "name": "architecture-portfolio",
@@ -7362,12 +6980,144 @@ html,
 }
 </file>
 
+<file path="src/components/aigcWorksPage.css">
+/* =========================================
+    AIGC Works Page
+    ========================================= */
+.aigc-portfolio-section {
+    background-color: #000000;
+    position: relative;
+    width: 100vw;
+    /* 精确计算的滚动空间，用于满足 3/4 触发和结束溢出 200px 的数学条件 */
+    height: calc(500vh - 600px); 
+    z-index: 10;
+}
+
+.aigc-sticky-container {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* =========================================
+    视频容器
+    ========================================= */
+.aigc-video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1; /* 底层 */
+}
+
+/* =========================================
+    页面标题
+    ========================================= */
+.aigc-titles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5; /* 在视频之上，但在 Ring 之下 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.aigc-main-wrapper {
+    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
+    font-size: 9rem;
+    font-weight: 900;
+    color: #0016d8;
+    line-height: 1;
+}
+
+.aigc-sub-wrapper {
+    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #0016d8;
+    line-height: 1;
+}
+
+.aigc-title-char {
+    color: inherit;
+}
+
+/* =========================================
+   响应式
+   ========================================= */
+@media (max-width: 900px) {
+    .aigc-portfolio-section {
+        margin: 0;
+        padding: 0;
+        /* 🌟 核心修改：改为 200vh，配合下一页的 -100vh，实现滑动过程正好是下一页升起覆盖的过程，彻底去除死锁 */
+        height: 200vh;
+    }
+
+    .aigc-sticky-container {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    .aigc-video-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .aigc-scroll-video {
+        object-fit: cover;
+        object-position: calc(50% - 100px) center;
+    }
+
+    .aigc-main-wrapper {
+        font-size: 16vw;
+    }
+
+    .aigc-sub-wrapper {
+        font-size: 8vw;
+    }
+
+    .aigc-ring {
+        display: none;
+    }
+}
+
+/* =========================================
+    Ring 图片
+    ========================================= */
+.aigc-ring {
+    position: absolute;
+    top: 230%;
+    left: 50%;
+    width: 210vw;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* 中间层：确保盖住标题和视频 */
+    pointer-events: none;
+    will-change: top, width;
+}
+
+/* =========================================
+    视频本体
+    ========================================= */
+.aigc-scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+</file>
+
 <file path="src/components/introductionPage.css">
 /* =========================================
    Introduction Page 核心布局
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
 .introduction-page {
   position: relative;
   z-index: 50;        
@@ -7703,120 +7453,333 @@ html,
 }
 </file>
 
-<file path="src/components/generatedContent.css">
+<file path="src/App.css">
 /* =========================================
-   Generated Content Page (Cascade Carousel)
+   基础重置与全局设置 (包含 React 的 #root)
    ========================================= */
-.generated-content-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000000;
-  position: relative;
-  z-index: 30; /* 确保覆盖 AIGC 页面 */
-  margin-top: -100vh; /* 核心：向上滑动天然覆盖 */
-  overflow: hidden; 
+@font-face {
+    font-family: 'Aquatico';
+    src: url('/fonts/Aquatico-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* =========================================
-   动态标题模块 (左侧锚定，蓝块绝对静止)
-   ========================================= */
-.gc-title-block {
-  position: absolute;
-  /* 🌟 修改点 1：将标题块整体上移 (从 18vh 改为 10vh) */
-  top: calc(10vh - 40px); 
-  left: 60vw; 
-  right: 5vw;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  z-index: 50;
-  pointer-events: none;
+@font-face {
+    font-family: 'SansSerifFLF';
+    src: url('/fonts/SansSerifFLF.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-.gc-blue-square {
-  width: 35px;
-  height: 35px;
-  background-color: #0016d8; 
-  flex-shrink: 0;
-  margin-top: 5px; /* 微调以对齐首行文字的视觉中心 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.gc-title-text {
-  font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
-  font-size: clamp(1.2rem, 2.5vw, 2.8rem); 
-  font-weight: 900;
-  line-height: 1.25; /* 让多行文本紧凑美观 */
-  color: #ffffff;
-  margin: 0;
-  margin-top: -10px;
-  letter-spacing: 1px;
-  word-wrap: break-word; /* 允许过长时自然换行 */
-}
-
-/* 中文模式：移除 Dela Gothic One，使用标准中文字体栈 */
-.zh-lang .gc-title-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
-}
-
-/* =========================================
-   无限画廊容器
-   ========================================= */
-.gc-carousel-container {
-  position: absolute;
-  /* 🌟 修改点 2：将画廊底部留白增大，实现画廊整体向上推 (从 40px 改为 12vh) */
-  bottom: 12vh;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  touch-action: pan-y; /* 拦截水平拖拽的默认事件 */
-  cursor: grab;
-  z-index: 40;
-}
-
-.gc-carousel-container:active {
-  cursor: grabbing;
-}
-
-/* 响应式调整 (手机端) */
-@media (max-width: 900px) {
-  .generated-content-page {
-    margin-top: 0; /* 移动端正常文档流，不覆盖 AIGC */
-    z-index: 20;
-    height: 100vh;
+body,
+html,
+#root {
+    width: 100%;
     min-height: 100vh;
-  }
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-x: clip;
 
-  .gc-title-block {
-    /* 🌟 手机端标题适当下移 */
-    top: calc(12vh - 40px);
-    left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
-    right: 10vw;
-    gap: 15px;
-  }
-  .gc-blue-square {
-    width: 25px;
-    height: 25px;
-    margin-top: 3px;
-  }
-  .gc-title-text {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-  }
-  
-  .gc-carousel-container {
-    /* 🌟 手机端画廊垂直居中于页面 */
-    bottom: auto;
-    top: 50%;
-    left: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* 背景闪烁动画 */
+@keyframes flicker {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* =========================================
+   每个全屏页面区块通用样式 
+   ========================================= */
+.section,
+.generated-content-page,
+.programming-page {
+    position: relative;
     width: 100vw;
-    transform: translateY(-50%) scale(2.4);
-    transform-origin: center center;
-    /* 不裁切图片，允许图片超出容器边界 */
-    overflow: visible;
-  }
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
 
-  .generated-content-page {
-    overflow: visible;
-  }
+/* =========================================
+   第一页：首页 (Hero)
+   ========================================= */
+#home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bg-layer {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bg-layer-1 { z-index: 1; }
+.bg-layer-2 { z-index: 2; mix-blend-mode: screen; opacity: 0.8; }
+
+/* 主大字 */
+.title-main {
+    position: absolute;
+    left: 8vw;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.title-main h1 {
+    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+}
+
+/* 名字 */
+.title-name {
+    position: absolute;
+    right: 5vw;
+    bottom: 22vh;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.title-name h2 {
+    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif;
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 900px) {
+    .title-main {
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .title-main h1 { font-size: 18vw; }
+
+    .title-name {
+        left: 0;
+        right: 0;
+        bottom: 15vh;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .title-name h2 { font-size: 9vw; }
+}
+
+/* 🌟 核心修改 1：将 Scroll 指示器整体上移 */
+.scroll-indicator {
+    position: absolute;
+    /* 调大 bottom 的值，将其往上移。窄屏最低保留30px，大屏自适应至60px */
+    bottom: clamp(30px, 8vh, 60px); 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    animation: bounce 2s infinite ease-in-out;
+    cursor: pointer;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    z-index: 50; 
+}
+
+.scroll-arrow {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 15px); }
+}
+
+/* =========================================
+   作品展示页 (Portfolio Section)
+   ========================================= */
+.portfolio-section { background-color: #03102c; }
+
+.diffuse-light {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(10, 80, 255, 0.3) 0%, rgba(3, 16, 44, 0) 50%);
+    z-index: 0;
+    animation: moveLight 15s infinite alternate linear;
+    pointer-events: none;
+}
+
+@keyframes moveLight {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10%, 5%) scale(1.2); }
+    100% { transform: translate(-5%, 15%) scale(0.9); }
+}
+
+.hover-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    filter: blur(10px) brightness(0.4);
+}
+
+.section-title {
+    position: relative;
+    z-index: 10;
+    padding-left: 10vw;
+    margin-top: -5vh;
+}
+
+.section-title h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.section-title span { font-weight: 300; font-size: 3rem; }
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 10vh;
+    z-index: 10;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gallery-track {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 50px 0 50px 10vw;
+    scrollbar-width: none;
+}
+
+.gallery-track::-webkit-scrollbar { display: none; }
+
+.gallery-item {
+    min-width: 400px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease;
+    filter: grayscale(100%);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, filter;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.gallery-item .project-title {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-item:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02) translateZ(0);
+    z-index: 20;
+}
+
+.gallery-item:hover .project-title { opacity: 1; }
+
+.scroll-hint {
+    position: absolute;
+    right: 15vw;
+    bottom: 15vh;
+    font-size: 14px;
+    z-index: 10;
+    text-align: right;
+    opacity: 0.7;
+}
+
+/* =========================================
+   字体类控制修复 (跨平台适配)
+   ========================================= */
+.keep-my-font, .keep-my-font span {
+    font-family: 'SansSerifFLF', "PingFang SC", "STHeiti", "华文黑体", "Microsoft YaHei", "微软雅黑", sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.keep-my-font-name, .keep-my-font-name span {
+    font-family: 'Aquatico', "Segoe UI", Arial, sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.keep-my-font-3, .keep-my-font-3 span {
+    font-family: 'Dela Gothic One', "Segoe UI", Arial, sans-serif !important;
+    font-weight: 900 !important;
 }
 </file>
 
@@ -7922,6 +7885,395 @@ export default function AIGCWorksPage() {
             style={{ top: "50%", left: "50%", width: "100vw", x: "-50%", y: y, scale: scale, z: 0, willChange: "transform" }}
           />
         )}
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/generatedContent.css">
+/* =========================================
+   Generated Content Page (Cascade Carousel)
+   ========================================= */
+.generated-content-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  position: relative;
+  z-index: 30; /* 确保覆盖 AIGC 页面 */
+  margin-top: -100vh; /* 核心：向上滑动天然覆盖 */
+  overflow: hidden; 
+}
+
+/* =========================================
+   动态标题模块 (左侧锚定，蓝块绝对静止)
+   ========================================= */
+.gc-title-block {
+  position: absolute;
+  top: calc(10vh - 40px); 
+  left: 60vw; 
+  right: 5vw;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.gc-blue-square {
+  width: 35px;
+  height: 35px;
+  background-color: #0016d8; 
+  flex-shrink: 0;
+  margin-top: 5px; /* 微调以对齐首行文字的视觉中心 */
+}
+
+.gc-title-text {
+  font-family: 'Dela Gothic One', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 2.8rem); 
+  font-weight: 900;
+  line-height: 1.25; /* 让多行文本紧凑美观 */
+  color: #ffffff;
+  margin: 0;
+  margin-top: -10px;
+  letter-spacing: 1px;
+  word-wrap: break-word; /* 允许过长时自然换行 */
+}
+
+/* 中文模式：移除 Dela Gothic One，使用标准中文字体栈 */
+.zh-lang .gc-title-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif !important;
+}
+
+/* =========================================
+   无限画廊容器
+   ========================================= */
+.gc-carousel-container {
+  position: absolute;
+  bottom: 12vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  touch-action: pan-y; /* 拦截水平拖拽的默认事件 */
+  cursor: grab;
+  z-index: 40;
+}
+
+.gc-carousel-container:active {
+  cursor: grabbing;
+}
+
+/* =========================================
+   移动端底部提示药丸按钮 (Pill Button)
+   ========================================= */
+.gc-hint-wrapper {
+  position: absolute;
+  bottom: 10vh; /* 放在画廊下方偏下位置 */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* 仅提示，不遮挡底部任何滑动交互 */
+  z-index: 100;
+}
+
+.gc-pill-button {
+  background-color: #333333; /* 优雅的灰色背景 */
+  padding: 12px 28px;
+  border-radius: 9999px; /* 完美的药丸形 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  max-width: 92vw; /* 防止屏幕太窄时超出边界 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 必须：配合 Framer Motion 的宽度展开动画 */
+}
+
+.gc-pill-text {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* 绝对禁止换行，保证单行显示 */
+}
+
+/* =========================================
+   响应式调整 (手机端 <= 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  .generated-content-page {
+    /* 🌟 核心修改：恢复 margin-top: -100vh (直接继承全局)，让它像幕布一样直接覆盖到 AIGC 页面上方 */
+    margin-top: -100vh;
+    z-index: 30; /* 确保层级比 AIGC 高 */
+    height: 100vh;
+    min-height: 100vh;
+    overflow: visible; /* 保持画廊卡片可以越界 */
+  }
+
+  .gc-title-block {
+    top: calc(12vh - 40px);
+    left: 10vw; 
+    right: 10vw;
+    gap: 15px;
+  }
+  
+  .gc-blue-square {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+  }
+  
+  .gc-title-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  
+  .gc-carousel-container {
+    bottom: auto;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    transform: translateY(-50%) scale(2.4);
+    transform-origin: center center;
+    overflow: visible;
+  }
+}
+</file>
+
+<file path="src/components/IntroductionPage.jsx">
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import './introductionPage.css';
+import Aurora from './AuroraEffect';
+import BorderGlow from './BorderGlow';
+import ProfileCard from './ProfileCard';
+import avatarImg from '../assets/avatar.png';
+
+export default function IntroductionPage() {
+  const targetRef = useRef(null);
+  const { t } = useTranslation();
+
+  const dragRef = useRef(null);
+  const dragX = useMotionValue(0);
+  const [isCompact, setIsCompact] = useState(false);
+  const animPlayedRef = useRef(false);
+  const [animPlayed, setAnimPlayed] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)');
+    const update = () => setIsCompact(mq.matches);
+
+    update();
+
+    if (mq.addEventListener) {
+      mq.addEventListener('change', update);
+      return () => mq.removeEventListener('change', update);
+    }
+
+    mq.addListener(update);
+    return () => mq.removeListener(update);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end -50vh"]
+  });
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (v) => {
+      if (v >= 0.5 && !animPlayedRef.current) {
+        animPlayedRef.current = true;
+        setAnimPlayed(true);
+      }
+    });
+    return () => {
+      if (typeof unsubscribe === 'function') unsubscribe();
+    };
+  }, [scrollYProgress]);
+
+  const boxesX = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    isCompact || animPlayed ? ['0vw', '0vw', '0vw'] : ['100vw', '0vw', '0vw']
+  );
+  const textX = useTransform(
+    scrollYProgress,
+    [0, 0.7, 1],
+    ['0px', '300px', '600px']
+  );
+
+  const introStyles = {
+    '--intro-box-height': isCompact ? 'clamp(420px, 92vw, 500px)' : 'clamp(420px, 44vw, 540px)',
+    '--intro-box-width': isCompact ? 'min(86vw, 360px)' : 'clamp(250px, 24vw, 380px)',
+  };
+
+  const skills = [
+    { name: "Sketch up", percent: "90%" },
+    { name: "Rhino", percent: "88%" },
+    { name: "AutoCAD", percent: "80%" },
+    { name: "Photoshop", percent: "95%" },
+    { name: "Illustrator", percent: "85%" },
+    { name: "Vibe Coding", percent: "65%" },
+    { name: "CET-6", percent: "90%" }
+  ];
+
+  return (
+    <section
+      id="introduction"
+      className="introduction-page"
+      ref={targetRef}
+      style={introStyles}
+    >
+
+      <div
+        className="background-hello"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, calc(-50% - (var(--intro-box-height) * 0.18)))',
+          fontSize: '24vw',
+          fontWeight: 900,
+          letterSpacing: '-1vw',
+          whiteSpace: 'nowrap',
+          zIndex: 0,
+          pointerEvents: 'none',
+          color: 'rgba(255, 255, 255, 0.08)',
+          fontFamily: "'Dela Gothic One', cursive, sans-serif"
+        }}
+      >
+        Hello!
+      </div>
+
+      <div className="aurora-bg-wrapper" style={{ zIndex: 1 }}>
+        <Aurora
+          colorStops={["#8599d2", "#0016d8", "#5211dd"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1}
+        />
+      </div>
+
+      <div className="intro-content">
+
+        <motion.div 
+          className="swipe-hint"
+          style={{ opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]) }}
+        >
+          Swipe to view
+        </motion.div>
+
+        <motion.div
+          className="boxes-scroll-wrapper"
+          ref={dragRef}
+          style={{ 
+            x: boxesX, 
+            width: isCompact ? '100%' : '100vw', 
+            overflowX: 'visible', 
+            overflowY: 'visible',
+            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级，不锁死 transform
+            willChange: 'transform'
+          }}
+        >
+          <motion.div
+            className="boxes-container"
+            drag={isCompact ? false : 'x'}
+            dragConstraints={isCompact ? undefined : dragRef}
+            whileTap={{ cursor: "grabbing" }}
+            style={{
+              x: isCompact ? 0 : dragX,
+              y: isCompact ? 0 : 'clamp(-78px, -7vh, -28px)',
+              cursor: isCompact ? 'default' : 'grab',
+              width: isCompact ? '100%' : 'max-content',
+              margin: isCompact ? '0' : '0 auto',
+              padding: isCompact ? '0 16px' : '0 20px',
+              height: isCompact ? 'auto' : 'var(--intro-box-height)'
+            }}
+          >
+
+            <BorderGlow
+              className="glass-box"
+              backgroundColor="rgba(255, 255, 255, 0.03)"
+              borderRadius={24}
+              glowColor="240 80 70"
+              colors={['#8599d2', '#0016d8', '#5211dd']}
+              fillOpacity={0}
+            >
+              <div className="box-inner-content">
+                <h3 className="box-title">{t('introduction.skills')}</h3>
+                <div className="skills-list">
+                  {skills.map((skill, index) => (
+                    <div className="skill-item" key={index}>
+                      <span className="skill-name">{skill.name}</span>
+                      <div className="progress-track">
+                        <div className="progress-fill" style={{ width: skill.percent }}></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </BorderGlow>
+
+            <ProfileCard
+              name="Liu Yuyang"
+              title="Designer"
+              avatarUrl={avatarImg}
+              showUserInfo={false}
+              enableTilt={true}
+              behindGlowEnabled={false}
+              innerGradient="linear-gradient(145deg, rgba(20,20,40,0.8) 0%, rgba(82,17,221,0.2) 100%)"
+            />
+
+            <BorderGlow
+              className="glass-box"
+              backgroundColor="rgba(255, 255, 255, 0.03)"
+              borderRadius={24}
+              glowColor="240 80 70"
+              colors={['#8599d2', '#0016d8', '#5211dd']}
+              fillOpacity={0}
+            >
+              <div className="box-inner-content">
+                <h3 className="box-title">{t('introduction.education')}</h3>
+
+                <div className="edu-item">
+                  <h4 className="school-name">{t('introduction.school1')}</h4>
+                  <div className="edu-divider"></div>
+                  <div className="edu-details">
+                    <span className="major">{t('introduction.major1')}</span>
+                    <span className="degree blue-text">{t('introduction.degree1')}</span>
+                  </div>
+                </div>
+
+                <div className="edu-item" style={{ marginTop: '40px' }}>
+                  <h4 className="school-name">{t('introduction.school2')}</h4>
+                  <div className="edu-divider"></div>
+                  <div className="edu-details">
+                    <span className="major">{t('introduction.major2')}</span>
+                    <span className="degree blue-text">{t('introduction.degree2')}</span>
+                  </div>
+                </div>
+              </div>
+            </BorderGlow>
+
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          className="text-row" 
+          style={{ 
+            x: textX, 
+            y: isCompact ? 0 : '58%',
+            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级
+            willChange: 'transform'
+          }}
+        >
+          <h2 className="keep-my-font-3">
+            Who Am I - Skills - Education - Who Am I - Skills - Education
+          </h2>
+        </motion.div>
+
       </div>
     </section>
   );
@@ -8267,7 +8619,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
             src={config.image}
             alt={`Work ${index + 1}`}
             className="flying-photo"
-            decoding="async" // 🌟 加入后台异步解码
+            decoding="async"
             style={{
               position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
               objectFit: 'cover', rotateZ, scaleX, scaleY, filter, opacity, clipPath: clipPathStyle,
@@ -8276,7 +8628,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
               rotateY: rotateY,
               skewX: skewXLag,
               transformPerspective: 1000,
-              z: 0, // 🌟 正确触发硬件加速的方式，不再覆盖 transform
+              z: 0, 
               willChange: 'transform, filter'
             }}
           />
@@ -8359,13 +8711,16 @@ export default function ArchitectureWorks() {
   const inertiaRef = useRef(null);
   const exitAnimRef = useRef(null);
 
+  // 🌟 核心：引入触控事件状态锁
   const dragRef = useRef({
     isDown: false,
     startX: 0,
+    startY: 0,
     startGX: 0,
     lastTime: 0,
     lastX: 0,
-    velocity: 0
+    velocity: 0,
+    axis: null
   });
 
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
@@ -8400,7 +8755,11 @@ export default function ArchitectureWorks() {
     }
   });
 
+  // 🌟 核心绑定：原生 TouchMove 阻断默认滚动
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleWheel = (e) => {
       if (!isExpandedRef.current) return;
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
@@ -8412,14 +8771,18 @@ export default function ArchitectureWorks() {
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel);
+    const handleTouchMove = (e) => {
+      if (dragRef.current.axis === 'x') {
+        if (e.cancelable) e.preventDefault();
       }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('touchmove', handleTouchMove);
     };
   }, [galleryX]);
 
@@ -8485,28 +8848,46 @@ export default function ArchitectureWorks() {
     return () => window.removeEventListener('scroll', onScroll);
   }, [scrollYProgress]);
 
+  // 🌟 重新设计的 Pointer 事件逻辑
   const onPointerDown = useCallback((e) => {
     if (!isExpandedRef.current) return;
-    e.preventDefault();
+    // 移除 e.preventDefault() 允许原生上下滑动启动
     inertiaRef.current?.stop();
     exitAnimRef.current?.stop();
 
-    const t = Date.now();
     dragRef.current = {
       isDown: true,
       startX: e.clientX,
+      startY: e.clientY,
       startGX: galleryX.get(),
-      lastTime: t,
+      lastTime: Date.now(),
       lastX: e.clientX,
-      velocity: 0
+      velocity: 0,
+      axis: null
     };
   }, [galleryX]);
 
   const onPointerMove = useCallback((e) => {
     if (!dragRef.current.isDown) return;
-    const now = Date.now();
+    
     const dx = e.clientX - dragRef.current.startX;
-    let newX = dragRef.current.startGX + dx;
+    const dy = e.clientY - dragRef.current.startY;
+
+    // 🌟 滑动意图侦测：当手指移动超过 5px 时锁定轴向
+    if (!dragRef.current.axis) {
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        dragRef.current.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      }
+    }
+
+    // 🌟 如果判定为上下滚动，彻底抛弃画廊逻辑，归还控制权给页面
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const sensitivity = isMobile ? 1.8 : 1; 
+
+    const now = Date.now();
+    let newX = dragRef.current.startGX + dx * sensitivity;
     newX = Math.max(-3200, Math.min(0, newX));
     galleryX.set(newX);
 
@@ -8524,7 +8905,11 @@ export default function ArchitectureWorks() {
     if (!dragRef.current.isDown) return;
     dragRef.current.isDown = false;
 
-    const inertiaFactor = 0.12;
+    // 如果判定为上下滚动，不需要触发画廊的横向回弹惯性
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const inertiaFactor = isMobile ? 0.08 : 0.12;
     const currentX = galleryX.get();
     const velocity = dragRef.current.velocity * 100;
     let targetX = currentX + velocity * inertiaFactor;
@@ -8532,8 +8917,8 @@ export default function ArchitectureWorks() {
 
     inertiaRef.current = animate(currentX, targetX, {
       type: "spring",
-      stiffness: 120,
-      damping: 18,
+      stiffness: isMobile ? 160 : 120,
+      damping: isMobile ? 22 : 18,
       onUpdate: v => galleryX.set(v),
       onComplete: () => { }
     });
@@ -8544,9 +8929,12 @@ export default function ArchitectureWorks() {
     const onUp = () => onPointerUp();
     document.addEventListener('pointermove', onMove);
     document.addEventListener('pointerup', onUp);
+    document.addEventListener('touchcancel', onUp); // 🌟 防卡死
+
     return () => {
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('touchcancel', onUp);
     };
   }, [onPointerMove, onPointerUp]);
 
@@ -8565,9 +8953,10 @@ export default function ArchitectureWorks() {
 
   return (
     <section id="architecture" className="architecture-works-section" ref={containerRef}>
+      {/* 🌟 核心：为容器添加 touch-action: pan-y，让浏览器原生处理竖向滚动 */}
       <div className="sticky-viewport"
         onPointerDown={onPointerDown}
-        style={{ touchAction: 'none', cursor: isExpanded ? 'grab' : 'default', perspective: 1500 }}
+        style={{ touchAction: 'pan-y', cursor: isExpanded ? 'grab' : 'default', perspective: 1500 }}
       >
         <div style={{
           position: 'absolute',
@@ -8642,245 +9031,6 @@ export default function ArchitectureWorks() {
 }
 </file>
 
-<file path="src/components/IntroductionPage.jsx">
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import './introductionPage.css';
-import Aurora from './AuroraEffect';
-import BorderGlow from './BorderGlow';
-import ProfileCard from './ProfileCard';
-import avatarImg from '../assets/avatar.png';
-
-export default function IntroductionPage() {
-  const targetRef = useRef(null);
-  const { t } = useTranslation();
-
-  const dragRef = useRef(null);
-  const dragX = useMotionValue(0);
-  const [isCompact, setIsCompact] = useState(false);
-  const animPlayedRef = useRef(false);
-  const [animPlayed, setAnimPlayed] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 900px)');
-    const update = () => setIsCompact(mq.matches);
-
-    update();
-
-    if (mq.addEventListener) {
-      mq.addEventListener('change', update);
-      return () => mq.removeEventListener('change', update);
-    }
-
-    mq.addListener(update);
-    return () => mq.removeListener(update);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end -50vh"]
-  });
-
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on('change', (v) => {
-      if (v >= 0.5 && !animPlayedRef.current) {
-        animPlayedRef.current = true;
-        setAnimPlayed(true);
-      }
-    });
-    return () => {
-      if (typeof unsubscribe === 'function') unsubscribe();
-    };
-  }, [scrollYProgress]);
-
-  const boxesX = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    isCompact || animPlayed ? ['0vw', '0vw', '0vw'] : ['100vw', '0vw', '0vw']
-  );
-  const textX = useTransform(
-    scrollYProgress,
-    [0, 0.7, 1],
-    ['0px', '300px', '600px']
-  );
-
-  const introStyles = {
-    '--intro-box-height': isCompact ? 'clamp(420px, 92vw, 500px)' : 'clamp(420px, 44vw, 540px)',
-    '--intro-box-width': isCompact ? 'min(86vw, 360px)' : 'clamp(250px, 24vw, 380px)',
-  };
-
-  const skills = [
-    { name: "Sketch up", percent: "90%" },
-    { name: "Rhino", percent: "88%" },
-    { name: "AutoCAD", percent: "80%" },
-    { name: "Photoshop", percent: "95%" },
-    { name: "Illustrator", percent: "85%" },
-    { name: "Vibe Coding", percent: "65%" },
-    { name: "CET-6", percent: "90%" }
-  ];
-
-  return (
-    <section
-      id="introduction"
-      className="introduction-page"
-      ref={targetRef}
-      style={introStyles}
-    >
-
-      <div
-        className="background-hello"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, calc(-50% - (var(--intro-box-height) * 0.18)))',
-          fontSize: '24vw',
-          fontWeight: 900,
-          letterSpacing: '-1vw',
-          whiteSpace: 'nowrap',
-          zIndex: 0,
-          pointerEvents: 'none',
-          color: 'rgba(255, 255, 255, 0.08)',
-          fontFamily: "'Dela Gothic One', cursive, sans-serif"
-        }}
-      >
-        Hello!
-      </div>
-
-      <div className="aurora-bg-wrapper" style={{ zIndex: 1 }}>
-        <Aurora
-          colorStops={["#8599d2", "#0016d8", "#5211dd"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={1}
-        />
-      </div>
-
-      <div className="intro-content">
-
-        <motion.div 
-          className="swipe-hint"
-          style={{ opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]) }}
-        >
-          Swipe to view
-        </motion.div>
-
-        <motion.div
-          className="boxes-scroll-wrapper"
-          ref={dragRef}
-          style={{ 
-            x: boxesX, 
-            width: isCompact ? '100%' : '100vw', 
-            overflowX: 'visible', 
-            overflowY: 'visible',
-            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级，不锁死 transform
-            willChange: 'transform'
-          }}
-        >
-          <motion.div
-            className="boxes-container"
-            drag={isCompact ? false : 'x'}
-            dragConstraints={isCompact ? undefined : dragRef}
-            whileTap={{ cursor: "grabbing" }}
-            style={{
-              x: isCompact ? 0 : dragX,
-              y: isCompact ? 0 : 'clamp(-78px, -7vh, -28px)',
-              cursor: isCompact ? 'default' : 'grab',
-              width: isCompact ? '100%' : 'max-content',
-              margin: isCompact ? '0' : '0 auto',
-              padding: isCompact ? '0 16px' : '0 20px',
-              height: isCompact ? 'auto' : 'var(--intro-box-height)'
-            }}
-          >
-
-            <BorderGlow
-              className="glass-box"
-              backgroundColor="rgba(255, 255, 255, 0.03)"
-              borderRadius={24}
-              glowColor="240 80 70"
-              colors={['#8599d2', '#0016d8', '#5211dd']}
-              fillOpacity={0}
-            >
-              <div className="box-inner-content">
-                <h3 className="box-title">{t('introduction.skills')}</h3>
-                <div className="skills-list">
-                  {skills.map((skill, index) => (
-                    <div className="skill-item" key={index}>
-                      <span className="skill-name">{skill.name}</span>
-                      <div className="progress-track">
-                        <div className="progress-fill" style={{ width: skill.percent }}></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </BorderGlow>
-
-            <ProfileCard
-              name="Liu Yuyang"
-              title="Designer"
-              avatarUrl={avatarImg}
-              showUserInfo={false}
-              enableTilt={true}
-              behindGlowEnabled={false}
-              innerGradient="linear-gradient(145deg, rgba(20,20,40,0.8) 0%, rgba(82,17,221,0.2) 100%)"
-            />
-
-            <BorderGlow
-              className="glass-box"
-              backgroundColor="rgba(255, 255, 255, 0.03)"
-              borderRadius={24}
-              glowColor="240 80 70"
-              colors={['#8599d2', '#0016d8', '#5211dd']}
-              fillOpacity={0}
-            >
-              <div className="box-inner-content">
-                <h3 className="box-title">{t('introduction.education')}</h3>
-
-                <div className="edu-item">
-                  <h4 className="school-name">{t('introduction.school1')}</h4>
-                  <div className="edu-divider"></div>
-                  <div className="edu-details">
-                    <span className="major">{t('introduction.major1')}</span>
-                    <span className="degree blue-text">{t('introduction.degree1')}</span>
-                  </div>
-                </div>
-
-                <div className="edu-item" style={{ marginTop: '40px' }}>
-                  <h4 className="school-name">{t('introduction.school2')}</h4>
-                  <div className="edu-divider"></div>
-                  <div className="edu-details">
-                    <span className="major">{t('introduction.major2')}</span>
-                    <span className="degree blue-text">{t('introduction.degree2')}</span>
-                  </div>
-                </div>
-              </div>
-            </BorderGlow>
-
-          </motion.div>
-        </motion.div>
-
-        <motion.div 
-          className="text-row" 
-          style={{ 
-            x: textX, 
-            y: isCompact ? 0 : '58%',
-            z: 0, // 🌟 修复：只通过 Framer Motion 原生的 z 控制层级
-            willChange: 'transform'
-          }}
-        >
-          <h2 className="keep-my-font-3">
-            Who Am I - Skills - Education - Who Am I - Skills - Education
-          </h2>
-        </motion.div>
-
-      </div>
-    </section>
-  );
-}
-</file>
-
 <file path="src/components/GeneratedContent.jsx">
 import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useMotionValueEvent, animate, AnimatePresence } from 'framer-motion';
@@ -8904,7 +9054,7 @@ const getProjects = (t) => [
 ];
 
 /* =========================================
-   单张幻灯片组件（保留了性能优化）
+   单张幻灯片组件
    ========================================= */
 const GalleryItem = ({ index, smoothProgress, img, spreadProgress, isMobile }) => {
   const originalP = useTransform(smoothProgress, val => {
@@ -8915,58 +9065,51 @@ const GalleryItem = ({ index, smoothProgress, img, spreadProgress, isMobile }) =
 
   const p = useTransform([originalP, spreadProgress], ([orig, spread]) => orig * spread);
 
-  // Desktop transforms (6 visible images)
   const xDesktop = useTransform(p,   [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['-63vw', '-42vw', '0vw', '42vw', '64vw', '82vw', '96vw', '110vw']);
   const widthDesktop = useTransform(p,  [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['42vw', '42vw', '42vw', '22vw', '18vw', '14vw', '12vw', '12vw']);
   const heightDesktop = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4, 4.5], ['75vh', '75vh', '75vh', '60vh', '45vh', '35vh', '25vh', '25vh']);
   const visibilityDesktop = useTransform(p, val => (val < -1.6 || val > 4.6) ? 'hidden' : 'visible');
 
-  // Mobile transforms (3 visible images, center largest, symmetric decrease to sides)
-  // p=-1: left (medium), p=0: center (largest, front), p=1: right (medium)
-  // Only width controlled - height auto preserves original aspect ratio
-  // After scale(2.4) from center center, these pre-scale values render centered on page
-  // p=-1 renders center at ~20vw, p=0 at 50vw, p=1 at ~80vw (all viewport-relative)
-  const xMobile = useTransform(p, [-1.5, -1, 0, 1, 1.5, 4.5], ['-30vw', '17.5vw', '22.5vw', '42.5vw', '75vw', '80vw']);
-  const widthMobile = useTransform(p, [-1.5, -1, 0, 1, 1.5, 4.5], ['15vw', '40vw', '55vw', '40vw', '10vw', '5vw']);
-  const visibilityMobile = useTransform(p, val => (val < -1.6 || val > 1.6) ? 'hidden' : 'visible');
+  const xMobile = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4.5], ['-65vw', '-21.3vw', '30vw', '42.5vw', '53.7vw', '66.3vw', '91.2vw']);
+  const widthMobile = useTransform(p, [-1.5, -1, 0, 1, 2, 3, 4.5], ['42.5vw', '42.5vw', '42.5vw', '37.5vw', '32.4vw', '27.5vw', '22.5vw']);
+  
+  const visibilityMobile = useTransform(p, val => (val < -1.45 || val > 3.8) ? 'hidden' : 'visible');
+  const opacityMobile = useTransform(p, [-1.45, -1.1, 3.2, 3.8], [0, 1, 1, 0]);
 
-  // Select transforms based on device type
   const x = isMobile ? xMobile : xDesktop;
   const width = isMobile ? widthMobile : widthDesktop;
   const height = isMobile ? undefined : heightDesktop;
   const visibility = isMobile ? visibilityMobile : visibilityDesktop;
+  const opacity = isMobile ? opacityMobile : 1; 
 
-  const zIndexDesktop = useTransform(originalP, val => Math.round(10 - val));
-  const zIndexMobile = useTransform(originalP, val => {
-    // Left image (-1) on top, then center (0), then right (1)
-    if (Math.abs(val + 1) < 0.5) return 12; // left = highest
-    if (Math.abs(val) < 0.5) return 11;     // center = second
-    return 10;                                // right = lowest
-  });
+  const zIndexDesktop = useTransform(originalP, val => Math.round((20 - val) * 100));
+  const zIndexMobile = useTransform(originalP, val => Math.round((20 - val) * 100));
   const zIndex = isMobile ? zIndexMobile : zIndexDesktop;
 
   return (
     <motion.div 
       style={{ 
         position: 'absolute', 
-        bottom: 0, 
+        bottom: isMobile ? 'auto' : 0, 
+        top: isMobile ? '50%' : 'auto',
+        y: isMobile ? '-50%' : 0,
         left: 0,   
         x,           
         width, 
         height,
         zIndex,
         visibility,
-        opacity: 1, 
-        z: 0, // 🌟 性能优化：给每个图层独立的 GPU 通道
+        opacity, 
+        z: 0, 
         contain: isMobile ? 'layout style' : 'strict',
-        willChange: isMobile ? 'transform, width' : 'transform, width, height'
+        willChange: isMobile ? 'transform, width, opacity' : 'transform, width, height'
       }}
     >
       <img 
         src={img} 
         alt={`Project ${index + 1}`} 
-        decoding="async" // 🌟 性能优化：强制后台解码，防主线程卡顿
-        style={{ width: '100%', height: isMobile ? 'auto' : '100%', objectFit: isMobile ? undefined : 'cover', display: 'block' }} 
+        decoding="async" 
+        style={{ width: '100%', height: isMobile ? 'auto' : '100%', objectFit: isMobile ? undefined : 'cover', display: 'block', pointerEvents: 'none' }} 
         draggable="false"
       />
     </motion.div>
@@ -8985,7 +9128,6 @@ export default function GeneratedContent() {
   const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
   const [isMobile, setIsMobile] = useState(isMobileRef.current);
   
-  // 🌟 检测屏幕宽度变化
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 900;
@@ -8998,11 +9140,24 @@ export default function GeneratedContent() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 🌟 恢复：计算触发页面 Q弹吸附 的 Y 轴阀值
+  const { scrollYProgress: sectionVisibleProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "start start"]
+  });
+
+  const [showPill, setShowPill] = useState(false);
+  
+  useMotionValueEvent(sectionVisibleProgress, "change", (latest) => {
+    if (isMobileRef.current) {
+      if (latest >= 0.98 && !showPill) setShowPill(true);
+      if (latest < 0.90 && showPill) setShowPill(false);
+    }
+  });
+
   const [triggerPoint, setTriggerPoint] = useState(999999);
 
   useLayoutEffect(() => {
-    if (isMobileRef.current) return; // 移动端不需要惯性移动
+    if (isMobileRef.current) return;
     const updatePoint = () => {
       if (sectionRef.current) setTriggerPoint(sectionRef.current.offsetTop);
     };
@@ -9019,16 +9174,21 @@ export default function GeneratedContent() {
   });
   const spreadProgress = useTransform(galleryEnterProgress, [0.5, 1], [0, 1]);
 
-  // 🌟 恢复：页面的惯性移动效果逻辑
-  const clampedScrollY = useTransform(scrollY, (y) => Math.min(y, triggerPoint));
-  const smoothClampedScrollY = useSpring(clampedScrollY, { stiffness: 100, damping: 30 });
-  const springOffset = useTransform(() => clampedScrollY.get() - smoothClampedScrollY.get());
-
   const rawProgress = useMotionValue(0); 
   const smoothProgress = useSpring(rawProgress, { stiffness: 80, damping: 15 });
   const [activeIndex, setActiveIndex] = useState(0);
   
-  const dragRef = useRef({ isDown: false, startX: 0, startP: 0, lastTime: 0, lastX: 0, velocity: 0 });
+  // 🌟 核心：引入触控事件的状态锁
+  const dragRef = useRef({ 
+    isDown: false, 
+    startX: 0, 
+    startY: 0, 
+    startP: 0, 
+    lastTime: 0, 
+    lastX: 0, 
+    velocity: 0,
+    axis: null // 用于记录当前是纵向(y)还是横向(x)滑动
+  });
   const inertiaRef = useRef(null);
 
   useMotionValueEvent(smoothProgress, "change", (latest) => {
@@ -9038,7 +9198,11 @@ export default function GeneratedContent() {
     }
   });
 
+  // 🌟 核心：为原生 touchmove 绑定 passive: false 以阻断页面反弹
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
@@ -9046,26 +9210,58 @@ export default function GeneratedContent() {
         rawProgress.set(rawProgress.get() + e.deltaX * 0.0015);
       }
     };
-    const el = containerRef.current;
-    if (el) el.addEventListener('wheel', handleWheel, { passive: false });
+
+    const handleTouchMove = (e) => {
+      // 只要方向锁定为 'x' (横向画廊滑动)，就强行阻止浏览器原生的处理（比如iOS橡皮筋效果）
+      if (dragRef.current.axis === 'x') {
+        if (e.cancelable) {
+          e.preventDefault();
+        }
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    el.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
     return () => {
-      if (el) el.removeEventListener('wheel', handleWheel);
+      el.removeEventListener('wheel', handleWheel);
+      el.removeEventListener('touchmove', handleTouchMove);
     };
   }, [rawProgress]);
 
   const onPointerDown = (e) => {
     inertiaRef.current?.stop(); 
     dragRef.current = { 
-      isDown: true, startX: e.clientX, startP: rawProgress.get(), 
-      lastTime: Date.now(), lastX: e.clientX, velocity: 0 
+      isDown: true, 
+      startX: e.clientX, 
+      startY: e.clientY, 
+      startP: rawProgress.get(), 
+      lastTime: Date.now(), 
+      lastX: e.clientX, 
+      velocity: 0,
+      axis: null // 每次按下重新初始化方向
     };
   };
 
   const onPointerMove = (e) => {
     if (!dragRef.current.isDown) return;
-    const dx = e.clientX - dragRef.current.startX;
     
-    rawProgress.set(dragRef.current.startP - dx * 0.002);
+    const dx = e.clientX - dragRef.current.startX;
+    const dy = e.clientY - dragRef.current.startY;
+
+    // 🌟 滑动意图侦测：当手指移动超过 5px 时锁定轴向
+    if (!dragRef.current.axis) {
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        dragRef.current.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      }
+    }
+
+    // 🌟 如果判定为上下滚动，彻底抛弃画廊逻辑，归还控制权给页面
+    if (dragRef.current.axis === 'y') return;
+
+    // 根据设备动态调整触控滑动的灵敏度，让手机滑动时更"跟手"
+    const sensitivity = isMobile ? 0.0035 : 0.002;
+    rawProgress.set(dragRef.current.startP - dx * sensitivity);
 
     const now = Date.now();
     if (now - dragRef.current.lastTime > 16) {
@@ -9080,11 +9276,17 @@ export default function GeneratedContent() {
     if (!dragRef.current.isDown) return;
     dragRef.current.isDown = false;
     
+    // 🌟 如果是上下滑动松手，不触发画廊的横向回弹
+    if (dragRef.current.axis === 'y') return;
+
     const velocity = dragRef.current.velocity;
-    const targetP = rawProgress.get() - velocity * 0.4;
+    // 移动端和 PC 端赋予不同的惯性阻尼，触屏更平滑
+    const targetP = rawProgress.get() - velocity * (isMobile ? 0.25 : 0.4);
     
     inertiaRef.current = animate(rawProgress.get(), targetP, {
-      type: "spring", stiffness: 120, damping: 18,
+      type: "spring", 
+      stiffness: isMobile ? 160 : 120, // 移动端回弹更紧实
+      damping: isMobile ? 22 : 18,
       onUpdate: v => rawProgress.set(v)
     });
   };
@@ -9092,22 +9294,22 @@ export default function GeneratedContent() {
   useEffect(() => {
     document.addEventListener('pointermove', onPointerMove);
     document.addEventListener('pointerup', onPointerUp);
+    // 同时监听 touchcancel 防中断卡死
+    document.addEventListener('touchcancel', onPointerUp);
+    
     return () => {
       document.removeEventListener('pointermove', onPointerMove);
       document.removeEventListener('pointerup', onPointerUp);
+      document.removeEventListener('touchcancel', onPointerUp);
     };
-  }, []);
+  }, [isMobile]); // 绑定依赖 isMobile
 
   return (
     <motion.section 
       id="generated-content" 
       className={`generated-content-page${isChinese ? ' zh-lang' : ''}`}
       ref={sectionRef}
-      style={{ 
-        y: 0, /* 移除惯性阻尼移动效果 */
-        z: 0, 
-        willChange: 'transform' 
-      }} 
+      style={{ y: 0, z: 0, willChange: 'transform' }} 
     >
       <div className="gc-title-block">
         <div className="gc-blue-square"></div>
@@ -9142,13 +9344,37 @@ export default function GeneratedContent() {
           />
         ))}
       </div>
+
+      <div className="gc-hint-wrapper">
+        <AnimatePresence>
+          {isMobile && showPill && (
+            <motion.div
+              initial={{ width: 0, opacity: 0, scale: 0.8 }}
+              animate={{ width: "auto", opacity: 1, scale: 1 }}
+              exit={{ width: 0, opacity: 0, scale: 0.8 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 260, 
+                damping: 20, 
+                opacity: { duration: 0.2 } 
+              }}
+              className="gc-pill-button"
+            >
+              <span className="gc-pill-text">
+                {isChinese 
+                  ? "左右滑动浏览更多项目照片" 
+                  : "Swipe through the gallery to view more pictures"}
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.section>
   );
 }
 </file>
 
 <file path="src/components/programming.css">
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 @font-face {
   font-family: 'SonsieOne';
   src: url('/fonts/SonsieOne-Regular.ttf') format('truetype');

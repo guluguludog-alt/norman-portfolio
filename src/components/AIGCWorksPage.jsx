@@ -8,17 +8,16 @@ import ringImg from '../assets/Ring.png';
 
 export default function AIGCWorksPage() {
   const sectionRef = useRef(null);
-  const videoRef = useRef(null); // 🌟 1. 获取视频 DOM 引用
+  const videoRef = useRef(null); 
   const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
   const [isMobile, setIsMobile] = useState(isMobileRef.current);
   
-  // 🌟 2. 侦测该组件是否在屏幕中可视
   const isInView = useInView(sectionRef, { margin: "0px 0px -200px 0px" });
 
   const [scrollMetrics, setScrollMetrics] = useState({ start: 0, end: 1000 });
 
   useLayoutEffect(() => {
-    if (isMobileRef.current) return; // 移动端不需要滚动锁定动画
+    if (isMobileRef.current) return; 
     const updateMetrics = () => {
       if (sectionRef.current) {
         const vh = window.innerHeight;
@@ -38,7 +37,6 @@ export default function AIGCWorksPage() {
   const scale = useTransform(ringProgress, [0, 1], [2.1, 3.0]);
   const y = useTransform(ringProgress, [0, 1], ["calc(-50% + 180vh)", "calc(-50% + 0vh)"]);
 
-  // 🌟 检测屏幕宽度变化
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 900;
@@ -51,13 +49,12 @@ export default function AIGCWorksPage() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 🌟 3. 根据是否可视，动态控制视频播放/暂停
   useEffect(() => {
     if (videoRef.current) {
       if (isInView) {
         videoRef.current.play().catch(e => console.log("视频播放等待交互", e));
       } else {
-        videoRef.current.pause(); // 滑出屏幕立刻停止后台解码
+        videoRef.current.pause(); 
       }
     }
   }, [isInView]);
@@ -70,7 +67,7 @@ export default function AIGCWorksPage() {
             ref={videoRef}
             src={videoFile}
             className="aigc-scroll-video"
-            preload="metadata"
+            preload="auto" /* 🌟 核心：改为 auto 强行后台预缓存视频流，抹杀滑入黑屏闪烁 */
             muted
             playsInline
             loop

@@ -1,8 +1,6 @@
 /* =========================================
    Introduction Page 核心布局
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
 .introduction-page {
   position: relative;
   z-index: 50;        

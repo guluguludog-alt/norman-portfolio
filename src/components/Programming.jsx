@@ -279,7 +279,7 @@ export default function Programming() {
             ref={videoRef} 
             src={Video2} 
             className="programming-scroll-video" 
-            preload="metadata"
+            preload="auto"
             muted 
             playsInline 
             onEnded={() => setVideoEnded(true)}

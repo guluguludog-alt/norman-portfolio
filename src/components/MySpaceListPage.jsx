@@ -1,14 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence, useMotionValue } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import AnimatedSticker from './AnimatedSticker'; 
 import './mySpaceListPage.css';
 
-// 导入贴纸
 import CatStickerImg from '../assets/CatSticker1.png';
 import EyesStickerImg from '../assets/EyesSticker.png';
 
-// 导入所有悬浮预览序列图
 import Cat1Img from '../assets/Cat1.jpg';
 import Cat2Img from '../assets/Cat2.jpg';
 import Cat3Img from '../assets/Cat3.jpg';
@@ -31,7 +29,7 @@ import GamesImg from '../assets/Games.jpg';
 import Books1Img from '../assets/Books1.jpg';
 import Books2Img from '../assets/Books2.jpg';
 
-const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, onToggle }) => {
+const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, isTouchRef, updatePos, onHover, onClick }) => {
   const animStart = 0.2;
   const animEnd = 1.0; 
   const duration = animEnd - animStart;
@@ -48,26 +46,48 @@ const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, 
 
   const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #ffffff ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
 
-  // 🌟 核心：改为点击判定
+  // ================= 鼠标专属：Hover 触发逻辑 =================
+  const handlePointerEnter = (e) => {
+    if (isTouchRef.current) return; // 触控设备忽略
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    let clickPercent = Math.max(0, Math.min(1, x / rect.width));
+    updatePos(e.clientX, e.clientY);
+    onHover(index, clickPercent);
+  };
+
+  const handlePointerMove = (e) => {
+    if (isTouchRef.current) return; 
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    let clickPercent = Math.max(0, Math.min(1, x / rect.width));
+    updatePos(e.clientX, e.clientY);
+    onHover(index, clickPercent);
+  };
+
+  const handlePointerLeave = (e) => {
+    if (isTouchRef.current) return;
+    onHover(null, 0); // 鼠标移开立即消失
+  };
+
+  // ================= 触控专属：点击触发逻辑 =================
   const handleClick = (e) => {
-    // 如果当前项已经处于激活状态，再次点击将其关闭
-    if (isActive) {
-      onToggle(null, 0);
-    } else {
-      // 如果未激活，计算点击位置，并展开图片
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      let clickPercent = x / rect.width;
-      clickPercent = Math.max(0, Math.min(1, clickPercent));
-      onToggle(index, clickPercent);
-    }
+    if (!isTouchRef.current) return; // 鼠标设备忽略点击（交由 Hover 处理）
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    let clickPercent = Math.max(0, Math.min(1, x / rect.width));
+    updatePos(e.clientX, e.clientY);
+    onClick(index, clickPercent);
   };
 
   return (
     <motion.h1 
       className="myspace-text-line" 
       style={{ backgroundImage: animatedGradient }}
-      onClick={handleClick} /* 🌟 将交互改为 Click */
+      onPointerEnter={handlePointerEnter}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      onClick={handleClick}
     >
       <span className="myspace-main-text">{lineData.text}</span>
     </motion.h1>
@@ -80,18 +100,44 @@ export default function MySpaceListPage() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
-  // 🌟 状态存储目前激活的数据，lineIndex 为 null 即代表全部关闭
   const [activeData, setActiveData] = useState({ lineIndex: null, percent: 0 });
+  
+  // 🌟 核心：硬件类型判定器 (同步Ref用于事件处理，异步State用于CSS重绘)
+  const isTouchRef = useRef(false);
+  const [isTouchState, setIsTouchState] = useState(false);
 
-  // 保留全局鼠标移动侦测，为了让展示出来的预览图可以丝滑地跟着鼠标走
   useEffect(() => {
-    const updateMousePos = (e) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+    const handlePointer = (e) => {
+      const isTouch = e.pointerType === 'touch' || e.pointerType === 'pen';
+      isTouchRef.current = isTouch;
+      if (isTouch !== isTouchState) {
+        setIsTouchState(isTouch);
+      }
     };
-    window.addEventListener('pointermove', updateMousePos);
-    return () => window.removeEventListener('pointermove', updateMousePos);
-  }, [mouseX, mouseY]);
+    // 采用底层捕获，第一时间判断硬件设备身份
+    window.addEventListener('pointerdown', handlePointer, true);
+    window.addEventListener('pointermove', handlePointer, true);
+    return () => {
+      window.removeEventListener('pointerdown', handlePointer, true);
+      window.removeEventListener('pointermove', handlePointer, true);
+    };
+  }, [isTouchState]);
+
+  // 🌟 核心：双模式坐标映射算法
+  const updatePos = (clientX, clientY) => {
+    if (isTouchRef.current) {
+      // 触控模式：将图片的坐标锚定到页面文档上，这样用户上下滑动时，图片才会自然地随页面滚走
+      const container = containerRef.current;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      mouseX.set(clientX - rect.left);
+      mouseY.set(clientY - rect.top);
+    } else {
+      // 鼠标模式：将图片绝对锁定在屏幕的鼠标光标上，实现如影随形的追踪效果
+      mouseX.set(clientX);
+      mouseY.set(clientY);
+    }
+  };
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -107,10 +153,21 @@ export default function MySpaceListPage() {
     { text: "BOOKS I KEEP", images: [Books1Img, Books2Img] }
   ];
 
+  const allImages = useMemo(() => {
+    const imgs = [];
+    lines.forEach(line => {
+      if (line.images) {
+        line.images.forEach(img => {
+          if (!imgs.includes(img)) imgs.push(img);
+        });
+      }
+    });
+    return imgs;
+  }, []);
+
   const catProgress = useTransform(scrollYProgress, [0.1, 0.8], [0, 1]);
   const eyesProgress = useTransform(scrollYProgress, [0.25, 0.95], [0, 1]);
 
-  // 根据当前激活的索引渲染图片
   const activeLine = activeData.lineIndex !== null ? lines[activeData.lineIndex] : null;
   let currentImageSrc = null;
   if (activeLine && activeLine.images?.length > 0) {
@@ -120,37 +177,40 @@ export default function MySpaceListPage() {
   }
 
   return (
-    <section id="myspace-list" className="my-space-list-page-container" ref={containerRef}>
+    <section 
+      id="myspace-list" 
+      className="my-space-list-page-container" 
+      ref={containerRef} 
+      style={{ position: 'relative' }} // 必须，确保移动端的绝对定位锚定在此
+    >
       
       <div className="myspace-text-container">
         {lines.map((lineData, index) => (
           <AnimatedLine 
-            key={index} 
-            lineData={lineData} 
-            index={index} 
-            totalLines={lines.length} 
-            scrollYProgress={scrollYProgress} 
+            key={index} lineData={lineData} index={index} 
+            totalLines={lines.length} scrollYProgress={scrollYProgress} 
             isActive={activeData.lineIndex === index}
-            onToggle={(i, pct) => setActiveData({ lineIndex: i, percent: pct })}
+            isTouchRef={isTouchRef}
+            updatePos={updatePos}
+            onHover={(i, pct) => setActiveData({ lineIndex: i, percent: pct })}
+            onClick={(i, pct) => {
+              // 点击切换逻辑：第二次点击相同的选项将隐藏图片
+              if (activeData.lineIndex === i) {
+                setActiveData({ lineIndex: null, percent: 0 });
+              } else {
+                setActiveData({ lineIndex: i, percent: pct });
+              }
+            }}
           />
         ))}
       </div>
 
       <div className="myspace-stickers-container">
-        <AnimatedSticker 
-          src={CatStickerImg} 
-          className="sticker-cat-face" 
-          progress={catProgress} 
-        />
-        <AnimatedSticker 
-          src={EyesStickerImg} 
-          className="sticker-eyes-below" 
-          progress={eyesProgress} 
-        />
+        <AnimatedSticker src={CatStickerImg} className="sticker-cat-face" progress={catProgress} />
+        <AnimatedSticker src={EyesStickerImg} className="sticker-eyes-below" progress={eyesProgress} />
       </div>
 
       <div className="myspace-hover-hint">
-        {/* 如果需要，您可以去 json 文件把提示字由 hover 稍微改为 click */}
         {t('myspaceList.hoverHint')}
       </div>
 
@@ -158,23 +218,36 @@ export default function MySpaceListPage() {
         {currentImageSrc && (
           <motion.div
             className="myspace-hover-image-wrapper"
-            style={{ x: mouseX, y: mouseY }}
+            style={{ 
+              x: mouseX, 
+              y: mouseY,
+              // 🌟 终极防滚动死锁：触控状态为 absolute(随页面自然滚走)，鼠标状态为 fixed(吸附屏幕光标)
+              position: isTouchState ? 'absolute' : 'fixed',
+              top: 0, left: 0,
+              pointerEvents: 'none',
+              zIndex: 100
+            }}
             initial={{ opacity: 0, filter: 'blur(15px)' }}
             animate={{ opacity: 1, filter: 'blur(0px)' }}
             exit={{ opacity: 0, filter: 'blur(15px)' }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            <AnimatePresence>
-              <motion.img
-                key={currentImageSrc} 
-                src={currentImageSrc}
+            {allImages.map(src => (
+              <img
+                key={src} 
+                src={src}
                 className="myspace-hover-image"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15, ease: "linear" }}
+                loading="lazy"
+                decoding="async"
+                style={{ 
+                  opacity: currentImageSrc === src ? 1 : 0,
+                  transition: 'opacity 0.2s ease',
+                  position: 'absolute',
+                  top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover'
+                }}
+                alt="MySpace Preview"
               />
-            </AnimatePresence>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
