@@ -30,11 +30,18 @@
 }
 
 /* =========================================
-   移动端布局 (<=900px): 上下不裁切，左右可裁切
+   移动端布局 (<=900px): 图片缩小60%，上下对齐页面边缘，左右可出页面
    ========================================= */
 @media (max-width: 900px) {
+  .my-space-page-container {
+    height: 40vh;
+    overflow: visible;
+  }
+
   .myspace-sequence-canvas {
-    object-fit: cover;
-    object-position: center;
+    width: auto;
+    height: 40vh;
+    aspect-ratio: 1920 / 1080;
+    object-fit: fill;
   }
 }

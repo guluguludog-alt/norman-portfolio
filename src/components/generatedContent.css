@@ -16,7 +16,6 @@
    ========================================= */
 .gc-title-block {
   position: absolute;
-  /* 🌟 修改点 1：将标题块整体上移 (从 18vh 改为 10vh) */
   top: calc(10vh - 40px); 
   left: 60vw; 
   right: 5vw;
@@ -57,7 +56,6 @@
    ========================================= */
 .gc-carousel-container {
   position: absolute;
-  /* 🌟 修改点 2：将画廊底部留白增大，实现画廊整体向上推 (从 40px 改为 12vh) */
   bottom: 12vh;
   left: 0;
   width: 100vw;
@@ -71,33 +69,79 @@
   cursor: grabbing;
 }
 
-/* 响应式调整 (手机端) */
+/* =========================================
+   移动端底部提示药丸按钮 (Pill Button)
+   ========================================= */
+.gc-hint-wrapper {
+  position: absolute;
+  bottom: 10vh; /* 放在画廊下方偏下位置 */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* 仅提示，不遮挡底部任何滑动交互 */
+  z-index: 100;
+}
+
+.gc-pill-button {
+  background-color: #333333; /* 优雅的灰色背景 */
+  padding: 12px 28px;
+  border-radius: 9999px; /* 完美的药丸形 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  max-width: 92vw; /* 防止屏幕太窄时超出边界 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 必须：配合 Framer Motion 的宽度展开动画 */
+}
+
+.gc-pill-text {
+  color: #ffffff;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* 绝对禁止换行，保证单行显示 */
+}
+
+/* =========================================
+   响应式调整 (手机端 <= 900px)
+   ========================================= */
 @media (max-width: 900px) {
   .generated-content-page {
-    margin-top: 0; /* 移动端正常文档流，不覆盖 AIGC */
-    z-index: 20;
-    height: auto;
+    /* 🌟 核心修改：恢复 margin-top: -100vh (直接继承全局)，让它像幕布一样直接覆盖到 AIGC 页面上方 */
+    margin-top: -100vh;
+    z-index: 30; /* 确保层级比 AIGC 高 */
+    height: 100vh;
     min-height: 100vh;
+    overflow: visible; /* 保持画廊卡片可以越界 */
   }
 
   .gc-title-block {
-    /* 🌟 手机端标题适当下移 */
     top: calc(12vh - 40px);
-    left: 10vw; /* 手机端依然靠左，以保证阅读体验 */
+    left: 10vw; 
     right: 10vw;
     gap: 15px;
   }
+  
   .gc-blue-square {
     width: 25px;
     height: 25px;
     margin-top: 3px;
   }
+  
   .gc-title-text {
     font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
   
   .gc-carousel-container {
-    /* 🌟 手机端画廊也适当增高底部边距，保持协调 */
-    bottom: 10vh;
+    bottom: auto;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    transform: translateY(-50%) scale(2.4);
+    transform-origin: center center;
+    overflow: visible;
   }
 }

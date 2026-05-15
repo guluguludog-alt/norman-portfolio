@@ -336,7 +336,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
             src={config.image}
             alt={`Work ${index + 1}`}
             className="flying-photo"
-            decoding="async" // 🌟 加入后台异步解码
+            decoding="async"
             style={{
               position: 'absolute', marginLeft: -180, marginTop: -120, width: 360, height: 240,
               objectFit: 'cover', rotateZ, scaleX, scaleY, filter, opacity, clipPath: clipPathStyle,
@@ -345,7 +345,7 @@ const PhotoItem = ({ index, config, smoothY, isExpanded, showText, smoothVelocit
               rotateY: rotateY,
               skewX: skewXLag,
               transformPerspective: 1000,
-              z: 0, // 🌟 正确触发硬件加速的方式，不再覆盖 transform
+              z: 0, 
               willChange: 'transform, filter'
             }}
           />
@@ -428,13 +428,16 @@ export default function ArchitectureWorks() {
   const inertiaRef = useRef(null);
   const exitAnimRef = useRef(null);
 
+  // 🌟 核心：引入触控事件状态锁
   const dragRef = useRef({
     isDown: false,
     startX: 0,
+    startY: 0,
     startGX: 0,
     lastTime: 0,
     lastX: 0,
-    velocity: 0
+    velocity: 0,
+    axis: null
   });
 
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
@@ -469,7 +472,11 @@ export default function ArchitectureWorks() {
     }
   });
 
+  // 🌟 核心绑定：原生 TouchMove 阻断默认滚动
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleWheel = (e) => {
       if (!isExpandedRef.current) return;
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
@@ -481,14 +488,18 @@ export default function ArchitectureWorks() {
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel);
+    const handleTouchMove = (e) => {
+      if (dragRef.current.axis === 'x') {
+        if (e.cancelable) e.preventDefault();
       }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('touchmove', handleTouchMove);
     };
   }, [galleryX]);
 
@@ -554,28 +565,46 @@ export default function ArchitectureWorks() {
     return () => window.removeEventListener('scroll', onScroll);
   }, [scrollYProgress]);
 
+  // 🌟 重新设计的 Pointer 事件逻辑
   const onPointerDown = useCallback((e) => {
     if (!isExpandedRef.current) return;
-    e.preventDefault();
+    // 移除 e.preventDefault() 允许原生上下滑动启动
     inertiaRef.current?.stop();
     exitAnimRef.current?.stop();
 
-    const t = Date.now();
     dragRef.current = {
       isDown: true,
       startX: e.clientX,
+      startY: e.clientY,
       startGX: galleryX.get(),
-      lastTime: t,
+      lastTime: Date.now(),
       lastX: e.clientX,
-      velocity: 0
+      velocity: 0,
+      axis: null
     };
   }, [galleryX]);
 
   const onPointerMove = useCallback((e) => {
     if (!dragRef.current.isDown) return;
-    const now = Date.now();
+    
     const dx = e.clientX - dragRef.current.startX;
-    let newX = dragRef.current.startGX + dx;
+    const dy = e.clientY - dragRef.current.startY;
+
+    // 🌟 滑动意图侦测：当手指移动超过 5px 时锁定轴向
+    if (!dragRef.current.axis) {
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        dragRef.current.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      }
+    }
+
+    // 🌟 如果判定为上下滚动，彻底抛弃画廊逻辑，归还控制权给页面
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const sensitivity = isMobile ? 1.8 : 1; 
+
+    const now = Date.now();
+    let newX = dragRef.current.startGX + dx * sensitivity;
     newX = Math.max(-3200, Math.min(0, newX));
     galleryX.set(newX);
 
@@ -593,7 +622,11 @@ export default function ArchitectureWorks() {
     if (!dragRef.current.isDown) return;
     dragRef.current.isDown = false;
 
-    const inertiaFactor = 0.12;
+    // 如果判定为上下滚动，不需要触发画廊的横向回弹惯性
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const inertiaFactor = isMobile ? 0.08 : 0.12;
     const currentX = galleryX.get();
     const velocity = dragRef.current.velocity * 100;
     let targetX = currentX + velocity * inertiaFactor;
@@ -601,8 +634,8 @@ export default function ArchitectureWorks() {
 
     inertiaRef.current = animate(currentX, targetX, {
       type: "spring",
-      stiffness: 120,
-      damping: 18,
+      stiffness: isMobile ? 160 : 120,
+      damping: isMobile ? 22 : 18,
       onUpdate: v => galleryX.set(v),
       onComplete: () => { }
     });
@@ -613,9 +646,12 @@ export default function ArchitectureWorks() {
     const onUp = () => onPointerUp();
     document.addEventListener('pointermove', onMove);
     document.addEventListener('pointerup', onUp);
+    document.addEventListener('touchcancel', onUp); // 🌟 防卡死
+
     return () => {
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('touchcancel', onUp);
     };
   }, [onPointerMove, onPointerUp]);
 
@@ -634,9 +670,10 @@ export default function ArchitectureWorks() {
 
   return (
     <section id="architecture" className="architecture-works-section" ref={containerRef}>
+      {/* 🌟 核心：为容器添加 touch-action: pan-y，让浏览器原生处理竖向滚动 */}
       <div className="sticky-viewport"
         onPointerDown={onPointerDown}
-        style={{ touchAction: 'none', cursor: isExpanded ? 'grab' : 'default', perspective: 1500 }}
+        style={{ touchAction: 'pan-y', cursor: isExpanded ? 'grab' : 'default', perspective: 1500 }}
       >
         <div style={{
           position: 'absolute',

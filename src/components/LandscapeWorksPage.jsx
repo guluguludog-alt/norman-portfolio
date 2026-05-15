@@ -142,7 +142,7 @@ const PhotoItem = ({ index, config, galleryX, smoothVelocity, sectionProgress })
             transformPerspective: 1000,
             boxShadow: 'none',
             WebkitBoxShadow: 'none',
-            z: 0, // 🌟 使用原生方式触发 GPU 层
+            z: 0, 
             willChange: 'transform'
           }}
         />
@@ -225,16 +225,23 @@ export default function LandscapeWorksPage() {
 
   const inertiaRef = useRef(null);
 
+  // 🌟 核心：引入触控事件状态锁
   const dragRef = useRef({
     isDown: false,
     startX: 0,
+    startY: 0,
     startGX: 0,
     lastTime: 0,
     lastX: 0,
-    velocity: 0
+    velocity: 0,
+    axis: null
   });
 
+  // 🌟 核心绑定：原生 TouchMove 阻断默认滚动
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleWheel = (e) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
         e.preventDefault();
@@ -245,38 +252,58 @@ export default function LandscapeWorksPage() {
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel);
+    const handleTouchMove = (e) => {
+      if (dragRef.current.axis === 'x') {
+        if (e.cancelable) e.preventDefault();
       }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('touchmove', handleTouchMove);
     };
   }, [galleryX]);
 
   const onPointerDown = useCallback((e) => {
-    e.preventDefault();
+    // 移除 e.preventDefault() 允许原生上下滑动启动
     inertiaRef.current?.stop();
 
-    const t = Date.now();
     dragRef.current = {
       isDown: true,
       startX: e.clientX,
+      startY: e.clientY,
       startGX: galleryX.get(),
-      lastTime: t,
+      lastTime: Date.now(),
       lastX: e.clientX,
-      velocity: 0
+      velocity: 0,
+      axis: null
     };
   }, [galleryX]);
 
   const onPointerMove = useCallback((e) => {
     if (!dragRef.current.isDown) return;
-    const now = Date.now();
+    
     const dx = e.clientX - dragRef.current.startX;
-    let newX = dragRef.current.startGX + dx;
+    const dy = e.clientY - dragRef.current.startY;
 
+    // 🌟 滑动意图侦测：当手指移动超过 5px 时锁定轴向
+    if (!dragRef.current.axis) {
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        dragRef.current.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      }
+    }
+
+    // 🌟 如果判定为上下滚动，彻底抛弃画廊逻辑，归还控制权给页面
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const sensitivity = isMobile ? 1.8 : 1; 
+
+    const now = Date.now();
+    let newX = dragRef.current.startGX + dx * sensitivity;
     newX = Math.max(0, Math.min(3400, newX));
     galleryX.set(newX);
 
@@ -294,17 +321,20 @@ export default function LandscapeWorksPage() {
     if (!dragRef.current.isDown) return;
     dragRef.current.isDown = false;
 
-    const inertiaFactor = 0.12;
+    // 如果判定为上下滚动，不需要触发画廊的横向回弹惯性
+    if (dragRef.current.axis === 'y') return;
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 900;
+    const inertiaFactor = isMobile ? 0.08 : 0.12;
     const currentX = galleryX.get();
     const velocity = dragRef.current.velocity * 100;
     let targetX = currentX + velocity * inertiaFactor;
-
     targetX = Math.max(0, Math.min(3400, targetX));
 
     inertiaRef.current = animate(currentX, targetX, {
       type: "spring",
-      stiffness: 120,
-      damping: 18,
+      stiffness: isMobile ? 160 : 120,
+      damping: isMobile ? 22 : 18,
       onUpdate: v => galleryX.set(v),
       onComplete: () => { }
     });
@@ -315,9 +345,12 @@ export default function LandscapeWorksPage() {
     const onUp = () => onPointerUp();
     document.addEventListener('pointermove', onMove);
     document.addEventListener('pointerup', onUp);
+    document.addEventListener('touchcancel', onUp); // 🌟 防卡死
+    
     return () => {
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('touchcancel', onUp);
     };
   }, [onPointerMove, onPointerUp]);
 
@@ -400,9 +433,10 @@ export default function LandscapeWorksPage() {
         </motion.h1>
       </motion.div>
 
+      {/* 🌟 核心：为容器添加 touch-action: pan-y，让浏览器原生处理竖向滚动 */}
       <div
         onPointerDown={onPointerDown}
-        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'none', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
+        style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, touchAction: 'pan-y', cursor: 'grab', perspective: 1500, overflow: 'hidden' }}
       >
         <div className="landscape-bg-text">
           Landscape

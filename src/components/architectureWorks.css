@@ -107,9 +107,46 @@
   margin: 0;
 }
 
-.folder-ui-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-.folder-count { font-family: -apple-system, sans-serif; font-size: 3.5rem; font-weight: 700; color: #ffffff; line-height: 1; }
-.folder-circle-icon { width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+/* 🌟 核心修改 2：彻底隐藏底部的 "05" 计数和圆形图标 */
+.folder-ui-bottom { 
+  display: none; 
+}
+.folder-count { display: none; }
+.folder-circle-icon { display: none; }
+
+
+/* =========================================
+   🌟 核心修改 3：移动端布局下文件夹减小10%并下沉至部分隐藏在页面外
+   ========================================= */
+@media (max-width: 900px) {
+  .folder-piece { 
+    width: 90vw; 
+    height: 64vw; 
+    min-width: 0; 
+    min-height: 0;
+    /* 设为负值，使其往下沉，部分超出页面底端外 */
+    bottom: -6vh; 
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .folder-front-glass { 
+    width: 90vw; 
+    height: 57.6vw; 
+    min-width: 0; 
+    min-height: 0;
+    /* 同步下移 */
+    bottom: -6vh; 
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 5% 8%;
+  }
+
+  .folder-ui-top h3 { font-size: 1.5rem; }
+  .folder-ui-top p { font-size: 0.9rem; }
+}
 
 /* =========================================
    照片层
@@ -132,7 +169,6 @@
   margin-top: -130px;  
   object-fit: cover;
   border-radius: 8px;
-  /* 🌟 已彻底移除原来的白色 border，实现无边框纯净效果 */
   border: none; 
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
   will-change: transform, filter;

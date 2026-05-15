@@ -70,13 +70,14 @@
     .aigc-portfolio-section {
         margin: 0;
         padding: 0;
-        /* 移动端没有 Ring 动画，大幅减少滚动空间 */
-        height: calc(200vh - 200px);
+        /* 🌟 核心修改：改为 200vh，配合下一页的 -100vh，实现滑动过程正好是下一页升起覆盖的过程，彻底去除死锁 */
+        height: 200vh;
     }
 
     .aigc-sticky-container {
         position: sticky;
         top: 0;
+        height: 100vh;
     }
 
     .aigc-video-container {

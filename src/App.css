@@ -62,7 +62,6 @@ html,
     flex-direction: column;
     justify-content: center;
     z-index: 10;
-    /* 🌟 已彻底移除 content-visibility: auto，防止边界抖动 */
 }
 
 /* =========================================
@@ -159,10 +158,11 @@ html,
     .title-name h2 { font-size: 9vw; }
 }
 
-/* 滚动提示动画 */
+/* 🌟 核心修改 1：将 Scroll 指示器整体上移 */
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    /* 调大 bottom 的值，将其往上移。窄屏最低保留30px，大屏自适应至60px */
+    bottom: clamp(30px, 8vh, 60px); 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -172,6 +172,7 @@ html,
     animation: bounce 2s infinite ease-in-out;
     cursor: pointer;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    z-index: 50; 
 }
 
 .scroll-arrow {

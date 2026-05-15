@@ -160,27 +160,34 @@
 
 /* 手机端适配 */
 @media (max-width: 900px) {
+  .my-space-list-page-container {
+    height: 70vh;
+  }
+  
   .myspace-text-container {
-    top: -20vh; 
+    top: 5vh; 
+    transform: scaleY(1.4);
+    transform-origin: top left;
   }
   
   .myspace-main-text {
-    /* 🌟 手机端同样加上高度响应式限制 (10vh) */
-    font-size: clamp(2.5rem, min(12vw, 10vh), 6rem);
+    /* 手机端提高字体大小下限，保证大字清晰可见 */
+    font-size: clamp(2rem, min(10vw, 10vh), 5rem);
   }
   
   .myspace-text-line {
-    line-height: 1.2; 
+    line-height: 1.3;
+    letter-spacing: 0.02em;
   }
   
   .sticker-cat-face {
-    top: -15vh;
+    top: 10vh;
     left: 15vw;
     width: clamp(100px, 18vw, 180px);
   }
   
   .sticker-eyes-below {
-    top: 10vh;
+    top: 35vh;
     left: 60vw;
     width: clamp(120px, 25vw, 200px);
   }

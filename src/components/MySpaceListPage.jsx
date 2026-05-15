@@ -31,7 +31,7 @@ import GamesImg from '../assets/Games.jpg';
 import Books1Img from '../assets/Books1.jpg';
 import Books2Img from '../assets/Books2.jpg';
 
-const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, onHover, onLeave }) => {
+const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, onToggle }) => {
   const animStart = 0.2;
   const animEnd = 1.0; 
   const duration = animEnd - animStart;
@@ -48,21 +48,26 @@ const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, onHover, o
 
   const animatedGradient = useMotionTemplate`linear-gradient(to right, #ffffff ${stop1}, #ffffff ${stop2}, #0016d8 ${stop3}, rgba(0, 22, 216, 0) ${stop4})`;
 
-  const handlePointerMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    let hoverPercent = x / rect.width;
-    hoverPercent = Math.max(0, Math.min(1, hoverPercent));
-    onHover(index, hoverPercent);
+  // 🌟 核心：改为点击判定
+  const handleClick = (e) => {
+    // 如果当前项已经处于激活状态，再次点击将其关闭
+    if (isActive) {
+      onToggle(null, 0);
+    } else {
+      // 如果未激活，计算点击位置，并展开图片
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      let clickPercent = x / rect.width;
+      clickPercent = Math.max(0, Math.min(1, clickPercent));
+      onToggle(index, clickPercent);
+    }
   };
 
   return (
     <motion.h1 
       className="myspace-text-line" 
       style={{ backgroundImage: animatedGradient }}
-      onPointerEnter={handlePointerMove}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={onLeave}
+      onClick={handleClick} /* 🌟 将交互改为 Click */
     >
       <span className="myspace-main-text">{lineData.text}</span>
     </motion.h1>
@@ -74,8 +79,11 @@ export default function MySpaceListPage() {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const [hoverData, setHoverData] = useState({ lineIndex: null, percent: 0 });
+  
+  // 🌟 状态存储目前激活的数据，lineIndex 为 null 即代表全部关闭
+  const [activeData, setActiveData] = useState({ lineIndex: null, percent: 0 });
 
+  // 保留全局鼠标移动侦测，为了让展示出来的预览图可以丝滑地跟着鼠标走
   useEffect(() => {
     const updateMousePos = (e) => {
       mouseX.set(e.clientX);
@@ -99,15 +107,15 @@ export default function MySpaceListPage() {
     { text: "BOOKS I KEEP", images: [Books1Img, Books2Img] }
   ];
 
-  // 🌟 独立进度控制：确保 scroll 没到 0.1 / 0.25 之前，progress 严格为 0，从而触发隐藏状态
   const catProgress = useTransform(scrollYProgress, [0.1, 0.8], [0, 1]);
   const eyesProgress = useTransform(scrollYProgress, [0.25, 0.95], [0, 1]);
 
-  const activeLine = hoverData.lineIndex !== null ? lines[hoverData.lineIndex] : null;
+  // 根据当前激活的索引渲染图片
+  const activeLine = activeData.lineIndex !== null ? lines[activeData.lineIndex] : null;
   let currentImageSrc = null;
   if (activeLine && activeLine.images?.length > 0) {
     const imgCount = activeLine.images.length;
-    const imgIndex = Math.min(Math.floor(hoverData.percent * imgCount), imgCount - 1);
+    const imgIndex = Math.min(Math.floor(activeData.percent * imgCount), imgCount - 1);
     currentImageSrc = activeLine.images[imgIndex];
   }
 
@@ -122,8 +130,8 @@ export default function MySpaceListPage() {
             index={index} 
             totalLines={lines.length} 
             scrollYProgress={scrollYProgress} 
-            onHover={(i, pct) => setHoverData({ lineIndex: i, percent: pct })}
-            onLeave={() => setHoverData({ lineIndex: null, percent: 0 })}
+            isActive={activeData.lineIndex === index}
+            onToggle={(i, pct) => setActiveData({ lineIndex: i, percent: pct })}
           />
         ))}
       </div>
@@ -142,6 +150,7 @@ export default function MySpaceListPage() {
       </div>
 
       <div className="myspace-hover-hint">
+        {/* 如果需要，您可以去 json 文件把提示字由 hover 稍微改为 click */}
         {t('myspaceList.hoverHint')}
       </div>
 

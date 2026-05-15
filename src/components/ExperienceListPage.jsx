@@ -1,12 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './experienceListPage.css';
 import starBg from '../assets/Starbackground.png'; 
 
-const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [hasHovered, setHasHovered] = useState(false);
+const CompanyItem = React.memo(({ company, index, scrollYProgress, isActive, onClick }) => {
+  // 使用 hasActivated 记录是否曾经被激活过，以便触发回退动画
+  const [hasActivated, setHasActivated] = useState(false);
+
+  useEffect(() => {
+    if (isActive) setHasActivated(true);
+  }, [isActive]);
   
   const opacityStart = index * 0.12; 
   const opacityEnd = opacityStart + 0.15; 
@@ -25,7 +29,6 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
 
   // ================= 核心动画编排 =================
   
-  // 1. 原公司名：放大缓冲 + 遮罩擦除
   const originalTextVariants = {
     hidden: { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
     rest: { 
@@ -33,7 +36,6 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
       scale: 1, 
       transition: { 
         clipPath: { duration: 0.85, delay: 0, ease: [0.4, 0, 0.2, 1] },
-        // 🌟 修复：加入 0.4 秒的平滑回退，如果在放大中途移走鼠标，它会温柔地缩回去而不是瞬间闪现
         scale: { duration: 0.4, ease: "easeOut" } 
       } 
     },
@@ -47,7 +49,6 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
     }
   };
 
-  // 2. 职位信息揭示
   const revealTextVariants = {
     hidden: { clipPath: "inset(0% 100% 0% 0%)" },
     rest: { 
@@ -60,7 +61,6 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
     }
   };
 
-  // 3. 竖直彗星光标
   const scannerVariants = {
     hidden: { opacity: 0, left: "0%" },
     rest: {
@@ -85,19 +85,14 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress }) => {
     }
   };
 
-  const handleHoverStart = () => {
-    setIsHovered(true);
-    setHasHovered(true);
-  };
-
-  const currentAnimationState = isHovered ? "hover" : (hasHovered ? "rest" : "hidden");
+  // 🌟 根据属性直接判定当前应处于哪种动画状态
+  const currentAnimationState = isActive ? "hover" : (hasActivated ? "rest" : "hidden");
 
   return (
     <motion.div 
       className="company-item"
       style={{ opacity: itemOpacity }} 
-      onHoverStart={handleHoverStart}
-      onHoverEnd={() => setIsHovered(false)}
+      onClick={onClick} /* 🌟 核心：Hover 改为 onClick */
       initial="hidden"
       animate={currentAnimationState}
     >
@@ -135,6 +130,9 @@ export default function ExperienceListPage() {
   const containerRef = useRef(null);
   const { t, i18n } = useTranslation();
   const isChinese = i18n.language === 'zh';
+  
+  // 🌟 核心状态：记录当前展开的是哪个索引。null 代表全部关闭。
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const { scrollYProgress: textScrollProgress } = useScroll({
     target: containerRef,
@@ -176,7 +174,9 @@ export default function ExperienceListPage() {
             key={index}
             index={index}
             company={company}
-            scrollYProgress={textScrollProgress} 
+            scrollYProgress={textScrollProgress}
+            isActive={activeIndex === index} 
+            onClick={() => setActiveIndex(activeIndex === index ? null : index)} /* 🌟 触发点击事件 */
           />
         ))}
       </div>

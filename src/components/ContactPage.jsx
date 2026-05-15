@@ -33,7 +33,7 @@ export default function ContactPage() {
   const text = "LETUSTALK!";
   const letters = text.split("");
 
-  const finalScales = [2.8, 3.4, 2.5, 3.8, 3.1, 3.2, 2.7, 3.6, 2.9, 3.5];
+  const finalScales = [4.6, 5.5, 4.0, 6.2, 5.1, 5.2, 4.4, 5.9, 4.7, 5.7];
 
   return (
     <section id="contact" className="contact-section" ref={containerRef}>
