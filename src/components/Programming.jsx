@@ -67,6 +67,8 @@ export default function Programming() {
   const sweep2TextOpacity = useMotionValue(0);
   const sweep2TextBlur = useMotionValue(20);
   const sweep2TextBlurString = useTransform(sweep2TextBlur, (v) => `blur(${v}px)`);
+  const sweep2TextX = useMotionValue('-50%');
+  const sweep2TextY = useMotionValue('-50%');
   const sweep2Percent = useMotionValue(-20);
   const sweep2Stop1 = useTransform(sweep2Percent, v => `${v - 20}%`);
   const sweep2Stop2 = useTransform(sweep2Percent, v => `${v - 10}%`);
@@ -95,8 +97,9 @@ export default function Programming() {
         containerScale: dynamicScale, containerX: '0vw', containerY: '-16vh',
         imacX: '-50%', imacY: '-50%', imacFinalOpacity: 0, 
         macStudioX: 'calc(-50% + 28vw)', macStudioY: 'calc(-50% - 7vh)', 
-        text1X: '-50%', text1Y: 'calc(-50% + 10vh)',
-        buttonsX: '-50%', buttonsY: 'calc(-50% + 10vh + 35vw)' 
+        text1X: '-50%', text1Y: 'calc(-50% + 20vh)',
+        text2X: '-50%', text2Y: 'calc(-50% + 14vh)',
+        buttonsX: '-50%', buttonsY: 'calc(-50% + 20vh + 35vw)' 
       };
     } else {
       return {
@@ -104,6 +107,7 @@ export default function Programming() {
         imacX: 'calc(-50% - 30vw)', imacY: 'calc(-50% + 0.5vw)', imacFinalOpacity: 1, 
         macStudioX: 'calc(-50% - 2vw)', macStudioY: 'calc(-50% + 12.3vw)', 
         text1X: 'calc(-50% + 30vw)', text1Y: 'calc(-50% - 4vw)', 
+        text2X: 'calc(-50% + 30vw)', text2Y: 'calc(-50% - 4vw)', 
         buttonsX: 'calc(-50% + 30vw)', buttonsY: 'calc(-50% + 13.5vw)' 
       };
     }
@@ -129,9 +133,11 @@ export default function Programming() {
 
     animate(syncTextX, layout.text1X, { duration: 0.01 });
     animate(syncTextY, layout.text1Y, { duration: 0.01 });
+    animate(sweep2TextX, layout.text2X, { duration: 0.01 });
+    animate(sweep2TextY, layout.text2Y, { duration: 0.01 });
     animate(buttonsX, layout.buttonsX, { duration: 0.01 });
     animate(buttonsY, layout.buttonsY, { duration: 0.01 });
-  }, [containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity, syncTextX, syncTextY, buttonsX, buttonsY]);
+  }, [containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity, syncTextX, syncTextY, sweep2TextX, sweep2TextY, buttonsX, buttonsY]);
 
   useEffect(() => {
     let lastWidth = window.innerWidth;
@@ -220,6 +226,8 @@ export default function Programming() {
     animate(sweep2TextOpacity, 0, { duration: 0.01 });
     animate(sweep2TextBlur, 20, { duration: 0.01 });
     animate(sweep2Percent, -20, { duration: 0.01 });
+    animate(sweep2TextX, '-50%', { duration: 0.01 });
+    animate(sweep2TextY, '-50%', { duration: 0.01 });
     animate(buttonsOpacity, 0, { duration: 0.01 });
     animate(buttonsBlur, 20, { duration: 0.01 });
     animate(playIconOpacity, 0, { duration: 0.01 });
@@ -251,7 +259,7 @@ export default function Programming() {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
-  }, [syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity]);
+  }, [syncTextOpacity, syncTextBlur, sweepPercent, sweep2TextOpacity, sweep2TextBlur, sweep2Percent, sweep2TextX, sweep2TextY, buttonsOpacity, buttonsBlur, playIconOpacity, playIconBlur, containerScale, containerX, containerY, macbookOpacity, imacX, imacY, imacOpacity, macStudioX, macStudioY, macStudioOpacity]);
 
   return (
     <section id="programming" className={`programming-page${isChinese ? ' zh-lang' : ''}`} ref={sectionRef}>
@@ -331,7 +339,7 @@ export default function Programming() {
 
         <motion.div 
           className="sync-text-container sync-text-second"
-          style={{ opacity: sweep2TextOpacity, x: syncTextX, y: syncTextY, filter: sweep2TextBlurString }}
+          style={{ opacity: sweep2TextOpacity, x: sweep2TextX, y: sweep2TextY, filter: sweep2TextBlurString }}
         >
           <motion.h2 style={{ backgroundImage: animatedGradient2, fontFamily: syncFontFamily }}>{t('programming.clipoTitle')}</motion.h2>
         </motion.div>

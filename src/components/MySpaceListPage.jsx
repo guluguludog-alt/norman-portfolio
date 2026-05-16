@@ -123,20 +123,12 @@ export default function MySpaceListPage() {
     };
   }, [isTouchState]);
 
-  // 🌟 核心：双模式坐标映射算法
+  // 🌟 核心：坐标映射算法 — 统一使用视口坐标（fixed 定位）
   const updatePos = (clientX, clientY) => {
-    if (isTouchRef.current) {
-      // 触控模式：将图片的坐标锚定到页面文档上，这样用户上下滑动时，图片才会自然地随页面滚走
-      const container = containerRef.current;
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      mouseX.set(clientX - rect.left);
-      mouseY.set(clientY - rect.top);
-    } else {
-      // 鼠标模式：将图片绝对锁定在屏幕的鼠标光标上，实现如影随形的追踪效果
-      mouseX.set(clientX);
-      mouseY.set(clientY);
-    }
+    // 无论鼠标还是触控，都使用视口坐标，配合 fixed 定位
+    // 触控设备下图片固定在点击时的屏幕位置，不会随页面滚动而移动
+    mouseX.set(clientX);
+    mouseY.set(clientY);
   };
 
   const { scrollYProgress } = useScroll({
@@ -221,8 +213,8 @@ export default function MySpaceListPage() {
             style={{ 
               x: mouseX, 
               y: mouseY,
-              // 🌟 终极防滚动死锁：触控状态为 absolute(随页面自然滚走)，鼠标状态为 fixed(吸附屏幕光标)
-              position: isTouchState ? 'absolute' : 'fixed',
+              // 🌟 统一使用 fixed 定位：鼠标模式图片跟随光标，触控模式图片固定在点击位置不随页面滚动
+              position: 'fixed',
               top: 0, left: 0,
               pointerEvents: 'none',
               zIndex: 100

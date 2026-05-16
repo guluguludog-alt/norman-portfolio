@@ -190,12 +190,15 @@
     width: clamp(120px, 25vw, 200px);
   }
 
-  /* 手机端隐藏提示文字与预览交互 */
+  /* 手机端隐藏提示文字（触屏用点击替代hover） */
   .myspace-hover-hint {
     display: none; 
   }
   
+  /* 触屏设备：图片预览缩小并适配移动端屏幕 */
   .myspace-hover-image-wrapper {
-    display: none;
+    width: clamp(140px, 35vw, 220px);
+    margin-left: 2vw;
+    margin-top: -10vh;
   }
 }
