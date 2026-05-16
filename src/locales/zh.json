@@ -17,6 +17,7 @@
     "degree2": "硕士"
   },
   "experienceList": {
+    "pillText": "点击查看实习详情",
     "company1": "西安建筑科技大学建筑设计研究院",
     "position1": "建筑实习生",
     "time1": "2024.9-2025.9",
@@ -85,6 +86,7 @@
     "details": "详情"
   },
   "landscape": {
+    "pillText": "滑动查看更多项目",
     "project1": {
       "title": "济南黄台中央公园",
       "subtitle": "山东济南",
@@ -149,6 +151,7 @@
     "clipoTitle": "Clipo 免费\n且开源"
   },
   "myspaceList": {
+    "pillText": "点击文字查看图片",
     "hoverHint": "将光标放在文字上来查看图片"
   },
   "hero": {

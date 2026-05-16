@@ -99,6 +99,21 @@ export default function MySpaceListPage() {
   const { t } = useTranslation();
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { amount: 0.1 });
+
+  // ---- Mobile pill state (touch devices only, using existing isTouchState) ----
+  const [showPill, setShowPill] = useState(false);
+
+  const { scrollYProgress: pillProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+
+  useEffect(() => {
+    const unsubscribe = pillProgress.on("change", (latest) => {
+      setShowPill(latest >= 0.2 && latest <= 0.95);
+    });
+    return unsubscribe;
+  }, [pillProgress]);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -258,6 +273,23 @@ export default function MySpaceListPage() {
               />
             ))}
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile floating pill (touch devices only) */}
+      <AnimatePresence>
+        {isTouchState && showPill && (
+          <div className="mobile-myspace-pill">
+            <motion.div
+              className="mobile-myspace-pill-inner"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 15, mass: 0.8 }}
+            >
+              {t('myspaceList.pillText')}
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 

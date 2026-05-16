@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './experienceListPage.css';
 import starBg from '../assets/Starbackground.png'; 
@@ -134,6 +134,26 @@ export default function ExperienceListPage() {
   // 🌟 核心状态：记录当前展开的是哪个索引。null 代表全部关闭。
   const [activeIndex, setActiveIndex] = useState(null);
 
+  // ---- Mobile pill state (touch devices only) ----
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [showPill, setShowPill] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const { scrollYProgress: pillProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+
+  useEffect(() => {
+    const unsubscribe = pillProgress.on("change", (latest) => {
+      setShowPill(latest >= 0.2 && latest <= 0.95);
+    });
+    return unsubscribe;
+  }, [pillProgress]);
+
   const { scrollYProgress: textScrollProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "start start"]
@@ -180,6 +200,22 @@ export default function ExperienceListPage() {
           />
         ))}
       </div>
+      {/* Mobile floating pill (touch devices only) */}
+      <AnimatePresence>
+        {isTouchDevice && showPill && (
+          <div className="mobile-experience-pill">
+            <motion.div
+              className="mobile-experience-pill-inner"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 15, mass: 0.8 }}
+            >
+              {t('experienceList.pillText')}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

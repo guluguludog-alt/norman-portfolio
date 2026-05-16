@@ -7,7 +7,8 @@ import {
   useSpring,
   animate,
   useVelocity,
-  useMotionValue
+  useMotionValue,
+  AnimatePresence
 } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useLenis } from 'lenis/react';
@@ -224,6 +225,26 @@ export default function LandscapeWorksPage() {
   const smoothVelocity = useSpring(galleryVelocity, { stiffness: 80, damping: 15 });
 
   const inertiaRef = useRef(null);
+
+  // ---- Mobile pill state (touch devices only) ----
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [showPill, setShowPill] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const { scrollYProgress: pillProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+
+  useEffect(() => {
+    const unsubscribe = pillProgress.on("change", (latest) => {
+      setShowPill(latest >= 0.2 && latest <= 0.95);
+    });
+    return unsubscribe;
+  }, [pillProgress]);
 
   // 🌟 核心：引入触控事件状态锁
   const dragRef = useRef({
@@ -476,6 +497,23 @@ export default function LandscapeWorksPage() {
           ))}
         </motion.div>
       </div>
+
+      {/* Mobile floating pill (touch devices only) */}
+      <AnimatePresence>
+        {isTouchDevice && showPill && (
+          <div className="mobile-landscape-pill">
+            <motion.div
+              className="mobile-landscape-pill-inner"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 15, mass: 0.8 }}
+            >
+              {t('landscape.pillText')}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

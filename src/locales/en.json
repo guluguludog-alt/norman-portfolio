@@ -17,6 +17,7 @@
     "degree2": "Master"
   },
   "experienceList": {
+    "pillText": "Tap to view internship details.",
     "company1": "Architectural Design and Research Institute of Xi'an University of Architecture and Technology",
     "position1": "Architecture Intern",
     "time1": "2024.9-2025.9",
@@ -85,6 +86,7 @@
     "details": "Details"
   },
   "landscape": {
+    "pillText": "Swipe through the gallery to view more projects.",
     "project1": {
       "title": "Jinan Huangtai Central Park",
       "subtitle": "Jinan, Shandong, China",
@@ -149,6 +151,7 @@
     "clipoTitle": "Clipo is free\nand open-source"
   },
   "myspaceList": {
+    "pillText": "Tap the text to reveal pictures.",
     "hoverHint": "Hover over the text to preview the image."
   },
   "hero": {
