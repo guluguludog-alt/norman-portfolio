@@ -16,11 +16,12 @@ export default function ProjectDetailPage() {
     );
   }, [projectId]);
 
-  // 核心：如果是 LProject1 (济南黄台中央公园)，则隐藏默认的返回按钮，改用它专属的左上角小蓝块
-  const showDefaultBack = projectId !== 'LProject1';
+  // 如果是 LProject1 或 Project2，则彻底隐藏系统自带的默认返回按钮，改用大屏内部自带的高级小蓝块
+  const showDefaultBack = projectId !== 'LProject1' && projectId !== 'Project2';
 
   return (
-    <div className="project-detail-container">
+    /* 核心加固：动态为数字化大屏注入全透明专属标识类 */
+    <div className={`project-detail-container ${!showDefaultBack ? 'transparent-gate' : ''}`}>
       {showDefaultBack && (
         <button 
           onClick={() => navigate(-1)} 

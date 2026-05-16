@@ -17,13 +17,14 @@ import ArchitectureWorks from './components/ArchitectureWorks';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProjectDetailPage from './components/ProjectDetailPage';
-import LoadingScreen from './components/LoadingScreen'; // 🌟 引入刚建好的加载页
+import LoadingScreen from './components/LoadingScreen'; 
 
 function Home() {
-  // 记录整个网站资源是否加载完毕的全局状态
-  const [isAppLoaded, setIsAppLoaded] = useState(false);
+  // 核心优化：利用 sessionStorage 缓存状态，防止用户返回主页时重新激活 LoadingScreen 幕布导致闪烁黑屏
+  const [isAppLoaded, setIsAppLoaded] = useState(() => {
+    return sessionStorage.getItem('global_app_loaded') === 'true';
+  });
 
-  // 在加载页未消失前，把滚动强制锁死在最顶部，防止手抖滑到下面
   useEffect(() => {
     if (!isAppLoaded) {
       window.scrollTo(0, 0);
@@ -33,14 +34,17 @@ function Home() {
     }
   }, [isAppLoaded]);
 
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('global_app_loaded', 'true');
+    setIsAppLoaded(true);
+  };
+
   return (
     <>
-      {/* 🌟 放置加载幕布，当它触发完成时更新全局状态 */}
-      <LoadingScreen onComplete={() => setIsAppLoaded(true)} />
+      {!isAppLoaded && <LoadingScreen onComplete={handleLoadingComplete} />}
 
       <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothWheel: true }}>
         <Navbar />
-        {/* 🌟 将状态传递给 Hero，让 Hero 等幕布拉开再播放酷炫入场 */}
         <Hero isAppLoaded={isAppLoaded} />
         <IntroductionPage />
         <ExperiencePage />
@@ -61,8 +65,12 @@ function Home() {
 function App() {
   return (
     <Router>
+      {/* 底层主页常驻，保留全站滚动位置与生命周期 */}
+      <Home />
+      
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={null} />
+        {/* 高层悬浮遮罩通道，原位向下擦出 */}
         <Route path="/project/:projectId" element={<ProjectDetailPage />} />
       </Routes>
     </Router>

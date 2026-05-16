@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as echarts from 'echarts';
 import AMapLoader from '@amap/amap-jsapi-loader';
+import { useTranslation } from 'react-i18next'; // 全局多语言钩子联动
 import './LProject1.css';
 
+// 全局配置高德安全密钥
 window._AMapSecurityConfig = {
   securityJsCode: '0716992449547cb661a4b1e574a42a7b',
 };
@@ -13,9 +15,61 @@ const JINAN_TEMP = [-0.4, 3.2, 9.4, 16.9, 22.6, 27.2, 27.5, 26.3, 22.1, 15.8, 8.
 const JINAN_RAIN = [5.7, 8.5, 15.3, 27.1, 46.5, 78.2, 161.1, 150.7, 58.4, 29.2, 14.5, 6.1];
 const JINAN_SUN = [152.1, 160.3, 204.5, 228.6, 264.2, 241.0, 186.5, 198.6, 195.4, 201.2, 162.3, 145.6];
 
+// 专属多语言本地字典（中文模式下 Project 保持英文不翻译）
+const translations = {
+  en: {
+    project: "Project",
+    title: "Jinan Huangtai Central Park",
+    siteAnalysis: "Site Analysis",
+    interactiveInterface: "Interactive Interface",
+    landUse: "Land Use Allocation by Category",
+    demographics: "Demographic Structure",
+    climate: "Climate Data",
+    precipitation: "Precipitation Data",
+    sunshine: "Sunshine Duration Data",
+    descriptionTitle: "Project Description",
+    description: "This central park landscape planning and design project focuses on the urban renewal initiative in the Huangtai District of Jinan, centering on the in-depth design exploration and conceptual development of a planned central park. The project aims to improve the urban environment, establish a new city landmark, and integrate the profound historical and cultural heritage.",
+    age0_20: "0-20 years old",
+    age20_40: "20-40 years old",
+    age40_60: "40-60 years old",
+    age60_plus: "60+ years old",
+    residential: "Residential",
+    parks: "Parks & Green Spaces",
+    school: "School",
+    commercial: "Commercial",
+    other: "Other"
+  },
+  zh: {
+    project: "Project", 
+    title: "济南黄台中央公园规划",
+    siteAnalysis: "场地现状分析",
+    interactiveInterface: "交互式界面", 
+    landUse: "规划用地各类构成占比",
+    demographics: "当地人口结构", 
+    climate: "气温年标数据",
+    precipitation: "年降水量季节分配数据",
+    sunshine: "平均日照时数统计",
+    descriptionTitle: "项目简介", 
+    description: "本项目聚焦于济南黄台片区的城市更新行动，围绕规划中的中央公园展开深入的景观规划设计与概念发掘。项目旨在改善黄台片区整体生态城市环境，打造全新的绿色智慧地标，并深度融合当地历史悠久的齐鲁泉水文化底蕴。",
+    age0_20: "0-20 岁",
+    age20_40: "20-40 岁",
+    age40_60: "40-60 岁",
+    age60_plus: "60 岁以上",
+    residential: "居住建筑用地",
+    parks: "景观公园与公共绿地",
+    school: "教育配套用地",
+    commercial: "商业核心综合体",
+    other: "其他市政公共设施"
+  }
+};
+
 export default function LProject1() {
   const navigate = useNavigate();
+  const { i18n } = useTranslation(); 
   
+  const isZh = i18n.language?.startsWith('zh');
+  const tDict = isZh ? translations.zh : translations.en;
+
   const chartTempRef = useRef(null);
   const chartRainRef = useRef(null);
   const chartSunRef = useRef(null);
@@ -23,12 +77,15 @@ export default function LProject1() {
 
   const [barWidths, setBarWidths] = useState([0, 0, 0, 0, 0]);
   const [tooltip, setTooltip] = useState({ display: 'none', left: 0, top: 0, label: '', perc: '' });
+  
+  // 顺畅动画：控制页面级向上原位收回退出动画的状态
+  const [isExiting, setIsExiting] = useState(false);
 
   const dotSequence = useMemo(() => [
-    ...Array(23).fill({ color: 'var(--color-red)', label: '0-20岁', perc: '23%' }),
-    ...Array(27).fill({ color: 'var(--color-cyan)', label: '20-40岁', perc: '27%' }),
-    ...Array(30).fill({ color: 'var(--color-purple)', label: '40-60岁', perc: '30%' }),
-    ...Array(20).fill({ color: 'var(--color-blue)', label: '60岁以上', perc: '20%' })
+    ...Array(23).fill({ color: 'var(--color-red)', key: 'age0_20', perc: '23%' }),
+    ...Array(27).fill({ color: 'var(--color-cyan)', key: 'age20_40', perc: '27%' }),
+    ...Array(30).fill({ color: 'var(--color-purple)', key: 'age40_60', perc: '30%' }),
+    ...Array(20).fill({ color: 'var(--color-blue)', key: 'age60_plus', perc: '20%' })
   ], []);
 
   const createChart = (domElement, data, colorStr) => {
@@ -41,7 +98,6 @@ export default function LProject1() {
       animationDuration: 2500,
       animationEasing: 'cubicOut',
       grid: { top: 5, bottom: 20, left: 28, right: 5 },
-      // 触控优化：支持移动端单指滑动查看 ECharts 数据提示，并禁用多余手势
       tooltip: {
         trigger: 'axis',
         backgroundColor: 'rgba(0,0,0,0.8)',
@@ -114,8 +170,6 @@ export default function LProject1() {
 
     let mapInstance = null;
     let visualInstance = null;
-
-    // 检测当前屏幕宽度是否为窄屏设备
     const isMobile = window.innerWidth <= 960;
 
     AMapLoader.load({
@@ -128,13 +182,8 @@ export default function LProject1() {
         center: [117.044017, 36.714492], 
         viewMode: '2D', 
         mapStyle: 'amap://styles/79ed85c5692f07d67cfa26518ecbbce1',
-        
-        // 【核心触控优化】解决地图区域卡死页面滚动的冲突
-        // 如果是窄屏/移动端，禁用单指拖拽底图（dragEnable: false），用户双指才能拖拽地图。
-        // 这样单指在地图上滑动时，页面可以畅快地上下正常滚动，彻底避免冲突。
         dragEnable: !isMobile, 
-        keyboardEnable: false,
-        doubleClickZoom: !isMobile // 手机端双击不进行地图放大，防止冲突
+        keyboardEnable: false, doubleClickZoom: !isMobile 
       });
 
       visualInstance = new AMap.Visual('amap://visual/415a04aa9deb44cd6c1643a3b87926e5', mapInstance);
@@ -143,7 +192,6 @@ export default function LProject1() {
       console.error("高德地图加载失败:", e);
     });
 
-    // 针对移动端点击空白处关闭人口点阵悬浮框的监听
     const handleTouchOutside = () => {
       setTooltip(prev => ({ ...prev, display: 'none' }));
     };
@@ -157,32 +205,42 @@ export default function LProject1() {
     };
   }, []);
 
-  // 人口矩阵圆点触控兼容事件
   const handleDotTouch = (e, item) => {
-    e.stopPropagation(); // 阻止冒泡，防止被全局点击关闭
+    e.stopPropagation();
     const touch = e.touches[0];
     setTooltip({
       display: 'flex',
       left: touch.clientX + 10,
       top: touch.clientY - 45,
-      label: item.label,
+      label: isZh ? translations.zh[item.key] : translations.en[item.key],
       perc: item.perc
     });
   };
 
+  const handleBackClick = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      navigate(-1);
+    }, 800); 
+  };
+
   return (
-    <div className="lproject1-page">
+    /* 【核心修复】挂载 data-lenis-prevent 属性，全面阻断主页 Lenis 对大屏移动端触控的致命拦截 */
+    <div 
+      className={`lproject1-page ${isZh ? 'zh-mode' : 'en-mode'} ${isExiting ? 'is-exiting' : ''}`}
+      data-lenis-prevent
+    >
       <header className="lproject1-header">
         <div className="brand fade-text">
-          <div className="blue-icon-box" onClick={() => navigate(-1)} title="Back"></div>
+          <div className="blue-icon-box" onClick={handleBackClick} title="Back"></div>
           <div className="title-text">
-            <h1>Project</h1>
-            <h2>Jinan Huangtai Central Park</h2>
+            <h1>{tDict.project}</h1>
+            <h2>{tDict.title}</h2>
           </div>
         </div>
         <div className="site-analysis fade-text">
-          <div className="main">Site Analysis</div>
-          <div className="sub">Interactive Interface</div>
+          <div className="main">{tDict.siteAnalysis}</div>
+          <div className="sub">{tDict.interactiveInterface}</div>
         </div>
       </header>
 
@@ -194,22 +252,22 @@ export default function LProject1() {
       <div className="dashboard-container">
         <div className="side-column column-left">
           <div className="panel panel-landuse">
-            <div className="panel-header fade-text">Land Use Allocation by Category</div>
+            <div className="panel-header fade-text">{tDict.landUse}</div>
             <div className="panel-body fade-text">
               <div className="land-use-list">
                 {[
-                  { val: 50, color: 'var(--color-yellow)', name: 'Residential' },
-                  { val: 20, color: 'var(--color-green)', name: 'Parks & Green Spaces' },
-                  { val: 10, color: 'var(--color-cyan)', name: 'School' },
-                  { val: 15, color: 'var(--color-blue)', name: 'Commercial' },
-                  { val: 5, color: '#ffffff', name: 'Other' }
+                  { val: 50, color: 'var(--color-yellow)', nameKey: 'residential' },
+                  { val: 20, color: 'var(--color-green)', nameKey: 'parks' },
+                  { val: 10, color: 'var(--color-cyan)', nameKey: 'school' },
+                  { val: 15, color: 'var(--color-blue)', nameKey: 'commercial' },
+                  { val: 5, color: '#ffffff', nameKey: 'other' }
                 ].map((item, idx) => (
                   <div className="land-item" key={idx}>
                     <div className="progress-bar" style={{ width: `${barWidths[idx]}%` }}></div>
                     <div className="land-info">
                       <span className="perc">{item.val}%</span>
                       <span className="name">
-                        <div className="land-dot" style={{ background: item.color }}></div> {item.name}
+                        <div className="land-dot" style={{ background: item.color }}></div> {isZh ? translations.zh[item.nameKey] : translations.en[item.nameKey]}
                       </span>
                     </div>
                   </div>
@@ -219,13 +277,14 @@ export default function LProject1() {
           </div>
 
           <div className="panel panel-demographics">
-            <div className="panel-header fade-text">Demographic Structure</div>
+            <div className="panel-header fade-text">{tDict.demographics}</div>
             <div className="panel-body">
               <div className="matrix-container">
                 {dotSequence.map((item, index) => {
                   let row = Math.floor(index / 10);
                   let col = index % 10;
                   let delay = 1 + (row + col) * 0.05;
+                  const currentLabel = isZh ? translations.zh[item.key] : translations.en[item.key];
                   return (
                     <div
                       key={index}
@@ -234,10 +293,9 @@ export default function LProject1() {
                         backgroundColor: item.color,
                         animation: `lproject1-scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${delay}s forwards`
                       }}
-                      onMouseEnter={() => setTooltip({ display: 'flex', left: 0, top: 0, label: item.label, perc: item.perc })}
+                      onMouseEnter={() => setTooltip({ display: 'flex', left: 0, top: 0, label: currentLabel, perc: item.perc })}
                       onMouseMove={(e) => setTooltip(prev => ({ ...prev, left: e.clientX + 15, top: e.clientY - 15 }))}
                       onMouseLeave={() => setTooltip(prev => ({ ...prev, display: 'none' }))}
-                      // 【触控兼容】手指触摸点阵时执行单独的坐标计算并展示
                       onTouchStart={(e) => handleDotTouch(e, item)}
                     ></div>
                   );
@@ -254,15 +312,15 @@ export default function LProject1() {
             <div className="panel-body">
               <div className="charts-stack">
                 <div className="chart-unit">
-                  <h3 className="fade-text">Climate Data</h3>
+                  <h3 className="fade-text">{tDict.climate}</h3>
                   <div ref={chartTempRef} className="echart-dom fade-text"></div>
                 </div>
                 <div className="chart-unit">
-                  <h3 className="fade-text">Precipitation Data</h3>
+                  <h3 className="fade-text">{tDict.precipitation}</h3>
                   <div ref={chartRainRef} className="echart-dom fade-text"></div>
                 </div>
                 <div className="chart-unit">
-                  <h3 className="fade-text">Sunshine Duration Data</h3>
+                  <h3 className="fade-text">{tDict.sunshine}</h3>
                   <div ref={chartSunRef} className="echart-dom fade-text"></div>
                 </div>
               </div>
@@ -270,11 +328,9 @@ export default function LProject1() {
           </div>
 
           <div className="panel panel-description">
-            <div className="panel-header fade-text" style={{ marginBottom: '5px' }}>Project Description</div>
+            <div className="panel-header fade-text">{tDict.descriptionTitle}</div>
             <div className="panel-body description-box fade-text">
-              <div className="description">
-                This central park landscape planning and design project focuses on the urban renewal initiative in the Huangtai District of Jinan, centering on the in-depth design exploration and conceptual development of a planned central park. The project aims to improve the urban environment, establish a new city landmark, and integrate the profound historical and cultural heritage.
-              </div>
+              <div className="description">{tDict.description}</div>
             </div>
           </div>
         </div>

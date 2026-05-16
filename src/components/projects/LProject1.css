@@ -20,26 +20,55 @@
   
   font-family: inherit; 
   
-  height: 100vh;
+  position: fixed; 
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 100vh;
+  z-index: 9999; 
+
   overflow-x: hidden;
   overflow-y: hidden;
   box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 200;
 
-  /* 【CSS触控防护】全面禁止全屏文本意外选择和系统自带的长按呼出菜单 */
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
+
+  /* 入场时原位向下擦出 */
+  animation: lproject1-wipeDown 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* --- 动画定义区 --- */
+/* 退出动效：点击左上角小蓝块触发向上原位收回 */
+.lproject1-page.is-exiting {
+  animation: lproject1-wipeUp 0.8s cubic-bezier(0.25, 1, 0.3, 1) forwards !important;
+}
+
+.lproject1-page.is-exiting .fade-text,
+.lproject1-page.is-exiting .m-dot,
+.lproject1-page.is-exiting .progress-bar {
+  animation: lproject1-fadeOut 0.3s ease forwards !important;
+}
+
+/* --- 核心动画关键帧定义 --- */
+@keyframes lproject1-wipeDown {
+  0% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes lproject1-wipeUp {
+  0% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
 @keyframes lproject1-fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes lproject1-fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 @keyframes lproject1-scaleIn {
@@ -47,12 +76,19 @@
   to { transform: scale(1); opacity: 1; }
 }
 
-.lproject1-page .lproject1-header { opacity: 0; animation: lproject1-fadeIn 1s ease 0.2s forwards; }
-.lproject1-page .panel { opacity: 0; animation: lproject1-fadeIn 1s ease 0.2s forwards; }
-.lproject1-page .map-view { opacity: 0; animation: lproject1-fadeIn 1s ease 0.2s forwards; }
-.lproject1-page .fade-text { opacity: 0; animation: lproject1-fadeIn 1s ease 1s forwards; }
+.lproject1-page .lproject1-header,
+.lproject1-page .panel,
+.lproject1-page .map-view {
+  animation: none !important;
+  opacity: 1 !important;
+}
 
-/* --- 顶部导航与标题 --- */
+.lproject1-page .fade-text { 
+  opacity: 0; 
+  animation: lproject1-fadeIn 1s ease 1s forwards; 
+}
+
+/* --- 顶部导航栏 --- */
 .lproject1-page .lproject1-header {
   position: absolute; top: 0; left: 0; width: 100%;
   padding: 20px 30px; box-sizing: border-box;
@@ -97,18 +133,15 @@
   font-weight: bold; 
   font-family: 'Dela Gothic One', sans-serif;
 }
-.lproject1-page .title-text h2 { 
-  margin: 4px 0 0 0; 
-  font-size: 15px; 
-  font-weight: normal; 
-  color: #ddd; 
-}
 
-.lproject1-page .site-analysis { text-align: right; pointer-events: auto;}
+.lproject1-page .site-analysis { 
+  text-align: right; 
+  pointer-events: auto;
+}
 .lproject1-page .site-analysis .main { font-size: 20px; color: var(--color-blue); font-weight: bold; }
 .lproject1-page .site-analysis .sub { font-size: 12px; color: #666; margin-top: 4px; }
 
-/* --- 宽屏大屏布局 --- */
+/* --- 大屏网格大屏布局 --- */
 .lproject1-page .dashboard-container {
   display: grid;
   grid-template-columns: 340px 1fr 380px;
@@ -135,14 +168,34 @@
   display: flex; flex-direction: column;
 }
 
+/* 多语言字栈分流 */
 .lproject1-page .panel-header {
   font-size: 15px; 
   margin-bottom: 10px; 
   color: var(--text-main); 
   font-weight: bold;
-  font-family: 'Dela Gothic One', sans-serif;
   letter-spacing: 0.5px;
 }
+
+.lproject1-page.en-mode .title-text h2,
+.lproject1-page.en-mode .panel-header,
+.lproject1-page.en-mode .chart-unit h3 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 15px;
+}
+.lproject1-page.en-mode .title-text h2 { color: #ddd; font-weight: normal; }
+.lproject1-page.en-mode .chart-unit h3 { font-size: 13px; }
+
+.lproject1-page.zh-mode .title-text h2,
+.lproject1-page.zh-mode .panel-header,
+.lproject1-page.zh-mode .chart-unit h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "华文黑体", "STHeiti", "Segoe UI", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.lproject1-page.zh-mode .title-text h2 { font-size: 16px; font-weight: 500; }
+.lproject1-page.zh-mode .panel-header { font-size: 15px; }
+.lproject1-page.zh-mode .chart-unit h3 { font-size: 13px; }
 
 .lproject1-page .panel-body {
   flex: 1;
@@ -150,7 +203,7 @@
   position: relative;
 }
 
-/* --- 左侧用地占比 --- */
+/* --- 用地占比 --- */
 .lproject1-page .land-use-list {
   flex: 1; display: flex; flex-direction: column; 
   justify-content: space-evenly;
@@ -181,8 +234,6 @@
   cursor: pointer; 
   transition: transform 0.2s; 
   transform: scale(0); opacity: 0;
-  
-  /* 优化点阵在触控屏上的点击灵敏度，增大响应响应热区而体积保持不变 */
   position: relative;
 }
 .lproject1-page .m-dot::after {
@@ -191,8 +242,8 @@
 }
 .lproject1-page .m-dot:hover { transform: scale(1.5) !important; z-index: 10; }
 
-/* --- 悬浮提示框 --- */
-.lproject1-pill-tooltip {
+/* --- 提示框 --- */
+.lproject1-page .lproject1-pill-tooltip {
   position: fixed;
   flex-direction: column; 
   gap: 5px; 
@@ -205,14 +256,14 @@
   text-align: center;
 }
 
-/* --- 中间地图区域 --- */
+/* --- 中间高德核心区域 --- */
 .lproject1-page .map-view {
   background: #050505;
   border: 1px solid var(--border-color); border-radius: 12px; 
   position: relative; overflow: hidden;
 }
 
-/* --- 右侧图表 --- */
+/* --- 图表 --- */
 .lproject1-page .charts-stack {
   flex: 1;
   display: flex; flex-direction: column;
@@ -220,31 +271,25 @@
   gap: 15px; 
 }
 .lproject1-page .chart-unit { flex: 1; position: relative; min-height: 110px; }
-.lproject1-page .chart-unit h3 { 
-  position: absolute; top: 0; left: 0; 
-  font-size: 13px; 
-  margin: 0; 
-  font-weight: bold; 
-  z-index: 10; 
-  font-family: 'Dela Gothic One', sans-serif;
-}
+.lproject1-page .chart-unit h3 { position: absolute; top: 0; left: 0; margin: 0; z-index: 10; }
 .lproject1-page .echart-dom { 
   position: absolute; top: 18px; bottom: 0; left: 0; right: 0;
   width: 100%; height: calc(100% - 18px); 
 }
 
-/* --- 描述文字 --- */
+/* --- 简介段落排版 --- */
 .lproject1-page .description-box { flex: 1; display: flex; align-items: center; overflow: hidden; }
 .lproject1-page .description { font-size: 12px; line-height: 1.5; color: #999; text-align: justify; }
 
 
 /* ==========================================================================
-   窄屏/移动触控端响应式适配及物理碰撞隔离
-   ========================================================================== */
+   【核心升级】窄屏安全流式自适应排版（完全洗净 touch-action 冲突拦截）
+   ========================================================================= */
 @media screen and (max-width: 960px) {
   .lproject1-page {
-    overflow-y: auto; /* 窄屏恢复页面级顺畅滚动 */
-    -webkit-overflow-scrolling: touch; /* 强化 iOS 滚动惯性 */
+    /* 由于 data-lenis-prevent 盾牌已在 JSX 容器就位，此处开启原生纵向滑动能获得极致顺畅体验 */
+    overflow-y: auto !important; 
+    -webkit-overflow-scrolling: touch; 
   }
 
   .lproject1-page .lproject1-header {
@@ -256,6 +301,7 @@
   }
   .lproject1-page .site-analysis {
     text-align: left;
+    width: 100%;
   }
 
   .lproject1-page .dashboard-container {
@@ -266,15 +312,13 @@
     gap: 20px;
   }
 
-  /* 地图强制置顶 */
+  /* 【彻底解决无法向下滚动】全面卸载移动端下掐断系统滚动的 touch-action 规则，完全交由系统顶层流畅调度 */
   .lproject1-page .map-view {
     order: -1; 
     height: 45vh; 
     min-height: 320px;
     width: 100%;
-    
-    /* 【高德专属优化】允许单指上下滚动页面，硬隔离高德单指拖拽冲突 */
-    touch-action: pan-y; 
+    touch-action: auto !important; 
   }
 
   .lproject1-page .side-column {
@@ -297,9 +341,8 @@
     min-height: 300px;
   }
 
-  /* 图表手势优化：单指在图表上滑动时允许顺畅滚动网页 */
   .lproject1-page .panel-charts {
-    touch-action: pan-y; 
+    touch-action: auto !important; 
   }
 
   .lproject1-page .charts-stack {
