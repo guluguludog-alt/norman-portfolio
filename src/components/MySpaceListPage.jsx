@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
-import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence, useMotionValue } from 'framer-motion';
+import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence, useMotionValue, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import AnimatedSticker from './AnimatedSticker'; 
 import './mySpaceListPage.css';
@@ -73,6 +73,7 @@ const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, 
   // ================= 触控专属：点击触发逻辑 =================
   const handleClick = (e) => {
     if (!isTouchRef.current) return; // 鼠标设备忽略点击（交由 Hover 处理）
+    e.stopPropagation(); // 阻止冒泡到容器的点击事件
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     let clickPercent = Math.max(0, Math.min(1, x / rect.width));
@@ -97,6 +98,7 @@ const AnimatedLine = ({ lineData, index, totalLines, scrollYProgress, isActive, 
 export default function MySpaceListPage() {
   const { t } = useTranslation();
   const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { amount: 0.1 });
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -160,6 +162,20 @@ export default function MySpaceListPage() {
   const catProgress = useTransform(scrollYProgress, [0.1, 0.8], [0, 1]);
   const eyesProgress = useTransform(scrollYProgress, [0.25, 0.95], [0, 1]);
 
+  // 🌟 触控设备：点击空白区域关闭图片
+  const handleContainerClick = useCallback((e) => {
+    if (!isTouchRef.current) return;
+    // 检查点击目标是否在文字行上（如果在文字行上，子元素的 stopPropagation 会阻止到这里）
+    setActiveData({ lineIndex: null, percent: 0 });
+  }, []);
+
+  // 🌟 滑出页面后自动关闭图片
+  useEffect(() => {
+    if (!isInView && activeData.lineIndex !== null) {
+      setActiveData({ lineIndex: null, percent: 0 });
+    }
+  }, [isInView, activeData.lineIndex]);
+
   const activeLine = activeData.lineIndex !== null ? lines[activeData.lineIndex] : null;
   let currentImageSrc = null;
   if (activeLine && activeLine.images?.length > 0) {
@@ -173,7 +189,8 @@ export default function MySpaceListPage() {
       id="myspace-list" 
       className="my-space-list-page-container" 
       ref={containerRef} 
-      style={{ position: 'relative' }} // 必须，确保移动端的绝对定位锚定在此
+      style={{ position: 'relative' }}
+      onClick={handleContainerClick}
     >
       
       <div className="myspace-text-container">

@@ -3,27 +3,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './loadingScreen.css';
 
 // =========================================
-// 1. 引入你需要强制等待加载的大图
+// 1. 引入所有需要强制等待加载的图片资源
 // =========================================
+
+// 通用资源
 import avatarImg from '../assets/avatar.png';
 import ringImg from '../assets/Ring.png';
 import starBg from '../assets/Starbackground.png';
+import heroImg from '../assets/hero.png';
+import barImg from '../assets/Bar.png';
 
-// 建筑画廊图片
+// 建筑画廊
 import Project1 from '../assets/Project1.jpg';
 import Project2 from '../assets/Project2.jpg';
 import Project3 from '../assets/Project3.jpg';
 import Project4 from '../assets/Project4.jpg';
 import Project5 from '../assets/Project5.jpg';
 
-// 景观画廊图片
+// 景观画廊
 import LProject1 from '../assets/LProject1.png';
 import LProject2 from '../assets/LProject2.png';
 import LProject3 from '../assets/LProject3.png';
 import LProject4 from '../assets/LProject4.png';
 import LProject5 from '../assets/LProject5.png';
 
-// GeneratedContent 页面图片
+// AIGC 作品
 import GProject1 from '../assets/GProject1.png';
 import GProject2 from '../assets/GProject2.png';
 import GProject3 from '../assets/GProject3.png';
@@ -31,16 +35,81 @@ import GProject4 from '../assets/GProject4.png';
 import GProject5 from '../assets/GProject5.png';
 import GProject6 from '../assets/GProject6.png';
 
+// MySpaceList - 猫咪
+import Cat1Img from '../assets/Cat1.jpg';
+import Cat2Img from '../assets/Cat2.jpg';
+import Cat3Img from '../assets/Cat3.jpg';
+import Cat4Img from '../assets/Cat4.jpg';
+import Cat5Img from '../assets/Cat5.jpg';
+
+// MySpaceList - 朋友
+import Friends1Img from '../assets/Friends1.jpg';
+import Friends2Img from '../assets/Friends2.jpg';
+import Friends3Img from '../assets/Friends3.jpg';
+import Friends4Img from '../assets/Friends4.jpg';
+
+// MySpaceList - 音乐
+import Music1Img from '../assets/Music1.jpg';
+import Music2Img from '../assets/Music2.jpg';
+import Music3Img from '../assets/Music3.jpg';
+import Music4Img from '../assets/Music4.jpg';
+import Music5Img from '../assets/Music5.jpg';
+
+// MySpaceList - 电影
+import Movie1Img from '../assets/Movie1.jpg';
+import Movie2Img from '../assets/Movie2.jpg';
+import Movie3Img from '../assets/Movie3.jpg';
+import Movie4Img from '../assets/Movie4.jpg';
+
+// MySpaceList - 游戏 & 书籍
+import GamesImg from '../assets/Games.jpg';
+import Books1Img from '../assets/Books1.jpg';
+import Books2Img from '../assets/Books2.jpg';
+
+// 其他组件用到的图片
+import MacBookImg from '../assets/MacBook.png';
+import iMacImg from '../assets/iMac.png';
+import MacstudioImg from '../assets/Macstudio.png';
+import ClipoInterfaceImg from '../assets/ClipoInterface.png';
+import HistoryImg from '../assets/History.png';
+import HistoryWindowImg from '../assets/HistoryWindow.png';
+import MailiconImg from '../assets/Mailicon.png';
+import FileImg from '../assets/File.png';
+import GithubImg from '../assets/Github.png';
+import CatStickerImg from '../assets/CatSticker1.png';
+import EyesStickerImg from '../assets/EyesSticker.png';
+import MenuIconImg from '../assets/MenuIcon.png';
+import PlaycircleImg from '../assets/Playcircle.png';
+
 const PRELOAD_ASSETS = [
+  // 公共资源
   '/background_layer.png',
   '/pixel_layer.png',
-  avatarImg, ringImg, starBg,
+  // 核心图片
+  avatarImg, ringImg, starBg, heroImg, barImg,
+  // 建筑
   Project1, Project2, Project3, Project4, Project5,
+  // 景观
   LProject1, LProject2, LProject3, LProject4, LProject5,
-  GProject1, GProject2, GProject3, GProject4, GProject5, GProject6
+  // AIGC
+  GProject1, GProject2, GProject3, GProject4, GProject5, GProject6,
+  // 猫咪
+  Cat1Img, Cat2Img, Cat3Img, Cat4Img, Cat5Img,
+  // 朋友
+  Friends1Img, Friends2Img, Friends3Img, Friends4Img,
+  // 音乐
+  Music1Img, Music2Img, Music3Img, Music4Img, Music5Img,
+  // 电影
+  Movie1Img, Movie2Img, Movie3Img, Movie4Img,
+  // 游戏 & 书籍
+  GamesImg, Books1Img, Books2Img,
+  // 其他
+  MacBookImg, iMacImg, MacstudioImg, ClipoInterfaceImg,
+  HistoryImg, HistoryWindowImg, MailiconImg, FileImg, GithubImg,
+  CatStickerImg, EyesStickerImg, MenuIconImg, PlaycircleImg
 ];
 
-// 🌟 核心突破口：将图片实例挂载到 Window 全局对象上，彻底阻断浏览器的垃圾回收机制！
+// 🌟 将图片实例挂载到 Window 全局对象上，防止垃圾回收
 window.__PRELOADED_IMAGES_CACHE__ = window.__PRELOADED_IMAGES_CACHE__ || [];
 
 export default function LoadingScreen({ onComplete }) {
@@ -56,42 +125,45 @@ export default function LoadingScreen({ onComplete }) {
 
   useEffect(() => {
     let isMounted = true;
-    let currentProgress = 0;
-    let loadedCount = 0;
-    const total = PRELOAD_ASSETS.length;
+    // 进度计算：图片加载 + window.onload + 字体加载 = total + 2 个阶段
+    const totalItems = PRELOAD_ASSETS.length + 2; // +2 for window.onload and fonts.ready
+    let completedItems = 0;
 
-    const simInterval = setInterval(() => {
-      currentProgress += Math.floor(Math.random() * 10) + 5;
-      if (currentProgress > 85) currentProgress = 85; 
-      if (isMounted) setProgress(currentProgress);
-    }, 150);
-
-    const handleComplete = () => {
-      clearInterval(simInterval);
-      if (isMounted) {
-        setProgress(100); 
-        setTimeout(() => {
-          setIsVisible(false);
-          if (onComplete) onComplete();
-        }, 400); 
-      }
+    const updateProgress = () => {
+      if (!isMounted) return;
+      completedItems++;
+      // 前95%留给实际加载，最后5%留给结束动画缓冲
+      const realProgress = Math.min(Math.round((completedItems / totalItems) * 95), 95);
+      setProgress(realProgress);
     };
 
-    if (total === 0) {
-      handleComplete();
-    } else {
+    const handleComplete = () => {
+      if (!isMounted) return;
+      setProgress(100);
+      setTimeout(() => {
+        setIsVisible(false);
+        if (onComplete) onComplete();
+      }, 400);
+    };
+
+    // 🌟 条件1：预加载所有图片并解码
+    const imageLoadPromise = new Promise((resolve) => {
+      if (PRELOAD_ASSETS.length === 0) {
+        updateProgress();
+        resolve();
+        return;
+      }
+      let imgLoaded = 0;
       PRELOAD_ASSETS.forEach((src) => {
         const img = new Image();
         img.src = src;
-        
         const markAsLoaded = () => {
-          // 🌟 把解码后的图片塞进全局数组，永久驻留极速内存
           window.__PRELOADED_IMAGES_CACHE__.push(img);
-          loadedCount++;
-          if (loadedCount === total) handleComplete();
+          imgLoaded++;
+          // 每张图片加载完成都更新进度
+          updateProgress();
+          if (imgLoaded === PRELOAD_ASSETS.length) resolve();
         };
-
-        // 🌟 强制调用底层 decode()，将压缩包提前解压为 GPU 显存可以直读的位图
         if (img.decode) {
           img.decode().then(markAsLoaded).catch(markAsLoaded);
         } else {
@@ -99,11 +171,47 @@ export default function LoadingScreen({ onComplete }) {
           img.onerror = markAsLoaded;
         }
       });
-    }
+    });
+
+    // 🌟 条件2：window.onload — 确保页面所有资源（包括视频、CSS、脚本等）加载完毕
+    const windowLoadPromise = new Promise((resolve) => {
+      if (document.readyState === 'complete') {
+        updateProgress();
+        resolve();
+      } else {
+        window.addEventListener('load', () => {
+          updateProgress();
+          resolve();
+        }, { once: true });
+      }
+    });
+
+    // 🌟 条件3：所有字体加载完毕
+    const fontsLoadPromise = new Promise((resolve) => {
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          updateProgress();
+          resolve();
+        });
+      } else {
+        updateProgress();
+        resolve();
+      }
+    });
+
+    // 🌟 三个条件全部满足后才放行
+    Promise.all([imageLoadPromise, windowLoadPromise, fontsLoadPromise])
+      .then(() => {
+        // 所有资源加载完毕，补满进度到 95%
+        if (isMounted) {
+          setProgress(95);
+          // 给一个小缓冲让动画过渡更顺滑
+          setTimeout(handleComplete, 200);
+        }
+      });
 
     return () => {
       isMounted = false;
-      clearInterval(simInterval);
     };
   }, [onComplete]);
 
