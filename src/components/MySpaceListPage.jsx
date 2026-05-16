@@ -218,9 +218,22 @@ export default function MySpaceListPage() {
             updatePos={updatePos}
             onHover={(i, pct) => setActiveData({ lineIndex: i, percent: pct })}
             onClick={(i, pct) => {
-              // 点击切换逻辑：第二次点击相同的选项将隐藏图片
               if (activeData.lineIndex === i) {
-                setActiveData({ lineIndex: null, percent: 0 });
+                // 同一行：检查是否映射到不同图片
+                const lineImages = lines[i]?.images;
+                if (lineImages && lineImages.length > 0) {
+                  const currentImgIdx = Math.min(Math.floor(activeData.percent * lineImages.length), lineImages.length - 1);
+                  const newImgIdx = Math.min(Math.floor(pct * lineImages.length), lineImages.length - 1);
+                  if (currentImgIdx !== newImgIdx) {
+                    // 不同图片 → 更新图片，不隐藏
+                    setActiveData({ lineIndex: i, percent: pct });
+                  } else {
+                    // 相同图片 → 隐藏
+                    setActiveData({ lineIndex: null, percent: 0 });
+                  }
+                } else {
+                  setActiveData({ lineIndex: null, percent: 0 });
+                }
               } else {
                 setActiveData({ lineIndex: i, percent: pct });
               }
