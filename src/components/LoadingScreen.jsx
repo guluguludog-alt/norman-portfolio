@@ -20,6 +20,12 @@ import Project3 from '../assets/Project3.jpg';
 import Project4 from '../assets/Project4.jpg';
 import Project5 from '../assets/Project5.jpg';
 
+// 羌族文化图片
+import Qiang1 from '../assets/Qiang1.jpeg';
+import Qiang2 from '../assets/Qiang2.jpeg';
+import Qiang3 from '../assets/Qiang3.jpeg';
+import Qiang4 from '../assets/Qiang4.jpeg';
+
 // 景观画廊
 import LProject1 from '../assets/LProject1.png';
 import LProject2 from '../assets/LProject2.png';
@@ -81,6 +87,12 @@ import EyesStickerImg from '../assets/EyesSticker.png';
 import MenuIconImg from '../assets/MenuIcon.png';
 import PlaycircleImg from '../assets/Playcircle.png';
 
+// =========================================
+// 2. 视频资源
+// =========================================
+import Video1Web from '../assets/Video1_web.mp4';
+import Video2Web from '../assets/Video2_web.mp4';
+
 const PRELOAD_ASSETS = [
   // 公共资源
   '/background_layer.png',
@@ -89,6 +101,8 @@ const PRELOAD_ASSETS = [
   avatarImg, ringImg, starBg, heroImg, barImg,
   // 建筑
   Project1, Project2, Project3, Project4, Project5,
+  // 羌族文化
+  Qiang1, Qiang2, Qiang3, Qiang4,
   // 景观
   LProject1, LProject2, LProject3, LProject4, LProject5,
   // AIGC
@@ -109,8 +123,14 @@ const PRELOAD_ASSETS = [
   CatStickerImg, EyesStickerImg, MenuIconImg, PlaycircleImg
 ];
 
-// 🌟 将图片实例挂载到 Window 全局对象上，防止垃圾回收
+const PRELOAD_VIDEOS = [
+  Video1Web,
+  Video2Web,
+];
+
+// 🌟 将图片和视频实例挂载到 Window 全局对象上，防止垃圾回收
 window.__PRELOADED_IMAGES_CACHE__ = window.__PRELOADED_IMAGES_CACHE__ || [];
+window.__PRELOADED_VIDEOS_CACHE__ = window.__PRELOADED_VIDEOS_CACHE__ || [];
 
 export default function LoadingScreen({ onComplete }) {
   const [progress, setProgress] = useState(0);
@@ -125,8 +145,8 @@ export default function LoadingScreen({ onComplete }) {
 
   useEffect(() => {
     let isMounted = true;
-    // 进度计算：图片加载 + window.onload + 字体加载 = total + 2 个阶段
-    const totalItems = PRELOAD_ASSETS.length + 2; // +2 for window.onload and fonts.ready
+    // 进度计算：图片加载 + 视频加载 + window.onload + 字体加载
+    const totalItems = PRELOAD_ASSETS.length + PRELOAD_VIDEOS.length + 2; // +2 for window.onload and fonts.ready
     let completedItems = 0;
 
     const updateProgress = () => {
@@ -173,7 +193,34 @@ export default function LoadingScreen({ onComplete }) {
       });
     });
 
-    // 🌟 条件2：window.onload — 确保页面所有资源（包括视频、CSS、脚本等）加载完毕
+    // 🌟 条件2：预加载所有视频 — 等待 canplaythrough 表示视频已缓冲到可播放
+    const videoLoadPromise = new Promise((resolve) => {
+      if (PRELOAD_VIDEOS.length === 0) {
+        updateProgress();
+        resolve();
+        return;
+      }
+      let videoLoaded = 0;
+      PRELOAD_VIDEOS.forEach((src) => {
+        const video = document.createElement('video');
+        video.preload = 'auto';
+        video.muted = true;
+        video.playsInline = true;
+        video.src = src;
+        const markAsLoaded = () => {
+          window.__PRELOADED_VIDEOS_CACHE__.push(video);
+          videoLoaded++;
+          updateProgress();
+          if (videoLoaded === PRELOAD_VIDEOS.length) resolve();
+        };
+        // canplaythrough 表示浏览器认为可以不间断播放整个视频
+        video.addEventListener('canplaythrough', markAsLoaded, { once: true });
+        video.addEventListener('error', markAsLoaded, { once: true }); // 出错也放行，不阻塞
+        video.load();
+      });
+    });
+
+    // 🌟 条件3：window.onload — 确保页面所有资源（包括 CSS、脚本等）加载完毕
     const windowLoadPromise = new Promise((resolve) => {
       if (document.readyState === 'complete') {
         updateProgress();
@@ -186,7 +233,7 @@ export default function LoadingScreen({ onComplete }) {
       }
     });
 
-    // 🌟 条件3：所有字体加载完毕
+    // 🌟 条件4：所有字体加载完毕
     const fontsLoadPromise = new Promise((resolve) => {
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(() => {
@@ -199,8 +246,8 @@ export default function LoadingScreen({ onComplete }) {
       }
     });
 
-    // 🌟 三个条件全部满足后才放行
-    Promise.all([imageLoadPromise, windowLoadPromise, fontsLoadPromise])
+    // 🌟 四个条件全部满足后才放行
+    Promise.all([imageLoadPromise, videoLoadPromise, windowLoadPromise, fontsLoadPromise])
       .then(() => {
         // 所有资源加载完毕，补满进度到 95%
         if (isMounted) {
