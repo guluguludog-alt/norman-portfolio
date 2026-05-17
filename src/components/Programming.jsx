@@ -13,6 +13,7 @@ import MacstudioImg from '../assets/Macstudio.png';
 import GithubIcon from '../assets/Github.png';
 import FileIcon from '../assets/File.png';
 import PlaycircleIcon from '../assets/Playcircle.png';
+import ClipoIcon from '../assets/Clipoicon.png';
 
 export default function Programming() {
   const { t, i18n } = useTranslation();
@@ -31,6 +32,7 @@ export default function Programming() {
   const [isRippling, setIsRippling] = useState(false);
   const [isGlowActive, setIsGlowActive] = useState(false);
   const [fadeOutAll, setFadeOutAll] = useState(false);
+  const [showClipoIcon, setShowClipoIcon] = useState(false);
 
   const [animationPhase, setAnimationPhase] = useState('idle');
   const isMobileRef = useRef(typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
@@ -188,7 +190,8 @@ export default function Programming() {
 
     const t5 = setTimeout(() => {
       setAnimationPhase('finished');
-      applyFinalLayout(false); 
+      applyFinalLayout(false);
+      if (isMobileRef.current) setShowClipoIcon(true);
 
       setTimeout(() => {
         animate(syncTextOpacity, 1, { duration: 0.8 });
@@ -253,6 +256,7 @@ export default function Programming() {
     setIsRippling(false);
     setIsGlowActive(false);
     setFadeOutAll(false);
+    setShowClipoIcon(false);
     
     setVideoPlaying(true);
     if (videoRef.current) {
@@ -323,6 +327,14 @@ export default function Programming() {
             src={Macbook} alt="Macbook Overlay" className="macbook-overlay-image" decoding="async"
             style={{ opacity: macbookOpacity, top: '50%', left: '50%', x: '-49.8%', y: '-44.4%', z: 0 }} 
           />
+          {showClipoIcon && (
+            <img 
+              src={ClipoIcon} 
+              alt="Clipo Icon" 
+              className="clipo-icon-center" 
+              decoding="async" 
+            />
+          )}
         </motion.div>
 
         <motion.img 
