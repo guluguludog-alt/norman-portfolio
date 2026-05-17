@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './experienceListPage.css';
 import starBg from '../assets/Starbackground.png'; 
 
-const CompanyItem = React.memo(({ company, index, scrollYProgress, isActive, onClick }) => {
+const CompanyItem = React.memo(({ company, index, scrollYProgress, isActive, onClick, onMouseEnter, onMouseLeave, isTouchDevice }) => {
   // 使用 hasActivated 记录是否曾经被激活过，以便触发回退动画
   const [hasActivated, setHasActivated] = useState(false);
 
@@ -92,7 +92,9 @@ const CompanyItem = React.memo(({ company, index, scrollYProgress, isActive, onC
     <motion.div 
       className="company-item"
       style={{ opacity: itemOpacity }} 
-      onClick={onClick} /* 🌟 核心：Hover 改为 onClick */
+      onClick={isTouchDevice ? onClick : undefined}
+      onMouseEnter={isTouchDevice ? undefined : onMouseEnter}
+      onMouseLeave={isTouchDevice ? undefined : onMouseLeave}
       initial="hidden"
       animate={currentAnimationState}
     >
@@ -196,7 +198,10 @@ export default function ExperienceListPage() {
             company={company}
             scrollYProgress={textScrollProgress}
             isActive={activeIndex === index} 
-            onClick={() => setActiveIndex(activeIndex === index ? null : index)} /* 🌟 触发点击事件 */
+            isTouchDevice={isTouchDevice}
+            onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+            onMouseEnter={() => setActiveIndex(index)}
+            onMouseLeave={() => setActiveIndex(null)}
           />
         ))}
       </div>
