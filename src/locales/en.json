@@ -1,8 +1,8 @@
 {
   "navbar": {
     "aigc": "AIGC",
-    "architecture": "Architecture",
-    "landscape": "Landscape",
+    "architecture": "Architecture/Landscape",
+    "landscape": "Resources",
     "more": "More",
     "contactMe": "Contact me"
   },
@@ -159,5 +159,16 @@
   },
   "contact": {
     "backToTop": "Back to Top"
+  },
+  "resources": {
+    "home": "Home",
+    "title": "Resources",
+    "disclaimer": "This software is permanently free with no hidden charges. All risks arising from the use of this software (including but not limited to data loss, system errors, third-party data charges) are borne by the user. Please back up important data in advance. The developer assumes no responsibility.",
+    "learnMore": "Learn More",
+    "download": "Download",
+    "clipo": {
+      "name": "Clipo",
+      "description": "A permanently free smart clipboard manager that automatically captures and categorizes your copy history. Supports one-click OCR text extraction from images, automatic color palette generation, and quick creation of auto-organized 'Collections' knowledge base."
+    }
   }
 }

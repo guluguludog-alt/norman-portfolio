@@ -18,6 +18,7 @@ import ArchitectureWorks from './components/ArchitectureWorks';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProjectDetailPage from './components/ProjectDetailPage';
 import LoadingScreen from './components/LoadingScreen'; 
+import ResourcesPage from './components/ResourcesPage';
 
 function Home() {
   // 核心优化：利用 sessionStorage 缓存状态，防止用户返回主页时重新激活 LoadingScreen 幕布导致闪烁黑屏
@@ -72,6 +73,8 @@ function App() {
         <Route path="/" element={null} />
         {/* 高层悬浮遮罩通道，原位向下擦出 */}
         <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+        {/* 资源下载页面 */}
+        <Route path="/resources" element={<ResourcesPage />} />
       </Routes>
     </Router>
   );

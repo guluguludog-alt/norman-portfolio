@@ -1,8 +1,8 @@
 {
   "navbar": {
     "aigc": "AIGC",
-    "architecture": "建筑",
-    "landscape": "景观",
+    "architecture": "建筑/景观",
+    "landscape": "资源下载",
     "more": "更多",
     "contactMe": "联系我"
   },
@@ -159,5 +159,16 @@
   },
   "contact": {
     "backToTop": "返回顶部"
+  },
+  "resources": {
+    "home": "首页",
+    "title": "资源下载",
+    "disclaimer": "软件永久免费，无任何隐藏收费。使用本软件产生的一切风险（包括但不限于数据丢失、系统异常、第三方流量费）均由用户自行承担。请重要数据请提前备份，开发者不承担任何责任。",
+    "learnMore": "了解更多",
+    "download": "下载",
+    "clipo": {
+      "name": "Clipo",
+      "description": "一款永久免费的智能剪贴板管理工具，能自动捕获并分类你的复制历史，支持OCR一键拾取图片文字、自动分析图片生成色卡，还能快捷创建自动归类的「集锦」知识库。"
+    }
   }
 }

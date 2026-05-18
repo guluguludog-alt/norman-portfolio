@@ -4,6 +4,7 @@ import './Navbar.css';
 import MenuIcon from '../assets/MenuIcon.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const menuVariants = {
   hidden: { y: '-100%', transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
@@ -33,6 +34,7 @@ export default function Navbar() {
   const moreDropdownRef = useRef(null);
   const moreTriggerRef = useRef(null);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'zh' : 'en';
@@ -68,7 +70,7 @@ export default function Navbar() {
             <nav className="nav-links">
               <a href="#aigc">{t('navbar.aigc')}</a>
               <a href="#architecture">{t('navbar.architecture')}</a>
-              <a href="#landscape">{t('navbar.landscape')}</a>
+              <a href="/resources" onClick={(e) => { e.preventDefault(); navigate('/resources'); }}>{t('navbar.landscape')}</a>
               <div 
                 className="more-dropdown-wrapper"
                 onMouseEnter={() => setIsMoreHovered(true)}
@@ -141,7 +143,7 @@ export default function Navbar() {
                 {[
                   { name: t('navbar.aigc'), href: '#aigc' },
                   { name: t('navbar.architecture'), href: '#architecture' },
-                  { name: t('navbar.landscape'), href: '#landscape' },
+                  { name: t('navbar.landscape'), href: '/resources', navigateTo: '/resources' },
                   { name: t('navbar.more'), href: '#myspace' },
                   { name: i18n.language === 'en' ? '中文' : 'EN', isButton: true },
                   { name: t('navbar.contactMe'), href: '#contact' }
@@ -150,7 +152,7 @@ export default function Navbar() {
                     {item.isButton ? (
                       <button className="mobile-fullscreen-link" onClick={() => { toggleLanguage(); setIsMobileMenuOpen(false); }}>{item.name}</button>
                     ) : (
-                      <a href={item.href} className="mobile-fullscreen-link" onClick={() => setIsMobileMenuOpen(false)}>{item.name}</a>
+                      <a href={item.href} className="mobile-fullscreen-link" onClick={() => { setIsMobileMenuOpen(false); if (item.navigateTo) { navigate(item.navigateTo); } }}>{item.name}</a>
                     )}
                   </motion.div>
                 ))}
