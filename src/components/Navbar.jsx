@@ -152,7 +152,7 @@ export default function Navbar() {
                     {item.isButton ? (
                       <button className="mobile-fullscreen-link" onClick={() => { toggleLanguage(); setIsMobileMenuOpen(false); }}>{item.name}</button>
                     ) : (
-                      <a href={item.href} className="mobile-fullscreen-link" onClick={() => { setIsMobileMenuOpen(false); if (item.navigateTo) { navigate(item.navigateTo); } }}>{item.name}</a>
+                      <a href={item.href} className="mobile-fullscreen-link" onClick={(e) => { if (item.navigateTo) { e.preventDefault(); } setIsMobileMenuOpen(false); if (item.navigateTo) { navigate(item.navigateTo); } }}>{item.name}</a>
                     )}
                   </motion.div>
                 ))}
