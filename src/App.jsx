@@ -19,6 +19,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProjectDetailPage from './components/ProjectDetailPage';
 import LoadingScreen from './components/LoadingScreen'; 
 import ResourcesPage from './components/ResourcesPage';
+import { Analytics } from '@vercel/analytics/react';
 
 function Home() {
   // 核心优化：利用 sessionStorage 缓存状态，防止用户返回主页时重新激活 LoadingScreen 幕布导致闪烁黑屏
@@ -65,18 +66,21 @@ function Home() {
 
 function App() {
   return (
-    <Router>
-      {/* 底层主页常驻，保留全站滚动位置与生命周期 */}
-      <Home />
-      
-      <Routes>
-        <Route path="/" element={null} />
-        {/* 高层悬浮遮罩通道，原位向下擦出 */}
-        <Route path="/project/:projectId" element={<ProjectDetailPage />} />
-        {/* 资源下载页面 */}
-        <Route path="/resources" element={<ResourcesPage />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        {/* 底层主页常驻，保留全站滚动位置与生命周期 */}
+        <Home />
+        
+        <Routes>
+          <Route path="/" element={null} />
+          {/* 高层悬浮遮罩通道，原位向下擦出 */}
+          <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+          {/* 资源下载页面 */}
+          <Route path="/resources" element={<ResourcesPage />} />
+        </Routes>
+      </Router>
+      <Analytics />
+    </>
   );
 }
 
